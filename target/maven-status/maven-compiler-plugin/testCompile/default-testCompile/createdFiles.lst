@@ -1,0 +1,6 @@
+com\stepdefinit\SauceStep.class
+com\Pom\SauceLogin.class
+com\runner\RunnerClass.class
+com\resources\BaseClass.class
+com\Pom\SauceCart.class
+com\Pom\SaucePro.class
