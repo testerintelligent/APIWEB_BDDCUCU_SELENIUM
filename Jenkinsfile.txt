@@ -1,0 +1,29 @@
+pipeline 
+{
+ 	agent  { label 'WinNode'} //'LinuxAgent'  
+
+
+	stages 
+	{
+	
+	   	stage('Execution')
+		{
+			steps 
+			{
+				bat 'mvn test -Dtest=RunnerClass'
+			}
+		} 
+	}		
+
+	post
+	{
+		always
+		{
+			sleep(time:3,unit:"SECONDS")
+			cucumber buildStatus: 'UNCHANGED', customCssFiles: '', customJsFiles: '', fileIncludePattern: '**/*.json', jsonReportDirectory: 'target/cucumber-report/', reportTitle: 'Report', sortingMethod: 'ALPHABETICAL', trendsLimit: 5
+		}
+	}	
+	
+}
+           
+    
