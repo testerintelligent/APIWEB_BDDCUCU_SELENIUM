@@ -1,11 +1,11 @@
 Feature: To create the address in cyclos using API
-@cyclos
+@cyclos_create_address
   Scenario Outline: Create the address in cyclos
     Given User should load the url username
     When User should create the address
     Then User should validate the status codes
 
-@cyclos_01
+@cyclos_get_address
   Scenario Outline: Get the address in cyclos
     Given User should load the url username,password "<username>" and "<password>"
     When User should get the address
@@ -19,7 +19,7 @@ Feature: To create the address in cyclos using API
       | username | password  |
       | Krhithya | Divya@123 |
       
-        Scenario Outline: Verify the cyclos site address
+  Scenario Outline: Verify the cyclos site address
     Given User should load the url cyclos
     When User should enter the username and password "<username>" and "<password>"
     And User should navigate to profile
