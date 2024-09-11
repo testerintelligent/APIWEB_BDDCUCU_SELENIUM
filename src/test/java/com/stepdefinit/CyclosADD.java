@@ -153,7 +153,7 @@ public class CyclosADD extends BaseClass {
 		WebElement name = login.getName();
 		String text = name.getText();
 		System.out.println(text);
-		assertEquals(text, addressLine1);
+		assertEquals(text, login.getUsername());
 	}
 
 	@Then("User should validate the city")

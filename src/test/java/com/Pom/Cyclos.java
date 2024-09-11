@@ -26,7 +26,7 @@ public class Cyclos extends BaseClass{
 	@FindBy(xpath="//div[text()='  Divya ']")
 	private WebElement user;
 	
-	@FindBy(xpath="(//div[@class='data-item'])[1]")
+	@FindBy(xpath="(//div[@class='d-flex label-value-value'])[2]")
 	private WebElement name;
 	
 	@FindBy(xpath="(//div[@class='data-item'])[3]")
