@@ -147,12 +147,14 @@ public class CyclosADD extends BaseClass {
 		Click(login.getSubmit());
 		Click(login.getUser());
 	}
+	
 
 	@Then("User should validate the name")
 	public void user_should_validate_the_name() {
 		WebElement name = login.getName();
 		String text = name.getText();
 		System.out.println(text);
+		
 		assertEquals(text, "Krhithya");
 	}
 
