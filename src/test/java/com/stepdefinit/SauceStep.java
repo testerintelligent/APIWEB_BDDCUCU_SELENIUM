@@ -5,12 +5,10 @@ import com.Pom.SaucePro;
 
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.WebDriver;
-
 import com.Pom.SauceCart;
 import com.resources.BaseClass;
 
-import io.cucumber.java.After;
+
 import io.cucumber.java.en.*;
 
 public class SauceStep extends BaseClass {
@@ -19,13 +17,7 @@ public class SauceStep extends BaseClass {
 	SauceCart cart;
 	SauceLogin login;
 	
-	
-//	@After
-//	public void after() {
-//		driver.close();
-//
-//	}
-	
+
 	@Given("User should launch the browser")
 	public void user_should_launch_the_browser() {
 	  LaunchBrowser();
@@ -36,7 +28,9 @@ public class SauceStep extends BaseClass {
 	@When("User should write {string} and {string}")
 	public void user_should_write_and(String username, String password) {
 	   login = new SauceLogin();
+	   //method override
 	  EnterValue(login.getUsername(), username);
+	   //method override
 	   EnterValue(login.getPassword(), password);
 	}
 
@@ -57,9 +51,6 @@ public class SauceStep extends BaseClass {
 		driver.close();
 	}
 
-
-
-	
 	@Then("User should click the product")
 	public void user_should_click_the_product() {
 		Click(login.getClick1());
