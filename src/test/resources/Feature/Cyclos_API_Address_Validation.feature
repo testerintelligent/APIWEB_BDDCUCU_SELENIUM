@@ -18,7 +18,8 @@ Feature: To create the address in cyclos using API
     Examples: 
       | username | password  |
       | Krhithya | Divya@123 |
-      
+
+ @cyclos_verify_address 
   Scenario Outline: Verify the cyclos site address
     Given User should load the url cyclos
     When User should enter the username and password "<username>" and "<password>"
