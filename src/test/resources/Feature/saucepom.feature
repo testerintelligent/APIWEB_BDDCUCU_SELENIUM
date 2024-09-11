@@ -1,7 +1,7 @@
 
 Feature: Verifying the sauce page
 @sauce
-Scenario Outline: Verify the login and Logout Funtionality
+Scenario Outline: Verify the Login and Logout Funtionality
 Given User should launch the browser
 When User should write "<username>" and "<password>"
 And User should click the login button
@@ -34,7 +34,7 @@ Examples:
 |username|password|
 |standard_user|secret_sauce|
 
-Scenario Outline: verify the login page
+Scenario Outline: Verify User is able add the product to the cart
 Given User should launch the browser
 When User should write "<username>" and "<password>"
 And User should click the login button
@@ -45,7 +45,7 @@ Examples:
 |username|password|
 |standard_user|secret_sauce|
 
-Scenario Outline: verify the login page
+Scenario Outline: Verify User is able Select fitler button
 Given User should launch the browser
 When User should write "<username>" and "<password>"
 And User should click the login button
@@ -56,7 +56,7 @@ Examples:
 |username|password|
 |standard_user|secret_sauce|
 
-Scenario Outline: verify the login page
+Scenario Outline: Verify User is able to see success message after login
 Given User should launch the browser
 When User should write "<username>" and "<password>"
 And User should click the login button
@@ -67,7 +67,7 @@ Examples:
 |username|password|
 |standard_user|secret_sauce|
 
-Scenario Outline: verify the login page
+Scenario Outline: Verify User is able to logut from the page 
 Given User should launch the browser
 When User should write "<username>" and "<password>"
 And User should click the login button
@@ -78,7 +78,7 @@ Examples:
 |username|password|
 |standard_user|secret_sauce|
 
-Scenario Outline: verify the login page
+Scenario Outline: Verify User is able to add all product to the cart
 Given User should launch the browser
 When User should write "<username>" and "<password>"
 And User should click the login button
