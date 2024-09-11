@@ -5,7 +5,6 @@ import static org.hamcrest.Matchers.equalTo;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -16,7 +15,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
@@ -37,8 +35,6 @@ public class BaseClass {
 		ChromeOptions co = new ChromeOptions();
 		co.addArguments("--remote-allow-origins=*");
 		WebDriverManager.chromedriver().setup();
-		//driver = new ChromeDriver();
-		//System.setProperty("webdriver.chrome.driver", "C:/Program Files/Google/chromedriver.exe");
 		driver = new ChromeDriver(co);
 		driver.manage().window().maximize();
 
