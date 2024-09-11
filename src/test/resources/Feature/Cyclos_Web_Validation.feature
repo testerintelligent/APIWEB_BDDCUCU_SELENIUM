@@ -1,4 +1,4 @@
-Feature: validating the cyclos site 
+Feature: Validating the Content in Cyclos Website
 
  @cyclos_login_test
   Scenario Outline: Verify the cyclos site address
