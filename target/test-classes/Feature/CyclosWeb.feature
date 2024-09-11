@@ -1,5 +1,5 @@
 Feature: validate the cyclos site
- @cyclos_02
+ @cyclos_login_test
   Scenario Outline: Verify the cyclos site address
     Given User should load the url cyclos
     When User should enter the username and password "<username>" and "<password>"
@@ -11,7 +11,7 @@ Feature: validate the cyclos site
     |username|password|
     |Krhithya|Divya@123|
     
-    @cyclos_03
+    @cyclos_delete_User
   Scenario Outline: Delete the address in cyclos
     Given User should load the url username and password "<username>" and "<password>"
     When User should delete the address

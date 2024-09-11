@@ -17,7 +17,7 @@ public class SauceCart extends BaseClass {
 	@FindBy(xpath ="//div[normalize-space()='Test.allTheThings() T-Shirt (Red)']")
 	private WebElement click7;
 	
-	@FindBy(xpath ="//button[@id='add-to-cart-test.allthethings()-t-shirt-(red)']")
+	@FindBy(xpath ="//button[@id='add-to-cart']")
 	private WebElement click8;
 	
 	@FindBy(xpath ="//a[@class='shopping_cart_link']")
