@@ -8,7 +8,7 @@ import com.resources.BaseClass;
 
 public class SauceLogin extends BaseClass {
 	public SauceLogin() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver, this);  //Constructor created
 	}
 
 	@FindBy(xpath="//input[@name='user-name']")
