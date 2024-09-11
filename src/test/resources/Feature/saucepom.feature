@@ -1,5 +1,5 @@
 
-Feature: Verifying the sauce page
+Feature: Verifying Product Purchase functinality  in Sauce Labs Website
 @sauce
 Scenario Outline: Verify the Login and Logout Funtionality
 Given User should launch the browser
