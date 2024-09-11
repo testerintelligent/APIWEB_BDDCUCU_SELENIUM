@@ -1,11 +1,12 @@
-Feature: To create the address in cyclos using API
-@cyclos_create_address
-  Scenario Outline: Create the address in cyclos
+Feature: To create and validate the address in cyclos using API
+
+  @cyclos_create_address
+  Scenario: Create the address in cyclos
     Given User should load the url username
     When User should create the address
     Then User should validate the status codes
 
-@cyclos_get_address
+  @cyclos_get_address
   Scenario Outline: Get the address in cyclos
     Given User should load the url username,password "<username>" and "<password>"
     When User should get the address
@@ -27,7 +28,18 @@ Feature: To create the address in cyclos using API
     Then User should validate the name
     And User should validate the city
     And User should validate the state
+
     Examples:
     |username|password|
     |Krhithya|Divya@123|
 
+
+  @cyclos_delete_User
+  Scenario Outline: Delete the address in cyclos
+    Given User should load the url username and password "<username>" and "<password>"
+    When User should delete the address
+    Then User should validate the status code in reponces
+
+    Examples: 
+      | username | password  |
+      | Krhithya | Divya@123 |
