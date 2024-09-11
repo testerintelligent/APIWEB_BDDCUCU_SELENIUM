@@ -7,8 +7,6 @@ import java.util.concurrent.TimeUnit;
 
 import com.Pom.SauceCart;
 import com.resources.BaseClass;
-
-
 import io.cucumber.java.en.*;
 
 public class SauceStep extends BaseClass {
@@ -17,7 +15,6 @@ public class SauceStep extends BaseClass {
 	SauceCart cart;
 	SauceLogin login;
 	
-
 	@Given("User should launch the browser") //steps for launching browser
 	public void user_should_launch_the_browser() {
 	  LaunchBrowser();
