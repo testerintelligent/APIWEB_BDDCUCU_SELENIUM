@@ -7,8 +7,6 @@ import java.util.concurrent.TimeUnit;
 
 import com.Pom.SauceCart;
 import com.resources.BaseClass;
-
-
 import io.cucumber.java.en.*;
 
 public class SauceStep extends BaseClass {
@@ -17,24 +15,22 @@ public class SauceStep extends BaseClass {
 	SauceCart cart;
 	SauceLogin login;
 	
-
-	@Given("User should launch the browser")
+	@Given("User should launch the browser") //steps for launching browser
 	public void user_should_launch_the_browser() {
 	  LaunchBrowser();
 	  LaunchURL("https://www.saucedemo.com/");
 	  driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 
-	@When("User should write {string} and {string}")
+	@When("User should write {string} and {string}") //Passing Username and password for Login
 	public void user_should_write_and(String username, String password) {
 	   login = new SauceLogin();
-	   //method override
+	   //method override - EnterValue method used for username and password
 	  EnterValue(login.getUsername(), username);
-	   //method override
-	   EnterValue(login.getPassword(), password);
+	  EnterValue(login.getPassword(), password);
 	}
 
-	@When("User should click the login button")
+	@When("User should click the login button") //Clicking the SUbmit Button after entering username and password
 	public void user_should_click_the_login_button() {
 	  Click(login.getClick());
 	}
@@ -42,8 +38,7 @@ public class SauceStep extends BaseClass {
 	@Then("User should verify success message after login")
 	public void user_should_verify_success_message_after_login() {
 	    login.getText();
-	    //assert.assertEquals("verify login", "Swag Labs", f);
-	    
+	       
 	}
 	
 	@Then("User should logoff")
