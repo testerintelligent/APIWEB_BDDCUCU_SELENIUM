@@ -3,8 +3,6 @@ package com.Pom;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import com.github.dockerjava.api.model.Driver;
 import com.resources.BaseClass;
 
 public class SaucePro extends BaseClass {
@@ -12,6 +10,7 @@ public class SaucePro extends BaseClass {
 		PageFactory.initElements(driver, this);
 	}
 	
+//Encapsulation (Data Hiding)- created in private and used in methods
 
 	@FindBy(xpath = "//div[text()='Sauce Labs Bike Light']//parent::a//preceding::div//button[text()='Add to cart']")
 	 private WebElement click;
