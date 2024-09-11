@@ -1,7 +1,6 @@
 pipeline 
 {
- 	agent  { label 'WinNode'} //'LinuxAgent'  
-
+ 	agent any
 
 	stages 
 	{
