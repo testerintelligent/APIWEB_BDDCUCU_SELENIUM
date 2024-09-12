@@ -9,7 +9,7 @@ import com.Pom.SauceCart;
 import com.resources.BaseClass;
 import io.cucumber.java.en.*;
 
-//Saucestep is inherited from BaseClass(BaseClass.java)
+//Inheritance - SauceStep is inherited from SuperClass(BaseClass.java)
 public class SauceStep extends BaseClass {
 //WebDriver driver;
 	SaucePro pro;
@@ -31,7 +31,8 @@ public class SauceStep extends BaseClass {
 	  EnterValue(login.getPassword(), password);
 	}
 
-	@When("User should click the login button") //Clicking the SUbmit Button after entering username and password
+	//Clicking the SUbmit Button after entering username and password
+	@When("User should click the login button") 
 	public void user_should_click_the_login_button() {
 	  Click(login.getClick());
 	}
@@ -42,11 +43,13 @@ public class SauceStep extends BaseClass {
 	       
 	}
 	
+	//logout the application
 	@Then("User should logoff")
 	public void user_should_logoff() {
 		driver.close();
 	}
 
+	//Selecting the product
 	@Then("User should click the product")
 	public void user_should_click_the_product() {
 		Click(login.getClick1());
