@@ -29,7 +29,7 @@ public class Cyclos extends BaseClass{
 	@FindBy(xpath="//div[text()='  Divya ']")
 	private WebElement user;
 	
-	@FindBy(xpath="(//div[@class='data-item'])[2]")
+	@FindBy(xpath="(//div[@class='data-item'])[1]")
 	private WebElement name;
 	
 	@FindBy(xpath="(//div[@class='data-item'])[3]")
