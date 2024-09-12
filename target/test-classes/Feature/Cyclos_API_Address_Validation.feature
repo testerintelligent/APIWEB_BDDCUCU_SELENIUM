@@ -1,15 +1,10 @@
 Feature: To Create and validate the address in cyclos using API
 
-Background: Create the address in cyclos
+  @cyclos_create_address
+  Scenario: Create the address in cyclos
     Given User should load the url username
     When User should create the address
     Then User should validate the status codes
-
-  # @cyclos_create_address
-  # Scenario: Create the address in cyclos
-    # Given User should load the url username
-    # When User should create the address
-    # Then User should validate the status codes
 
   @cyclos_get_address
   Scenario Outline: Get the address in cyclos
