@@ -8,6 +8,7 @@ Feature: Validating the Content in Cyclos Website
     Then User should validate the name
     And User should validate the city
     And User should validate the state
+
     Examples:
     |username|password|
     |Krhithya|Divya@123|
