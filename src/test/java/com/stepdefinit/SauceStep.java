@@ -61,6 +61,7 @@ public class SauceStep extends BaseClass {
 	public void user_should_click_the_add_to_cart_button() {
 		Click(login.getClick3());
 		Click(login.getClick4());
+		//method override - EnterValue method used for username and password
 		EnterValue(login.getFirst(), "praveen");
 		EnterValue(login.getLast(), "kumar");
 		EnterValue(login.getPin(), "600096");
@@ -73,6 +74,7 @@ public class SauceStep extends BaseClass {
 	public void user_should_click_cart_button() {
 		Click(login.getClick8());
 		Click(login.getClick9());
+		//method override - EnterValue method used for username and password
 		EnterValue(login.getFirstname(), "masi");
 		EnterValue(login.getLastname(), "masi");
 		EnterValue(login.getPinnumber(), "600096");
@@ -89,6 +91,7 @@ public class SauceStep extends BaseClass {
 		Click(cart.getClick8());
 		Click(cart.getClick9());
 		Click(cart.getClick00());
+		//method override - EnterValue method used for name
 		EnterValue(cart.getFname(), "sam");
 		EnterValue(cart.getLname(), "kumar");
 		EnterValue(cart.getPincode(), "600097");
@@ -103,6 +106,7 @@ public class SauceStep extends BaseClass {
 	    Click(pro.getClick1());
 	    Click(pro.getClick2());
 	    Click(pro.getClick3());
+		//method override - EnterValue method used for username and password
 	    EnterValue(pro.getFirst(), "kumar");
 	    EnterValue(pro.getLast(), "kumar");
 	    EnterValue(pro.getClick5(),"600096");
@@ -132,6 +136,7 @@ public class SauceStep extends BaseClass {
 		 pro = new SaucePro();
 	   Click(pro.getClick12());
 	   Click(pro.getClick14());
+	   //method override - EnterValue method used for username and password
 	   EnterValue(pro.getFirstname(), "aravind");
 	   EnterValue(pro.getLastname(), "kumar");
 	   EnterValue(pro.getPincode(), "600099");
@@ -143,6 +148,7 @@ public class SauceStep extends BaseClass {
 	@Then("User should click cart")
 	public void user_should_click_cart() {
 		 pro = new SaucePro();
+		   //method override - Click is used to click the button
 	Click(pro.getLclick());
 	driver.close();
 	    
@@ -151,6 +157,7 @@ public class SauceStep extends BaseClass {
 	@Then("User should click carts")
 	public void user_should_click_carts() {
 		 pro = new SaucePro();
+		 //method override - Click is used to click the checkout button
 	    Click(pro.getSclick());
 	    Click(pro.getCclick());
 	    driver.close();
