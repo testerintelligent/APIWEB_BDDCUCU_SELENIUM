@@ -171,6 +171,7 @@ public class CyclosADD extends BaseClass {
 		assertEquals(text, "addressLine1");
 	}
 
+	// To Validate the value of city
 	@Then("User should validate the city")
 	public void user_should_validate_the_city() {
 		WebElement city2 = login.getCity();
@@ -180,6 +181,7 @@ public class CyclosADD extends BaseClass {
 
 	}
 
+	// To Validate the value of state
 	@Then("User should validate the state")
 	public void user_should_validate_the_state() {
 		WebElement state = login.getState();
