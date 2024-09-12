@@ -155,7 +155,7 @@ public class CyclosADD extends BaseClass {
 		String text = name.getText();
 		System.out.println(text);
 		
-		assertEquals(text, "Krhithya");
+		assertEquals(text, addressLine1);
 	}
 
 	@Then("User should validate the city")
