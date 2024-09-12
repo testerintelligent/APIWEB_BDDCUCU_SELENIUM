@@ -6,11 +6,14 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.resources.BaseClass;
 
+//Inheritance - Cyclos is inherited from SuperClass(BaseClass.java)
 public class Cyclos extends BaseClass{
 
-	public Cyclos() {
-		PageFactory.initElements(driver, this);
+	public Cyclos() {   //Constructor - Instance of a class 
+		PageFactory.initElements(driver, this); //PageFactory is being intialized here
 	}
+
+	//Encapsulation (Data Hiding)- Below private declaration are used to call within the class 
 	@FindBy(xpath="//div[text()=' Login ']")
 	private WebElement login;
 	
@@ -38,6 +41,9 @@ public class Cyclos extends BaseClass{
 	@FindBy(xpath="(//span[@class='inline-label'])[2]")
 	private WebElement City_01;
 
+	//Encapsulation -Below Getter and Setter method are used
+	//Get -To retrieve the value of above private field
+	//Set -To set the value of above private field
 	public WebElement getCity_01() {
 		return City_01;
 	}

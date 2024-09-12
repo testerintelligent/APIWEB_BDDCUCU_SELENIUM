@@ -6,11 +6,13 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.resources.BaseClass;
 
+//Inheritance - SauceLogin is inherited from SuperClass(BaseClass.java)
 public class SauceLogin extends BaseClass {
-	public SauceLogin() {
-		PageFactory.initElements(driver, this);  //Constructor created
+	public SauceLogin() {  //Constructor - Instance of a class 
+		PageFactory.initElements(driver, this);   //PageFactory is being intialized here
 	}
 
+	//Encapsulation (Data Hiding)- Below private declaration are used to call within the class 
 	@FindBy(xpath="//input[@name='user-name']")
 	private WebElement username;
 
@@ -71,6 +73,10 @@ public class SauceLogin extends BaseClass {
 	@FindBy(xpath ="//button[@id='finish']")
 	private WebElement click12;
 
+
+	//Encapsulation -Below Getter and Setter method are used
+	//Get -To retrieve the value of above private field
+	//Set -To set the value of above private field
 	public WebElement getUsername() {
 		return username;
 	}
