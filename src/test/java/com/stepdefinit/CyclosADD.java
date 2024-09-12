@@ -1,5 +1,8 @@
 package com.stepdefinit;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -58,6 +61,7 @@ public class CyclosADD extends BaseClass {
 		Assert.assertEquals(201, statusCode);
 	}
 
+	//API - request to load baseURI with username and password
 	@Given("User should load the url username,password {string} and {string}")
 	public void user_should_load_the_url_username_password_and(String string, String string2)
 			throws FileNotFoundException, IOException {
@@ -82,24 +86,28 @@ public class CyclosADD extends BaseClass {
 
 	}
 
+	//To retrieve the value of name
 	@Then("User should get the name")
 	public void user_should_get_the_name() {
 		name = res.jsonPath().getString("name");
 		System.out.println(name);
 	}
 
+	//To retrieve the value of Address
 	@Then("User should get the addressLine1")
 	public void user_should_get_the_address_line1() {
 		addressLine1 = res.jsonPath().getString("addressLine1");
 		System.out.println(addressLine1);
 	}
 
+	//To retrieve the value of city 
 	@Then("User should get the city")
 	public void user_should_get_the_city() {
 		city = res.jsonPath().getString("city");
 		System.out.println(city);
 	}
 
+	//To retrieve the value of region
 	@Then("User should get the region")
 	public void user_should_get_the_region() {
 		region = res.jsonPath().getString("region");
@@ -107,6 +115,7 @@ public class CyclosADD extends BaseClass {
 		;
 	}
 
+		//API - request to load baseURI with username and password
 	@Given("User should load the url username and password {string} and {string}")
 	public void user_should_load_the_url_username_and_password_and(String string, String string2)
 			throws FileNotFoundException, IOException {
@@ -115,6 +124,7 @@ public class CyclosADD extends BaseClass {
 		reqspec = RestAssured.given().header("Authorization", " Basic S3JoaXRoeWE6RGl2eWFAMTIz");
 	}
 
+	//API - Delete request
 	@When("User should delete the address")
 	public void user_should_delete_the_address() {
 		res = reqspec.delete();
@@ -128,6 +138,7 @@ public class CyclosADD extends BaseClass {
 		Assert.assertEquals(delete, 204);
 	}
 
+	//loading the URL
 	@Given("User should load the url cyclos")
 	public void user_should_load_the_url_cyclos() {
 		LaunchBrowser();
@@ -144,20 +155,20 @@ public class CyclosADD extends BaseClass {
 		EnterValue(login.getPassword(), password);
 	}
 
+	//Goto profile option
 	@When("User should navigate to profile")
 	public void user_should_navigate_to_profile() {
 		Click(login.getSubmit());
 		Click(login.getUser());
 	}
 	
-
+// To Validate the value of name
 	@Then("User should validate the name")
 	public void user_should_validate_the_name() {
 		WebElement name = login.getName();
 		String text = name.getText();
 		System.out.println(text);
-		
-		// assertEquals(text, "addressLine1");
+		assertEquals(text, "addressLine1");
 	}
 
 	@Then("User should validate the city")
@@ -165,7 +176,7 @@ public class CyclosADD extends BaseClass {
 		WebElement city2 = login.getCity();
 		String city1 = city2.getText();
 		System.out.println(city1);
-		// assertTrue(city1.contains(city));
+		 assertTrue(city1.contains(city));
 
 	}
 
@@ -174,7 +185,7 @@ public class CyclosADD extends BaseClass {
 		WebElement state = login.getState();
 		String st = state.getText();
 		System.out.println(st);
-		// assertTrue(st.contains(region));
+		assertTrue(st.contains(region));
 		driver.close();
 	}
 

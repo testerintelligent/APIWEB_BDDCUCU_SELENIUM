@@ -107,6 +107,7 @@ public class BaseClass {
 		s.selectByVisibleText(text);
 	}
 
+	//Code for Screenshot
 	public static void TakeScreenShot() throws IOException {  
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File screenshotAs = ts.getScreenshotAs(OutputType.FILE);
@@ -114,6 +115,8 @@ public class BaseClass {
 		FileUtils.copyDirectory(screenshotAs, SaveFile);
 
 	}
+
+	//API POST Request with Header
 	public void POST(String responseBody, String param, int statusCode, String jsonObj, String value)
 			throws IOException {
 		given().header("Authorization", "Basic ZGVtbzoxMjM0").header("Content-Type", "application/json")
