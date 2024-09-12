@@ -22,6 +22,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import io.restassured.http.ContentType;
 
 public class BaseClass {
+	//Intializing the variable
 	public static WebDriver driver;
 	public static Actions a;
 	public static Select s;
@@ -31,7 +32,7 @@ public class BaseClass {
 	public static String city;
 	public static String region;
 	
-	public static void LaunchBrowser() {
+	public static void LaunchBrowser() { //Steps for lauching Chrome browser
 		ChromeOptions co = new ChromeOptions();
 		co.addArguments("--remote-allow-origins=*");
 		WebDriverManager.chromedriver().setup();
@@ -39,7 +40,7 @@ public class BaseClass {
 		driver.manage().window().maximize();
 
 	}
-	public static String getproperty(String value) throws IOException {
+	public static String getproperty(String value) throws IOException { // Declaring and Handling IOException
 		FileInputStream file = new FileInputStream("Config\\config.properties");
 		Properties p = new Properties();
 		p.load(file);
@@ -106,7 +107,7 @@ public class BaseClass {
 		s.selectByVisibleText(text);
 	}
 
-	public static void TakeScreenShot() throws IOException {
+	public static void TakeScreenShot() throws IOException {  
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File screenshotAs = ts.getScreenshotAs(OutputType.FILE);
 		File SaveFile = new File("C:\\Users\\VDI020\\eclipse-workspace\\Maven_Proj_M\\ScreenshotSS.jpeg");

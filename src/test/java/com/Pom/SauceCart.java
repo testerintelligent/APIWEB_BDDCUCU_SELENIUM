@@ -6,11 +6,13 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.resources.BaseClass;
 
+//Inheritance - SauceCart is inherited from SuperClass(BaseClass.java)
 public class SauceCart extends BaseClass {
-	public SauceCart() {
-		PageFactory.initElements(driver, this);
+	public SauceCart() {  //Constructor - Instance of a class 
+		PageFactory.initElements(driver, this);  //PageFactory is being intialized here
 	}
 
+//Encapsulation (Data Hiding)- Below private declaration are used to call within the class
 	@FindBy(xpath ="//select[@class='product_sort_container']")
 	private WebElement drop;
 	
@@ -38,6 +40,9 @@ public class SauceCart extends BaseClass {
 	@FindBy(xpath ="//input[@id='continue']")
 	private WebElement click11;
 
+	//Encapsulation -Below Getter and Setter method are used
+	//Get -To retrieve the value of above private field
+	//Set -To set the value of above private field
 	public WebElement getDrop() {
 		return drop;
 	}
