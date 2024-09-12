@@ -1,4 +1,4 @@
-Feature: To create and validate the address in cyclos using API
+Feature: To Create and validate the address in cyclos using API
 
   @cyclos_create_address
   Scenario: Create the address in cyclos
