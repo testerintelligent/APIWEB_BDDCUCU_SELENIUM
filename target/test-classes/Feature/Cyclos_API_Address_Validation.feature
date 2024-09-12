@@ -25,6 +25,7 @@ Feature: To Create and validate the address in cyclos using API
     Given User should load the url cyclos
     When User should enter the username and password "<username>" and "<password>"
     And User should navigate to profile
+#  check 
     # Then User should validate the name
     # And User should validate the city
     # And User should validate the state
