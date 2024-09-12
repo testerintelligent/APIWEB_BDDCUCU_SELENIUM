@@ -5,14 +5,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import com.resources.BaseClass;
 
+//Inheritance - SaucePro is inherited from SuperClass(BaseClass.java)
 public class SaucePro extends BaseClass {
-	public SaucePro() {
-		PageFactory.initElements(driver, this);
+	public SaucePro() {       //Constructor - Instance of a class 
+		PageFactory.initElements(driver, this);    //PageFactory is being intialized here
 	}
 	
-//Encapsulation (Data Hiding)- created in private and used in methods
-
-	@FindBy(xpath = "//div[text()='Sauce Labs Bike Light']//parent::a//preceding::div//button[text()='Add to cart']")
+//Encapsulation (Data Hiding)- Below private declaration are used to call within the class
+ 	@FindBy(xpath = "//div[text()='Sauce Labs Bike Light']//parent::a//preceding::div//button[text()='Add to cart']")
 	 private WebElement click;
 	 
 	 @FindBy(xpath = "//div[text()='Sauce Labs Backpack']//parent::div//following::a/div[text()='Sauce Labs Fleece Jacket']")
@@ -126,9 +126,9 @@ public class SaucePro extends BaseClass {
 	 @FindBy(xpath = "//a[@id='about_sidebar_link']")
 	 private WebElement abclick;
 	 
-//	 @FindBy(xpath = "//button[text()='Sign in']")
-//	 private WebElement sigclick;
-
+//Encapsulation -Below Getter and Setter method are used
+	//Get -To retrieve the value of above private field
+	//Set -To set the value of above private field
 	public WebElement getClick() {
 		return click;
 	}
