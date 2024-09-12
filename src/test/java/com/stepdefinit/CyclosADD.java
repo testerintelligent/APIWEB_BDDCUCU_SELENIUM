@@ -1,8 +1,5 @@
 package com.stepdefinit;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -20,6 +17,7 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
+//Inheritance - CyclosADD is inherited from SuperClass(BaseClass.java)
 public class CyclosADD extends BaseClass {
 	RequestSpecification reqspec;
 	Response res;
@@ -27,6 +25,7 @@ public class CyclosADD extends BaseClass {
 	String string;
 	String repon;
 
+	//Post request and header mentioned below with Authentication
 	@Given("User should load the url username")
 	public void user_should_load_the_url_username() throws FileNotFoundException, IOException {
 		String requestBody = "{\r\n" + "    \"name\": \"Member account33\",\r\n"
@@ -50,6 +49,7 @@ public class CyclosADD extends BaseClass {
 		res.prettyPrint();
 	}
 
+	//Validating POST request status codes
 	@Then("User should validate the status codes")
 	public void user_should_validate_the_status_codes() {
 		// repon = res.jsonPath().getString("name");
@@ -71,9 +71,9 @@ public class CyclosADD extends BaseClass {
 		res.prettyPrint();
 	}
 
+	//Validating GET request status codes
 	@Then("User should validate the status code in reponce")
 	public void user_should_validate_the_status_code_in_reponce() {
-		// repon = res.jsonPath().getString("name");
 		int statusCode = res.statusCode();
 		System.out.println(statusCode);
 		Assert.assertEquals(200, statusCode);
@@ -120,6 +120,7 @@ public class CyclosADD extends BaseClass {
 		res = reqspec.delete();
 	}
 
+	//After deleting the record validating the Status code
 	@Then("User should validate the status code in reponces")
 	public void user_should_validate_the_status_code_in_reponces() {
 		int delete = res.statusCode();
@@ -138,6 +139,7 @@ public class CyclosADD extends BaseClass {
 	public void user_should_enter_the_username_and_password_and(String username, String password) {
 		login = new Cyclos();
 		Click(login.getLogin());
+		//method override - EnterValue method used for username and password
 		EnterValue(login.getUsername(), username);
 		EnterValue(login.getPassword(), password);
 	}
