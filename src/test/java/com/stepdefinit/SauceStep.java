@@ -9,6 +9,7 @@ import com.Pom.SauceCart;
 import com.resources.BaseClass;
 import io.cucumber.java.en.*;
 
+//Saucestep is inherited from BaseClass(BaseClass.java)
 public class SauceStep extends BaseClass {
 //WebDriver driver;
 	SaucePro pro;
