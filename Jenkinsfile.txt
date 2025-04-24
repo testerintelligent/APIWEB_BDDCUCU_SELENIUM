@@ -13,8 +13,9 @@ pipeline
 				bat 'mvn test -Dtest=RunnerClass'
 			}
 		} 
+	}
 	}		
-	
+
 	post
 	{
 		always
