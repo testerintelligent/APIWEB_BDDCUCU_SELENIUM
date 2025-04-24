@@ -1,4 +1,4 @@
-package com.stepdefinit;
+package com.stepDefinitions;
 
 import com.Pom.SauceLogin;
 import com.Pom.SaucePro;
