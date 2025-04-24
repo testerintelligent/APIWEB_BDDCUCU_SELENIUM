@@ -1,11 +1,10 @@
 pipeline 
 {
- 	agent any
+ 	 agent { label 'WinNode' }
 
 	stages 
 	{
-	node('WinNode')
-	{
+	
 	   	stage('Execution')
 		{
 			steps 
@@ -13,7 +12,6 @@ pipeline
 				bat 'mvn test -Dtest=RunnerClass'
 			}
 		} 
-	}
 	}		
 
 	post
