@@ -4,7 +4,8 @@ pipeline
 
 	stages 
 	{
-	
+	node('WinNode')
+	{
 	   	stage('Execution')
 		{
 			steps 
@@ -13,7 +14,7 @@ pipeline
 			}
 		} 
 	}		
-
+	
 	post
 	{
 		always
