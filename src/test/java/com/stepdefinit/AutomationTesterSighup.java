@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +16,8 @@ public class AutomationTesterSighup {
     WebDriver driver = null;
     @Given("Launch browser and navigate to AutomationTester url")
 public void launch_browser_and_navigate() {
-    System.setProperty("webDriver.chrome.driver", "C:/Users/10669/OneDrive - Expleo France/Desktop/SampleTest/src/test/resources/drivers/chromedriver_proxy.exe");
+      WebDriverManager.chromedriver().setup();
+   // System.setProperty("webDriver.chrome.driver", "C:/Users/10669/OneDrive - Expleo France/Desktop/SampleTest/src/test/resources/drivers/chromedriver_proxy.exe");
     driver= new ChromeDriver();
     //driver = new EdgeDriver();
     //  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
