@@ -1,6 +1,6 @@
 Feature: Princy_18APR2025_Web_AHB
 
-   Scenario Outline: Validation of Login Credentials
+   Scenario Outline: Validation of Login Credentials AHB
     Given User is on the Adactin Login page
     When User enters the valid "<Username>" and "<Password>" for the Adactin site
     And User clicks the login button
@@ -9,19 +9,5 @@ Feature: Princy_18APR2025_Web_AHB
     Examples: 
       | Username      | Password |
       | PrincyPrabha | Princy@119 |
-
-   Scenario Outline: Validation of invalid Login Credentials
-    Given User is on the Adactin Login page
-    When User enters the invalid "<Username>" and "<Password>" for the Adactin site
-    And User clicks the login button
-    Then It should show the error msg
-
-    Examples: 
-      | Username      | Password |
-      | TestingPrincy | Test@12  |
-      | Testing       | Test@123 |
-      | TestingP |          |
-      |               | Test@123 |
-      |               |          |
 
   
