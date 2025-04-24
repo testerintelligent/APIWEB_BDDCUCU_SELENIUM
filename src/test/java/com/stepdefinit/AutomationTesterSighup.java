@@ -13,7 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 public class AutomationTesterSighup {
    
-    WebDriver driver = null;
+    WebDriver driver;
     @Given("Launch browser and navigate to AutomationTester url")
 public void launch_browser_and_navigate() {
       WebDriverManager.chromedriver().setup();
