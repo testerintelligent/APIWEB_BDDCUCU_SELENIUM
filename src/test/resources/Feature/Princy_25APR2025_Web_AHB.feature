@@ -1,3 +1,4 @@
+@PrincyAll
 Feature: Princy_24APR2025_Web_AHB
 
    Scenario Outline: Validation of Login Credentials AHB
