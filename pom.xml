@@ -109,7 +109,7 @@
 				selenium-java
 			</artifactId>
 			<version>
-				3.14.0
+				4.27.0
 			</version>
 		</dependency>
 		<dependency>
