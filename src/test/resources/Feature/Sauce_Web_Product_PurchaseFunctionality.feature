@@ -1,4 +1,4 @@
-Feature: Verifying Product Purchase functinality  in Sauce Labs Website
+Feature: Vinay_24APR25_Web_Verifying Product Purchase functinality  in Sauce Labs Website
 
 @sauce_Login_logout
 Scenario Outline: Verify the Login and Logout Funtionality
