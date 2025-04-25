@@ -15,7 +15,7 @@ public class PS01_Login_StepDef {
 
     @Given("User is on the Adactin Login page")
 public void user_is_on_the_adactin_login_page() {
-    driver.get("https://adactinhotelapp.com/HotelAppBuild2/index.php");
+    driver.get("https://adactinhotelapp.com/");
         driver.manage().window().maximize();
 		  
 }
@@ -32,7 +32,7 @@ public void user_clicks_the_login_button() {
 }
 @Then("User should be redirected to Adactin Homepage")
 public void user_should_be_redirected_to_adactin_homepage() {
-    
+
     WebElement welcome = driver.findElement(By.xpath("//td[@class='welcome_menu']"));
 		String text = welcome.getText();
 		System.out.println(text);
