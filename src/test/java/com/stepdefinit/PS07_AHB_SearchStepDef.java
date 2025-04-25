@@ -12,13 +12,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import io.cucumber.java.en.*;
 
-public class PS02_AHB_SearchStepDef {
+public class PS07_AHB_SearchStepDef {
 
     WebDriver driver = new ChromeDriver();
 
     @Given("User should be in Adactin Hotel Home page")
     public void userShouldBeInAdactinHotelHomePage() {
-        driver.get("https://adactinhotelapp.com/");
+        driver.get("https://adactinhotelapp.com/HotelAppBuild2/index.php");
         driver.manage().window().maximize();
         driver.findElement(By.id("username")).sendKeys("PrincyPrabha");
         driver.findElement(By.id("password")).sendKeys("Princy@119");
