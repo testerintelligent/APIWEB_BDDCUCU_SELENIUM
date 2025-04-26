@@ -24,7 +24,7 @@ public class AutomationTesterSighup {
     WebDriver driver;
     @Given("Launch browser and navigate to AutomationTester url")
 public void launch_browser_and_navigate() {
-      WebDriverManager.chromedriver().setup();
+	
    // System.setProperty("webDriver.chrome.driver", "C:/Users/10669/OneDrive - Expleo France/Desktop/SampleTest/src/test/resources/drivers/chromedriver_proxy.exe");
     driver= new ChromeDriver();
     //driver = new EdgeDriver();
