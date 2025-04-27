@@ -1,4 +1,4 @@
-package stepdefinit;
+package com.stepdefinit;
 
 import java.time.Duration;
 import java.util.Set;
@@ -21,13 +21,13 @@ public class PracticePage {
  
 	WebDriver driver; 
 
-	POM.PracticePage practice; 
+	com.Pom.PracticePage practice; 
 
 	@Given("user lauch the automation practice")
 	public void user_lauch_the_automation_practice() {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
-		practice = new POM.PracticePage(driver);
+		practice = new com.Pom.PracticePage(driver);
 		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  
 
