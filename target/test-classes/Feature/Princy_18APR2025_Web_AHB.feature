@@ -1,4 +1,4 @@
-Feature: Princy_18APR2025_Web_AH
+Feature: Princy_18APR2025_Web_AHB
 
    Scenario Outline: Validation of Login Credentials AHB
     Given User is on the Adactin Login page
