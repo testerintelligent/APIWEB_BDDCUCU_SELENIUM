@@ -1,4 +1,4 @@
-package stepDefinitions;
+package com.stepdefinit;
 
 import static org.junit.Assert.assertEquals;
 
@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import POM.SauceDemoelement;
+import com.Pom.SauceDemoelement;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
