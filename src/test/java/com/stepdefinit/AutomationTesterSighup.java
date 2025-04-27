@@ -11,19 +11,20 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import org.openqa.selenium.support.ui.Select;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class AutomationTesterSighup {
    
     WebDriver driver;
     @Given("Launch browser and navigate to AutomationTester url")
 public void launch_browser_and_navigate() {
-      WebDriverManager.chromedriver().setup();
+	
    // System.setProperty("webDriver.chrome.driver", "C:/Users/10669/OneDrive - Expleo France/Desktop/SampleTest/src/test/resources/drivers/chromedriver_proxy.exe");
     driver= new ChromeDriver();
     //driver = new EdgeDriver();
