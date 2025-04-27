@@ -1,6 +1,6 @@
-package stepDefinitions;
+package com.stepdefinit;
 
-import java.util.Set;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

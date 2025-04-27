@@ -1,4 +1,4 @@
-package stepDefinitions;
+package com.stepdefinit;
 
 import java.util.List;
 
