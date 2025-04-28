@@ -15,15 +15,15 @@ import io.cucumber.java.Before;
 
 public class LoginPage {
     WebDriver driver;
-    com.Pom.AutomationExercise AE;
+    AutomationExercise AE;
 
- 
+    @Before
     public void setUp() {
         // Set up WebDriver and AutomationExercise
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        AE = new com.Pom.AutomationExercise(driver);  // Initialize AE with WebDriver
+        AE = new AutomationExercise(driver);  // Initialize AE with WebDriver
         driver.get("https://automationexercise.com");
     }
 
@@ -67,12 +67,12 @@ public class LoginPage {
         System.out.println("Checking if the delete account button is visible...");
     }
 
-   // @When("I click the login button")
-  //  public void i_click_the_login_button() {
+  //  @When("I click the login button")
+   // public void i_click_the_login_button() {
        
    // }
 
-   // @Then("I verify that the username is displayed as logged in")
+  //  @Then("I verify that the username is displayed as logged in")
   //  public void i_verify_that_the_username_is_displayed_as_logged_in() {
        
   //  }
@@ -80,7 +80,7 @@ public class LoginPage {
    // @Then("I check if the delete account button is visible")
    // public void i_check_if_the_delete_account_button_is_visible() {
        
-   // }
+  //  }
 
     // You may want to close the browser after tests
     

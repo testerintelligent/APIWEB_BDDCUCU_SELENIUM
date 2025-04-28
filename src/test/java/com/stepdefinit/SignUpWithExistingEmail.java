@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import com.Pom.AutomationExercise;
+import com.Pom.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -22,7 +22,7 @@ public class SignUpWithExistingEmail {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        AE = new AutomationExercise(driver);  // Initialize AE with WebDriver
+        AE = new com.Pom.AutomationExercise(driver);  // Initialize AE with WebDriver
         driver.get("https://automationexercise.com");
 	}
 
