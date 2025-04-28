@@ -58,26 +58,29 @@ public class LoginPage {
         email.sendKeys("demo@test.yu");
         WebElement pass = driver.findElement(By.xpath("//input[@name='password']"));
         pass.sendKeys("YuTest");
-    }
-
-    @When("I click the login button")
-    public void i_click_the_login_button() {
         WebElement login = driver.findElement(By.xpath("//button[contains(text(),'Login')]"));
         login.click();
         System.out.println("Clicking the login button...");
-    }
-
-    @Then("I verify that the username is displayed as logged in")
-    public void i_verify_that_the_username_is_displayed_as_logged_in() {
         AE.verifyLoggedInUsernameVisible();  // Now AE is properly initialized
         System.out.println("Verifying that the username is displayed as logged in...");
-    }
-
-    @Then("I check if the delete account button is visible")
-    public void i_check_if_the_delete_account_button_is_visible() {
         AE.checkDeleteAccount();  // Now AE is properly initialized
         System.out.println("Checking if the delete account button is visible...");
     }
+
+  //  @When("I click the login button")
+   // public void i_click_the_login_button() {
+       
+   // }
+
+  //  @Then("I verify that the username is displayed as logged in")
+  //  public void i_verify_that_the_username_is_displayed_as_logged_in() {
+       
+  //  }
+
+   // @Then("I check if the delete account button is visible")
+   // public void i_check_if_the_delete_account_button_is_visible() {
+       
+  //  }
 
     // You may want to close the browser after tests
     
