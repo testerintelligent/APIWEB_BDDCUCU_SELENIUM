@@ -1,11 +1,20 @@
 pipeline 
 {
- 	agent any
-
+	agent  { label 'WinNode' } //'Win-Node-1' 
 	stages 
 	{
-	
-	   	stage('Execution')
+		stage('CleanWorkSpace')
+		{
+			steps 
+			{
+				echo("Clean Exising Workspace")
+				echo "$JENKINS_HOME"
+				echo "$WORKSPACE"
+				cleanWs()
+				sleep(time:3,unit:"SECONDS")
+				}
+		}
+		stage('Execution')
 		{
 			steps 
 			{
@@ -13,7 +22,6 @@ pipeline
 			}
 		} 
 	}		
-
 	post
 	{
 		always
@@ -22,7 +30,6 @@ pipeline
 			cucumber buildStatus: 'UNCHANGED', customCssFiles: '', customJsFiles: '', fileIncludePattern: '**/*.json', jsonReportDirectory: 'target/cucumber-report/', reportTitle: 'Report', sortingMethod: 'ALPHABETICAL', trendsLimit: 5
 		}
 	}	
-	
 }
-           
-    
+
+
