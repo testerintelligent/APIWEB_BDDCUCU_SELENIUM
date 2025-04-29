@@ -6,7 +6,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-    features = "src/test/resources/Feature/Princy_11APR2025_Login.feature", 
+    features = "src/test/resources/Feature/", 
     glue = "com.stepdefinit", 
     dryRun = false, // Set to true for dry run
     plugin = { 
