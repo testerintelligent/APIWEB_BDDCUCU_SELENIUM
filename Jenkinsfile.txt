@@ -26,6 +26,8 @@ pipeline {
 		} 
         stage('Execution') {
                 steps {
+                    bat 'mvn clean'
+                    sleep(time: 5, unit: "SECONDS")
                     bat 'mvn test -Dtest=RunnerClass'
                 }
             }
