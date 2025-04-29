@@ -1,4 +1,4 @@
-Feature: Krithika_28MAR_ShopURL
+Feature: Krithika_28MAR2025_Web_ShopURL
  
   Scenario: Test the login operations in customer login
     Given I enter the shops login url of domain

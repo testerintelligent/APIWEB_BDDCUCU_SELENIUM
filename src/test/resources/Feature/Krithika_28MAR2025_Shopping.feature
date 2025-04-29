@@ -1,4 +1,4 @@
-Feature: Krithika_28MAR_2025_ShoppingSite
+Feature: Krithika_28MAR2025_Web_ShoppingSite
 
   Scenario: Adding an item to the cart
     Given I navigate to the shopping page

@@ -1,4 +1,4 @@
-Feature: Krithika_04APR_2025_Alertpopup
+Feature: Krithika_04APR2025_Web_Alertpopup
 
   Scenario: Handle Alert popup
   Given I enter the URL of the practice page for confirmation

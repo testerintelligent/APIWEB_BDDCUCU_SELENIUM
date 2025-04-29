@@ -1,4 +1,4 @@
-Feature: Krithika_28MAR_2025_PracticalTest
+Feature: Krithika_28MAR_2025_Web_PracticalTest
  
   Scenario: Test the banking operations in customer login
     Given I enter the url of banking domains

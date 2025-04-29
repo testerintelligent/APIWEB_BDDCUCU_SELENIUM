@@ -1,4 +1,4 @@
-Feature: Krithika_05APR_2025_Drag_Drop_functionality
+Feature: Krithika_05APR2025_Web_DragDropFunctionality
 
   Scenario: Drag box A and drop onto box B
     Given I am on the Drag and Drop page

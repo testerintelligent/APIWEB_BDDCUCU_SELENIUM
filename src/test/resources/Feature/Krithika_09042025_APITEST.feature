@@ -1,4 +1,4 @@
-Feature: Krithika_09042025_Reqres_Rest_Assured_web/api
+Feature: Krithika_09042025_API_Reqres_RestAssured
  
   Scenario: Get user details 
     Given the API is available 

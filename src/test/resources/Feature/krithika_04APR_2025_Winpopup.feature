@@ -1,4 +1,4 @@
-Feature: Krithika_04APR_2025_Winpopup
+Feature: Krithika_04APR2025_Web_Winpopup
  
   Scenario: Test the window button operations in practice page
     Given I enter the url of practice page
