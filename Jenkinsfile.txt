@@ -1,41 +1,32 @@
-pipeline 
-{
+pipeline {
+    agent { label 'WinNode' }
 
- 	 agent { label 'WinNode' }
+    stages {
+        stage('Execution') {
+            steps {
+                bat 'mvn test -Dtest=RunnerClass'
+            }
+        }
+    }
 
-	stages 
-	{
-		
-		stage('Execution')
-		{
-			steps 
-			{
-				bat 'mvn test -Dtest=RunnerClass'
-			}
-		} 
-	}		
-	post
-	{
-		always
-		{
-			
-                stage('Report and CleanWorkSpace')
-		{
-			steps 
-			{
-				sleep(time:3,unit:"SECONDS")
-				cucumber buildStatus: 'UNCHANGED', customCssFiles: '', customJsFiles: '', fileIncludePattern: '**/*.json', jsonReportDirectory: 'target/cucumber-report/', reportTitle: 'Report', sortingMethod: 'ALPHABETICAL', trendsLimit: 5
-				sleep(time:3,unit:"SECONDS")
-				echo("Clean Exising Workspace")
-				echo "$JENKINS_HOME"
-				echo "$WORKSPACE"
-				cleanWs()
-				sleep(time:3,unit:"SECONDS")
-				}
-		}
-		}
+    post {
+        always {
+            sleep(time: 3, unit: "SECONDS")
+            cucumber buildStatus: 'UNCHANGED',
+                     customCssFiles: '',
+                     customJsFiles: '',
+                     fileIncludePattern: '**/*.json',
+                     jsonReportDirectory: 'target/cucumber-report/',
+                     reportTitle: 'Report',
+                     sortingMethod: 'ALPHABETICAL',
+                     trendsLimit: 5
 
-	}	
+            sleep(time: 3, unit: "SECONDS")
+            echo "Clean Existing Workspace"
+            echo "JENKINS_HOME: $JENKINS_HOME"
+            echo "WORKSPACE: $WORKSPACE"
+            cleanWs()
+            sleep(time: 3, unit: "SECONDS")
+        }
+    }
 }
-
-
