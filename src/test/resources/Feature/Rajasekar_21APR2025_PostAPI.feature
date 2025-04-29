@@ -1,4 +1,4 @@
-Feature: Rajasekar_21APR2025_PostAPI
+Feature: Rajasekar_21APR2025_API_PostAPI
 
   Scenario: Verify token is generated with valid credentials
     Given I set the base URI

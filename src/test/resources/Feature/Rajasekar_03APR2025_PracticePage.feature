@@ -1,4 +1,4 @@
-Feature: Rajasekar_03APR2025_PracticePage
+Feature: Rajasekar_03APR2025_Web_PracticePage
 
 
 Scenario:
