@@ -1,4 +1,4 @@
-Feature: Krithika_04APR_2025_Automationbookpanda
+Feature: Krithika_04APR2025_Web_Automationbookpanda
  
  Scenario: Successfully book a room
     Given Open the booking application

@@ -1,4 +1,4 @@
-Feature: Krithika_28MAR_2025_Domainlogin
+Feature: Krithika_28MAR2025_Web_Domainlogin
  
   Scenario: Test the banking operations in customers login
     Given I enter the url of domains

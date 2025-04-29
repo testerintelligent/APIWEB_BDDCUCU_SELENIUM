@@ -1,4 +1,4 @@
-Feature: Krithika_04APR_2025_Context_Menu 
+Feature: Krithika_04APR2025_Web_Context_Menu 
 
    Scenario: Verify the context menu alert
     Given I open the context menu webpage

@@ -1,4 +1,4 @@
-Feature: Krithika_05APR_2025_Status_Code
+Feature: Krithika_05APR2025_API_StatusCode
 
   Scenario Outline: Navigate to status code page and click back button
     Given I am on the Status Codes page

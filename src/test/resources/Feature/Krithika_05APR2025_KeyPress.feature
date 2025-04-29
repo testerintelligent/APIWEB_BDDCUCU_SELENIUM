@@ -1,4 +1,4 @@
-Feature: Krithika_05APR_2025_KeyPress
+Feature: Krithika_05APR2025_Web_KeyPress
 
   Scenario Outline: Verify key press events
     Given I am on the Key Press page

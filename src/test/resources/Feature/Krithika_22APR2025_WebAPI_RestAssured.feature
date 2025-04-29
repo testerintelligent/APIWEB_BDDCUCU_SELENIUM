@@ -1,4 +1,4 @@
-Feature: Krithika_22APR2025_UserAPIRestAssuredMethods
+Feature: Krithika_22APR2025_API_UserAPIRestAssuredMethods
 
   Scenario: Retrieve user by ID
     Given I set the GET endpoint for user with ID "2"

@@ -1,4 +1,4 @@
-Feature: Krithika_28MAR_2025_RegistrationTest
+Feature: Krithika_28MAR2025_Web_RegistrationTest
  
   Scenario: Test the web shop operations in customer login
     Given I enter the registration url of domain
