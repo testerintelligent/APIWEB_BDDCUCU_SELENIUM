@@ -1,6 +1,8 @@
+
 @Abar
 
 Feature: Abarna_22APR_2025__WEB_Verify Subscription in Home Page
+
 
   Scenario: Verify Subscription section functionality
     Given Launch browser and navigate to AutomationTester url

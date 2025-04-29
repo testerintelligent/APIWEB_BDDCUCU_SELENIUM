@@ -1,6 +1,8 @@
 @Abar
 
+
 Feature: Abarna_23APR_2025__WEB_Search Product Functionality
+
 
   Scenario: Verify search functionality for products
    Given Launch browser and navigate to AutomationTester url

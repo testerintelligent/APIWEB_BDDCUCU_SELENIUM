@@ -11,20 +11,26 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import org.openqa.selenium.interactions.Actions;
+
 import org.openqa.selenium.support.ui.Select;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class AutomationTesterSighup {
    
     WebDriver driver;
     @Given("Launch browser and navigate to AutomationTester url")
 public void launch_browser_and_navigate() {
+
       WebDriverManager.chromedriver().setup();
+
    // System.setProperty("webDriver.chrome.driver", "C:/Users/10669/OneDrive - Expleo France/Desktop/SampleTest/src/test/resources/drivers/chromedriver_proxy.exe");
     driver= new ChromeDriver();
     //driver = new EdgeDriver();
@@ -328,11 +334,13 @@ public void launch_browser_and_navigate() {
 	        List<WebElement> products = driver.findElements(By.xpath("//div[@class='productinfo text-center']"));
 	        Assert.assertTrue("Products list is not visible", products.size() > 0);
 	    }
+
 		@Then("Verify user is navigated to test cases page successfully")
 public void verify_user_is_navigated_to_test_cases_page_successfully() {
   //  WebElement header = driver.findElement(By.xpath("//h2[contains(text(),'Test Cases')]"));
 //Assert.assertTrue("Test Cases page header not visible", header.isDisplayed());
 }
+
 	    
 	    @When("Scroll down to footer")
 	    public void scroll_down_to_footer() {
@@ -360,6 +368,7 @@ public void verify_user_is_navigated_to_test_cases_page_successfully() {
 	        WebElement successMsg = driver.findElement(By.xpath("//div[contains(text(),'You have been successfully subscribed!')]"));
 	        Assert.assertTrue("Success message is not visible", successMsg.isDisplayed());
 	    }
+
 		@When("Click the on {string} button")
 public void click_the_on_button(String string) {
     
