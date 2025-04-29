@@ -1,4 +1,4 @@
-Feature: Rajasekar_15APR2025_SauceCheckout
+Feature: Rajasekar_15APR2025_Web_SauceCheckout
 
 
 Scenario: checkout

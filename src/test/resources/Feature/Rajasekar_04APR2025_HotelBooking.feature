@@ -1,4 +1,4 @@
-Feature: Rajasekar_4APR_2025_HotelBooking
+Feature: Rajasekar_04APR2025_Web_HotelBooking
 
 Scenario:
 

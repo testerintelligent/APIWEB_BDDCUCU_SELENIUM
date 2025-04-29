@@ -1,4 +1,4 @@
-Feature: Rajasekar_15APR2025_Saucedemo_cart
+Feature: Rajasekar_15APR2025_Web_Saucedemo_cart
 
 Scenario: Add to cart
 Given user launch the application with credentilas

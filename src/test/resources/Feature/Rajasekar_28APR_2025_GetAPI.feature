@@ -1,4 +1,4 @@
-Feature: Rajasekar_28APR_2025_GetAPI
+Feature: Rajasekar_28APR2025_API_GetAPI
 
  Scenario: Get user details 
     Given check the API is available 

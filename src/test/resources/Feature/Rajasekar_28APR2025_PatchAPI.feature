@@ -1,4 +1,4 @@
-Feature: Rajasekar_28APR2025_PatchAPI
+Feature: Rajasekar_28APR2025_API_PatchAPI
   Scenario: Successfully update a user's name and job
     Given the user exists with ID "2"
     When I send a PATCH request to update the user's name to "Morpheus" and job to "Zion Resident"
