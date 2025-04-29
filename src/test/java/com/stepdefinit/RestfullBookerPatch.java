@@ -1,47 +1,58 @@
 package com.stepdefinit;
 
 import static io.restassured.RestAssured.given;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
+import static org.hamcrest.Matchers.equalTo;
 
 public class RestfullBookerPatch {
-    private static Response response;
-    
+    private Response response;
+    private String userId;
+    private String updatedName;
 
-    @Given("the user exists with ID {string}")
-public void the_user_exists_with_id(String id) {
+
+@Given("I have the user ID and the new user name")
+public void i_have_the_user_id_and_the_new_user_name() {
+    userId = "2"; // Example user ID
+    updatedName = "John Updated";
+    
+}
+
+@When("I send a Patch request to update the user")
+public void i_send_a_patch_request_to_update_the_user() {
+
+    String requestBody = "{ \"name\": \"" + updatedName + "\" }";
+
+        response = given()
+                        .baseUri("https://reqres.in")
+                        .basePath("/api/users/" + userId)
+                        .header("Content-Type", "application/json")
+                        .body(requestBody)
+                   .when()
+                        .patch()
+                   .then()
+                        .extract()
+                        .response();
    
-    
 }
-@When("I send a PATCH request to update the user's name to {string} and job to {string}")
-public void i_send_a_patch_request_to_update_the_user_s_name_to_and_job_to(String name, String job) {
-    
-    
 
-    response = given()
-    .header("Content-Type", "application/json")
-    .header("Accept", "application/json")
-    .body("{\"name\": \"" + name + "\", \"job\": \"" + job + "\"}")
-    .when()
-    .patch("https://reqres.in/api/users/");
+@Then("the response status code should be {int}")
+public void the_response_status_code_should_be(Integer int1) {
+
+    response.then().statusCode(200);
+
    
 }
+@Then("the response should contain the updated name")
+public void the_response_should_contain_the_updated_name() {
 
-@Then("the response status should be {int}")
-public void the_response_status_should_be(int statusCode) {
-   assertEquals(statusCode, response.getStatusCode());
-}
-
-@Then("the response body should contain the updated name and job")
-public void the_response_body_should_contain_the_updated_name_and_job() {
-        assertTrue(response.getBody().asString().contains("Morpheus"));
-        assertTrue(response.getBody().asString().contains("Zion Resident"));
+    response.then().body("name", equalTo(updatedName));
     
 }
+
+ 
 
 }

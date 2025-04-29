@@ -1,6 +1,8 @@
-Feature: Rajasekar_28APR2025_API_PatchAPI
-  Scenario: Successfully update a user's name and job
-    Given the user exists with ID "2"
-    When I send a PATCH request to update the user's name to "Morpheus" and job to "Zion Resident"
-    Then the response status should be 200
-    And the response body should contain the updated name and job
+@Raja
+Feature: Update user data with PATCH API
+
+  Scenario: Update user name successfully
+    Given I have the user ID and the new user name
+    When I send a Patch request to update the user
+    Then the response status code should be 200
+    And the response should contain the updated name
