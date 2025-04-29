@@ -5,17 +5,7 @@ pipeline
 
 	stages 
 	{
-		stage('CleanWorkSpace')
-		{
-			steps 
-			{
-				echo("Clean Exising Workspace")
-				echo "$JENKINS_HOME"
-				echo "$WORKSPACE"
-				cleanWs()
-				sleep(time:3,unit:"SECONDS")
-				}
-		}
+		
 		stage('Execution')
 		{
 			steps 
@@ -28,9 +18,23 @@ pipeline
 	{
 		always
 		{
-			sleep(time:3,unit:"SECONDS")
-			cucumber buildStatus: 'UNCHANGED', customCssFiles: '', customJsFiles: '', fileIncludePattern: '**/*.json', jsonReportDirectory: 'target/cucumber-report/', reportTitle: 'Report', sortingMethod: 'ALPHABETICAL', trendsLimit: 5
+			
+                stage('Report and CleanWorkSpace')
+		{
+			steps 
+			{
+				sleep(time:3,unit:"SECONDS")
+				cucumber buildStatus: 'UNCHANGED', customCssFiles: '', customJsFiles: '', fileIncludePattern: '**/*.json', jsonReportDirectory: 'target/cucumber-report/', reportTitle: 'Report', sortingMethod: 'ALPHABETICAL', trendsLimit: 5
+				sleep(time:3,unit:"SECONDS")
+				echo("Clean Exising Workspace")
+				echo "$JENKINS_HOME"
+				echo "$WORKSPACE"
+				cleanWs()
+				sleep(time:3,unit:"SECONDS")
+				}
 		}
+		}
+
 	}	
 }
 
