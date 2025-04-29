@@ -35,13 +35,6 @@ public void i_send_a_patch_request_to_update_the_user() {
    
 }
 
-// @Then("the response status code should be {int}")
-// public void the_response_status_code_should_be(Integer int1) {
-
-//     response.then().statusCode(200);
-
-   
-// }
 @Then("the response should contain the updated name")
 public void the_response_should_contain_the_updated_name() {
     response.then().statusCode(200)
