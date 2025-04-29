@@ -1,5 +1,4 @@
-@Raja
-Feature: Update user data with PATCH API
+Feature: Rajasekar_28APR2025_API_PatchAPI
 
   Scenario: Update user name successfully
     Given I have the user ID and the new user name
