@@ -24,9 +24,11 @@ pipeline {
 			url: 'https://github.com/testerintelligent/APIWEB_BDDCUCU_SELENIUM.git'
 			}
 		} 
+        
+        
         stage('Execution') {
                 steps {
-                    bat 'mvn clean'
+                    bat 'mvn clean install'
                     sleep(time: 5, unit: "SECONDS")
                     bat 'mvn test -Dtest=RunnerClass'
                 }
