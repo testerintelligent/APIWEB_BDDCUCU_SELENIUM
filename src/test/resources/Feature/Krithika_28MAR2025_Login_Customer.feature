@@ -1,4 +1,4 @@
-Feature: Krithika_28MAR_2025_Customer_login
+Feature: Krithika_28MAR2025_Web_Customer_login
  
   Scenario: Test the login operations in customer login
     Given I enter the shop login url of domain

@@ -1,4 +1,4 @@
-Feature: Krithika_05APR_2025_HorizontalSlider
+Feature: Krithika_05APR2025_Web_HorizontalSlider
 
     Scenario: Verify slider updates the displayed value correctly
     Given I open the slider webpage

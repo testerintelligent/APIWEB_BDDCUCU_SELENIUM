@@ -1,4 +1,4 @@
-Feature: Krithika_04APR_2025_Community_Voting
+Feature: Krithika_04APR2025_Web_Community_Voting
 
   Scenario: User votes in the community poll
     Given I logged into the applications
