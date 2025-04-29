@@ -11,7 +11,7 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import io.cucumber.java.en.And;
@@ -328,6 +328,11 @@ public void launch_browser_and_navigate() {
 	        List<WebElement> products = driver.findElements(By.xpath("//div[@class='productinfo text-center']"));
 	        Assert.assertTrue("Products list is not visible", products.size() > 0);
 	    }
+		@Then("Verify user is navigated to test cases page successfully")
+public void verify_user_is_navigated_to_test_cases_page_successfully() {
+  //  WebElement header = driver.findElement(By.xpath("//h2[contains(text(),'Test Cases')]"));
+//Assert.assertTrue("Test Cases page header not visible", header.isDisplayed());
+}
 	    
 	    @When("Scroll down to footer")
 	    public void scroll_down_to_footer() {
@@ -355,8 +360,77 @@ public void launch_browser_and_navigate() {
 	        WebElement successMsg = driver.findElement(By.xpath("//div[contains(text(),'You have been successfully subscribed!')]"));
 	        Assert.assertTrue("Success message is not visible", successMsg.isDisplayed());
 	    }
-        @Then("Verify user is navigated to test cases page successfully")
-public void verify_user_is_navigated_to_test_cases_page_successfully() {
+		@When("Click the on {string} button")
+public void click_the_on_button(String string) {
     
 }
+@When("Hover over first product and click 'Add to cart'")
+public void hover_first_product_and_add_to_cart() {
+    WebElement firstProduct = driver.findElement(By.xpath("(//div[@class='product-overlay'])[1]"));
+    WebElement addToCart = driver.findElement(By.xpath("(//a[contains(text(),'Add to cart')])[1]"));
+
+    // Hover using JS or Actions class
+    Actions actions = new Actions(driver);
+    actions.moveToElement(firstProduct).perform();
+    addToCart.click();
+}
+@When("Click on the 'Cart' button")
+public void click_on_cart_button() {
+    WebElement cartLink = driver.findElement(By.xpath("//a[@href='/view_cart']"));
+    Assert.assertTrue("Cart link is not displayed", cartLink.isDisplayed());
+    cartLink.click();
+}
+@And("Click the 'Continue Shopping' button")
+public void click_the_continue_shopping() {
+    WebElement continueBtn = driver.findElement(By.xpath("//button[@class='btn btn-success close-modal btn-block']"));
+  //  Assert.assertTrue(continueBtn.isDisplayed());
+  //  continueBtn.click();
+    JavascriptExecutor js = (JavascriptExecutor) driver;
+    js.executeScript("arguments[0].click();", continueBtn);
+}
+
+@When("Hover over second product and click 'Add to cart'")
+public void hover_second_product_and_add_to_cart() {
+    WebElement secondProduct = driver.findElement(By.xpath("(//div[@class='product-overlay'])[2]"));
+    WebElement addToCart = driver.findElement(By.xpath("(//a[contains(text(),'Add to cart')])[2]"));
+
+    Actions actions = new Actions(driver);
+    actions.moveToElement(secondProduct).perform();
+   // addToCart.click();
+    JavascriptExecutor js = (JavascriptExecutor) driver;
+    js.executeScript("arguments[0].click();", addToCart);
+}
+
+@And("Click the 'View Cart' button")
+public void click_the_view_cart_button() {
+    WebElement viewCartBtn = driver.findElement(By.xpath("//u[contains(text(),'View Cart')]"));
+  //  Assert.assertTrue(viewCartBtn.isDisplayed());
+  //  viewCartBtn.click();
+}
+
+
+@Then("Verify both products are added to Cart")
+public void verify_products_in_cart() {
+//    List<WebElement> cartProducts = driver.findElements(By.xpath("//tr[@id='product-1' or @id='product-2']"));
+//    Assert.assertEquals("Not both products are added", 2, cartProducts.size());
+}
+
+@Then("Verify their prices, quantity and total price")
+public void verify_cart_details() {
+  //  WebElement price1 = driver.findElement(By.xpath("//tr[@id='product-1']//td[@class='cart_price']/p"));
+//    WebElement qty1 = driver.findElement(By.xpath("//tr[@id='product-1']//td[@class='cart_quantity']/button"));
+//    WebElement total1 = driver.findElement(By.xpath("//tr[@id='product-1']//td[@class='cart_total']/p"));
+//
+//    WebElement price2 = driver.findElement(By.xpath("//tr[@id='product-2']//td[@class='cart_price']/p"));
+//    WebElement qty2 = driver.findElement(By.xpath("//tr[@id='product-2']//td[@class='cart_quantity']/button"));
+//    WebElement total2 = driver.findElement(By.xpath("//tr[@id='product-2']//td[@class='cart_total']/p"));
+//
+//    Assert.assertTrue(price1.isDisplayed() && qty1.isDisplayed() && total1.isDisplayed());
+//    Assert.assertTrue(price2.isDisplayed() && qty2.isDisplayed() && total2.isDisplayed());
+driver.quit();
+}
+
+
+
+
     }

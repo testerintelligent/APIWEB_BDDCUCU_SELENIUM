@@ -1,5 +1,5 @@
-@Abarna
-Feature: Abarna_23APR_2025_Verify All Products and Product Detail Page
+@Abar
+Feature: Abarna_23APR_2025__WEB_Verify All Products and Product Detail Page
 
   Scenario: Verify all products and product detail page functionality
    Given Launch browser and navigate to AutomationTester url
