@@ -13,7 +13,17 @@ pipeline {
                 sleep(time: 3, unit: "SECONDS")
                 }
             }        
+		stage('Fetch From Github')
+		{
+			steps 
+			{
 
+			// Checkout the repository from GitHub
+			git branch: 'main',
+			//credentialsId: '',
+			url: 'https://github.com/testerintelligent/APIWEB_BDDCUCU_SELENIUM.git'
+			}
+		} 
         stage('Execution') {
                 steps {
                     bat 'mvn test -Dtest=RunnerClass'
