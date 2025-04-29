@@ -1,6 +1,8 @@
 pipeline 
 {
-	agent  { label 'WinNode' } //'Win-Node-1' 
+
+ 	 agent { label 'WinNode' }
+
 	stages 
 	{
 		stage('CleanWorkSpace')
