@@ -43,7 +43,8 @@ public class reqResTest {
 	}
 	
 	@When("send get request in server of reqres")
-	public void send_get_request_in_server_of_reqres() {		
+	public void send_get_request_in_server_of_reqres() {
+        reqspec.header("x-api-key","reqres-free-v1");		
 		response =reqspec.get("/23");
 	}
 	
@@ -54,11 +55,15 @@ public class reqResTest {
 
 	@When("delete user in server of reqres")
 	public void delete_user_in_server_of_reqres() {
+        reqspec.header("x-api-key","reqres-free-v1");		
+
 		response =reqspec.delete("/2");
 	}
 	
 	@When("Get delayed response in server of reqres")
 	public void get_delayed_response_in_server_of_reqres() {
+        reqspec.header("x-api-key","reqres-free-v1");		
+
 		response =reqspec.get("?delay=3");
 	}
 
