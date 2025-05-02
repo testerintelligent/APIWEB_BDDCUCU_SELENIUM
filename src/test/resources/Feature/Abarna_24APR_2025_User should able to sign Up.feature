@@ -1,5 +1,5 @@
 
-@Abar
+@Sanity
 Feature: Abarna_24APR_2025__WEB_User Should able to signup
 
   Scenario: User should be able to sign up 

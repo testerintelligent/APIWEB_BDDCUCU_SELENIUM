@@ -1,4 +1,4 @@
-@Abar
+@Sanity
 Feature:  Abarna_28APR_2025_WEB_Verify Subscription Feature
 
   Scenario:Verify Subscription in Cart page

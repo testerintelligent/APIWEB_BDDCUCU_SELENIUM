@@ -1,5 +1,5 @@
 
-@Abar
+@Sanity
 Feature: Abarna_23APR_2025__WEB_Verify All Products and Product Detail Page
 
 

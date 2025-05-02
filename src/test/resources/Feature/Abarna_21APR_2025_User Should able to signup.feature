@@ -1,5 +1,5 @@
 
-@Abar
+@Sanity
 Feature: Abarna_21APR_2025__WEB_User Should able to signup
 
 

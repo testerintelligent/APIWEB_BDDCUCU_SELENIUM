@@ -1,5 +1,5 @@
+@Sanity
 
-@Abar
 Feature: Abarna_21APR_2025__WEB_Signup with an already registered email address
 
  Scenario: Signup with an already registered email address

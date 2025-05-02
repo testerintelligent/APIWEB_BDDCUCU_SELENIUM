@@ -1,5 +1,5 @@
 
-@Abar
+@Sanity
 Feature: Abarna_22APR_2025_WEB_Contact Us Form
 
 

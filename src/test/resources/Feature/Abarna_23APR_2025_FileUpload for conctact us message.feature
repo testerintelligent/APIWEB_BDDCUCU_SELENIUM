@@ -1,5 +1,5 @@
 
-@Abar
+@Sanity
 Feature: Abarna_23APR_2025__WEB_FileUpload for conctact us message
 
 

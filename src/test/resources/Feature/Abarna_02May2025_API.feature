@@ -1,4 +1,4 @@
-@api
+@Sanity
 Feature: Abarna_02May_2025_API_Test functionality of ReqRes Api
 For sample testing we should check the functionality of ReqRes api
 

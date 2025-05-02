@@ -1,4 +1,4 @@
-@Abar
+@Sanity
 Feature: Abarna_28APR_2025_WEB_Add Products to Cart
 
   Scenario: Add Products to Cart

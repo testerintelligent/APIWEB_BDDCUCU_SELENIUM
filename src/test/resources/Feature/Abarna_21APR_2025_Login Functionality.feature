@@ -1,5 +1,5 @@
+@Sanity
 
-@Abar
 Feature: Abarna_21APR_2025_WEB_Login Functionality
 
 
