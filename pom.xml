@@ -53,6 +53,12 @@
             <version>4.27.0</version>
         </dependency>
 
+        <dependency>
+<groupId>org.testng</groupId>
+<artifactId>testng</artifactId>
+<version>7.7.1</version>
+</dependency>
+
         <!-- WebDriver Manager Dependency -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>

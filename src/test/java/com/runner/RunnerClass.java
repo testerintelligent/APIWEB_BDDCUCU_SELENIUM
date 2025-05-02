@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-    features = "src/test/resources/Feature/", tags = "@Abar",
+    features = "src/test/resources/Feature/Abarna_02May2025_API.feature",
     glue = "com.stepdefinit", 
     dryRun = false, // Set to true for dry run , 
     plugin = { 
