@@ -1,34 +1,30 @@
 package com.stepdefinit;
 
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import com.Pom.AutomationExercise;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.Pom.AutomationExercise;
+
 import io.cucumber.java.en.Given;
-import io.cucumber.java.Before;
+import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class LoginPage {
     WebDriver driver;
     AutomationExercise AE;
 
-    @Before
-    public void setUp() {
+   
+
+    @Given("I want to launch the automation exercise website")
+    public void i_want_to_launch_the_automation_exercise_website() {
         // Set up WebDriver and AutomationExercise
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         AE = new AutomationExercise(driver);  // Initialize AE with WebDriver
         driver.get("https://automationexercise.com");
-    }
-
-    @Given("I want to launch the automation exercise website")
-    public void i_want_to_launch_the_automation_exercise_website() {
         System.out.println("Opening the automation exercise website...");
         
     }

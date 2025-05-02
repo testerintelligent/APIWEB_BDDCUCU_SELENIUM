@@ -1,5 +1,7 @@
-@rrr
-Feature: Abarna_22APR_2025_Test Cases Page Verification
+
+@Abar
+Feature: Abarna_22APR_2025__WEB_Test Cases Page Verification
+
 
   Scenario: Verify user can navigate to the Test Cases page successfully
     Given Launch browser and navigate to AutomationTester url

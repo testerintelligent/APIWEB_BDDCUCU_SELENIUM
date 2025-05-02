@@ -1,5 +1,6 @@
 
-Feature: Abarna_24APR_2025_User Should able to signup
+@Abar
+Feature: Abarna_24APR_2025__WEB_User Should able to signup
 
   Scenario: User should be able to sign up 
     Given Launch browser and navigate to AutomationTester url
