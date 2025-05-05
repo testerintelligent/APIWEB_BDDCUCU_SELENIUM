@@ -1,6 +1,6 @@
 
 @Sanity
-Feature: Abarna_3May_2025_API_Functionality
+Feature: Abarna_5May_2025_API_Functionality
 
   Scenario: Update user name successfully
     Given I have the user ID and new user name
