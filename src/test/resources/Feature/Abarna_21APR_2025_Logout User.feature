@@ -1,4 +1,6 @@
-Feature: Abarna_21APR_2025_Logout User
+@Sanity
+
+Feature: Abarna_21APR_2025__WEB_Logout User
 
   Scenario: Logout user successfully
     Given Launch browser and navigate to AutomationTester url

@@ -1,4 +1,7 @@
-Feature: Abarna_21APR_2025_Signup with an already registered email address
+@Sanity
+
+Feature: Abarna_21APR_2025__WEB_Signup with an already registered email address
+
  Scenario: Signup with an already registered email address
    Given Launch browser and navigate to AutomationTester url
     Then Verify that home page is visible successfully
