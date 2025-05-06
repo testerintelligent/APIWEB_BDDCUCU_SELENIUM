@@ -8,7 +8,11 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 <<<<<<< HEAD
+<<<<<<< HEAD
     features = "src/test/resources/Feature", 
+=======
+    features = "src/test/resources/Feature/WEB_Rajasekar_DemoTest.feature", 
+>>>>>>> b01d2c1 (changes)
     glue = "com.stepdefinit", 
 =======
     features = "src/test/resources/Feature/Rajasekar_05May_2025_API.feature", 
