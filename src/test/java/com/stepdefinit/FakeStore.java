@@ -108,7 +108,7 @@ public void the_response_should_contain_desription(String expectedDescription) {
 
 }
 
-@When("I send a DELETE request for product ID 18")
+@When("I send a DELETE request for product ID 20")
 public void i_send_a_delete_request_for_product_id(Integer int1) {
 
     response = given()
