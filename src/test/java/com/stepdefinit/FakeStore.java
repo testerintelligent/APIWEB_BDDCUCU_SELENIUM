@@ -1,14 +1,16 @@
 package com.stepdefinit;
 
 import static io.restassured.RestAssured.baseURI;
+
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
+import static io.restassured.RestAssured.head;
+
+import org.testng.Assert;
+
 
 
 import io.restassured.response.Response;
-
+import io.restassured.specification.RequestSpecification;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -16,6 +18,7 @@ import io.cucumber.java.en.When;
 public class FakeStore {
 
    Response response;
+
    
 
     @Given("The Fake store API is available")
@@ -28,16 +31,16 @@ public void the_fake_store_api_is_available() {
 public void i_fetch_the_product_with_id(Integer id) {
     response =  given()
     .when()
-    .get("/Product/" + id);
+    .get("/product/" + id);
     
 }
 
 @Then("The response should be {int}")
 public void the_response_should_be(Integer statuscode) {
+   
+    Assert.assertEquals(200, response.getStatusCode());
 
-    assertThat(response.statusCode(), is(statuscode));
-
-
+       
    
 }
 
@@ -45,7 +48,9 @@ public void the_response_should_be(Integer statuscode) {
 public void the_product_tittle_should_be(String expectedTitle) {
 
     String actualTitle = response.jsonPath().getString("title");
-    assertThat(actualTitle, equalTo(expectedTitle));
+    
+    Assert.assertEquals(actualTitle, expectedTitle);
+
    
 }
 
@@ -68,12 +73,14 @@ public void i_send_a_post_request_to_create_a_product() {
 }
 @Then("Respose code should be {int}")
 public void respose_code_should_be(Integer expectedStatus) {
-    assertThat(response.statusCode(), is(expectedStatus));
+    Assert.assertEquals(expectedStatus.intValue(), response.getStatusCode());
+    
 }
 @Then("The response should containe the tittle {string}")
 public void the_response_should_containe_the_tittle(String expectedTitle) {
     String actualTitle = response.jsonPath().getString("title");
-        assertThat(actualTitle, is(expectedTitle));
+    Assert.assertEquals(actualTitle, expectedTitle);
+    
 }
 
 @When("I send a put request to update product {int}")
@@ -97,35 +104,35 @@ public void i_send_a_put_request_to_update_product(Integer int1) {
 @Then("the status code should be {int}")
 public void the_status_code_should_be(Integer statusCode) {
 
-    assertThat(response.statusCode(), is(statusCode));
+    Assert.assertEquals(200, response.getStatusCode());
     
 }
 @Then("the response should contain desription {string}")
 public void the_response_should_contain_desription(String expectedDescription) {
 
     String actualDescription = response.jsonPath().getString("description");
-    assertThat(actualDescription, equalTo(expectedDescription));
+    Assert.assertEquals(actualDescription, expectedDescription);
 
 }
 
-@When("I send a DELETE request for product ID 20")
+@When("I send a DELETE request for product ID {int}")
 public void i_send_a_delete_request_for_product_id(Integer int1) {
 
     response = given()
     .when()
-    .delete("/products/20");
+    .delete("/products/18");
     
 }
 @Then("the response status should be {int}")
 public void the_response_status_should_be(Integer statusCode) {
-    assertThat(response.statusCode(), is(statusCode));
+    Assert.assertEquals(200, response.getStatusCode());
     
 }
 @Then("the deleted product ID should be {int}")
 public void the_deleted_product_id_should_be(Integer expectedId) {
 
     int returnedId = response.jsonPath().getInt("id");
-        assertThat(returnedId, is(expectedId));
+    Assert.assertEquals(returnedId, expectedId);
     
 }
 
