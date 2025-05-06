@@ -1,4 +1,4 @@
-@Sanity
+@Smoke
 
 Feature: WEB_Abarna_DemoTest1
 
