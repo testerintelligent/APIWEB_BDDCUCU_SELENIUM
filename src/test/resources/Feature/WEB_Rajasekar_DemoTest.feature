@@ -1,3 +1,4 @@
+@Regression
 Feature: WEB_Rajasekar_DemoTest
 
 
@@ -5,25 +6,25 @@ Scenario:
 
 
 Given user lauch the automation practice  
-When User select the radio button
+When User select radio button
 And  User send the country details
 And  User select the drop down box
 And  User navigate to the child window
 And  User navigate to the default window
 Then user send the input value
 
-
+@Smoke
 Scenario: checkout
 
 
-Given User launch The Application  
+Given User launch Application  
 When  User input the first name
 When  User input the last name
 When  User input the Zipcode
 And   User Click the continue button
 Then  User Click finish button.
 
-
+@Sanity
 Scenario: Add to cart
 
 Given user launch the application with credentilas
