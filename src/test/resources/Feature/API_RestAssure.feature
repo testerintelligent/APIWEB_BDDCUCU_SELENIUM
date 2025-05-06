@@ -1,7 +1,6 @@
-@Sanity
-Feature: Abarna_02May_2025_API_Test functionality of ReqRes Api
-For sample testing we should check the functionality of ReqRes api
+@Smoke
 
+Feature: API_RestAssure_Funtionality
 Scenario: Get List Users of ReqRes Api
 Given Give the domain name of reqres
 When send the get request with the resource url of reqres
@@ -26,3 +25,15 @@ Scenario: delete a User of ReqRes Api
 Given Give the domain name of reqres
 When delete user in server of reqres
 Then validate the delete response code of reqres
+
+Scenario: Update user name successfully
+Given I have the user ID and new user name
+When I send a Patch request to update user details
+Then The response should contain the updated name
+ 
+ 
+Scenario: verified with valid credentials
+Given I set base URI
+When I send POST request to /auth with valid credential
+Then I should get the 200 OK response
+And I should receives a token in response
