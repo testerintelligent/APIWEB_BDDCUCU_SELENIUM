@@ -1,7 +1,6 @@
 @Smoke
 
-Feature: API_Abarna_DemoTest1
-
+Feature: API_RestAssure_Funtionality
 Scenario: Get List Users of ReqRes Api
 Given Give the domain name of reqres
 When send the get request with the resource url of reqres
