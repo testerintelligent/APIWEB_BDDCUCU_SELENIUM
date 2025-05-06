@@ -3,14 +3,14 @@ package com.stepdefinit;
 import static io.restassured.RestAssured.baseURI;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.head;
+
 
 import org.testng.Assert;
 
 
 
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
