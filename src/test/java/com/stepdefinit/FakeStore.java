@@ -49,4 +49,85 @@ public void the_product_tittle_should_be(String expectedTitle) {
    
 }
 
+@When("I send a post request to create a Product")
+public void i_send_a_post_request_to_create_a_product() {
+    String body = "{\r\n" + //
+                "    \"id\": 0,\r\n" + //
+                "    \"title\": \"string\",\r\n" + //
+                "    \"price\": 0.1,\r\n" + //
+                "    \"description\": \"string\",\r\n" + //
+                "    \"category\": \"string\",\r\n" + //
+                "    \"image\": \"http://example.com\"\r\n" + //
+                "}";
+
+                response = given().
+                header("Content-Type", "application/json")
+                .body(body)
+                .when()
+                .post("/products");
+}
+@Then("Respose code should be {int}")
+public void respose_code_should_be(Integer expectedStatus) {
+    assertThat(response.statusCode(), is(expectedStatus));
+}
+@Then("The response should containe the tittle {string}")
+public void the_response_should_containe_the_tittle(String expectedTitle) {
+    String actualTitle = response.jsonPath().getString("title");
+        assertThat(actualTitle, is(expectedTitle));
+}
+
+@When("I send a put request to update product {int}")
+public void i_send_a_put_request_to_update_product(Integer int1) {
+    String body = "{\n" +
+                "  \"id\": 0,\n" +
+                "  \"title\": \"string\",\n" +
+                "  \"price\": 0.1,\n" +
+                "  \"description\": \"changed string\",\n" +
+                "  \"category\": \"string\",\n" +
+                "  \"image\": \"http://example.com\"\n" +
+                "}";
+
+                response = given()
+                .header("Content-Type", "application/json")
+                .body(body)
+                .when()
+                .put("/products/18");
+    
+}
+@Then("the status code should be {int}")
+public void the_status_code_should_be(Integer statusCode) {
+
+    assertThat(response.statusCode(), is(statusCode));
+    
+}
+@Then("the response should contain desription {string}")
+public void the_response_should_contain_desription(String expectedDescription) {
+
+    String actualDescription = response.jsonPath().getString("description");
+    assertThat(actualDescription, equalTo(expectedDescription));
+
+}
+
+@When("I send a DELETE request for product ID 18")
+public void i_send_a_delete_request_for_product_id(Integer int1) {
+
+    response = given()
+    .when()
+    .delete("/products/20");
+    
+}
+@Then("the response status should be {int}")
+public void the_response_status_should_be(Integer statusCode) {
+    assertThat(response.statusCode(), is(statusCode));
+    
+}
+@Then("the deleted product ID should be {int}")
+public void the_deleted_product_id_should_be(Integer expectedId) {
+
+    int returnedId = response.jsonPath().getInt("id");
+        assertThat(returnedId, is(expectedId));
+    
+}
+
+
 }
