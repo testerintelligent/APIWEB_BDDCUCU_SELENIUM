@@ -118,6 +118,6 @@ public class projectRestAssured {
             System.out.println("DELETE test successful.");
 
         // Response responseGet = RestAssured.get("https://restful-booker.herokuapp.com/booking/" + bookingId);  
-        // Assert.assertEquals("not found deleted", responseGet.getBody().asString(),404);
+        // Assert.assertEquals("not found deleted", responseGet.getBody().asString(),404);;
     }
 }
