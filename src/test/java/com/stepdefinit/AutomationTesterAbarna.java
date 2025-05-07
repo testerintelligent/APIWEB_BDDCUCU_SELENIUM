@@ -20,7 +20,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.interactions.Actions;
 
-public class AutomationTesterSighup {
+public class AutomationTesterAbarna {
    
     WebDriver driver;
     @Given("Launch browser and navigate to AutomationTester url")
