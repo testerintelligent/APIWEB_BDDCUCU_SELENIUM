@@ -1,12 +1,13 @@
 package com.stepdefinit;
 
-import static org.junit.Assert.assertEquals;
-
 import java.util.List;
 import java.util.Map;
 
-import io.cucumber.java.en.*;
+import static org.junit.Assert.assertEquals;
 
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -32,6 +33,9 @@ public class RequresAPIAutomation {
 	public void i_send_get_request_to_with_query_parameter(String endpoint, String queryParam) {
 
 		response = request.get(endpoint + "?" + queryParam).then().log().all().extract().response();
+	//	response.header("x-api-key","reqres-free-v1");	
+	request.header("x-api-key","reqres-free-v1");		
+	
 
 	}
 
