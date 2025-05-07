@@ -1,6 +1,6 @@
 @Smoke
 
-Feature: WEB_Abarna_DemoTest1
+Feature: WEB_Abarna_DemoTest
 
 Scenario: Login user with incorrect email and password
  Given Launch browser and navigate to AutomationTester url
