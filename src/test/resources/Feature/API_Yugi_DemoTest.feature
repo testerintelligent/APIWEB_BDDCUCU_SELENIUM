@@ -1,4 +1,4 @@
-Feature: Yugi_28APR2025_API_CreateUserReqres
+Feature: API_Yugi_DemoTest
 
   Background:
     Given Base URL is set to "https://jsonplaceholder.typicode.com"
