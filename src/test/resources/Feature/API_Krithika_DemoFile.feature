@@ -1,6 +1,11 @@
-Feature: Krithika_22APR2025_API_UserAPIRestAssuredMethods
+Feature: API_Krithika_DemoFile.feature
 
-  Scenario: Retrieve user by ID
+  Scenario: Checking All HTTP Methods
+    Given Navigate to the URL
+    When I check all methods and assestion
+    Then I should get all responses
+	
+	Scenario: Retrieve user by ID
     Given I set the GET endpoint for user with ID "2"
     When I send the GET HTTP request
     Then I should receive a 200 status codes
@@ -31,3 +36,9 @@ Feature: Krithika_22APR2025_API_UserAPIRestAssuredMethods
     Given the API is up and running
     When I send a DELETE request to remove the user with ID 2
     Then I should receive a success response
+	
+  Scenario: Get user details 
+    Given the API is available 
+    When I send a GET request to "/api/users/2" 
+    Then the response status code should be 200 
+    And the response should contain user detail
