@@ -31,24 +31,28 @@ Given user launch the application with credentilas
 When  user click add to cart button for sauce labs BackPack
 Then user click the cart icon and navigates to Swag labs
 
+@Smoke
 Scenario:
 
 Given user lauch the herokuapp automation page  
 When User click the add remove elements
 Then  verify stale element execption
 
+@Smoke
 Scenario:
 
 Given user lauch the letcode dropdown button automation page  
 When User get the dropdown button
 Then User get multiselect
 
+@Sanity
 Scenario:
 Given user lauch the letcode automation page  
 When User click the simple alert
 When User click confirm alert
 Then A confirmation popup should appear
 
+@Sanity
 Scenario:
 
 Given user lauch the letcode button automation page  
@@ -57,6 +61,7 @@ When User get the colour of the button
 When User get the size of the button
 Then A confirmation on disable button
 
+@Regression
 Scenario:
 
 Given user launch The Application  
