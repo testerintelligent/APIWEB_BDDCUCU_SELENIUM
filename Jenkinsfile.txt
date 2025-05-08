@@ -19,7 +19,7 @@ pipeline {
 			{
 
 			// Checkout the repository from GitHub
-			git branch: 'main',
+			git branch: 'Abarna_BDD',
 			//credentialsId: '',
 			url: 'https://github.com/testerintelligent/APIWEB_BDDCUCU_SELENIUM.git'
 			}
