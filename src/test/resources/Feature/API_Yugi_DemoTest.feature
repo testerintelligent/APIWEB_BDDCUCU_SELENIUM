@@ -34,7 +34,7 @@ Feature: Yugi_28APR2025_API_CreateUserReqres
     And the response should contain more than 50 posts
 @Sanity
   Scenario: Retrieve a specific post by ID
-    When I send a GET request to "/posts/10"
+    When I send an GET request to "/posts/10"
     Then I should receive a status code of 200
     And the title of the post should be "optio molestias id quia eum"
 @Smoke
