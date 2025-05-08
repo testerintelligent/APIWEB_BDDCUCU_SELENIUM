@@ -27,12 +27,12 @@ public class QAfoxAddToCartStepDef {
         assertTrue(currentUrl.contains("inventory"));
     }
 
-    @When("I click the \"Add to cart\" button for \"Sauce Labs Backpack\"")
+    @When("I click the Add to cart button for Sauce Labs Backpack")
     public void i_click_add_to_cart_for_sauce_labs_backpack() {
         driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
     }
 
-    @Then("the cart badge should display \"1\"")
+    @Then("the cart badge should display 1")
     public void the_cart_badge_should_display_1() {
         WebElement cartBadge = driver.findElement(By.className("shopping_cart_badge"));
         assertEquals("1", cartBadge.getText());

@@ -1,6 +1,6 @@
 
 @Muthu
-Feature: WEB_Muthu_DemoTest
+Feature: Muthu_WEB_DemoTest
  
   Scenario: Test the Navvigation and Back operations in Academic Domain
     Given I enter into the Academy Domain
