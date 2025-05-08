@@ -1,6 +1,11 @@
 @PrincyAll
 
+<<<<<<< HEAD
 Feature: API_Princy_DemoTest
+=======
+Feature: Princy_API_Testcases
+
+>>>>>>> b70a329 (changes)
 
   Scenario: Get all activities and validate the first one
     Given The API is up and running

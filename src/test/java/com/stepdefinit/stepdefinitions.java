@@ -87,7 +87,11 @@ public class stepdefinitions {
 =======
     @When("I send a GET request to {string}")
     public void i_send_a_get_request_to(String endpoint) {
+<<<<<<< HEAD
 >>>>>>> 94a8d0c (changes)
+=======
+>>>>>>> b70a329 (changes)
+>>>>>>> b275fcd (changes)
         response = request.get(endpoint);
     }
 
@@ -107,7 +111,11 @@ public class stepdefinitions {
 =======
     @When("I send a POST request to {string} with body:")
     public void i_send_a_post_request_to_with_body(String endpoint, String body) {
+<<<<<<< HEAD
 >>>>>>> 94a8d0c (changes)
+=======
+>>>>>>> b70a329 (changes)
+>>>>>>> b275fcd (changes)
         response = request.body(body).post(endpoint);
     }
 
