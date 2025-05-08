@@ -96,8 +96,8 @@ public class stepdefinitions {
         response.then().body("title", equalTo(expectedTitle));
     }
 
-    @When("I send a POST request to {string} with body:")
-    public void i_send_a_post_request_to_with_body(String endpoint, String body) {
+    @When("I send an POST request to {string} with body:")
+    public void i_send_an_post_request_to_with_body(String endpoint, String body) {
         response = request.body(body).post(endpoint);
     }
 
