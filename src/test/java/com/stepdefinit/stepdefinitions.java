@@ -81,8 +81,13 @@ public class stepdefinitions {
         response.then().body("name", equalTo(name)).body("job", equalTo(job));
     }
 
+<<<<<<< HEAD
     @When("I send an GET request to {string}")
     public void i_send_an_get_request_to(String endpoint) {
+=======
+    @When("I send a GET request to {string}")
+    public void i_send_a_get_request_to(String endpoint) {
+>>>>>>> 94a8d0c (changes)
         response = request.get(endpoint);
     }
 
@@ -96,8 +101,13 @@ public class stepdefinitions {
         response.then().body("title", equalTo(expectedTitle));
     }
 
+<<<<<<< HEAD
     @When("I send an POST request to {string} with body:")
     public void i_send_an_post_request_to_with_body(String endpoint, String body) {
+=======
+    @When("I send a POST request to {string} with body:")
+    public void i_send_a_post_request_to_with_body(String endpoint, String body) {
+>>>>>>> 94a8d0c (changes)
         response = request.body(body).post(endpoint);
     }
 
