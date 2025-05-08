@@ -1,9 +1,5 @@
 
-<<<<<<< HEAD
 @Regression
-=======
-
->>>>>>> 924b82f (8 may)
 Feature: API_Vinay_DemoTest
 
 
