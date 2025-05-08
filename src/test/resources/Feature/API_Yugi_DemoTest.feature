@@ -39,7 +39,7 @@ Feature: Yugi_28APR2025_API_CreateUserReqres
     And the title of the post should be "optio molestias id quia eum"
 @Smoke
   Scenario: Create a new post
-    When I send a POST request to "/posts" with body:
+    When I send an POST request to "/posts" with body:
     """
     {
       "title": "Automation in API",
