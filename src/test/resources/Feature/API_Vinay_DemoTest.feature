@@ -1,5 +1,5 @@
 
-
+@Regression
 Feature: API_Vinay_DemoTest
 
 
