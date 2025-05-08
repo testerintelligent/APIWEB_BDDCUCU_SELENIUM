@@ -34,7 +34,7 @@ public class RequresAPIAutomation {
 
 		response = request.get(endpoint + "?" + queryParam).then().log().all().extract().response();
 	//	response.header("x-api-key","reqres-free-v1");	
-	request.header("x-api-key","reqres-free-v1");		
+	    request.header("x-api-key","reqres-free-v1");		
 	
 
 	}

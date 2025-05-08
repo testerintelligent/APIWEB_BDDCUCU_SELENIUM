@@ -33,6 +33,8 @@ public class reqResTest {
 	
 	@When("send the get request with the resource url of reqres")
 	public void send_the_get_request_with_the_resource_url_of_reqres() {
+		reqspec.header("x-api-key","reqres-free-v1");		
+
 		response =reqspec.get("?page=1");
 	}
 	
