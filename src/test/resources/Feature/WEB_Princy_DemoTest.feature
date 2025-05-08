@@ -1,5 +1,5 @@
 @PrincyAll
-Feature: Princy_WEB_DemoTest
+Feature: WEB_Princy_DemoTest
     As a user i want to login the page using the given credentials
 
   Scenario: Validation of login using valid credentials
