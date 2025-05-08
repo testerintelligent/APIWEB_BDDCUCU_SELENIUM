@@ -2,48 +2,48 @@ pipeline {
     agent { label 'WinNode' }
 
     stages {
-        
+
         stage('Clean Workspace') {
-                steps {
+            steps {
                 sleep(time: 3, unit: "SECONDS")
                 echo "Clean Existing Workspace"
                 echo "JENKINS_HOME: $JENKINS_HOME"
                 echo "WORKSPACE: $WORKSPACE"
                 cleanWs()
                 sleep(time: 3, unit: "SECONDS")
-                }
-            }        
-		stage('Fetch From Github')
-		{
-			steps 
-			{
-
-			// Checkout the repository from GitHub
-			git branch: 'Abarna_BDD',
-			//credentialsId: '',
-			url: 'https://github.com/testerintelligent/APIWEB_BDDCUCU_SELENIUM.git'
-			}
-		} 
-        
-        
-        stage('Execution') {
-                steps {
-                    bat 'mvn clean install'
-                    sleep(time: 5, unit: "SECONDS")
-                    bat 'mvn test -Dtest=RunnerClass'
-                }
             }
+        }
+
+        stage('Fetch From Github') {
+            steps {
+                git branch: 'main',
+                    // credentialsId: '', // Add if using private repo
+                    url: 'https://github.com/testerintelligent/APIWEB_BDDCUCU_SELENIUM.git'
+            }
+        }
+
+        stage('Execution') {
+            steps {
+                bat 'mvn clean install'
+                sleep(time: 5, unit: "SECONDS")
+                bat 'mvn test -Dtest=com.runner.RunnerClass'
+            }
+        }
+
+        stage('Verify Report File') {
+            steps {
+                bat 'dir target\\cucumber-report'
+            }
+        }
     }
 
     post {
         always {
             sleep(time: 3, unit: "SECONDS")
             cucumber buildStatus: 'UNCHANGED',
-                     customCssFiles: '',
-                     customJsFiles: '',
-                     fileIncludePattern: '**/*.json',
-                     jsonReportDirectory: 'target/cucumber-report/',
-                     reportTitle: 'Report',
+                     jsonReportDirectory: 'target/cucumber-report',
+                     fileIncludePattern: 'cucumber.json',
+                     reportTitle: 'BDD Report',
                      sortingMethod: 'ALPHABETICAL',
                      trendsLimit: 5
         }
