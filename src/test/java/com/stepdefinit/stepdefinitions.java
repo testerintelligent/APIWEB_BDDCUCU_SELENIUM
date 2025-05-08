@@ -81,8 +81,8 @@ public class stepdefinitions {
         response.then().body("name", equalTo(name)).body("job", equalTo(job));
     }
 
-    @When("I send a GET request to {string}")
-    public void i_send_a_get_request_to(String endpoint) {
+    @When("I send an GET request to {string}")
+    public void i_send_an_get_request_to(String endpoint) {
         response = request.get(endpoint);
     }
 
