@@ -1,5 +1,5 @@
 @MuthuAPI
-Feature: Muthu_API_Testcases
+Feature: API_Muthu_DemoTest
 
   Scenario: Get single User of ReqRes Api
     Given Give the domain name of reqres
