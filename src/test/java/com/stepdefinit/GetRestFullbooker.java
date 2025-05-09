@@ -48,13 +48,14 @@ public void the_response_of_status_code_should_be(Integer int2) {
 @Then("the response should be contain user detail")
 public void the_response_should_be_contain_user_detail() {
     response.prettyPrint();
+    RestAssured.baseURI = "https://restful-booker.herokuapp.com";
 
 }
 
-@Given("I set the base URI")
-    public void i_set_base_uri() {
-        RestAssured.baseURI = "https://restful-booker.herokuapp.com";
-    }
+//@Given("I set the base URI")
+  //  public void i_set_base_uri() {
+        
+  //  }
 
 //     @When("I send POST request to \\/auth with valid credentials")
 //     public void i_send_post_request_to_auth() {
