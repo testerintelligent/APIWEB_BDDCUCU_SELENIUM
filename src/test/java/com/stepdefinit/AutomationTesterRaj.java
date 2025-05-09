@@ -418,7 +418,7 @@ public void user_launch_application() {
 	        assertEquals("1", cartBadge.getText());
 	        WebElement cartclick= driver.findElement(By.xpath("//*[@id='shopping_cart_container']"));
 			cartclick.click();
-			WebElement chekout= driver.findElement(By.xpath("//button[contains(@id,'checkout')]"));
+			WebElement chekout= driver.findElement(By.xpath("//button[contains(@name,'checkout')]"));
 			chekout.click();
 			
    
@@ -489,7 +489,7 @@ public void user_input_the_first_name() {
 		
         WebElement cartBadge = driver.findElement(By.className("shopping_cart_badge"));
         assertEquals("1", cartBadge.getText());
-        WebElement cartclick= driver.findElement(By.xpath("//*[@id='shopping_cart_container']"));
+        WebElement cartclick= driver.findElement(By.xpath("//* [contains(@id,'shopping_cart_container')]"));
 		cartclick.click();
 
 	}
