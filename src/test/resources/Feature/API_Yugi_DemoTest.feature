@@ -1,4 +1,4 @@
-Feature: Yugi_28APR2025_API_CreateUserReqres
+Feature: API_Yugi_DemoTest
 
   Background:
     Given Base URL is set to "https://jsonplaceholder.typicode.com"
@@ -34,12 +34,12 @@ Feature: Yugi_28APR2025_API_CreateUserReqres
     And the response should contain more than 50 posts
 @Sanity
   Scenario: Retrieve a specific post by ID
-    When I send a GET request to "/posts/10"
+    When I send an GET request to "/posts/10"
     Then I should receive a status code of 200
     And the title of the post should be "optio molestias id quia eum"
 @Smoke
   Scenario: Create a new post
-    When I send a POST request to "/posts" with body:
+    When I send an POST request to "/posts" with body:
     """
     {
       "title": "Automation in API",
@@ -63,3 +63,42 @@ Feature: Yugi_28APR2025_API_CreateUserReqres
   Scenario: Delete a post by ID
     When I send a DELETE request to "/posts/10"
     Then I should receive a status code of 200
+
+    
+@Vinay
+  Scenario: Create the address in cyclos
+    Given User should load the url username
+    When User should create the address
+    Then User should validate the status codes
+
+  @Vinay
+  Scenario Outline: Get the address in cyclos
+    Given User should load the url username,password "<username>" and "<password>"
+    When User should get the address
+    Then User should validate the status code in reponce
+    And User should get the name
+    And User should get the addressLine1
+    And User should get the city
+    And User should get the region
+
+    Examples: 
+      | username | password  |
+      | Krhithya | Divya@123 |
+
+
+  @Vinay
+  Scenario Outline: Verify the cyclos site address
+    Given User should load the url cyclos
+    When User should enter the username and password "<username>" and "<password>"
+    And User should navigate to profile
+    # Then User should validate the name
+    # And User should validate the city
+    # And User should validate the state
+
+    Examples:
+    |username|password|
+    |Krhithya|Divya@123|
+
+
+
+
