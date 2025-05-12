@@ -126,3 +126,28 @@ Scenario: Login user with incorrect email and password
     When Enter email address in input and click arrow button
     Then Verify success message 'You have been successfully subscribed!' is visible
     Then Finally i close the browserrr
+
+
+    @Smoke
+    Scenario Outline: Verify login functionality with valid Credentials
+Given User should launch the browser
+When User should write "<username>" and "<password>"
+And User should click the login button
+Then User should verify success message after login
+And User should logoff
+ 
+Examples:
+|username|password|
+|standard_user|secret_sauce|
+ 
+@Smoke
+Scenario Outline: Verify User is able Select Product
+Given User should launch the browser
+When User should write "<username>" and "<password>"
+And User should click the login button
+Then User should verify success message after login
+And User should click the product
+ 
+Examples:
+|username|password|
+|standard_user|secret_sauce|
