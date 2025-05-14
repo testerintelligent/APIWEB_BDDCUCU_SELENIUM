@@ -52,7 +52,7 @@ Scenario: SignUp to the website
     And i will now check if the logout button is available
     And I will click the logout button
     And I will check if the logout is correctly happened
-    
+
     @Smoke
      Scenario: LoginWithIncorrectCredentials
     Given I want to launch the Automation Website
