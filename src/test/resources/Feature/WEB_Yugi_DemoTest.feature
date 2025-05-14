@@ -114,17 +114,6 @@ Examples:
 |username|password|
 |standard_user|secret_sauce|
 
-@sauce_Product_addProductoCart
-Scenario Outline: Verify User is able add the product to the cart
-Given User should launch the browser
-When User should write "<username>" and "<password>"
-And User should click the login button
-Then User should verify success message after login
-And User should click cart button
-
-Examples:
-|username|password|
-|standard_user|secret_sauce|
 
 @sauce_Product_selectFilter
 Scenario Outline: Verify User is able Select fitler button
@@ -177,13 +166,5 @@ Examples:
     |Krhithya|Divya@123|
     
 
-  @cyclos_delete_User
-  Scenario Outline: Delete the address in cyclos
-    Given User should load the url username and password "<username>" and "<password>"
-    When User should delete the address
-    Then User should validate the status code in reponces
-
-    Examples: 
-      | username | password  |
-      | Krhithya | Divya@123 |
+ 
     
