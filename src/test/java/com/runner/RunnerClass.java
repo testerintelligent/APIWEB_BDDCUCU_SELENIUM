@@ -6,14 +6,15 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-    features = "src/test/resources/Feature", 
+    features = "src/test/resources/Feature/WEB_Rajasekar_DemoTest.feature", 
     glue = "com.stepdefinit", 
     dryRun = false,
     monochrome = true,
+    tags = "@Smoke",
     plugin = { 
         "json:target/cucumber-report/cucumber.json", 
         "html:target/cucumber-report/cucumber.html"
+        }
+    )
+    public class RunnerClass {
     }
-)
-public class RunnerClass {
-}
