@@ -32,14 +32,14 @@ public class SauceStep extends BaseClass {
 public void user_should_write_and(String username, String password) {
     login = new SauceLogin();
 
-   // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
     // Wait for username field to be visible and enter value
-   // wait.until(ExpectedConditions.visibilityOf(login.getUsername()));
+    wait.until(ExpectedConditions.visibilityOf(login.getUsername()));
     EnterValue(login.getUsername(), username);
 
     // Wait for password field to be visible and enter value
-  //  wait.until(ExpectedConditions.visibilityOf(login.getPassword()));
+    wait.until(ExpectedConditions.visibilityOf(login.getPassword()));
     EnterValue(login.getPassword(), password);
 }
 
