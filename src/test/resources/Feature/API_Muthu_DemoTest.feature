@@ -1,6 +1,16 @@
 @MuthuAPI
 Feature: API_Muthu_DemoTest
 
+  Background:
+    Given Base URL is set to "https://jsonplaceholder.typicode.com"
+
+ 
+  Scenario: Create a new user with name and job
+    Given I have the username "morpheus" and job "leader"
+    When I send a POST request to create the user
+    Then I should receive a status code of 201
+    And the response should contain the user with name "morpheus" and job "leader"
+
   Scenario: Get single User of ReqRes Api
     Given Give the domain name of reqres
     When send the get request with the single resource url of reqres
