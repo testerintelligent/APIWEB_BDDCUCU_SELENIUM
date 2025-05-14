@@ -1,10 +1,12 @@
 @Smoke
 
 Feature: WEB_Abarna_DemoTest
+Background: Check Automation Tester Website
+Given Launch browser and navigate to AutomationTester url
+    Then Verify that home page is visible successfully
+
 
 Scenario: Login user with incorrect email and password
- Given Launch browser and navigate to AutomationTester url
-    Then Verify that home page is visible successfully
     When Click on Signup button
     Then Verify 'Login to your account' is visible
     And Enter correct email address and password
@@ -12,8 +14,6 @@ Scenario: Login user with incorrect email and password
     And Finally i close the browserrr
 
     Scenario: Logout user successfully
-    Given Launch browser and navigate to AutomationTester url
-    Then Verify that home page is visible successfully
     When Click on Signup button
    Then Verify 'Login to your account' is visible
     And Enter correct email address and password
@@ -23,8 +23,6 @@ Scenario: Login user with incorrect email and password
     Then Verify that user is navigated to login page
 
     Scenario: Signup with an already registered email address
-   Given Launch browser and navigate to AutomationTester url
-    Then Verify that home page is visible successfully
     When Click on Signup button
     And Enter name and already registered email address
     And Click the 'Signup' button
@@ -32,8 +30,6 @@ Scenario: Login user with incorrect email and password
     And Finally i close the browserrr
 
     Scenario: User should be able to sign up 
-    Given Launch browser and navigate to AutomationTester url
-    Then Verify that home page is visible successfully
     When Click on Signup button
     Then Verify new sign up is visible
     And Enter name and email address
@@ -41,15 +37,11 @@ Scenario: Login user with incorrect email and password
     And Finally i close the browserrr
 
      Scenario: Verify user can navigate to the Test Cases page successfully
-    Given Launch browser and navigate to AutomationTester url
-    Then Verify that home page is visible successfully
     When Click on 'Test Cases' button
     Then Verify user is navigated to test cases page successfully
     And Finally i close the browserrr
 
     Scenario: Verify Subscription section functionality
-    Given Launch browser and navigate to AutomationTester url
-    Then Verify that home page is visible successfully
     When Scroll down to footer
     Then Verify text 'SUBSCRIPTION'
     When Enter email address in input and click arrow button
@@ -57,16 +49,12 @@ Scenario: Login user with incorrect email and password
     And Finally i close the browserrr
 
     Scenario: Submit contact form with message and file upload
-    Given Launch browser and navigate to AutomationTester url
-   Then Verify that home page is visible successfully
     When Click on 'Contact Us' button
     Then Verify 'GET IN TOUCH' is visible
     And Enter name, email, subject and message
     And Finally i close the browserrr
 
     Scenario: Submit contact form with message and file upload
-    Given Launch browser and navigate to AutomationTester url
-   Then Verify that home page is visible successfully
     When Click on 'Contact Us' button
     Then Verify 'GET IN TOUCH' is visible
     And Enter name, email, subject and message
@@ -77,8 +65,6 @@ Scenario: Login user with incorrect email and password
         And Finally i close the browserrr
 
         Scenario: Verify search functionality for products
-   Given Launch browser and navigate to AutomationTester url
-    Then Verify that home page is visible successfully
     When Click on 'Products' button
     Then Verify user is navigated to ALL PRODUCTS page successfully
     When Enter product name in search input and click search button
@@ -86,8 +72,6 @@ Scenario: Login user with incorrect email and password
     Then Verify all the products related to search are visible
 
      Scenario: Verify all products and product detail page functionality
-   Given Launch browser and navigate to AutomationTester url
-    Then Verify that home page is visible successfully
     When Click on 'Products' button
     Then Verify user is navigated to ALL PRODUCTS page successfully
     Then The products list is visible
@@ -97,8 +81,6 @@ Scenario: Login user with incorrect email and password
     And Finally i close the browserrr
 
     Scenario: User should be able to sign up 
-    Given Launch browser and navigate to AutomationTester url
-    Then Verify that home page is visible successfully
     When Click on Signup button
     Then Verify new sign up is visible
     And Enter name and email address
@@ -106,8 +88,6 @@ Scenario: Login user with incorrect email and password
     And Finally i close the browserrr
 
     Scenario: Add Products to Cart
-    Given Launch browser and navigate to AutomationTester url
-    Then Verify that home page is visible successfully
     When Click the on 'Products' button
     And Hover over first product and click 'Add to cart'
     And Click the 'Continue Shopping' button
@@ -118,8 +98,6 @@ Scenario: Login user with incorrect email and password
     Then Finally i close the browserrr
 
     Scenario:Verify Subscription in Cart page
-    Given Launch browser and navigate to AutomationTester url
-    Then Verify that home page is visible successfully
     When Click on the 'Cart' button
     And Scroll down to footer
     Then Verify text 'SUBSCRIPTION'
