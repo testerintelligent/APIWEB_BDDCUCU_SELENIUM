@@ -43,12 +43,14 @@ public class LoginWithCurrent {
     @And("I enter the correct email address and password")
     public void i_enter_the_correct_email_address_and_password() {
         driver.findElement(By.name("email")).sendKeys("demo@test.yu"); // Replace with valid email
-        driver.findElement(By.name("password")).sendKeys("YuTest");       // Replace with valid password
+        driver.findElement(By.name("password")).sendKeys("YuTest"); 
+        
+         WebElement loginButton = driver.findElement(By.xpath("//button[text()='Login']"));
+        loginButton.click();// Replace with valid password
     }
 
-    @And("I click the login button")
-    public void i_click_the_login_button() {
-        WebElement loginButton = driver.findElement(By.xpath("//button[text()='Login']"));
-        loginButton.click();
-    }
+    //@And("I click the login button")
+   // public void i_click_the_login_button() {
+       
+   // }
 }
