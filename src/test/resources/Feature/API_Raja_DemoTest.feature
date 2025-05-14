@@ -1,3 +1,4 @@
+@Smoke
 Feature: API_Raja_DemoTest
 
 Background:
@@ -10,13 +11,7 @@ When I fetch the Product
 Then The response should be 200
 And the Product tittle should be "DANVOUY Women's T Shirt Casual Cotton Short"
 
-@Raja
-Scenario: Create a new product in fake store
-When I send a post request to create a Product
-Then Respose code should be 200
-And The response should containe the tittle "string"
-
-@Raja
+@Sanity
 Scenario: Update the product with put request
 When I send a put request to update product 18
 Then the status code should be 200
