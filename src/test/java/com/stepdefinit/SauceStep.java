@@ -10,7 +10,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Pom.SauceCart;
 import com.resources.BaseClass;
+
 import io.cucumber.java.en.*;
+import io.cucumber.messages.types.Duration;
 
 //Inheritance - SauceStep is inherited from SuperClass(BaseClass.java)
 public class SauceStep extends BaseClass {
@@ -30,14 +32,14 @@ public class SauceStep extends BaseClass {
 public void user_should_write_and(String username, String password) {
     login = new SauceLogin();
 
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+   // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
     // Wait for username field to be visible and enter value
-    wait.until(ExpectedConditions.visibilityOf(login.getUsername()));
+   // wait.until(ExpectedConditions.visibilityOf(login.getUsername()));
     EnterValue(login.getUsername(), username);
 
     // Wait for password field to be visible and enter value
-    wait.until(ExpectedConditions.visibilityOf(login.getPassword()));
+  //  wait.until(ExpectedConditions.visibilityOf(login.getPassword()));
     EnterValue(login.getPassword(), password);
 }
 

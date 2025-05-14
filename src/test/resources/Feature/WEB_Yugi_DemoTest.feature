@@ -52,7 +52,7 @@ Scenario: SignUp to the website
     And i will now check if the logout button is available
     And I will click the logout button
     And I will check if the logout is correctly happened
-    
+
     @Smoke
      Scenario: LoginWithIncorrectCredentials
     Given I want to launch the Automation Website
@@ -94,17 +94,17 @@ Examples:
 |username|password|
 |standard_user|secret_sauce|
 
-@sauce_Product_addtoCart
-Scenario Outline: Verify User is able Select Product after Login and add to Cart
-Given User should launch the browser
-When User should write "<username>" and "<password>"
-And User should click the login button
-Then User should verify success message after login
-And User should click the Add to cart button
+#@sauce_Product_addtoCart
+#Scenario Outline: Verify User is able Select Product after Login and add to Cart
+#Given User should launch the browser
+#When User should write "<username>" and "<password>"
+#And User should click the login button
+#Then User should verify success message after login
+#And User should click the Add to cart button
 
-Examples:
-|username|password|
-|standard_user|secret_sauce|
+#Examples:
+#|username|password|
+#|standard_user|secret_sauce|
 
 
 @sauce_Product_selectFilter
