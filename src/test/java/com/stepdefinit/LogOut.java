@@ -45,8 +45,8 @@ public class LogOut {
         pass.sendKeys("YuTest");
     }
 
-    @When("I click on the login button")
-    public void i_click_on_the_login_button() {
+    @When("now I click on the login button")
+    public void now_i_click_on_the_login_button() {
         WebElement login = driver.findElement(By.xpath("//button[contains(text(),'Login')]"));
         login.click();
         System.out.println("Clicking the login button...");

@@ -47,7 +47,7 @@ Scenario: SignUp to the website
     And verfiy if the home page is visible
     When I click on login button
     And Enter the correct credentials
-    And I click on the login button
+    And now I click on the login button
     Then I will check if the login is done successfully
     And i will now check if the logout button is available
     And I will click the logout button
