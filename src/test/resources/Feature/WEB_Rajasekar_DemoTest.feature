@@ -130,7 +130,6 @@ Then the user should get error message "<errorMessage>"
     Given I am logged in to my account
     And I navigate to the Address Book section
     When I click on the Add Address button
-    And I enter the following shipping address details:
       | First Name | Princy         |
       | Last Name  | PS             |
       | Company    | Exp Inc        |
