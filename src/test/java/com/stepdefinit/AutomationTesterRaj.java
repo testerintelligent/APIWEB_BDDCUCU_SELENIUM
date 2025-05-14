@@ -1,6 +1,7 @@
 package com.stepdefinit;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.time.Duration;
 import java.util.List;
@@ -51,7 +52,7 @@ public class AutomationTesterRaj {
 		booking.getUser_name().sendKeys("rajasekari");
 
 	}
-	@When(": User Enter The Password In Password Field")
+	@When("User Enter The Password In Password Field")
 	public void user_enter_the_password_in_password_field() {
 
 		//		inputValue(login.getPassword(), "Raje@123");
@@ -59,7 +60,7 @@ public class AutomationTesterRaj {
 		booking.getPassword().sendKeys("Raje@123");
 
 	}
-	@Then(": User Click On The Login Button And It Navigates To Search Hotel Page")
+	@Then("User Click On The Login Button And It Navigates To Search Hotel Page")
 	public void user_click_on_the_login_button_and_it_navigates_to_search_hotel_page() {
 
 		//		clickonElement(login.getSubmit());
@@ -68,7 +69,7 @@ public class AutomationTesterRaj {
 
 	}
 
-	@When(": user Select The Location")
+	@When("user Select The Location")
 	public void user_select_the_location() {
 
 		//		singledropdown(Search.getLocation(), "index", "1");
@@ -87,7 +88,7 @@ public class AutomationTesterRaj {
 
    }
 	
-	@When(": user Select The Hotel")
+	@When("user Select The Hotel")
 	public void user_select_the_hotel() {
 
 //		singledropdown(Search.getHotels(), "index", "1");
@@ -99,7 +100,7 @@ public class AutomationTesterRaj {
 		select.selectByIndex(1);
 
 	}
-	@When(": user Select The RoomType")
+	@When("user Select The RoomType")
 	public void user_select_the_room_type() {
 
 //		singledropdown(Search.getRoomtype(), "index", "1");
@@ -113,7 +114,7 @@ public class AutomationTesterRaj {
 		
 
 	}
-	@When(": user Select The NumberofRooms")
+	@When("user Select The NumberofRooms")
 	public void user_select_the_numberof_rooms() {
 		
 		
@@ -126,14 +127,14 @@ public class AutomationTesterRaj {
 		select.selectByIndex(1);
 
 	}
-	@When(": user Enters The CheckinDate")
+	@When("user Enters The CheckinDate")
 	public void user_enters_the_checkin_date() {
 
 //		inputValue(Search.getcheckinDate(), "21/03/2025");
 		
 		booking.getcheckinDate().sendKeys("21/06/2025");
 	}
-	@When(": user Enters The CheckOutDate")
+	@When("user Enters The CheckOutDate")
 	public void user_enters_the_check_out_date() {
 
 //		inputValue(Search.getcheckoutDate(), "21/03/2025");
@@ -141,7 +142,7 @@ public class AutomationTesterRaj {
 		booking.getcheckoutDate().sendKeys("21/06/2025");
 
 	}
-	@When(": user Select The AdultPerRoom")
+	@When("user Select The AdultPerRoom")
 	public void user_select_the_adult_per_room() {
 //		singledropdown(Search.getadultperroom(), "index", "1");
 		
@@ -152,7 +153,7 @@ public class AutomationTesterRaj {
 		select.selectByIndex(1);
 
 	}
-	@When(": user Select The ChildrenPerRoom")
+	@When("user Select The ChildrenPerRoom")
 	public void user_select_the_children_per_room() {
 
 //		singledropdown(Search.getchildperroom(), "index", "1");
@@ -166,7 +167,7 @@ public class AutomationTesterRaj {
 		
 
 	}
-	@Then(": User Click on the Search Button And It Navigates To Select Hotel page")
+	@Then("User Click on the Search Button And It Navigates To Select Hotel page")
 	public void user_click_on_the_search_button_and_it_navigates_to_select_hotel_page() {
 
 //		clickonElement(Search.getsearchhotel());
@@ -176,7 +177,7 @@ public class AutomationTesterRaj {
 
 	}
 	
-	@When(": user Select The RadioButton")
+	@When("user Select The RadioButton")
 	public void user_select_the_radio_button() {
 		
 //		clickonElement(Select.getradiobutton());
@@ -187,7 +188,7 @@ public class AutomationTesterRaj {
 		
 	   
 	}
-	@When(": user Select The ContinueButton")
+	@When("user Select The ContinueButton")
 	public void user_select_the_continue_button() {
 		
 //		clickonElement(Select.getcontinuebutton());
@@ -196,7 +197,7 @@ public class AutomationTesterRaj {
 	    
 	}
 	
-	@When(": user Enters The FirstName")
+	@When("user Enters The FirstName")
 	public void user_enters_the_first_name() {
 		
 //	inputValue(Payment.getFirstName(), "rajasekar");
@@ -205,7 +206,7 @@ public class AutomationTesterRaj {
 	   
 	}
 	
-	@When(": user Enters The LastName")
+	@When("user Enters The LastName")
 	public void user_enters_the_last_name() {
 		
 //    inputValue(Payment.getLastName(), "inbasekaran");
@@ -214,7 +215,7 @@ public class AutomationTesterRaj {
 	   
 	}
 	
-	@When(": user Enters The Address")
+	@When("user Enters The Address")
 	public void user_enters_the_address() {
 		
 //	inputValue(Payment.getAddress(), "No/2/91 A Kovur Chennai");
@@ -222,7 +223,7 @@ public class AutomationTesterRaj {
 	booking.getAddress().sendKeys("No/2/91 A Kovur Chennai");
 	   
 	}
-	@When(": user Enters The CCN Number")
+	@When("user Enters The CCN Number")
 	public void user_enters_the_ccn_number() {
 		
 //	inputValue(Payment.getCCNNumber(), "1234567890123456");
@@ -231,7 +232,7 @@ public class AutomationTesterRaj {
 	
 	}
 	
-	@When(": user Enters The CC TYpe")
+	@When("user Enters The CC TYpe")
 	public void user_enters_the_cc_t_ype() {
 		
 //	singledropdown(Payment.getCCType(), "index", "1");
@@ -243,7 +244,7 @@ public class AutomationTesterRaj {
 			select.selectByIndex(1);
 	 
 	}
-	@When(": user Enters The CC Expiry Month")
+	@When("user Enters The CC Expiry Month")
 	public void user_enters_the_cc_expiry_month() {
 		
 //	singledropdown(Payment.getCCExpiryMonth(), "index", "1");
@@ -256,7 +257,7 @@ public class AutomationTesterRaj {
 	
 	}
 	
-	@When(": user Enters The CC Expiry Year")
+	@When("user Enters The CC Expiry Year")
 	public void user_enters_the_cc_expiry_year() {
 		
 //	singledropdown(Payment.getCCExpiryYear(), "index", "10");
@@ -269,7 +270,7 @@ public class AutomationTesterRaj {
 
 	}
 	
-	@When(": user Enters The CC CVV")
+	@When("user Enters The CC CVV")
 	public void user_enters_the_cc_cvv() {
 		
 //    inputValue(Payment.getCC_CVV(), "426");
@@ -278,7 +279,7 @@ public class AutomationTesterRaj {
 
 	}
 	
-	@Then(": User Click on the BookNow Button It Navigates To Booking Cofirmation Page")
+	@Then("User Click on the BookNow Button It Navigates To Booking Cofirmation Page")
 	public void user_click_on_the_book_now_button_it_navigates_to_booking_cofirmation_page() {
 		
 //	clickonElement(Payment.getBookNow());
@@ -287,7 +288,7 @@ public class AutomationTesterRaj {
 	
 	}
 	
-	@When(": user Click My Itineary Button")
+	@When("user Click My Itineary Button")
 	public void user_click_my_itineary_button() {
 		
 		WebDriverWait wait = new WebDriverWait(driver, java.time.Duration.ofSeconds(20));
@@ -297,7 +298,7 @@ public class AutomationTesterRaj {
 	    booking.getMyItineray().click();
 	}
 	
-	@Then(": user Click Logout Button")
+	@Then("user Click Logout Button")
 	public void user_click_logout_button() {
 		
 //		clickonElement(Logout.getLogout());
@@ -720,7 +721,66 @@ public void a_confirmation_on_disable_button() {
     WebElement homebutton=driver.findElement(By.id("home"));
 
     homebutton.click();
+
+
+}
+
+@Given("User should Enters Login page")
+public void user_should_enters_login_page() {
+
+	driver.get("https://the-internet.herokuapp.com/login");
     
+}
+
+@When("User should enter {string} and {string}")
+public void user_should_enter_and(String username, String password) {
+
+	driver.findElement(By.id("username")).sendKeys(username);
+    driver.findElement(By.id("password")).sendKeys(password);
+   
+}
+@When("User clicks the login buttons")
+public void user_clicks_the_login_buttons() {
+
+	driver.findElement(By.cssSelector("button[type='submit']")).click();
+ 
+}
+@Then("User should be able to see {string}")
+public void user_should_be_able_to_see(String message) {
+
+	   String actualMessage = driver.findElement(By.id("flash")).getText();
+    assertTrue(actualMessage.contains(message));
+    
+}
+
+@Given("I open the checkbox page")
+public void i_open_the_checkbox_page() {
+
+	driver.get("https://the-internet.herokuapp.com/checkboxes");
+    
+}
+
+@When("I set checkbox {int} to {string}")
+public void i_set_checkbox_to(Integer index, String state) {
+
+	List<WebElement> checkboxes = driver.findElements(By.cssSelector("input[type='checkbox']"));
+    WebElement checkbox = checkboxes.get(index - 1);
+    boolean shouldBeChecked = state.equalsIgnoreCase("check");
+
+    if (checkbox.isSelected() != shouldBeChecked) {
+        checkbox.click();
+    }
+  
+}
+
+@Then("checkbox {int} should be {string}")
+public void checkbox_should_be(Integer index, String expectedState) {
+
+	List<WebElement> checkboxes = driver.findElements(By.cssSelector("input[type='checkbox']"));
+    WebElement checkbox = checkboxes.get(index - 1);
+    boolean expected = expectedState.equalsIgnoreCase("checked");
+    assertEquals(expected, checkbox.isSelected());
+ 
 }
 
 }
