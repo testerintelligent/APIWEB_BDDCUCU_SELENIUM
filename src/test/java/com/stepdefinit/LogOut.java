@@ -47,12 +47,21 @@ public class LogOut {
         pass.sendKeys("YuTest");
     }
 
+<<<<<<< HEAD
     @And("Now I have clicked the log button")
 public void now_I_have_clicked_the_log_button() {
     WebElement loginButton = driver.findElement(By.xpath("//button[contains(text(),'Login')]"));
     loginButton.click();
     System.out.println("Clicked the login button.");
 }
+=======
+    @When("now I click on the login button")
+    public void now_i_click_on_the_login_button() {
+        WebElement login = driver.findElement(By.xpath("//button[contains(text(),'Login')]"));
+        login.click();
+        System.out.println("Clicking the login button...");
+    }
+>>>>>>> ba5baef (features changes)
 
     @Then("I will check if the login is done successfully")
     public void i_will_check_if_the_login_is_done_successfully() {
