@@ -1,12 +1,16 @@
 package com.stepdefinit;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import io.cucumber.java.en.*;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
-import static org.junit.Assert.*;
+
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class LoginWithCurrent {
 
@@ -43,14 +47,12 @@ public class LoginWithCurrent {
     @And("I enter the correct email address and password")
     public void i_enter_the_correct_email_address_and_password() {
         driver.findElement(By.name("email")).sendKeys("demo@test.yu"); // Replace with valid email
-        driver.findElement(By.name("password")).sendKeys("YuTest"); 
-        
-         WebElement loginButton = driver.findElement(By.xpath("//button[text()='Login']"));
-        loginButton.click();// Replace with valid password
+        driver.findElement(By.name("password")).sendKeys("YuTest");       // Replace with valid password
     }
 
-    //@And("I click the login button")
-   // public void i_click_the_login_button() {
-       
-   // }
+    @And("I click the login button")
+    public void i_click_the_login_button() {
+        WebElement loginButton = driver.findElement(By.xpath("//button[text()='Login']"));
+        loginButton.click();
+    }
 }
