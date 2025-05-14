@@ -56,7 +56,7 @@ Scenario: SignUp to the website
      Scenario: I want to login to the automation website using the correct credentials
     Given I want to launch the automation exercise website
     And I verify that the home page is visible
-    When I click on the signup/login button
+    When I press the login button
     And I verify that the "Login to your account" section is visible
     And I enter the correct email address and password
     And I click the login button

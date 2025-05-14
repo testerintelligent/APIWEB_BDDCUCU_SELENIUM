@@ -27,11 +27,13 @@ public class LoginWithCurrent {
         assertEquals("Home page title does not match", expectedTitle, actualTitle);
     }
 
-    @When("I click on the signup/login button")
-    public void i_click_on_the_signup_login_button() {
-        WebElement signupLoginButton = driver.findElement(By.xpath("//a[@href='/login']"));
-        signupLoginButton.click();
-    }
+  @When("I press the login button")
+public void i_press_the_login_button() {
+    WebElement loginButton = driver.findElement(By.xpath("//button[contains(text(),'Login')]"));
+    loginButton.click();
+    System.out.println("Login button clicked (I press the login button).");
+}
+
 
     @And("I verify that the {string} section is visible")
     public void i_verify_that_the_section_is_visible(String expectedText) {
