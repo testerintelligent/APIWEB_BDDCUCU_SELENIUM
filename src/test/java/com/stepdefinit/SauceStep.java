@@ -5,9 +5,14 @@ import com.Pom.SaucePro;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.Pom.SauceCart;
 import com.resources.BaseClass;
+
 import io.cucumber.java.en.*;
+import io.cucumber.messages.types.Duration;
 
 //Inheritance - SauceStep is inherited from SuperClass(BaseClass.java)
 public class SauceStep extends BaseClass {
@@ -23,13 +28,20 @@ public class SauceStep extends BaseClass {
 	  driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 
-	@When("User should write {string} and {string}") //Passing Username and password for Login
-	public void user_should_write_and(String username, String password) {
-	   login = new SauceLogin();
-	   //method override - EnterValue method used for username and password
-	  EnterValue(login.getUsername(), username);
-	  EnterValue(login.getPassword(), password);
-	}
+	@When("User should write {string} and {string}")
+public void user_should_write_and(String username, String password) {
+    login = new SauceLogin();
+
+   // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+    // Wait for username field to be visible and enter value
+   // wait.until(ExpectedConditions.visibilityOf(login.getUsername()));
+    EnterValue(login.getUsername(), username);
+
+    // Wait for password field to be visible and enter value
+  //  wait.until(ExpectedConditions.visibilityOf(login.getPassword()));
+    EnterValue(login.getPassword(), password);
+}
 
 	//Clicking the SUbmit Button after entering username and password
 	@When("User should click the login button") 
