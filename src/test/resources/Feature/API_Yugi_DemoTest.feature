@@ -99,6 +99,16 @@ Feature: API_Yugi_DemoTest
     |username|password|
     |Krhithya|Divya@123|
 
+     @cyclos_delete_User
+  Scenario Outline: Delete the address in cyclos
+    Given User should load the url username and password "<username>" and "<password>"
+    When User should delete the address
+    Then User should validate the status code in reponces
+
+    Examples: 
+      | username | password  |
+      | Krhithya | Divya@123 |
+
 
 
 
