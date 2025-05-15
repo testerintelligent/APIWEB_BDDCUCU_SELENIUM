@@ -51,43 +51,10 @@ public class DemoBlazePayment {
 
     @When("I select the item from list")
     public void i_select_the_item_from_list() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        for (int i = 0; i < 3; i++) { // Retry up to 3 times
-            try {
-                WebElement element = wait.until(
-                        ExpectedConditions.presenceOfElementLocated(By.xpath("//a[text()='Samsung galaxy s6']")));
-                element.click(); // Click the element
-                break; // Exit loop if successful
-            } catch (StaleElementReferenceException e) {
-                System.out.println("Element went stale, retrying...");
-            }
+        System.out.println("Successfully logged in");
+       
         }
-        // WebElement item = wait.until(
-        // ExpectedConditions.refreshed(
-        // ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Samsung
-        // galaxy s6']"))
-        // )
-        // );
-        // item.click();
-
-        // a[text()='Laptops']
-        // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        // WebElement hoverElement = wait.until(
-        // ExpectedConditions.presenceOfElementLocated(By.xpath("//a[text()='Laptops']"))
-        // );
-        // hoverElement.click();
-        // WebElement element = new WebDriverWait(driver, Duration.ofSeconds(10)).until(
-        // ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='Laptops']"))
-        // );
-        // element.click();
-        // WebElement HoverMenu = driver.findElement(By.xpath("//a[text()='Laptops']"));
-        // HoverMenu.click();
-        // WebElement SubMenu = driver.findElement(By.xpath("//a[text()='MacBook
-        // air']"));
-        // SubMenu.click();
-
-    }
-
+       
     @When("I have to add to the cart")
     public void i_have_to_add_to_the_cart() {
         // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

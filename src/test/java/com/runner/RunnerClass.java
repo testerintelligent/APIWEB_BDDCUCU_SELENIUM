@@ -11,11 +11,11 @@ import io.cucumber.junit.CucumberOptions;
     glue = "com.stepdefinit", 
     dryRun = false,
     monochrome = true,
-   
+
     plugin = { 
         "json:target/cucumber-report/cucumber.json", 
         "html:target/cucumber-report/cucumber.html"
-        }
-    )
-    public class RunnerClass {
     }
+)
+public class RunnerClass {
+}

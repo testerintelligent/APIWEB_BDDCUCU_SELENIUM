@@ -1,9 +1,9 @@
 package com.stepdefinit;
-
 import io.cucumber.java.en.*;
 import io.restassured.response.Response;
-
+import io.restassured.specification.RequestSpecification;
 import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
 
 public class APIMPost {
 
@@ -47,4 +47,39 @@ public class APIMPost {
     // public void verifyResponseField(String key, String value) {
     //     response.then().body(key, equalTo(value));
     // }
+    
+    private String baseUrl;
+    private RequestSpecification request;
+    private Response postresponse;
+    private String userName;
+    private String userJob;
+    //private int userId;
+
+    @Given("The Base URL is set to {string}")
+    public void base_url_is_set_to(String url) {
+        baseUrl = url;
+        request = given().baseUri(baseUrl).header("Content-Type", "application/json");
+    }
+
+    @Given("I have the username {string} and job {string}")
+    public void i_have_the_username_and_job(String name, String job) {
+        userName = name;
+        userJob = job;
+    }
+
+    @When("I post a POST request to register the user")
+    public void i_post_a_post_request_to_register_the_user() {
+        String payload = "{ \"name\": \"" + userName + "\", \"job\": \"" + userJob + "\" }";
+        postresponse = request.body(payload).post("/users");
+    }
+
+    @Then("I should receive status code as {int}")
+    public void i_should_receive_status_code_as(Integer expectedStatus) {
+        postresponse.then().statusCode(expectedStatus);
+    }
+
+    @Then("the response should contain name {string} and job {string}")
+    public void the_response_should_contain_name_and_job(String name, String job) {
+        postresponse.then().body("name", equalTo(name)).body("job", equalTo(job));
+    }
 }
