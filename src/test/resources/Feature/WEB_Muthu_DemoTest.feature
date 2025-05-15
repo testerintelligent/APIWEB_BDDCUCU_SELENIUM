@@ -27,9 +27,9 @@ Scenario: Test the banking operations in customer Registration
     Then I can able to Register successfully
  
 Scenario: Test the banking operations in customer CompDBlogin
-    Given I enter the url of domain CompDataBaselogin
-    When I enter customer credentials of CompDataBaselogin
-    Then I can login domain of CompDBlogin successfully
+    Given I enter the url of domain CompDB1login
+    When I enter customer credentials of CompDB1login
+    Then I can login domain of CompDB1login successfully
  
 Scenario: Test the functionality of Search ComputerDatabase
     Given I enter the url for search the Computer Database

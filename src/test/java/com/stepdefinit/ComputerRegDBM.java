@@ -12,15 +12,15 @@ import io.cucumber.java.en.When;
 
 public class ComputerRegDBM {
      WebDriver driver = new ChromeDriver();
-@Given("I enter the url of domain CompDataBaselogin")
-public void i_enter_the_url_of_domain_CompDataBaselogin() {
+@Given("I enter the url of domain CompDB1login")
+public void i_enter_the_url_of_domain_CompDB1login() {
     // Write code here that turns the phrase above into concrete actions
     driver.get("https://demowebshop.tricentis.com/Login");
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  
     driver.getTitle();
    }
-@When("I enter customer credentials of CompDataBaselogin")
-public void i_enter_customer_credentials_of_CompDataBaselogin() {
+@When("I enter customer credentials of CompDB1login")
+public void i_enter_customer_credentials_of_CompDB1login() {
     // Write code here that turns the phrase above into concrete actions
     
         WebElement Email=driver.findElement(By.xpath("//input[@id='Email']"));
