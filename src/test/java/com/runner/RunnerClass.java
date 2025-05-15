@@ -1,6 +1,7 @@
 package com.runner;
 
 import org.junit.runner.RunWith;
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
@@ -10,10 +11,11 @@ import io.cucumber.junit.CucumberOptions;
     glue = "com.stepdefinit", 
     dryRun = false,
     monochrome = true,
+   
     plugin = { 
         "json:target/cucumber-report/cucumber.json", 
         "html:target/cucumber-report/cucumber.html"
+        }
+    )
+    public class RunnerClass {
     }
-)
-public class RunnerClass {
-}

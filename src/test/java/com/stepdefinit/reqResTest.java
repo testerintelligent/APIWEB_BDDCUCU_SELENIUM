@@ -145,5 +145,14 @@ public void the_response_should_contain_the_updated_name() {
         assertNotNull("Token should not be null", token);
         System.out.println("Generated Token: " + token);
     }
+	@Then("I should get the {int} OK response")
+	public void i_should_get_the_ok_response(Integer int1) {
+	//	assertEquals(statusCode.intValue(), response.getStatusCode());
+   // assertEquals(expectedStatusCode.intValue(), response.getStatusCode());
 
+	}
+	@Then("I should receives a token in response")
+	public void i_should_receives_a_token_in_response() {
+		
+	}
 }
