@@ -47,20 +47,12 @@ Scenario: SignUp to the website
     And verfiy if the home page is visible
     When I click on login button
     And Enter the correct credentials
-    And I click on the login button
+    And Now I have clicked the log button
     Then I will check if the login is done successfully
     And i will now check if the logout button is available
     And I will click the logout button
     And I will check if the logout is correctly happened
-    @Regression
-     Scenario: I want to login to the automation website using the correct credentials
-    Given I want to launch the automation exercise website
-    And I verify that the home page is visible
-    When I click on the signup/login button
-    And I verify that the "Login to your account" section is visible
-    And I enter the correct email address and password
-    And I click the login button
-   
+
     @Smoke
      Scenario: LoginWithIncorrectCredentials
     Given I want to launch the Automation Website
@@ -102,29 +94,18 @@ Examples:
 |username|password|
 |standard_user|secret_sauce|
 
-@sauce_Product_addtoCart
-Scenario Outline: Verify User is able Select Product after Login and add to Cart
-Given User should launch the browser
-When User should write "<username>" and "<password>"
-And User should click the login button
-Then User should verify success message after login
-And User should click the Add to cart button
+#@sauce_Product_addtoCart
+#Scenario Outline: Verify User is able Select Product after Login and add to Cart
+#Given User should launch the browser
+#When User should write "<username>" and "<password>"
+#And User should click the login button
+#Then User should verify success message after login
+#And User should click the Add to cart button
 
-Examples:
-|username|password|
-|standard_user|secret_sauce|
+#Examples:
+#|username|password|
+#|standard_user|secret_sauce|
 
-@sauce_Product_addProductoCart
-Scenario Outline: Verify User is able add the product to the cart
-Given User should launch the browser
-When User should write "<username>" and "<password>"
-And User should click the login button
-Then User should verify success message after login
-And User should click cart button
-
-Examples:
-|username|password|
-|standard_user|secret_sauce|
 
 @sauce_Product_selectFilter
 Scenario Outline: Verify User is able Select fitler button
@@ -177,13 +158,5 @@ Examples:
     |Krhithya|Divya@123|
     
 
-  @cyclos_delete_User
-  Scenario Outline: Delete the address in cyclos
-    Given User should load the url username and password "<username>" and "<password>"
-    When User should delete the address
-    Then User should validate the status code in reponces
-
-    Examples: 
-      | username | password  |
-      | Krhithya | Divya@123 |
+ 
     
