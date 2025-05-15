@@ -55,7 +55,7 @@ public class APIMPost {
     private String userJob;
     //private int userId;
 
-    @Given("Base URL is set to {string}")
+    @Given("The Base URL is set to {string}")
     public void base_url_is_set_to(String url) {
         baseUrl = url;
         request = given().baseUri(baseUrl).header("Content-Type", "application/json");
@@ -67,19 +67,19 @@ public class APIMPost {
         userJob = job;
     }
 
-    @When("I send a POST request to create the user")
-    public void i_send_a_post_request_to_create_the_user() {
+    @When("I post a POST request to register the user")
+    public void i_post_a_post_request_to_register_the_user() {
         String payload = "{ \"name\": \"" + userName + "\", \"job\": \"" + userJob + "\" }";
         postresponse = request.body(payload).post("/users");
     }
 
-    @Then("I should receive a status code of {int}")
-    public void i_should_receive_a_status_code_of(Integer expectedStatus) {
+    @Then("I should receive status code as {int}")
+    public void i_should_receive_status_code_as(Integer expectedStatus) {
         postresponse.then().statusCode(expectedStatus);
     }
 
-    @Then("the response should contain the user with name {string} and job {string}")
-    public void the_response_should_contain_the_user_with_name_and_job(String name, String job) {
+    @Then("the response should contain name {string} and job {string}")
+    public void the_response_should_contain_name_and_job(String name, String job) {
         postresponse.then().body("name", equalTo(name)).body("job", equalTo(job));
     }
 }
