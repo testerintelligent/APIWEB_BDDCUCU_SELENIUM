@@ -6,14 +6,14 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-    features = "src/test/resources/Feature/WEB_Yugi_DemoTest.feature", 
+    features = "src/test/resources/Feature", 
     glue = "com.stepdefinit", 
     dryRun = false,
     monochrome = true,
     plugin = { 
         "json:target/cucumber-report/cucumber.json", 
         "html:target/cucumber-report/cucumber.html"
+        }
+    )
+    public class RunnerClass {
     }
-)
-public class RunnerClass {
-}

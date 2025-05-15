@@ -735,8 +735,8 @@ public void user_should_enters_login_page() {
 @When("User should enter {string} and {string}")
 public void user_should_enter_and(String username, String password) {
 
-	driver.findElement(By.id("username")).sendKeys(username);
-    driver.findElement(By.id("password")).sendKeys(password);
+	driver.findElement(By.id("username")).sendKeys("username");
+    driver.findElement(By.id("password")).sendKeys("password");
    
 }
 @When("User clicks the login buttons")

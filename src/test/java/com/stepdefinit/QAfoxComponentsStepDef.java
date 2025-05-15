@@ -9,13 +9,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import groovy.time.Duration;
 import io.cucumber.java.en.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class QAfoxComponentsStepDef {
 	
 	WebDriver driver = new ChromeDriver();
+	 
 	@Given("the user is on the homepage")
 	public void the_user_is_on_the_homepage() throws InterruptedException {
 		 WebDriverManager.chromedriver().setup();
@@ -48,7 +51,7 @@ public class QAfoxComponentsStepDef {
 	}
 	@When("the user selects List view")
 	public void the_user_selects_list_view() {
-	    driver.findElement(By.xpath("//button[@id=\"list-view\"]")).click();
+	    driver.findElement(By.xpath("//button[@id='list-view']")).click();
 	}
 	@Then("the products should be displayed in list format")
 	public void the_products_should_be_displayed_in_list_format() {
