@@ -16,7 +16,7 @@ pipeline {
 
         stage('Fetch From Github') {
             steps {
-                git branch: 'main',
+                git branch: 'Yugi_BDD',
                     // credentialsId: '', // Add if using private repo
                     url: 'https://github.com/testerintelligent/APIWEB_BDDCUCU_SELENIUM.git'
             }
