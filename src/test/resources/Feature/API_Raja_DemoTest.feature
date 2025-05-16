@@ -1,5 +1,9 @@
 @Smoke
 Feature: API_Raja_DemoTest
+
+Background:
+Given The Base URI is "https://reqres.in"
+
 @Sanity
   Scenario: Fetch Product by ID 
 Given The Fake store API is available
@@ -21,8 +25,11 @@ And the deleted product ID should be 18
 
 
  @Sanity
+
+
+
 Scenario: fetch users from page 1
-Given The Base URI is "https://reqres.in"
+
 When I send GET request to "api/users" with query parameter "page=1"
 Then The Respose Code Should be 200
 And  The ID of the First User Name Should Be 1
