@@ -5,7 +5,7 @@ Background: Check Automation Tester Website
 Given Launch browser and navigate to AutomationTester url
     Then Verify that home page is visible successfully
 
-
+@Sanity
 Scenario: Login user with incorrect email and password
     When Click on Signup button
     Then Verify 'Login to your account' is visible
@@ -13,6 +13,7 @@ Scenario: Login user with incorrect email and password
     And Clicks 'login' button
     And Finally i close the browserrr
 
+@Sanity
     Scenario: Logout user successfully
     When Click on Signup button
    Then Verify 'Login to your account' is visible
@@ -22,6 +23,7 @@ Scenario: Login user with incorrect email and password
     When Click the 'Logout' button
     Then Verify that user is navigated to login page
 
+@Sanity
     Scenario: Signup with an already registered email address
     When Click on Signup button
     And Enter name and already registered email address
@@ -29,6 +31,7 @@ Scenario: Login user with incorrect email and password
     Then Verify error 'Email Address already exist!' is visible
     And Finally i close the browserrr
 
+@Sanity
     Scenario: User should be able to sign up 
     When Click on Signup button
     Then Verify new sign up is visible
@@ -36,11 +39,13 @@ Scenario: Login user with incorrect email and password
     And Click 'Signup' button
     And Finally i close the browserrr
 
+@Sanity
      Scenario: Verify user can navigate to the Test Cases page successfully
     When Click on 'Test Cases' button
     Then Verify user is navigated to test cases page successfully
     And Finally i close the browserrr
 
+@Sanity
     Scenario: Verify Subscription section functionality
     When Scroll down to footer
     Then Verify text 'SUBSCRIPTION'
@@ -48,12 +53,14 @@ Scenario: Login user with incorrect email and password
     Then Verify success message 'You have been successfully subscribed!' is visible
     And Finally i close the browserrr
 
+@Smoke
     Scenario: Submit contact form with message and file upload
     When Click on 'Contact Us' button
     Then Verify 'GET IN TOUCH' is visible
     And Enter name, email, subject and message
     And Finally i close the browserrr
 
+@Sanity
     Scenario: Submit contact form with message and file upload
     When Click on 'Contact Us' button
     Then Verify 'GET IN TOUCH' is visible
@@ -63,7 +70,7 @@ Scenario: Login user with incorrect email and password
     Then Verify success message 'Success! Your details have been submitted successfully.' is visible
     And Click 'Home' button and verify that landed to home page successfully
         And Finally i close the browserrr
-
+@Sanity
         Scenario: Verify search functionality for products
     When Click on 'Products' button
     Then Verify user is navigated to ALL PRODUCTS page successfully
@@ -71,6 +78,7 @@ Scenario: Login user with incorrect email and password
     Then Verify 'SEARCHED PRODUCTS' is visible
     Then Verify all the products related to search are visible
 
+@Sanity
      Scenario: Verify all products and product detail page functionality
     When Click on 'Products' button
     Then Verify user is navigated to ALL PRODUCTS page successfully
@@ -80,6 +88,7 @@ Scenario: Login user with incorrect email and password
     Then Verify that product detail is visible: product name, category, price, availability, condition, brand
     And Finally i close the browserrr
 
+@Sanity
     Scenario: User should be able to sign up 
     When Click on Signup button
     Then Verify new sign up is visible
@@ -87,6 +96,7 @@ Scenario: Login user with incorrect email and password
     And Click 'Signup' button
     And Finally i close the browserrr
 
+@Sanity
     Scenario: Add Products to Cart
     When Click the on 'Products' button
     And Hover over first product and click 'Add to cart'
@@ -97,6 +107,7 @@ Scenario: Login user with incorrect email and password
     And Verify their prices, quantity and total price
     Then Finally i close the browserrr
 
+@Sanity
     Scenario:Verify Subscription in Cart page
     When Click on the 'Cart' button
     And Scroll down to footer
