@@ -24,6 +24,8 @@ Then the response status should be 200
 And the deleted product ID should be 18
 
 
+
+
  @Sanity
 
 
@@ -73,4 +75,22 @@ And  The ID of the First User Name Should Be 1
     Examples:
     |username|password|
     |demo|1234|
+
+    @Sanity
+Scenario Outline: Get List Users of ReqRes Api
+  Given Give the domain name of reqres
+  When send the get request with the resource url of reqres
+  Then validate the response code of reqres
+  Examples:
+    | dummy |
+    | test  |
+
+@Smoke
+Scenario Outline: Get single User of ReqRes Api
+  Given Give the domain name of reqres
+  When send the get request with the single resource url of reqres
+  Then validate the response code get of reqres
+  Examples:
+    | dummy |
+    | test  |
 
