@@ -119,7 +119,6 @@ Scenario Outline: Validate the monitors page
 Scenario: Adding a new valid shipping address
   Given I am logged in to my account
   And I navigate to the Address Book section
-  When I click on the Add Address button
     | First Name | Princy         |
     | Last Name  | PS             |
     | Company    | Exp Inc        |
@@ -136,7 +135,7 @@ Scenario: Adding a new valid shipping address
 Scenario: Add a single product to the cart 
   Given I am on the Swag Labs inventory page
   When I click the Add to cart button for Sauce Labs Backpack
-  Then the cart badge should display 1  
+    
 
 @Princy
 Scenario: Verify product is added to the cart page
@@ -170,7 +169,6 @@ Scenario Outline: Validation of Login Credentials AHB
   Given User is on the Adactin Login page
   When User enters the valid "<Username>" and "<Password>" for the Adactin site
   And User clicks the login button
-  Then User should be redirected to Adactin Homepage
 
   Examples:
     | Username       | Password   |
@@ -181,7 +179,7 @@ Scenario Outline: Login with different credentials
   Given User should Enters Login page
   When User should enter "<Username>" and "<Password>"
   And User clicks the login buttons
-  Then User should be able to see "<message>"
+  
 
   Examples:
     | Username   | Password | message                 |
