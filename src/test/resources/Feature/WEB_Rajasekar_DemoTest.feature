@@ -151,6 +151,30 @@ Scenario: Proceed to login
   And click on the "Login" button
   Then user should be directed to Dashboard page with title "OrangeHRM"
 
+    @Sanity
+  Scenario: Verify slider updates the displayed value correctly
+    Given I open the slider webpage
+    When I move the slider to "0.5"
+    Then I should see the displayed value as "0.5"
+    When I move the slider to "2.5"
+    Then I should see the displayed value as "2.5"
+    When I move the slider to "5"
+    Then I should see the displayed value as "5"
+
+     @Smoke
+  Scenario Outline: Verify key press events
+    Given I am on the Key Press page
+    When I press the "<key>" key
+    Then I should see the message "You Entered: <key>"
+
+    Examples:
+      | key     |
+      | TAB     |
+      | ENTER   |
+      | ESCAPE  |
+      | ALT     |
+      | SHIFT   |
+
 @Sanity
 Scenario: Login as Admin with credentials 
   Given The user should be login page
@@ -195,3 +219,11 @@ Scenario Outline: Toggle checkbox selection
     | index | state  | expectedState |
     | 1     | check  | checked       |
     | 2     | uncheck| unchecked     |
+
+    @Sanity
+	Scenario: Adding an item to the cart
+    Given I navigate to the shopping page
+    When I select a product
+    And I choose the size, color, and quantity
+    And I add the product to the cart
+    Then I should be redirected to the shopping cart page
