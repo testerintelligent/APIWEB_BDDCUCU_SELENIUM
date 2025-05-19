@@ -65,13 +65,13 @@ Feature: API_Yugi_DemoTest
     Then I should receive a status code of 200
 
     
-@Vinay
+@Smoke
   Scenario: Create the address in cyclos
     Given User should load the url username
     When User should create the address
     Then User should validate the status codes
 
-  @Vinay
+  @Regression
   Scenario Outline: Get the address in cyclos
     Given User should load the url username,password "<username>" and "<password>"
     When User should get the address
@@ -86,7 +86,7 @@ Feature: API_Yugi_DemoTest
       | Krhithya | Divya@123 |
 
 
-  @Vinay
+  @Sanity
   Scenario Outline: Verify the cyclos site address
     Given User should load the url cyclos
     When User should enter the username and password "<username>" and "<password>"
@@ -99,7 +99,7 @@ Feature: API_Yugi_DemoTest
     |username|password|
     |Krhithya|Divya@123|
 
-     @cyclos_delete_User
+     @Regression
   Scenario Outline: Delete the address in cyclos
     Given User should load the url username and password "<username>" and "<password>"
     When User should delete the address
