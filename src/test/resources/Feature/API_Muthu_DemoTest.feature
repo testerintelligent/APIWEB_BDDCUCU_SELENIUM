@@ -82,6 +82,18 @@ Feature: API_Muthu_DemoTest
     Then the response status codes should be 201
     And the response should contain the user ID and creation timestamp
 
+@Smoke
+Scenario Outline: Verify the cyclos site address
+    Given User should load the url cyclos
+    When User should enter the username and password "<username>" and "<password>"
+    And User should navigate to profile
+    # Then User should validate the name
+    # And User should validate the city
+    # And User should validate the state
+
+    Examples:
+    |username|password|
+    |Krhithya|Divya@123|
 
 @Smoke   
   Scenario: Put request to update user details
