@@ -21,6 +21,7 @@ public class PS02_PostApiStepDef {
     public void i_send_post_request_to_endpoint_with_body(String endpoint, String body) {
         reqspec = RestAssured
                     .given()
+                    .header("x-api-key", "reqres-free-v1")
                     .header("Content-Type", "application/json")
                     .body(body);
 
