@@ -18,7 +18,7 @@ Scenario: Checkout Process
   And User input the last name
   And User input the Zipcode
   And User Click the continue button
-  Then User Click finish button
+  
 
 @Regression
 Scenario: Add to Cart
