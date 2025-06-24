@@ -1,5 +1,5 @@
 @MuthuAPI
-Feature: API_Muthu_DemoTest
+Feature: API_Muthu_DemoTest_ReqRes
 
   Background:
     Given The Base URL is set to "https://jsonplaceholder.typicode.com"
@@ -119,3 +119,51 @@ Scenario Outline: Verify the cyclos site address
     When I send a GET request to "/api/users/2" 
     Then the response status code should be 200 
     And the response should contain user detail
+
+@Sanity
+Scenario: Get List Users of ReqRes Api
+Given Give the domain name of reqres
+When send the get request with the resource url of reqres
+Then validate the response code of reqres
+
+
+@Smoke
+Scenario: Get single User of ReqRes Api
+Given Give the domain name of reqres
+When send the get request with the single resource url of reqres
+Then validate the response code get of reqres
+
+
+@Smoke
+Scenario: Get single user not found of ReqRes Api
+Given Give the domain name of reqres
+When send get request in server of reqres
+Then validate the negative response code of reqres
+
+
+@Smoke
+Scenario: Get delayed response of ReqRes Api
+Given Give the domain name of reqres
+When Get delayed response in server of reqres
+Then validate the response code of reqres
+
+@Smoke
+Scenario: delete a User of ReqRes Api
+Given Give the domain name of reqres
+When delete user in server of reqres
+Then validate the delete response code of reqres
+
+
+@Smoke
+Scenario: Update user name successfully
+Given I have the user ID and new user name
+When I send a Patch request to update user details
+Then The response should contain the updated name
+ 
+ 
+@Smoke
+Scenario: verified with valid credentials
+Given I set base URI
+When I send POST request to /auth with valid credential
+Then I should get the 200 OK response
+And I should receives a token in response
