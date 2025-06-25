@@ -173,7 +173,7 @@ And I should receives a token in response
 
 
 @Sanity
-  Scenario: Fetch Product by ID 
+Scenario: Fetch Product by ID 
 Given The Fake store API is available
 When I fetch the Product
 Then The response should be 200
@@ -190,6 +190,8 @@ Scenario: Delete product with ID 18
 When I send a DELETE request for product ID 18
 Then the response status should be 200
 And the deleted product ID should be 18
+
+
 
 
  @Sanity
@@ -228,4 +230,35 @@ And  The ID of the First User Name Should Be 1
     Given The API is up
     When I send GET request to "/api/users" with path parameter id as 2
     Then The response status code should will be 200
+
+  @Smoke
+  Scenario Outline: Verify the cyclos site address
+    Given User should load the url cyclos
+    When User should enter the username and password "<username>" and "<password>"
+    And User should navigate to profile
+    # Then User should validate the name
+    # And User should validate the city
+    # And User should validate the state
+
+    Examples:
+    |username|password|
+    |demo|1234|
+
+    @Sanity
+Scenario Outline: Get List Users of ReqRes Api
+  Given Give the domain name of reqres
+  When send the get request with the resource url of reqres
+  Then validate the response code of reqres
+  Examples:
+    | dummy |
+    | test  |
+
+@Smoke
+Scenario Outline: Get single User of ReqRes Api
+  Given Give the domain name of reqres
+  When send the get request with the single resource url of reqres
+  Then validate the response code get of reqres
+  Examples:
+    | dummy |
+    | test  |
 
