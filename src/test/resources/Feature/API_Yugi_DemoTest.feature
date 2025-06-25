@@ -1,4 +1,4 @@
-Feature: API_Yugi_DemoTest
+Feature: API_jsonplaceholder_DemoTest
 
   Background:
     Given Base URL is set to "https://jsonplaceholder.typicode.com"
