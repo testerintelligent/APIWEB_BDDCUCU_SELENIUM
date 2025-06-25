@@ -91,6 +91,7 @@ public void i_send_a_put_request_to_update_product(Integer int1) {
 
                 response = given()
                 .header("Content-Type", "application/json")
+                .header("x-api-key", "reqres-free-v1")
                 .body(body)
                 .when()
                 .put("/products/18");
