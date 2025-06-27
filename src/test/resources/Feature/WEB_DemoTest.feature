@@ -1,4 +1,3 @@
-@Muthu
 Feature: WEB_DemoTest
 
 Background: Check Automation Tester Website
@@ -580,7 +579,7 @@ Scenario: Add a single product to the cart
   When I click the Add to cart button for Sauce Labs Backpack
     
 
-@Princy
+@Smoke
 Scenario: Verify product is added to the cart page
   Given I have added "Sauce Labs Backpack" to the cart
   When I click the cart icon
