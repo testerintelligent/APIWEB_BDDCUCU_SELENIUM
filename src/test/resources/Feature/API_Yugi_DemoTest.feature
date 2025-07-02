@@ -3,6 +3,12 @@ Feature: API_jsonplaceholder_DemoTest
   Background:
     Given Base URL is set to "https://jsonplaceholder.typicode.com"
 
+
+
+  Scenario: Add numbers
+    When I add 2 and 3
+    Then the result should be 5
+
  @Smoke
   Scenario: Create a new user with name and job
     Given I have the user name "morpheus" and job "leader"
@@ -108,7 +114,6 @@ Feature: API_jsonplaceholder_DemoTest
     Examples: 
       | username | password  |
       | Krhithya | Divya@123 |
-
 
 
 
