@@ -5,45 +5,27 @@ pipeline {
 
         stage('Clean Workspace') {
             steps {
-                sleep(time: 3, unit: "SECONDS")
-                echo "Clean Existing Workspace"
-                echo "JENKINS_HOME: $JENKINS_HOME"
-                echo "WORKSPACE: $WORKSPACE"
+                echo "Cleaning workspace"
                 cleanWs()
-                sleep(time: 3, unit: "SECONDS")
             }
         }
 
-        stage('Fetch From Github') {
+        stage('Checkout Code') {
             steps {
                 git branch: 'main',
-                    // credentialsId: '', // Add if using private repo
                     url: 'https://github.com/testerintelligent/APIWEB_BDDCUCU_SELENIUM.git'
             }
         }
 
-        stage('Execution') {
+        stage('Build and Test') {
             steps {
-                bat 'mvn clean install'
-                sleep(time: 5, unit: "SECONDS")
-                bat 'mvn test -Dtest=com.runner.RunnerClass'
+                bat 'mvn clean verify -Dtest=com.runner.RunnerClass'
             }
         }
 
         stage('Verify Report File') {
             steps {
                 bat 'dir target\\cucumber-report'
-            }
-        }
-         stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
-        stage('Build and Test') {
-            steps {
-                sh 'mvn clean verify'
             }
         }
 
@@ -59,8 +41,10 @@ pipeline {
 
     post {
         always {
-            sleep(time: 3, unit: "SECONDS")
+            echo 'Publishing test and cucumber reports...'
+
             junit '**/target/surefire-reports/*.xml'
+
             cucumber buildStatus: 'UNCHANGED',
                      jsonReportDirectory: 'target/cucumber-report',
                      fileIncludePattern: 'cucumber.json',
