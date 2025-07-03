@@ -3,11 +3,12 @@ package com.stepdefinit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.example.Pom.paraBank;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import com.Pom.paraBank;
 
 public class RegisterAndLogin {
     WebDriver driver;

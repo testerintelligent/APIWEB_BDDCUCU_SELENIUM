@@ -1,10 +1,12 @@
 package com.stepdefinit;
 
 import io.cucumber.java.en.*;
-import com.Pom.AutomationExercise;
+
 import org.openqa.selenium.WebDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.example.Pom.AutomationExercise;
 
 public class RegisterUser {
     WebDriver driver;

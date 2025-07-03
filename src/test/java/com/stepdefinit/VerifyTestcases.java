@@ -3,7 +3,8 @@ package com.stepdefinit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import com.Pom.AutomationExercise;
+import com.example.Pom.AutomationExercise;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,7 +12,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class VerifyTestcases {
 	WebDriver driver;
-	 com.Pom.AutomationExercise AE;
+	 com.example.Pom.AutomationExercise AE;
 	
 	@Given("I want to launch the automation website")
 	public void i_want_to_launch_the_automation_website() {

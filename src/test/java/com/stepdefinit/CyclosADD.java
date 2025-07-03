@@ -10,8 +10,8 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
-import com.Pom.Cyclos;
-import com.resources.BaseClass;
+import com.example.Pom.Cyclos;
+import com.example.resources.BaseClass;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

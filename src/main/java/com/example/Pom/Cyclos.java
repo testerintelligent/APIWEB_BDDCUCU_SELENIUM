@@ -1,10 +1,10 @@
-package com.Pom;
+package com.example.Pom;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.resources.BaseClass;
+import com.example.resources.BaseClass;
 
 //Inheritance - Cyclos is inherited from SuperClass(BaseClass.java)
 public class Cyclos extends BaseClass{

@@ -1,12 +1,12 @@
-package com.Pom;
+package com.example.Pom;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.resources.BaseClass;
+import com.example.resources.BaseClass;
 
-//Inheritance - SauceCart is inherited from SuperClass(BaseClass.java)
+//Inheritance - SauceCart is inherited from cleanSuperClass(BaseClass.java)
 public class SauceCart extends BaseClass {
 	public SauceCart() {  //Constructor - Instance of a class 
 		PageFactory.initElements(driver, this);  //PageFactory is being intialized here

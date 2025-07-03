@@ -1,4 +1,4 @@
-package com.resources;
+package com.example.resources;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;

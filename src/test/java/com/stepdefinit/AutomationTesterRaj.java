@@ -18,8 +18,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.Pom.BookingHotel;
-import com.Pom.SauceDemoelement;
+import com.example.Pom.BookingHotel;
+import com.example.Pom.SauceDemoelement;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -32,7 +32,7 @@ public class AutomationTesterRaj {
 	WebDriver driver = new ChromeDriver();
 
 	BookingHotel booking = new BookingHotel(driver);
-	com.Pom.PracticePage practice; 
+	com.example.Pom.PracticePage practice; 
     SauceDemoelement sauce = new  SauceDemoelement(driver);
 
 
@@ -312,7 +312,7 @@ public class AutomationTesterRaj {
 	public void user_lauch_the_automation_practice() {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
-		practice = new com.Pom.PracticePage(driver);
+		practice = new com.example.Pom.PracticePage(driver);
 		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  
 

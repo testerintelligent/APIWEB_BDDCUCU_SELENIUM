@@ -1,9 +1,10 @@
-package com.Pom;
+package com.example.Pom;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import com.resources.BaseClass;
+
+import com.example.resources.BaseClass;
 
 //Inheritance - SaucePro is inherited from SuperClass(BaseClass.java)
 public class SaucePro extends BaseClass {

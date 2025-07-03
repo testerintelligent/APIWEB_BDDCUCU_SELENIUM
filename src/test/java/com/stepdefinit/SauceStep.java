@@ -1,15 +1,14 @@
 package com.stepdefinit;
 
-import com.Pom.SauceLogin;
-import com.Pom.SaucePro;
-
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.Pom.SauceCart;
-import com.resources.BaseClass;
+import com.example.Pom.SauceCart;
+import com.example.Pom.SauceLogin;
+import com.example.Pom.SaucePro;
+import com.example.resources.BaseClass;
 
 import io.cucumber.java.en.*;
 import io.cucumber.messages.types.Duration;

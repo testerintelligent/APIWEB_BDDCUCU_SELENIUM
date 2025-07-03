@@ -3,7 +3,7 @@ package com.stepdefinit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import com.Pom.DemoBlazePom;
+import com.example.Pom.DemoBlazePom;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

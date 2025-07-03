@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import com.Pom.AutomationExercise;
+import com.example.Pom.AutomationExercise;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;

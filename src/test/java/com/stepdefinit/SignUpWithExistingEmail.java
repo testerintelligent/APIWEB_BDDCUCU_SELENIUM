@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import com.Pom.*;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -14,7 +14,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class SignUpWithExistingEmail {
 	
 	WebDriver driver;
-	com.Pom.AutomationExercise AE;
+	com.example.Pom.AutomationExercise AE;
 	
 	@Given("I want to launch the Automation Exercise website")
 	public void i_want_to_launch_the_automation_exercise_website() {
@@ -22,7 +22,7 @@ public class SignUpWithExistingEmail {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        AE = new com.Pom.AutomationExercise(driver);  // Initialize AE with WebDriver
+        AE = new com.example.Pom.AutomationExercise(driver);  // Initialize AE with WebDriver
         driver.get("https://automationexercise.com");
 	}
 
