@@ -35,11 +35,32 @@ pipeline {
                 bat 'dir target\\cucumber-report'
             }
         }
+         stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build and Test') {
+            steps {
+                sh 'mvn clean verify'
+            }
+        }
+
+        stage('Publish JaCoCo Coverage') {
+            steps {
+                jacoco execPattern: '**/target/jacoco.exec',
+                       classPattern: '**/target/classes',
+                       sourcePattern: '**/src/main/java',
+                       exclusionPattern: '**/target/test-classes'
+            }
+        }
     }
 
     post {
         always {
             sleep(time: 3, unit: "SECONDS")
+            junit '**/target/surefire-reports/*.xml'
             cucumber buildStatus: 'UNCHANGED',
                      jsonReportDirectory: 'target/cucumber-report',
                      fileIncludePattern: 'cucumber.json',
