@@ -29,14 +29,6 @@ pipeline {
             }
         }
 
-        stage('Publish JaCoCo Coverage') {
-            steps {
-                jacoco execPattern: '**/target/jacoco.exec',
-                       classPattern: '**/target/classes',
-                       sourcePattern: '**/src/main/java',
-                       exclusionPattern: '**/target/test-classes'
-            }
-        }
     }
 
     post {
@@ -51,6 +43,14 @@ pipeline {
                      reportTitle: 'BDD Report',
                      sortingMethod: 'ALPHABETICAL',
                      trendsLimit: 5
+
+
+                jacoco execPattern: '**/target/jacoco.exec',
+                       classPattern: '**/target/classes',
+                       sourcePattern: '**/src/main/java',
+                       exclusionPattern: '**/target/test-classes'
+
+
         }
     }
 }
