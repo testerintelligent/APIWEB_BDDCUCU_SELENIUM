@@ -102,7 +102,7 @@ Scenario: To view all the front end back end apps
     Then I can able to see all the apps
  
 
- @Smoke
+ @Regression
   Scenario Outline: Login with valid credentials
   Given I navigate to the login page
     When I enter username "<Username>" and password "<Password>"
