@@ -45,9 +45,9 @@ pipeline
                Thread.sleep(8000)  // 8000 milliseconds = 8 seconds
            }
         
-            
-           publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, icon: '', keepAll: true, reportDir: 'target/site/jacoco/', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: 'JacacoReport', useWrapperFileDirectly: true])
-           
+           sucess {
+           publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: 'target/site/jacoco/', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: 'JacacoReport', useWrapperFileDirectly: true])
+        }
            script {
                println "Sleeping using Thread.sleep"
                Thread.sleep(8000)  // 8000 milliseconds = 8 seconds
