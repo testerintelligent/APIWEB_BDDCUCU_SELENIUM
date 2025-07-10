@@ -30,10 +30,19 @@ pipeline {
         }
 
     }
-
+  stage('Code Coverage') {
+            steps {
+                // Record JaCoCo coverage report
+                jacoco(execPattern: '**/target/*.exec', classPattern: '**/target/classes', sourcePattern: '**/src/main/java', exclusionPattern: '')
+            }
+        }
+    
     post {
         
-              
+        //   always {
+        //     // Publish JaCoCo report
+        //     jacoco()
+        // }    
 
         always {
             echo 'Publishing test and cucumber reports...'
@@ -50,7 +59,7 @@ pipeline {
                      sortingMethod: 'ALPHABETICAL',
                      trendsLimit: 5
 
-
+ jacoco()
 		recordCoverage(tools: [[parser: 'JACOCO']],
         	id: 'jacoco', name: 'JaCoCo Coverage',
         	sourceCodeRetention: 'EVERY_BUILD',
