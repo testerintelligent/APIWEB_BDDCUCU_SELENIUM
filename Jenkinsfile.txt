@@ -1,81 +1,221 @@
-pipeline 
-{
-    agent { label 'WinNode' }
+// pipeline 
+// {
+//     agent { label 'WinNode' }
 
-    stages {
+//     stages {
 
-        stage('Clean Workspace') {
-            steps {
-                echo "Cleaning workspace"
-                cleanWs()
-            }
-        }
+//         stage('Clean Workspace') {
+//             steps {
+//                 echo "Cleaning workspace"
+//                 cleanWs()
+//             }
+//         }
 
-        stage('Checkout Code') {
-            steps {
-                git branch: 'main',
-                    url: 'https://github.com/testerintelligent/APIWEB_BDDCUCU_SELENIUM.git'
-            }
-        }
+//         stage('Checkout Code') {
+//             steps {
+//                 git branch: 'main',
+//                     url: 'https://github.com/testerintelligent/APIWEB_BDDCUCU_SELENIUM.git'
+//             }
+//         }
 
-        stage('Build and Test') {
-            steps {
-                bat 'mvn clean verify -Dtest=com.runner.RunnerClass'
-            }
-        }
-        stage('Verify Report File') {
-            steps {
-                bat 'dir target\\cucumber-report'
-            }
-        }
-        stage('Publish Jacoco HTML Report') {
-            steps {
-                publishHTML([
-                    allowMissing: false,
-                    reportDir: 'target/site/jacoco', // Path to your report folder
-                    reportFiles: 'index.html',         // Main report file
-                    reportName: 'Custom Test Report',  // Name shown in Jenkins UI
-                    keepAll: true,                     // Keep reports for all builds
-                    alwaysLinkToLastBuild: true        // Link to latest report
-                ])
-            }
-        }
+//         stage('Build and Test') {
+//             steps {
+//                 bat 'mvn clean verify -Dtest=com.runner.RunnerClass'
+//             }
+//         }
+//         stage('Verify Report File') {
+//             steps {
+//                 bat 'dir target\\cucumber-report'
+//             }
+//         }
+//         // stage('Publish Jacoco HTML Report') {
+//         //     steps {
+//         //         publishHTML([
+//         //             allowMissing: false,
+//         //             reportDir: 'target/site/jacoco', // Path to your report folder
+//         //             reportFiles: 'index.html',         // Main report file
+//         //             reportName: 'Custom Test Report',  // Name shown in Jenkins UI
+//         //             keepAll: true,                     // Keep reports for all builds
+//         //             alwaysLinkToLastBuild: true        // Link to latest report
+//         //         ])
+//         //     }
+//         // }
 
         
+
+//     }
+ 
+    
+//     post {
+        
+//         always {
+//             echo 'Publishing test and cucumber reports...'
+
+
+//         script {
+//               println "Sleeping using Thread.sleep"
+//                Thread.sleep(8000)  // 5000 milliseconds = 5 seconds
+//            }
+        
+            
+//            publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, icon: '', keepAll: true, reportDir: 'target/site/jacoco', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+           
+//            script {
+//                println "Sleeping using Thread.sleep"
+//                Thread.sleep(8000)  // 5000 milliseconds = 5 seconds
+//            }
+
+
+//           junit '**/target/surefire-reports/*.xml'
+        
+//             cucumber buildStatus: 'UNCHANGED',
+//                      jsonReportDirectory: 'target/cucumber-report',
+//                      fileIncludePattern: 'cucumber.json',
+//                      reportTitle: 'BDD Report',
+//                      sortingMethod: 'ALPHABETICAL',
+//                      trendsLimit: 5
+
+//         }
+
+//     }
+// }
+
+pipeline {
+
+    agent { label 'WinNode' }
+ 
+    stages {
+ 
+        stage('Clean Workspace') {
+
+            steps {
+
+                echo "Cleaning workspace"
+
+                cleanWs()
+
+            }
+
+        }
+ 
+        stage('Checkout Code') {
+
+            steps {
+
+                git branch: 'main',
+
+                    url: 'https://github.com/testerintelligent/APIWEB_BDDCUCU_SELENIUM.git'
+
+            }
+
+        }
+ 
+        stage('Build and Test') {
+
+            steps {
+
+                bat 'mvn clean verify -Dtest=com.runner.RunnerClass'
+
+            }
+
+        }
+ 
+        stage('Verify Report File') {
+
+            steps {
+
+                script {
+
+                    def reportExists = fileExists('target/cucumber-report/cucumber.json')
+
+                    echo "Cucumber report exists: ${reportExists}"
+
+                    bat 'dir target\\cucumber-report'
+
+                }
+
+            }
+
+        }
+ 
+        stage('Publish Jacoco HTML Report') {
+
+            steps {
+
+                publishHTML([
+
+                    allowMissing: false,
+
+                    reportDir: 'target/site/jacoco', // Path to your report folder
+
+                    reportFiles: 'index.html',       // Main report file
+
+                    reportName: 'Code Coverage Report',
+
+                    keepAll: true,
+
+                    alwaysLinkToLastBuild: true
+
+                ])
+
+            }
+
+        }
 
     }
  
-    
     post {
-        
+
         always {
+
             echo 'Publishing test and cucumber reports...'
+ 
+            script {
 
+                echo "Sleeping for 8 seconds"
 
-        script {
-              println "Sleeping using Thread.sleep"
-               Thread.sleep(8000)  // 5000 milliseconds = 5 seconds
-           }
-        
-            
-          // publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, icon: '', keepAll: true, reportDir: 'target/site/jacoco', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
-           
-           script {
-               println "Sleeping using Thread.sleep"
-               Thread.sleep(8000)  // 5000 milliseconds = 5 seconds
-           }
+                sleep time: 8, unit: 'SECONDS'
 
+            }
+ 
+            junit '**/target/surefire-reports/*.xml'
+ 
+            script {
 
-          junit '**/target/surefire-reports/*.xml'
-        
-            cucumber buildStatus: 'UNCHANGED',
-                     jsonReportDirectory: 'target/cucumber-report',
-                     fileIncludePattern: 'cucumber.json',
-                     reportTitle: 'BDD Report',
-                     sortingMethod: 'ALPHABETICAL',
-                     trendsLimit: 5
+                if (fileExists('target/cucumber-report/cucumber.json')) {
+
+                    cucumber buildStatus: 'UNCHANGED',
+
+                             jsonReportDirectory: 'target/cucumber-report',
+
+                             fileIncludePattern: 'cucumber.json',
+
+                             reportTitle: 'BDD Report',
+
+                             sortingMethod: 'ALPHABETICAL',
+
+                             trendsLimit: 5
+
+                } else {
+
+                    echo "Cucumber JSON report not found"
+
+                }
+
+            }
+ 
+            script {
+
+                echo "Sleeping again for 8 seconds"
+
+                sleep time: 8, unit: 'SECONDS'
+
+            }
 
         }
 
     }
+
 }
+
+ 
