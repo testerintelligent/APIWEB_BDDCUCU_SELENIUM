@@ -1,4 +1,5 @@
-pipeline {
+pipeline 
+{
     agent { label 'WinNode' }
 
     stages {
@@ -38,11 +39,12 @@ pipeline {
             echo 'Publishing test and cucumber reports...'
 
            junit '**/target/surefire-reports/*.xml'
+        
            script {
                println "Sleeping using Thread.sleep"
                Thread.sleep(5000)  // 5000 milliseconds = 5 seconds
            }
-        }
+        
             
            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: 'target/site/jacoco', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
            
@@ -61,5 +63,5 @@ pipeline {
                      trendsLimit: 5
 
         }
-    }
+    
 }
