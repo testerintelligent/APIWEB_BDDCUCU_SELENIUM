@@ -23,6 +23,11 @@ pipeline
                 bat 'mvn clean verify -Dtest=com.runner.RunnerClass'
             }
         }
+        stage('Verify Report File') {
+            steps {
+                bat 'dir target\\cucumber-report'
+            }
+        }
         stage('Publish Jacoco HTML Report') {
             steps {
                 publishHTML([
@@ -36,11 +41,7 @@ pipeline
             }
         }
 
-        stage('Verify Report File') {
-            steps {
-                bat 'dir target\\cucumber-report'
-            }
-        }
+        
 
     }
  
