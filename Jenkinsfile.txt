@@ -36,34 +36,39 @@ pipeline
 
     post {
 
-        always {
-            echo 'Publishing test and cucumber reports...'
 
-
-        script {
-              println "Sleeping using Thread.sleep"
-               Thread.sleep(8000)  // 8000 milliseconds = 8 seconds
-           }
-        
-           success {
+         success {
            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: 'target/site/jacoco/', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: 'JacacoReport', useWrapperFileDirectly: true])
         }
-           script {
-               println "Sleeping using Thread.sleep"
-               Thread.sleep(8000)  // 8000 milliseconds = 8 seconds
-           }
+
+        // always {
+        //     echo 'Publishing test and cucumber reports...'
 
 
-          junit '**/target/surefire-reports/*.xml'
+        // script {
+        //       println "Sleeping using Thread.sleep"
+        //        Thread.sleep(8000)  // 8000 milliseconds = 8 seconds
+        //    }
         
-            cucumber buildStatus: 'UNCHANGED',
-                     jsonReportDirectory: 'target/cucumber-report',
-                     fileIncludePattern: 'cucumber.json',
-                     reportTitle: 'BDD Report',
-                     sortingMethod: 'ALPHABETICAL',
-                     trendsLimit: 5
+        //    success {
+        //    publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: 'target/site/jacoco/', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: 'JacacoReport', useWrapperFileDirectly: true])
+        // }
+        //    script {
+        //        println "Sleeping using Thread.sleep"
+        //        Thread.sleep(8000)  // 8000 milliseconds = 8 seconds
+        //    }
 
-        }
+
+        //   junit '**/target/surefire-reports/*.xml'
+        
+        //     cucumber buildStatus: 'UNCHANGED',
+        //              jsonReportDirectory: 'target/cucumber-report',
+        //              fileIncludePattern: 'cucumber.json',
+        //              reportTitle: 'BDD Report',
+        //              sortingMethod: 'ALPHABETICAL',
+        //              trendsLimit: 5
+
+        // }
 
     }
 }
