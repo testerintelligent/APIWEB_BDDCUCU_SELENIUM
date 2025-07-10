@@ -41,7 +41,7 @@ pipeline {
            junit '**/target/surefire-reports/*.xml'
 
 
-           publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: '*/target/site/jacaco', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+           publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: 'target/site/jacaco', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
 
             cucumber buildStatus: 'UNCHANGED',
                      jsonReportDirectory: 'target/cucumber-report',
