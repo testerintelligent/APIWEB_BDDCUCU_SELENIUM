@@ -38,9 +38,7 @@ pipeline {
         always {
             echo 'Publishing test and cucumber reports...'
 
-            jacaco()
-
-            junit '**/target/surefire-reports/*.xml'
+           junit '**/target/surefire-reports/*.xml'
 
             cucumber buildStatus: 'UNCHANGED',
                      jsonReportDirectory: 'target/cucumber-report',
