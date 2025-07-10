@@ -28,26 +28,12 @@ pipeline
                 bat 'dir target\\cucumber-report'
             }
         }
-        // stage('Publish Jacoco HTML Report') {
-        //     steps {
-        //         publishHTML([
-        //             allowMissing: false,
-        //             reportDir: 'target/site/jacoco', // Path to your report folder
-        //             reportFiles: 'index.html',         // Main report file
-        //             reportName: 'Custom Test Report',  // Name shown in Jenkins UI
-        //             keepAll: true,                     // Keep reports for all builds
-        //             alwaysLinkToLastBuild: true        // Link to latest report
-        //         ])
-        //     }
-        // }
-
-        
 
     }
- 
-    
+
+
     post {
-        
+
         always {
             echo 'Publishing test and cucumber reports...'
 
