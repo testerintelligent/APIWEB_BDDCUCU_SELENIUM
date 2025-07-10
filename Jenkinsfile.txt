@@ -28,12 +28,12 @@ pipeline {
                 bat 'dir target\\cucumber-report'
             }
         }
- stage('Code Coverage') {
-            steps {
-                // Record JaCoCo coverage report
-                jacoco(execPattern: '**/target/*.exec', classPattern: '**/target/classes', sourcePattern: '**/src/main/java', exclusionPattern: '')
-            }
-        }
+//  stage('Code Coverage') {
+//             steps {
+//                 // Record JaCoCo coverage report
+//                 jacoco(execPattern: '**/target/*.exec', classPattern: '**/target/classes', sourcePattern: '**/src/main/java', exclusionPattern: '')
+//             }
+//         }
     }
  
     
@@ -59,7 +59,7 @@ pipeline {
                      sortingMethod: 'ALPHABETICAL',
                      trendsLimit: 5
 
- jacoco()
+//  jacoco()
 		recordCoverage(tools: [[parser: 'JACOCO']],
         	id: 'jacoco', name: 'JaCoCo Coverage',
         	sourceCodeRetention: 'EVERY_BUILD',
