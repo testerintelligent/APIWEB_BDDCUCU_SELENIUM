@@ -11,8 +11,6 @@ import io.cucumber.junit.CucumberOptions;
     glue = "com.stepdefinit", 
     dryRun = false,
     monochrome = true,
-    tags = "@Smoke
-
     plugin = { 
         "json:target/cucumber-report/cucumber.json", 
         "html:target/cucumber-report/cucumber.html"
