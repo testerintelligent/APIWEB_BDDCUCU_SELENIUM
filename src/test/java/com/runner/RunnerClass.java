@@ -14,8 +14,7 @@ import io.cucumber.junit.CucumberOptions;
     plugin = { 
         "json:target/cucumber-report/cucumber.json", 
         "html:target/cucumber-report/cucumber.html"
-    },
-    tags = "@SmokeTest"
+    }
 )
 public class RunnerClass {
 }
