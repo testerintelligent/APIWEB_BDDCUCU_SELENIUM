@@ -5,20 +5,20 @@ Background:
 Given The Base URI is "https://reqres.in"
 And The Base URL is set to "https://jsonplaceholder.typicode.com"
 
- @Smoke
+ @Smoke @SmokeTest
   Scenario: Create a new user with name and job
     Given I have the username "morpheus" and job "leader"
     When I post a POST request to register the user
     Then I should receive status code as 201
     And the response should contain name "morpheus" and job "leader"
 
-@Sanity
+@Sanity @SmokeTest
   Scenario: Get single User of ReqRes Api
     Given Give the domain name of reqres
     When send the get request with the single resource url of reqres
     Then validate the response code get of reqres
 
-@Smoke
+@Smoke @SmokeTest
   Scenario: delete a User of ReqRes Api
     Given Give the domain name of reqres
     When delete user in server of reqres
