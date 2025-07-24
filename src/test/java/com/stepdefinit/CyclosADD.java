@@ -143,7 +143,8 @@ public class CyclosADD extends BaseClass {
 	public void user_should_load_the_url_cyclos() {
 		LaunchBrowser();
 		LaunchURL("https://demo.cyclos.org/ui/home");
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		// driver.manage().timeouts().implicitlyWait(null)(15, TimeUnit.SECONDS);
+		System.out.println("cycols url successfully done");
 	}
 
 	@When("User should enter the username and password {string} and {string}")

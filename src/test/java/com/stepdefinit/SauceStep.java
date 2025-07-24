@@ -24,7 +24,7 @@ public class SauceStep extends BaseClass {
 	public void user_should_launch_the_browser() {
 	  LaunchBrowser();
 	  LaunchURL("https://www.saucedemo.com/");
-	  driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	//   driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 
 	@When("User should write {string} and {string}")
