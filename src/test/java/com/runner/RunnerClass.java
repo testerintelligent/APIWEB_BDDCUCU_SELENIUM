@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-    features = "src/test/resources/Feature", 
+    features = "src/test/resources/Feature/API_React_APP.feature", 
     glue = "com.stepdefinit", 
     dryRun = false,
     monochrome = true,
