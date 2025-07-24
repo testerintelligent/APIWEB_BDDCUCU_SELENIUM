@@ -46,22 +46,19 @@ pipeline
            }
         
            
-          // publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: 'target/site/jacoco/', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: 'JacacoReport', useWrapperFileDirectly: false])
+          
         
-        //    script {
-        //        println "Sleeping using Thread.sleep"
-        //        Thread.sleep(8000)  // 8000 milliseconds = 8 seconds
-        //    }
+       
 
 
-        //   junit '**/target/surefire-reports/*.xml'
+          junit '**/target/surefire-reports/*.xml'
         
-        //     cucumber buildStatus: 'UNCHANGED',
-        //              jsonReportDirectory: 'target/cucumber-report',
-        //              fileIncludePattern: 'cucumber.json',
-        //              reportTitle: 'BDD Report',
-        //              sortingMethod: 'ALPHABETICAL',
-        //              trendsLimit: 5
+            cucumber buildStatus: 'UNCHANGED',
+                     jsonReportDirectory: 'target/cucumber-report',
+                     fileIncludePattern: 'cucumber.json',
+                     reportTitle: 'BDD Report',
+                     sortingMethod: 'ALPHABETICAL',
+                     trendsLimit: 5
 
         }
 
