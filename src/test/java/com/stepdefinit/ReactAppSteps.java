@@ -13,6 +13,7 @@ public class ReactAppSteps {
 
     private String endpoint;
     private Response response;
+	protected String trainingId;
 
     @Given("the training API endpoint is {string}")
     public void the_training_api_endpoint_is(String endpoint) {
@@ -52,7 +53,7 @@ public class ReactAppSteps {
     }
 
     @When("I send a POST request with valid training data for employee {string}")
-    public void i_send_a_post_request_with_valid_training_data_for_employee(String employeeName) {
+    public void i_send_a_post_request_with_valid_training_data(String employeeName) {
         Map<String, Object> requestBody = new HashMap<>();
         requestBody.put("employeeName", employeeName);
         requestBody.put("course", "Java");
@@ -73,7 +74,7 @@ public class ReactAppSteps {
                       .extract()
                       .response();
 
-        System.out.println("POST Response:\n" + response.prettyPrint());
+        System.out.println("Response: " + response.prettyPrint());
     }
 
     @Then("code should be {int}")
@@ -85,7 +86,6 @@ public class ReactAppSteps {
     public void the_response_should_contain_employeeName_as(String expectedName) {
         response.then().body("employeeName", equalTo(expectedName));
     }
-    
 }
 
 

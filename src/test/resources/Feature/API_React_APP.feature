@@ -7,7 +7,8 @@ Feature: Get training data from local API
     And the response should contain a list of trainings
 
     Scenario: Verify POST /api/trainings creates a new training
-    Given API endpoint is "http://10.192.190.130:5000/api/trainings"
+    Given API endpoint is "http://10.192.190.130:5000"
     When I send a POST request with valid training data for employee "Rajasekar"
     Then code should be 201
     And the response should contain employeeName as "Rajasekar"
+
