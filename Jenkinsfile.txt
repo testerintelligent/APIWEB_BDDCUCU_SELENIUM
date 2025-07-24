@@ -46,7 +46,7 @@ pipeline
            }
         
            
-           publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: 'target/site/jacoco/', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: 'JacacoReport', useWrapperFileDirectly: false])
+          // publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: 'target/site/jacoco/', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: 'JacacoReport', useWrapperFileDirectly: false])
         
         //    script {
         //        println "Sleeping using Thread.sleep"
