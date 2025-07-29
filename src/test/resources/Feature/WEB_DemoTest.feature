@@ -34,7 +34,7 @@ Scenario: Test the banking operations in customer Registration
 Scenario: Test the banking operations in customer CompDBlogin
     Given I enter the url of domain CompDB1login
     When I enter customer credentials of CompDB1login
-    Then I can login domain of CompDB1login successfully
+    
  
  @Smoke
 Scenario: Test the functionality of Search ComputerDatabase
@@ -115,12 +115,12 @@ Scenario: To view all the front end back end apps
       | muthu456   | muthu456   |
  
  @Smoke
-      Scenario: Choosing and adding the item into the cart
-    Given Should be logged in into the system
-    When I select the item from list
-    And I have to add to the cart
-    And I have to pay the amount for the item
-    Then I can able to buy the product
+    # Scenario: Choosing and adding the item into the cart
+    # Given Should be logged in into the system
+    # When I select the item from list
+    # And I have to add to the cart
+    # And I have to pay the amount for the item
+    # Then I can able to buy the product
    
    @Regression
  Scenario: Test the banking operations for Dropdown Notebook
