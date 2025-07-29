@@ -20,7 +20,9 @@ public class SliderSteps {
     public void i_open_the_slider_webpage() {
     	 WebDriverManager.chromedriver().setup();
         driver.get("https://the-internet.herokuapp.com/horizontal_slider"); // Replace with your actual slider URL
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    WebElement slider = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[type='range']")));
     }
 
     @When("I move the slider to {string}")
