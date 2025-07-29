@@ -25,9 +25,9 @@ public void i_enter_customer_credentials_of_CompDBlogin() {
     // Write code here that turns the phrase above into concrete actions
     
         WebElement Email=driver.findElement(By.xpath("//input[@id='Email']"));
-        Email.sendKeys("muthu20@gmail.com");
+        Email.sendKeys("muthu00@gmail.com");
         WebElement Password=driver.findElement(By.xpath("//input[@id='Password']"));
-        Password.sendKeys("Password@200391");
+        Password.sendKeys("Muthu@123");
         WebElement Login=driver.findElement(By.xpath("//input[@class='button-1 login-button']"));
         Login.click();
         
