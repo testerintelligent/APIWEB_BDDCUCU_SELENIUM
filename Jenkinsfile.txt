@@ -27,6 +27,7 @@ pipeline
         stage('Verify Report File') {
             steps {
                 bat 'dir target\\cucumber-report'
+                Thread.sleep(15000)  // 8000 milliseconds = 15 seconds
             }
         }
 
@@ -39,10 +40,10 @@ pipeline
 
                     script {
                         println "Sleeping using Thread.sleep"
-                        Thread.sleep(8000)  // 8000 milliseconds = 8 seconds
+                        Thread.sleep(15000)  // 8000 milliseconds = 15 seconds
                     }
 
-                    junit testResults: '**target/surefire-reports/*.xml' 
+                    junit testResults: '**target/surefire-reports/testng-results.xml' 
         
                     cucumber buildStatus: 'UNCHANGED',
                             jsonReportDirectory: 'target/cucumber-report',
