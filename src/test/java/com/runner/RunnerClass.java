@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
     features = "src/test/resources/Feature/", 
     glue = "com.stepdefinit", 
-    tags = "@reactApp",
+    //tags = "@reactApp",
     dryRun = false,
     monochrome = true,
     plugin = { 
