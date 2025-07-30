@@ -1,5 +1,6 @@
 Feature: Get training data from local API
 
+  @reactApp
   Scenario: Verify GET /api/trainings returns 200 status
     Given the training API endpoint is "http://localhost:5000"
     When I send a GET request to the training API

@@ -34,33 +34,22 @@ pipeline
 
     post {
 
-
         always {
-            echo 'Publishing test and cucumber reports...'
-            
+                    echo 'Publishing test and cucumber reports...'  
 
+                    script {
+                        println "Sleeping using Thread.sleep"
+                        Thread.sleep(8000)  // 8000 milliseconds = 8 seconds
+                    }
 
-        script {
-              println "Sleeping using Thread.sleep"
-               Thread.sleep(8000)  // 8000 milliseconds = 8 seconds
-           }
-
-           
+                    junit testResults: '**target/surefire-reports/*.xml' 
         
-           
-          
-        
-       
-
-
-          junit '**/target/surefire-reports/*.xml'
-        
-            cucumber buildStatus: 'UNCHANGED',
-                     jsonReportDirectory: 'target/cucumber-report',
-                     fileIncludePattern: 'cucumber.json',
-                     reportTitle: 'BDD Report',
-                     sortingMethod: 'ALPHABETICAL',
-                     trendsLimit: 5
+                    cucumber buildStatus: 'UNCHANGED',
+                            jsonReportDirectory: 'target/cucumber-report',
+                            fileIncludePattern: 'cucumber.json',
+                            reportTitle: 'BDD Report',
+                            sortingMethod: 'ALPHABETICAL',
+                            trendsLimit: 5
 
         }
 
