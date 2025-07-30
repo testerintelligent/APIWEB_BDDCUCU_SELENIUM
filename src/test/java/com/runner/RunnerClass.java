@@ -14,7 +14,8 @@ import io.cucumber.junit.CucumberOptions;
     monochrome = true,
     plugin = { 
         "json:target/cucumber-report/cucumber.json", 
-        "html:target/cucumber-report/cucumber.html"
+        "html:target/cucumber-report/cucumber.html",
+        "junit:target/cucumber-reports/Cucumber.xml"
     }
 )
 public class RunnerClass {

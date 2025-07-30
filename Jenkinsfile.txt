@@ -43,6 +43,8 @@ pipeline
             sortingMethod: 'ALPHABETICAL', 
             trendsLimit: 5
 
+            junit 'target/surefire-reports/*.xml'
+
         }
 
     }
