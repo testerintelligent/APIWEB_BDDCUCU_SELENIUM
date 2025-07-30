@@ -40,12 +40,7 @@ pipeline
 
                    
         
-                    cucumber buildStatus: 'UNCHANGED',
-                            jsonReportDirectory: 'target/cucumber-report',
-                            fileIncludePattern: 'cucumber.json',
-                            reportTitle: 'BDD Report',
-                            sortingMethod: 'ALPHABETICAL',
-                            trendsLimit: 5
+
 
                     junit testResults: '**target/surefire-reports/testng-results.xml' 
 
