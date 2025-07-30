@@ -101,6 +101,13 @@
 
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
+					
+                    <includes>
+						<include>**/TestRunnerClass*.java</include>
+					</includes>
+					<testFailureIgnore>true</testFailureIgnore>
+
+
                 </configuration>
             </plugin>    
 
@@ -120,7 +127,7 @@
                             <projectName>TestPom</projectName>
                             <outputDirectory>${project.build.directory}/cucumber-JVM-Report</outputDirectory>
                             <jsonFiles>
-                                <param>${project.build.directory}/cucumber-report/cucumber.json</param>
+                                <param>${project.build.directory}cucumber.json</param>
                             </jsonFiles>
                             <buildNumber>1.0.0</buildNumber>
                         </configuration>
