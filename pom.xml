@@ -121,7 +121,7 @@
                             <projectName>TestPom</projectName>
                             <outputDirectory>${project.build.directory}/cucumber-JVM-Report</outputDirectory>
                             <jsonFiles>
-                                <param>${project.build.directory}/target/cucumber.json</param>
+                                <param>${project.build.directory}/target/target/cucumber-report/cucumber.json</param>
                             </jsonFiles>
                             <buildNumber>1.0.0</buildNumber>
                         </configuration>
