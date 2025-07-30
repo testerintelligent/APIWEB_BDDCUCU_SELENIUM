@@ -39,8 +39,9 @@ pipeline
             customJsFiles: '', 
             fileIncludePattern: '**/*.json', 
             jsonReportDirectory: 'target/cucumber-report/', 
-            reportTitle: 'Report', s
-            ortingMethod: 'ALPHABETICAL', trendsLimit: 5
+            reportTitle: 'Report', 
+            sortingMethod: 'ALPHABETICAL', 
+            trendsLimit: 5
 
                    
         
