@@ -38,7 +38,7 @@ pipeline
                         Thread.sleep(15000)  // 8000 milliseconds = 15 seconds
                     }
 
-                    junit testResults: '**target/surefire-reports/testng-results.xml' 
+                   
         
                     cucumber buildStatus: 'UNCHANGED',
                             jsonReportDirectory: 'target/cucumber-report',
@@ -46,6 +46,8 @@ pipeline
                             reportTitle: 'BDD Report',
                             sortingMethod: 'ALPHABETICAL',
                             trendsLimit: 5
+
+                    junit testResults: '**target/surefire-reports/testng-results.xml' 
 
         }
 
