@@ -33,26 +33,20 @@ pipeline
         always {
                     echo 'Publishing test and cucumber reports...'  
 
-                    script {
-                        println "Sleeping using Thread.sleep"
-                        Thread.sleep(15000)  // 8000 milliseconds = 15 seconds
-                    }
-                        cucumber buildStatus: 'null', 
-                        customCssFiles: '', 
-                        customJsFiles: '', 
-                        failedFeaturesNumber: -1, 
-                        failedScenariosNumber: -1, 
-                        failedStepsNumber: -1, 
-                        fileIncludePattern: '**/*.json', 
-                        pendingStepsNumber: -1, 
-                        skippedStepsNumber: -1, 
-                        sortingMethod: 'ALPHABETICAL', 
-                        undefinedStepsNumber: -1
+			sleep(time:3,unit:"SECONDS")
+			cucumber buildStatus: 'UNCHANGED', 
+            customCssFiles: '', 
+            customJsFiles: '', 
+            fileIncludePattern: '**/*.json', 
+            jsonReportDirectory: 'target/cucumber-report/', 
+            reportTitle: 'Report', s
+            ortingMethod: 'ALPHABETICAL', trendsLimit: 5
+
                    
         
 
 
-                    junit testResults: '**target/surefire-reports/testng-results.xml' 
+                    junit '**/target/surefire-reports/*.xml' 
 
         }
 
