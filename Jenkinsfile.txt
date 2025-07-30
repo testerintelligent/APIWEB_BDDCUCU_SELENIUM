@@ -43,7 +43,7 @@ pipeline
             sortingMethod: 'ALPHABETICAL', 
             trendsLimit: 5
 
-            junit 'target/surefire-reports/*.xml'
+            junit 'target/cucumber-report/Cucumber.xml'
 
         }
 

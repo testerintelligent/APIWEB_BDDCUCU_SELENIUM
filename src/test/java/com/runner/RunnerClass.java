@@ -15,7 +15,7 @@ import io.cucumber.junit.CucumberOptions;
     plugin = { 
         "json:target/cucumber-report/cucumber.json", 
         "html:target/cucumber-report/cucumber.html",
-        "junit:target/cucumber-reports/Cucumber.xml"
+        "junit:target/cucumber-report/Cucumber.xml"
     }
 )
 public class RunnerClass {
