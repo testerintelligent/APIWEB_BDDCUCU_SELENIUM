@@ -27,7 +27,12 @@ pipeline
         stage('Verify Report File') {
             steps {
                 bat 'dir target\\cucumber-report'
-                Thread.sleep(15000)  // 8000 milliseconds = 15 seconds
+                    script {
+                        println "Sleeping using Thread.sleep"
+                        Thread.sleep(15000)  // 8000 milliseconds = 15 seconds
+                    }
+
+
             }
         }
 
