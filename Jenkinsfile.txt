@@ -32,9 +32,12 @@ pipeline
 
     }
 
-    post {                 
-                always {
-                    cucumber buildStatus: 'null', 
+    post {
+
+
+        always {
+            echo 'Publishing test and cucumber reports...'
+            cucumber buildStatus: 'null', 
                         customCssFiles: '', 
                         customJsFiles: '', 
                         failedFeaturesNumber: -1, 
@@ -46,16 +49,6 @@ pipeline
                         sortingMethod: 'ALPHABETICAL', 
                         undefinedStepsNumber: -1
                     junit testResults: '**target/junit-results.xml'
-                    
-           }
-        }
-
-
-    post {
-
-
-        always {
-            echo 'Publishing test and cucumber reports...'
 
 
         script {
