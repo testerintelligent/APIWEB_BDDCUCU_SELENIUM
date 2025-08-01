@@ -11,6 +11,7 @@ import java.util.Map;
 
 public class ReactAppSteps {
 
+
     private String endpoint;
     private Response response;
 	protected String trainingId;
@@ -86,6 +87,51 @@ public class ReactAppSteps {
     public void the_response_should_contain_employeeName_as(String expectedName) {
         response.then().body("employeeName", equalTo(expectedName));
     }
+
+    @When("I send a PUT request to the API with endpoint {string}")
+public void i_send_a_put_request_to_the_api_with_endpoint(String endpointB) {
+
+    response = given().log().all()
+            .header("Content-Type", "application/json")
+            .body("{\n" +
+                    "  \"_id\": \"688baa23f91ef3e7e477cc85\",\n" +
+                    "  \"employeeName\": \"Rajasekar.I\",\n" +
+                    "  \"course\": \"Java\",\n" +
+                    "  \"startDate\": \"2025-07-24T00:00:00.000Z\",\n" +
+                    "  \"endDate\": \"2025-07-24T00:00:00.000Z\",\n" +
+                    "  \"status\": \"Completed\",\n" +
+                    "  \"trainerName\": \"string\",\n" +
+                    "  \"trainingType\": \"Udemy\",\n" +
+                    "  \"percentCompleted\": 100,\n" +
+                    "  \"projectName\": \"ABC\",\n" +
+                    "  \"__v\": 0\n" +
+                    "}")
+            .when()
+            .put(endpointB)
+            .then().log().all()
+            .extract().response();
+}
+
+@Then("I should receive the response")
+public void i_should_receive_the_response3() {
+    System.out.println("Response Body:\n" + response.asString());
+}
+
+@Then("the status code contains {string}")
+public void the_status_code_contains(String code3) {
+    String responseBody = response.asString();
+    boolean contains = responseBody.contains(code3);
+    if (contains) {
+        System.out.println("✅ Response body contains: " + code3);
+    } else {
+        System.out.println("❌ Response does not contain expected code.");
+    }
+
+    
+
+
+    }
+
 }
 
 

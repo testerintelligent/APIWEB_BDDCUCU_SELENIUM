@@ -13,3 +13,8 @@ Feature: Get training data from local API
     Then code should be 201
     And the response should contain employeeName as "Rajasekar"
 
+    Scenario: Successfully update a training record by ID
+    When I send a PUT request to the API with endpoint "http://10.192.190.130:5000/api/trainings/688baa23f91ef3e7e477cc85"
+    Then I should receive the response
+    And the status code contains "200"
+
