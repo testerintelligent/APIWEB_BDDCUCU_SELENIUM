@@ -1,3 +1,4 @@
+
 Feature: API_reqres_DemoTest
 
 
@@ -31,7 +32,7 @@ And The Base URL is set to "https://jsonplaceholder.typicode.com"
     Then the response's status code is 200
     And validate the response should contain user detail
 
-@Smoke
+@Smoke @smoke_muthu
   Scenario: Create a new user using POST
     Given the base URI is "https://reqres.in"
     When I send a POST request to "/api/users" with body:
