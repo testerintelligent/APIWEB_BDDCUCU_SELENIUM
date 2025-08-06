@@ -1,9 +1,13 @@
 package com.stepdefinit;
 
-import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.greaterThan;
 
-import io.cucumber.java.en.*;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import static io.restassured.RestAssured.given;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
@@ -32,6 +36,8 @@ public class stepdefinitions {
     public void i_send_a_post_request_to_create_the_user() {
         String payload = "{ \"name\": \"" + userName + "\", \"job\": \"" + userJob + "\" }";
         response = request.body(payload).post("/users");
+        userId= response.jsonPath().getInt("id");
+        System.out.println("Created user ID: " + userId);
     }
 
     @Then("I should receive a status code of {int}")
@@ -42,11 +48,6 @@ public class stepdefinitions {
     @Then("the response should contain the user with name {string} and job {string}")
     public void the_response_should_contain_the_user_with_name_and_job(String name, String job) {
         response.then().body("name", equalTo(name)).body("job", equalTo(job));
-    }
-
-    @Given("I have the user ID {int}")
-    public void i_have_the_user_id(Integer id) {
-        userId = id;
     }
 
     @When("I send a DELETE request to delete the user")

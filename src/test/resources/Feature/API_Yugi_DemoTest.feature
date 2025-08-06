@@ -17,9 +17,9 @@ Feature: API_jsonplaceholder_DemoTest
     And the response should contain the user with name "morpheus" and job "leader"
 @Smoke
   Scenario: Delete a user by ID
-    Given I have the user ID 2
     When I send a DELETE request to delete the user
-    Then I should receive a status code of 204
+    Then I should receive a status code of 200
+    
 @Regression
   Scenario: Fetch user details by ID
     Given I have the user ID 2
