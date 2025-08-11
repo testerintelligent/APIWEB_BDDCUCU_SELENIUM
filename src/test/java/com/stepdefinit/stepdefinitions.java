@@ -18,7 +18,7 @@ public class stepdefinitions {
     private Response response;
     private String userName;
     private String userJob;
-    private int userId;
+    private Integer userId;  // Use Integer for nullable ID
 
     @Given("Base URL is set to {string}")
     public void base_url_is_set_to(String url) {
@@ -34,11 +34,11 @@ public class stepdefinitions {
 
     @When("I send a POST request to create the user")
     public void i_send_a_post_request_to_create_the_user() {
-        String payload = "{ \"name\": \"" + userName + "\", \"job\": \"" + userJob + "\" }";
-        response = request.body(payload).post("/users");
-        userId= response.jsonPath().getInt("id");
-        System.out.println("Created user ID: " + userId);
-    }
+    String payload = "{ \"name\": \"" + userName + "\", \"job\": \"" + userJob + "\" }";
+    response = request.body(payload).post("/users");
+    userId = response.jsonPath().getInt("id");  // getInt returns primitive int
+    System.out.println("Created user ID: " + userId);
+}
 
     @Then("I should receive a status code of {int}")
     public void i_should_receive_a_status_code_of(Integer expectedStatus) {
@@ -51,12 +51,18 @@ public class stepdefinitions {
     }
 
     @When("I send a DELETE request to delete the user")
-    public void i_send_a_delete_request_to_delete_the_user() {
-        response = request.delete("/users/" + userId);
+public void i_send_a_delete_request_to_delete_the_user() {
+    if (userId == -1) {
+        throw new RuntimeException("User ID not found. Cannot delete user.");
     }
+    response = request.delete("/users/" + userId);
+}
 
     @When("I send a GET request to fetch user")
     public void i_send_a_get_request_to_fetch_user() {
+        if (userId == null) {
+            throw new RuntimeException("User ID is null. Cannot fetch user.");
+        }
         response = request.get("/users/" + userId);
     }
 
@@ -73,6 +79,9 @@ public class stepdefinitions {
 
     @When("I send a PATCH request to update the user")
     public void i_send_a_patch_request_to_update_the_user() {
+        if (userId == null) {
+            throw new RuntimeException("User ID is null. Cannot update user.");
+        }
         String payload = "{ \"name\": \"" + userName + "\", \"job\": \"" + userJob + "\" }";
         response = request.body(payload).patch("/users/" + userId);
     }
