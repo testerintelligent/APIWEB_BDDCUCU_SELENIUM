@@ -1,8 +1,10 @@
 package com.stepdefinit;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.Assert;
 
-import io.cucumber.java.en.*;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -20,17 +22,21 @@ public class PS02_PostApiStepDef {
     @When("I send POST request to endpoint {string} with body")
     public void i_send_post_request_to_endpoint_with_body(String endpoint, String body) {
         reqspec = RestAssured
-                    .given()
-                    .header("x-api-key", "reqres-free-v1")
-                    .header("Content-Type", "application/json")
-                    .body(body);
+                .given()
+                .header("x-api-key", "reqres-free-v1")
+                .header("Content-Type", "application/json")
+                .body(body);
 
-        response = reqspec.post(endpoint);
+        response = reqspec.when().post(endpoint);
+
     }
 
     @Then("The response code should be {int}")
     public void the_response_code_should_be(Integer statusCode) {
-        assertEquals((int) statusCode, response.getStatusCode());
-        response.then().log().all();
+        int expected = statusCode;
+        int actual = response.getStatusCode();
+        Assert.assertEquals(expected, actual);
+
+        System.out.println("The response code is : " + actual);
     }
 }
