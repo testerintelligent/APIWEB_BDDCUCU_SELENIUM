@@ -35,12 +35,12 @@ Feature: API_jsonplaceholder_DemoTest
     And the response should contain the updated name "morpheus" and job "zion resident"
 @Sanity
   Scenario: Retrieve all posts
-    When I send a GET request to "/posts"
+    When I send a GET request to fetch users "/posts"
     Then I should receive a status code of 200
     And the response should contain more than 50 posts
 @Sanity
   Scenario: Retrieve a specific post by ID
-    When I send an GET request to "/posts/10"
+    When I send a GET request to fetch users "/posts/10"
     Then I should receive a status code of 200
     And the title of the post should be "optio molestias id quia eum"
 @Smoke

@@ -79,9 +79,14 @@ public void i_send_a_delete_request_to_delete_the_user() {
 
     @Then("the response should contain the user with ID {int}")
     public void the_response_should_contain_the_user_with_id(Integer id) {
-        response.then().body("data.id", equalTo(id));
+        response.then().body("id", equalTo(id));
     }
 
+@Given("I have the user ID {int}")
+public void i_have_the_user_id(Integer int1) {
+    userId = int1;
+    
+}
     @And("I have the updated name {string} and job {string}")
     public void i_have_the_updated_name_and_job(String name, String job) {
         userName = name;
@@ -102,7 +107,7 @@ public void i_send_a_delete_request_to_delete_the_user() {
         response.then().body("name", equalTo(name)).body("job", equalTo(job));
     }
 
-    @When("I send an GET request to {string}")
+    @When("I send a GET request to fetch users {string}")
     public void i_send_an_get_request_to(String endpoint) {
         response = request.get(endpoint);
     }
