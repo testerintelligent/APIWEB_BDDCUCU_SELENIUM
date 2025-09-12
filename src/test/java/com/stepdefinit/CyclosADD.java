@@ -1,14 +1,12 @@
 package com.stepdefinit;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.example.Pom.Cyclos;
 import com.example.resources.BaseClass;
@@ -150,7 +148,9 @@ public class CyclosADD extends BaseClass {
 	@When("User should enter the username and password {string} and {string}")
 	public void user_should_enter_the_username_and_password_and(String username, String password) {
 		login = new Cyclos();
-		Click(login.getLogin());
+
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	wait.until(ExpectedConditions.elementToBeClickable(login.getLogin())).click();
 		//method override - EnterValue method used for username and password
 		EnterValue(login.getUsername(), username);
 		EnterValue(login.getPassword(), password);
@@ -159,8 +159,11 @@ public class CyclosADD extends BaseClass {
 	//Goto profile option
 	@When("User should navigate to profile")
 	public void user_should_navigate_to_profile() {
-		Click(login.getSubmit());
-		Click(login.getUser());
+		login.getSubmit().click();
+
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	wait.until(ExpectedConditions.elementToBeClickable(login.getUser())).getText();
+		login.getUser().getText();
 	}
 	
 
