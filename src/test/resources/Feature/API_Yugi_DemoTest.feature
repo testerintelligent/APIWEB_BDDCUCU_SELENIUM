@@ -11,10 +11,10 @@ Feature: API_jsonplaceholder_DemoTest
 
  @Smoke
   Scenario: Create a new user with name and job
-    Given I have the user name "morpheus" and job "leader"
+    Given I have the user name "Guru" and job "leader"
     When I send a POST request to create the user
     Then I should receive a status code of 201
-    And the response should contain the user with name "morpheus" and job "leader"
+    And the response should contain the user with name "Guru" and job "leader"
 @Smoke
   Scenario: Delete a user by ID
     When I send a DELETE request to delete the user

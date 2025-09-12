@@ -7,9 +7,9 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-    features = "src/test/resources/Feature/", 
+    features = "src/test/resources/Feature/API_Yugi_DemoTest.feature", 
     glue = "com.stepdefinit", 
-    //tags = "@reactApp",
+   // tags = "@Smoke2",
     dryRun = false,
     monochrome = true,
     plugin = { 

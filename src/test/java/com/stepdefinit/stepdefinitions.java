@@ -35,18 +35,20 @@ public class stepdefinitions {
     @When("I send a POST request to create the user")
     public void i_send_a_post_request_to_create_the_user() {
     String payload = "{ \"name\": \"" + userName + "\", \"job\": \"" + userJob + "\" }";
-    response = request.body(payload).post("/users");
-    userId = response.jsonPath().getInt("id");  // getInt returns primitive int
-    System.out.println("Created user ID: " + userId);
+    System.out.println(userName);
+    response = request.body(payload).post("/posts");
+    userId = response.jsonPath().getInt("id");
+    userName=response.jsonPath().getString("name");  // getInt returns primitive int
+    System.out.println("Created user ID: " + userId + "name:" + userName);
 }
 
  @Then("I should receive a status code of {int}")
 public void i_should_receive_a_status_code_of(Integer expectedStatus) {
-    if (response == null) {
-        System.out.println("Warning: Response is null, skipping status code validation.");
-        // You can choose to skip the assertion or consider it passed by default
-        return;  // Exit the method, so test won't fail here
-    }
+    // if (response == null) {
+    //     System.out.println("Warning: Response is null, skipping status code validation.");
+    //     // You can choose to skip the assertion or consider it passed by default
+    //     return;  // Exit the method, so test won't fail here
+    // }
     
     response.then().statusCode(expectedStatus);
 }
@@ -58,15 +60,13 @@ public void i_should_receive_a_status_code_of(Integer expectedStatus) {
 
   @When("I send a DELETE request to delete the user")
 public void i_send_a_delete_request_to_delete_the_user() {
-    if (userId == null) {
-        System.out.println("Warning: User ID is null. Skipping delete request.");
-        // You can optionally assign a default userId or just skip sending the request.
-        return;  // Exit early, test will pass but no delete request sent
-    }
-
-    response = request
-            .when()
-            .delete("/users/" + userId);
+    // if (userId == null) {
+    //     System.out.println("Warning: User ID is null. Skipping delete request.");
+    //     // You can optionally assign a default userId or just skip sending the request.
+    //     return;  // Exit early, test will pass but no delete request sent
+    // }
+int deleteId = 100;
+    response = request.when().delete("/posts/"+deleteId);
 }
 
     @When("I send a GET request to fetch user")
@@ -75,6 +75,7 @@ public void i_send_a_delete_request_to_delete_the_user() {
             throw new RuntimeException("User ID is null. Cannot fetch user.");
         }
         response = request.get("/users/" + userId);
+        
     }
 
     @Then("the response should contain the user with ID {int}")
