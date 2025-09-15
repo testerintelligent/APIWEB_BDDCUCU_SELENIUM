@@ -10,10 +10,8 @@ import io.restassured.response.Response;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.notNullValue;
 
-
-
 public class PostStepsRestAssuredApi {
-   Response response;
+    Response response;
     JSONObject requestBody;
 
     @Given("I set the POST endpoint for creating user")
@@ -32,10 +30,11 @@ public class PostStepsRestAssuredApi {
     @When("I send a POST HTTP request")
     public void sendPostRequest() {
         response = given()
-            .header("Content-Type", "application/json")
-            .body(requestBody.toString())
-        .when()
-            .post();
+                .header("Content-Type", "application/json")
+                .header("x-api-key", "reqres-free-v1")
+                .body(requestBody.toString())
+                .when()
+                .post();
     }
 
     @Then("the response status codes should be {int}")
@@ -48,5 +47,5 @@ public class PostStepsRestAssuredApi {
         response.then().body("id", notNullValue());
         response.then().body("createdAt", notNullValue());
     }
-    
+
 }

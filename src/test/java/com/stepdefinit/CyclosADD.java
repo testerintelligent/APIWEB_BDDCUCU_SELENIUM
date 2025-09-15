@@ -28,7 +28,7 @@ public class CyclosADD extends BaseClass {
 	String string;
 	String repon;
 
-	//Post request and header mentioned below with Authentication
+	// Post request and header mentioned below with Authentication
 	@Given("User should load the url username")
 	public void user_should_load_the_url_username() throws FileNotFoundException, IOException {
 		String requestBody = "{\r\n" + "    \"name\": \"Member account33\",\r\n"
@@ -52,7 +52,7 @@ public class CyclosADD extends BaseClass {
 		res.prettyPrint();
 	}
 
-	//Validating POST request status codes
+	// Validating POST request status codes
 	@Then("User should validate the status codes")
 	public void user_should_validate_the_status_codes() {
 		// repon = res.jsonPath().getString("name");
@@ -61,7 +61,7 @@ public class CyclosADD extends BaseClass {
 		Assert.assertEquals(201, statusCode);
 	}
 
-	//API - request to load baseURI with username and password
+	// API - request to load baseURI with username and password
 	@Given("User should load the url username,password {string} and {string}")
 	public void user_should_load_the_url_username_password_and(String string, String string2)
 			throws FileNotFoundException, IOException {
@@ -75,7 +75,7 @@ public class CyclosADD extends BaseClass {
 		res.prettyPrint();
 	}
 
-	//Validating GET request status codes
+	// Validating GET request status codes
 	@Then("User should validate the status code in reponce")
 	public void user_should_validate_the_status_code_in_reponce() {
 		int statusCode = res.statusCode();
@@ -86,28 +86,28 @@ public class CyclosADD extends BaseClass {
 
 	}
 
-	//To retrieve the value of name
+	// To retrieve the value of name
 	@Then("User should get the name")
 	public void user_should_get_the_name() {
 		name = res.jsonPath().getString("name");
 		System.out.println(name);
 	}
 
-	//To retrieve the value of Address
+	// To retrieve the value of Address
 	@Then("User should get the addressLine1")
 	public void user_should_get_the_address_line1() {
 		addressLine1 = res.jsonPath().getString("addressLine1");
 		System.out.println(addressLine1);
 	}
 
-	//To retrieve the value of city 
+	// To retrieve the value of city
 	@Then("User should get the city")
 	public void user_should_get_the_city() {
 		city = res.jsonPath().getString("city");
 		System.out.println(city);
 	}
 
-	//To retrieve the value of region
+	// To retrieve the value of region
 	@Then("User should get the region")
 	public void user_should_get_the_region() {
 		region = res.jsonPath().getString("region");
@@ -115,7 +115,7 @@ public class CyclosADD extends BaseClass {
 		;
 	}
 
-		//API - request to load baseURI with username and password
+	// API - request to load baseURI with username and password
 	@Given("User should load the url username and password {string} and {string}")
 	public void user_should_load_the_url_username_and_password_and(String string, String string2)
 			throws FileNotFoundException, IOException {
@@ -124,13 +124,13 @@ public class CyclosADD extends BaseClass {
 		reqspec = RestAssured.given().header("Authorization", " Basic S3JoaXRoeWE6RGl2eWFAMTIz");
 	}
 
-	//API - Delete request
+	// API - Delete request
 	@When("User should delete the address")
 	public void user_should_delete_the_address() {
 		res = reqspec.delete();
 	}
 
-	//After deleting the record validating the Status code
+	// After deleting the record validating the Status code
 	@Then("User should validate the status code in reponces")
 	public void user_should_validate_the_status_code_in_reponces() {
 		int delete = res.statusCode();
@@ -138,7 +138,7 @@ public class CyclosADD extends BaseClass {
 		Assert.assertEquals(delete, 204);
 	}
 
-	//loading the URL
+	// loading the URL
 	@Given("User should load the url cyclos")
 	public void user_should_load_the_url_cyclos() {
 		LaunchBrowser();
@@ -151,17 +151,16 @@ public class CyclosADD extends BaseClass {
 	public void user_should_enter_the_username_and_password_and(String username, String password) {
 		login = new Cyclos();
 		Click(login.getLogin());
-		//method override - EnterValue method used for username and password
+		// method override - EnterValue method used for username and password
 		EnterValue(login.getUsername(), username);
 		EnterValue(login.getPassword(), password);
 	}
 
-	//Goto profile option
+	// Goto profile option
 	@When("User should navigate to profile")
 	public void user_should_navigate_to_profile() {
 		Click(login.getSubmit());
 		Click(login.getUser());
 	}
-	
 
 }
