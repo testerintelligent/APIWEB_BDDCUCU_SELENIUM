@@ -1,3 +1,5 @@
+
+
 Feature: API_reqres_DemoTest
 
 
@@ -24,49 +26,39 @@ And The Base URL is set to "https://jsonplaceholder.typicode.com"
     When delete user in server of reqres
     Then validate the delete response code of reqres
 
-@Regression
+@Regression 
   Scenario: Get user detail
     Given the API's availability check
     When I sends a GET request to "/api/users/2"
     Then the response's status code is 200
     And validate the response should contain user detail
 
-@Smoke
+@Sanity  
   Scenario: Create a new user using POST
     Given the base URI is "https://reqres.in"
-    When I send a POST request to "/api/users" with body:
-      """
-      {
-        "name1": "AAAAA",
-        "job1": "BBBBBB"
-      }
-      """
+    When I send POST request with endpoint "/api/users" 
     Then the response code should be 201
 
-@Sanity
+
+@Sanity 
   Scenario: Update a user using PUT
     Given the base URI is "https://reqres.in"
-    When I send a PUT request to "/api/users/2" with body:
-      """
-      {
-        "name": "CCCCC",
-        "job": "DDDDD"
-      }
-      """
-    Then the response status code should be 200
-    And the response should contain "job" as "CCCCC"
+    When I send PUT request with endpoint "/api/users/" 
+    Then the putResponse status code should be 200
 
-@Smoke
+
+@Smoke 
   Scenario: Update user name successfully
     Given I have the user ID and new user name
     When I send a Patch request to update user details
     Then The response should contain the updated name
 
-@Sanity
+@Sanity 
   Scenario: Checking All HTTP Methods
     Given Navigate to the URL
     When I check all methods and assestion
     Then I should get all responses
+
 @Smoke	
 	Scenario: Retrieve user by ID
     Given I set the GET endpoint for user with ID "2"
@@ -75,7 +67,7 @@ And The Base URL is set to "https://jsonplaceholder.typicode.com"
     And I should see user details in the response
 
 
-  @Regression
+  @Regression 
   Scenario: Successfully create a user
     Given I set the POST endpoint for creating user
     And I prepare request body with name "morpheus" and job "leader"
@@ -83,7 +75,7 @@ And The Base URL is set to "https://jsonplaceholder.typicode.com"
     Then the response status codes should be 201
     And the response should contain the user ID and creation timestamp
 
-@Smoke
+@Smoke @SmokeTest_N
 Scenario Outline: Verify the cyclos site address
     Given User should load the url cyclos
     When User should enter the username and password "<username>" and "<password>"
@@ -96,73 +88,73 @@ Scenario Outline: Verify the cyclos site address
     |username|password|
     |Krhithya|Divya@123|
 
-@Smoke   
+@Smoke 
   Scenario: Put request to update user details
     Given the API is up and running
     When I send a PUT request to update the user with ID 2
     Then I should receive a success response
 
-@Sanity
+@Sanity 
   Scenario: Patch request to partially update user details
     Given the API is up and running
     When I send a PATCH request to update the user with ID 2
     Then I should receive a success response
 
-@Regression
+@Regression 
   Scenario: Delete request to remove user
     Given the API is up and running
     When I send a DELETE request to remove the user with ID 2
-    Then I should receive a success response
+    Then I should receive a success delete response
 	
-  @Smoke
+  @Smoke 
   Scenario: Get user details 
     Given the API is available 
     When I send a GET request to "/api/users/2" 
     Then the response status code should be 200 
     And the response should contain user detail
 
-@Sanity
+@Sanity 
 Scenario: Get List Users of ReqRes Api
 Given Give the domain name of reqres
 When send the get request with the resource url of reqres
 Then validate the response code of reqres
 
 
-@Smoke
+@Smoke 
 Scenario: Get single User of ReqRes Api
 Given Give the domain name of reqres
 When send the get request with the single resource url of reqres
 Then validate the response code get of reqres
 
 
-@Smoke
+@Smoke 
 Scenario: Get single user not found of ReqRes Api
 Given Give the domain name of reqres
 When send get request in server of reqres
 Then validate the negative response code of reqres
 
 
-@Smoke
+@Smoke 
 Scenario: Get delayed response of ReqRes Api
 Given Give the domain name of reqres
 When Get delayed response in server of reqres
 Then validate the response code of reqres
 
-@Smoke
+@Smoke 
 Scenario: delete a User of ReqRes Api
 Given Give the domain name of reqres
 When delete user in server of reqres
 Then validate the delete response code of reqres
 
 
-@Smoke
+@Smoke 
 Scenario: Update user name successfully
 Given I have the user ID and new user name
 When I send a Patch request to update user details
 Then The response should contain the updated name
  
  
-@Smoke
+@Smoke 
 Scenario: verified with valid credentials
 Given I set base URI
 When I send POST request to /auth with valid credential
@@ -171,20 +163,20 @@ And I should receives a token in response
 
 
 
-@Sanity
+@Sanity 
 Scenario: Fetch Product by ID 
 Given The Fake store API is available
 When I fetch the Product
 Then The response should be 200
 And the Product tittle should be "DANVOUY Women's T Shirt Casual Cotton Short"
 
-@Sanity
+@Sanity @SmokeTest_N
 Scenario: Update the product with put request
 When I send a put request to update product 18
 Then the status code should be 200
 And the response should contain desription "changed string"
 
-@Smoke
+@Smoke @SmokeTest_N
 Scenario: Delete product with ID 18
 When I send a DELETE request for product ID 18
 Then the response status should be 200
