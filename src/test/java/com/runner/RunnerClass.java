@@ -6,7 +6,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/Feature/", glue = "com.stepdefinit", 
+@CucumberOptions(features = "src/test/resources/Feature", glue = "com.stepdefinit", 
                  // tags = "@SmokeTest_M", 
                  dryRun = false, monochrome = true, plugin = {
                 "json:target/cucumber-report/cucumber.json",

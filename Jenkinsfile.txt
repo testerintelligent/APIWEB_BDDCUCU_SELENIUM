@@ -1,6 +1,6 @@
 pipeline 
 {
-    agent { label 'TestCafe2' }
+    agent { label 'WinNode' }
 
     stages {
 
