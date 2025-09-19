@@ -1,14 +1,13 @@
 package com.example.resources;
 
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Map;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
+import static org.hamcrest.Matchers.equalTo;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -19,6 +18,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import static io.restassured.RestAssured.given;
 import io.restassured.http.ContentType;
 
 public class BaseClass {
@@ -32,14 +32,17 @@ public class BaseClass {
 	public static String city;
 	public static String region;
 	
-	public static void LaunchBrowser() { //Steps for lauching Chrome browser
-		ChromeOptions co = new ChromeOptions();
-		co.addArguments("--remote-allow-origins=*");
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver(co);
-		driver.manage().window().maximize();
-
-	}
+public static void LaunchBrowser() {
+	WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+    options.addArguments("disable-infobars");
+    options.setExperimentalOption("prefs", Map.of(
+    "credentials_enable_service", false,
+    "profile.password_manager_enabled", false
+    ));
+    driver = new ChromeDriver(options);
+    driver.manage().window().maximize();
+}
 	public static String getproperty(String value) throws IOException { // Declaring and Handling IOException
 		FileInputStream file = new FileInputStream("Config\\config.properties");
 		Properties p = new Properties();

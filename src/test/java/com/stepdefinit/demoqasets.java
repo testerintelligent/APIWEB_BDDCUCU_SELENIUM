@@ -1,6 +1,7 @@
 package com.stepdefinit;
 
 import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +11,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -19,13 +19,14 @@ import junit.framework.Assert;
 
 public class demoqasets {
 
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver;
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     Actions actions;
 
-    @Given("I navigate to the website")
+@Given("I navigate to the website")
 public void i_navigate_to_the_website() {
-    	 WebDriverManager.chromedriver().setup();
+    WebDriverManager.chromedriver().setup();
+    driver = new ChromeDriver();
     driver.get("https://demoqa.com/elements");
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  
     driver.getTitle();

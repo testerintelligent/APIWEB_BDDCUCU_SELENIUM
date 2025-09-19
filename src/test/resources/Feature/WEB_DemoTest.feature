@@ -240,7 +240,8 @@ Scenario: To view all the front end back end apps
 
 @Smoke
 Scenario Outline: Select a checkbox
-   When I select the "<checkboxName>" checkbox
+  Given I navigate to the website
+  When I select the "<checkboxName>" checkbox
 
 Examples:
    | checkboxName |
@@ -249,6 +250,7 @@ Examples:
 
 @Smoke
 Scenario Outline: Verify radio button selection
+    Given I navigate to the website
     When I select the "<radioButtonLabel>" radio button
     Then The "<radioButtonLabel>" radio button should be selected
 
