@@ -1,5 +1,5 @@
 
-
+@all
 Feature: API_reqres_DemoTest
 
 Background:
