@@ -676,7 +676,7 @@ Scenario Outline: Toggle checkbox selection
     And I add the product to the cart
     Then I should be redirected to the shopping cart page
 
-  @Regression
+  @sixtythree
   Scenario Outline: Register and delete a user account
     Given I want to launch the browser and navigate to the Automation Exercise website
     Given I verify that the home page is visible successfully
@@ -694,7 +694,7 @@ Scenario Outline: Toggle checkbox selection
       | dummy |
       | test  |
 
-  @Smoke
+  @sixtyfour
   Scenario Outline: Register and login to ParaBank
     Given I launch the ParaBank website
     When I register a new user
@@ -704,7 +704,7 @@ Scenario Outline: Toggle checkbox selection
       | dummy |
       | test  |
 
-  @Sanity
+  @sixtyfive
   Scenario Outline: SignUp to the website
     Given I launch the website
     Then Click the signup button
@@ -714,7 +714,7 @@ Scenario Outline: Toggle checkbox selection
       | dummy |
       | test  |
 
-  @Regression
+  @sixtysix
   Scenario Outline: Sign up with existing email
     Given I want to launch the Automation Exercise website
     And I verify I landed on the home page
@@ -726,7 +726,7 @@ Scenario Outline: Toggle checkbox selection
       | dummy |
       | test  |
 
-  @Smoke
+  @sixtyseven
   Scenario Outline: Testcases page verify
     Given I want to launch the automation website
     And i want to check the home page
@@ -738,7 +738,7 @@ Scenario Outline: Toggle checkbox selection
       | dummy |
       | test  |
 
-  @Sanity
+  @sixtyeight
   Scenario Outline: Logout feature
     Given I want to launch the website
     And verfiy if the home page is visible
@@ -753,7 +753,7 @@ Scenario Outline: Toggle checkbox selection
       | dummy |
       | test  |
 
-  @Smoke
+  @sixtynine
   Scenario Outline: LoginWithIncorrectCredentials
     Given I want to launch the Automation Website
     And Verfiy if the home page is available
@@ -764,7 +764,7 @@ Scenario Outline: Toggle checkbox selection
       | dummy |
       | test  |
 
-  @Sanity
+  @seventy
   Scenario Outline: To fill up the contact us form in the website
     Given I want to launch the website to check the contact form
     And I want to verify if we are on the home page
@@ -777,7 +777,7 @@ Scenario Outline: Toggle checkbox selection
       | dummy |
       | test  |
 
-  @Sanity @sauce_Login_logout
+  @SeventyOne
   Scenario Outline: Verify the Login and Logout Funtionality
     Given User should launch the browser
     When User should write "<username>" and "<password>"
@@ -789,7 +789,7 @@ Scenario Outline: Toggle checkbox selection
       |username       |password      |
       |standard_user  |secret_sauce  |
 
-  @Regression @sauce_Product_Select
+  @SeventyTwo
   Scenario Outline: Verify User is able Select Product after Login
     Given User should launch the browser
     When User should write "<username>" and "<password>"
@@ -801,7 +801,7 @@ Scenario Outline: Toggle checkbox selection
       |username       |password      |
       |standard_user  |secret_sauce  |
 
-  @Smoke @sauce_Product_selectFilter
+  @SeventyThreee
   Scenario Outline: Verify User is able Select fitler button
     Given User should launch the browser
     When User should write "<username>" and "<password>"
