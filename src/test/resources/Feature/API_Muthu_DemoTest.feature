@@ -1,5 +1,5 @@
 
-@all
+
 Feature: API_reqres_DemoTest
 
 Background:
@@ -105,7 +105,7 @@ Scenario Outline: Verify the cyclos site address
     When I send a DELETE request to remove the user with ID 2
     Then I should receive a success delete response
 	
-  @check
+ @Regression 
   Scenario: Get user details 
     Given the API is available 
     When I send a GET request to "/api/users/2" 

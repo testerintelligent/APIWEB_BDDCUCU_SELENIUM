@@ -31,7 +31,13 @@ public class QAfoxCartPageStepDef {
         driver.get("https://www.saucedemo.com/");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
-        driver.findElement(By.id("login-button")).click();      
+        driver.findElement(By.id("login-button")).click();   
+        
+        try{
+            driver.switchTo().alert().accept();
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
         if (productName.equals("Sauce Labs Backpack")) {
             driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
         } else {

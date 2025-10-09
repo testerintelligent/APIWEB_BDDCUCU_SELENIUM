@@ -32,7 +32,7 @@ public class booking {
         driver.get("https://automationintesting.online/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  
-        System.out.println("✅ User landed on homepage");
+        System.out.println("User landed on homepage");
     }
 
     @When("select the room")
@@ -62,7 +62,7 @@ public class booking {
         // driver.findElement(bookingPage.emailPath).sendKeys("krithikakrishna@gmail.com");
         // driver.findElement(bookingPage.phonePath).sendKeys("927262728283");
 
-        System.out.println("✅ Entered booking details");
+        System.out.println("Entered booking details");
     }
 
     @Then("Book the ticket")

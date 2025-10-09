@@ -1,109 +1,110 @@
-@all
+
 Feature: WEB_DemoTest
 
 Background: Check Automation Tester Website
 Given Launch browser and navigate to AutomationTester url
     Then Verify that home page is visible successfully
 
- @Smoke
+ @check
   Scenario: Test the Navvigation and Back operations in Academic Domain
     Given I enter into the Academy Domain
     When I click the OpenWindow Element    
     And I navigated to another site
     Then again Back to the Main URL
  
- @Smoke
+ @check
   Scenario: Test the Navvigation and Back operations in Academic Domain
     Given I enter into the Academy Domain
     When I click the OpenWindow Element    
     And I navigated to another site
     Then again Back to the Main URL
  
- @Regression
+ @check
     Scenario: Test the automation operations in RahulShettyAcademy
     Given I enter into the Academy Domain of Rahul
     When I click the OpenWindow button
     Then I navigated to that window
  
- @Sanity
+@check
 Scenario: Test the banking operations in customer Registration
     Given I enter the url of Registration of domain
     When I enter the customer Registration Details
     Then I can able to Register successfully
  
- @Smoke
+@check
 Scenario: Test the banking operations in customer CompDBlogin
     Given I enter the url of domain CompDB1login
     When I enter customer credentials of CompDB1login
     
  
- @Smoke
+ @Second
 Scenario: Test the functionality of Search ComputerDatabase
     Given I enter the url for search the Computer Database
     When I enter the ComputerDB name one by one
     Then I can able to Search ComputerDb
  
- @Sanity
+@Second
 Scenario: Test the cancel of ComputerDatabase
     Given I enter the cancel url of ComputerDatabase
     When I enter the ComputerDatabase Info
     Then I can able to cancel ComputerDatabase
  
- @Regression
+@Second
  Scenario: Test the banking operations in customer CompDBlogin
     Given I enter the url of domain CompDBlogin
     When I enter customer credentials of CompDBlogin
     Then I can login domain of CompDBlogin successfully
  
- @Smoke
+ @Second
     Scenario: Test the banking operations in customer Registration
     Given I enter the url of Registraion domain
     When I enter customer Registration Details
     Then I can able to Registration successfully
  
- @Regression
+@Second
 Scenario: Test the banking operations in customer CompDBlogin
     Given I enter the url of domain CompDBlogin
     When I enter customer credentials of CompDBlogin
     Then I can login domain of CompDBlogin successfully
  
- @Sanity
+ @third
 Scenario: Test the Search  ComputerDatabase
     Given I enter the url for search the Computer Database
     When I enter the ComputerDB name one by one
     Then I can able to Search ComputerDb
  
- @Regression
+ @fourth
 Scenario: Test the cancel of ComputerDatabase
     Given I enter the cancel url of ComputerDatabase
     When I enter the ComputerDatabase Info
     Then I can able to cancel ComputerDatabase
  
- @Smoke
+ @fifth
     Scenario: Test the banking operations in customer login
     Given I enter the url of domain
     When I enter customer credentials
     Then I can login domain successfully
  
- @Integration
+ @sixth
   Scenario: Test the banking operations for Community Poll
    Given I logged into the application
     When I have choosen the option for community poll
     Then I can submit the vote button
  
- @Smoke
+ @seventh
      Scenario: Test the banking operations for Add Cart
    Given Product should be visible to choose
     When I have choosen the option to add cart
     Then I can press the add cart button
  
+ @eighth
 Scenario: To view all the front end back end apps
     Given The app url should be loaded properly
     When I navigated the hover
     Then I can able to see all the apps
  
 
- @Regression
+ @nineth
   Scenario Outline: Login with valid credentials
   Given I navigate to the login page
     When I enter username "<Username>" and password "<Password>"
@@ -123,7 +124,7 @@ Scenario: To view all the front end back end apps
     # And I have to pay the amount for the item
     # Then I can able to buy the product
    
-   @Regression
+   @tenth
  Scenario: Test the banking operations for Dropdown Notebook
    Given Notebook elements should be loaded properly
     When I have to select the Sort by dropdown
@@ -131,63 +132,63 @@ Scenario: To view all the front end back end apps
     And I have to select the view as
     Then I can able to select the dropdown menu
  
- @Sanity
+ @Eleventh
     Scenario: Test the banking operations for Hover the menu
    Given Menu items should be loaded properly
     When I have to hover the menu
     Then I can able to select the submenu
  
- @Smoke
+ @Twelve
     Scenario: Choosing and adding the item into the cart
     Given The url should be loaded properly
     When I enter the book name in the search box
     Then I can able to see the book
  
-   @Smoke
+   @Thirteen
   Scenario: Handle confirmation popup
   Given I enter the URL of the practice page for alert
     When I enter "Krithika" in the text
     And I click on the confirm button
     Then I handle the confirmation popup
 	
-   @Sanity
+   @Fourteen
   Scenario: Test the window button operations in practice page
     Given I enter the url of practice page
     When I click  open window button popup
     Then I can see open window page successfully
 
-@Sanity
+@Fifteen
   Scenario: Krithika_04APR_2025_Tabpopup
     Given I enter the URL of the practice page
     When I click the open tab button
     Then I should see the new tab opened successfully
 	
-   @Smoke
+   @sixteen
   Scenario: Handle Alert popup
     Given I enter the URL of the practice page for confirmation
     When I enter "Krishna" in the textbox
     And I click on the alert button
     Then I handle the alert popup
 	
-   @Smoke
+   @seventeen
   Scenario: User votes in the community poll
     Given I logged into the applications
     When I have chosen the option for community polls
     Then I can submit the voting buttons
 	
-   @Smoke
+   @Eighteen
   Scenario: Drag box A and drop onto box B
     Given I am on the Drag and Drop page
     When I drag element "A" and drop it onto element "B"
     Then element "A" should be in position of "B"
   
-  @Smoke
+  @Nineteen
   Scenario: Drag box B and drop onto box A
     Given I am on the Drag and Drop page
     When I drag element "B" and drop it onto element "A"
     Then element "B" should be in position of "A"
 	
-   @Sanity
+   @Twenty
   Scenario: Verify slider updates the displayed value correctly
     Given I open the slider webpage
     When I move the slider to "0.5"
@@ -197,7 +198,7 @@ Scenario: To view all the front end back end apps
     When I move the slider to "5"
     Then I should see the displayed value as "5"
 	
-   @Smoke
+   @TwentyOne
   Scenario Outline: Verify key press events
     Given I am on the Key Press page
     When I press the "<key>" key
@@ -212,13 +213,13 @@ Scenario: To view all the front end back end apps
       | SHIFT   |
 	  
 	 
-	@Regression
+	@TwentyTwo
   Scenario: Test the filter  operations in automation bookstore
     Given I enter the url of bookstore
     When I search books
     Then I can retrive books successfully
 	
-   @Regression
+   @TwentyThree
  Scenario: Successfully book a room
     Given Open the booking application
     When select the room
@@ -227,7 +228,7 @@ Scenario: To view all the front end back end apps
     Then Book the ticket
     And Confirm the booking
 	
- @Sanity
+ @TwentyFour
  Scenario Outline: Verify text box functionality
    Given I navigate to the website
    When I enter "<name>" in the name text box  
@@ -239,7 +240,7 @@ Scenario: To view all the front end back end apps
       | John Doe  | john.doe@example.com  |
       | Alice Ray | alice.ray@gmail.com   |
 
-@Smoke
+@TwentyFive
 Scenario Outline: Select a checkbox
   Given I navigate to the website
   When I select the "<checkboxName>" checkbox
@@ -249,7 +250,7 @@ Examples:
    | Home        |
    
 
-@Smoke
+@TwentySix
 Scenario Outline: Verify radio button selection
     Given I navigate to the website
     When I select the "<radioButtonLabel>" radio button
@@ -266,31 +267,31 @@ Examples:
     When I enter customers credentials
     Then I can login domains successfully
 	
-   @Regression
+   @TwentySeven
 	Scenario: Test the login operations in customer login
     Given I enter the shops login url of domain
     When I enter customer login credential
     Then I can login shops successfully
 	
-   @Sanity
+   @TwentyEight
 	Scenario: Test the login operations in customer login
     Given I enter the shop login url of domain
     When I enter customer login credentials
     Then I can login shop successfully
 	
-   @Smoke
+   @TwentyNine
 	Scenario: Test the banking operations in customer login
     Given I enter the url of banking domains
     When I enter customer banking credentials
     Then I can login banking domain successfully
 	
-   @Regression
+   @Thirty
 	Scenario: Test the web shop operations in customer login
     Given I enter the registration url of domain
     When I enter new customer credentials
     Then I can register domain successfully
 	
-   @Sanity
+   @ThirtyOne
 	Scenario: Adding an item to the cart
     Given I navigate to the shopping page
     When I select a product
@@ -298,7 +299,7 @@ Examples:
     And I add the product to the cart
     Then I should be redirected to the shopping cart page
 	
-   @Smoke
+   @ThirtyTwo
 	Scenario: Verify the context menu alert
     Given I open the context menu webpage
     When I right-click on the context menu box
@@ -310,7 +311,7 @@ Examples:
  
 
 
-@Sanity
+@ThirtyThreee
 Scenario: Login user with incorrect email and password
     When Click on Signup button
     Then Verify 'Login to your account' is visible
@@ -318,7 +319,7 @@ Scenario: Login user with incorrect email and password
     And Clicks 'login' button
     And Finally i close the browserrr
 
-@Sanity
+@ThirtyFour
     Scenario: Logout user successfully
     When Click on Signup button
    Then Verify 'Login to your account' is visible
@@ -328,7 +329,7 @@ Scenario: Login user with incorrect email and password
     When Click the 'Logout' button
     Then Verify that user is navigated to login page
 
-@Sanity
+@ThirtyFive
     Scenario: Signup with an already registered email address
     When Click on Signup button
     And Enter name and already registered email address
@@ -336,7 +337,7 @@ Scenario: Login user with incorrect email and password
     Then Verify error 'Email Address already exist!' is visible
     And Finally i close the browserrr
 
-@Sanity
+@ThirtySix
     Scenario: User should be able to sign up 
     When Click on Signup button
     Then Verify new sign up is visible
@@ -344,13 +345,13 @@ Scenario: Login user with incorrect email and password
     And Click 'Signup' button
     And Finally i close the browserrr
 
-@Sanity
+@ThirtySeven
      Scenario: Verify user can navigate to the Test Cases page successfully
     When Click on 'Test Cases' button
     Then Verify user is navigated to test cases page successfully
     And Finally i close the browserrr
 
-@Sanity
+@ThirtyEight
     Scenario: Verify Subscription section functionality
     When Scroll down to footer
     Then Verify text 'SUBSCRIPTION'
@@ -358,14 +359,14 @@ Scenario: Login user with incorrect email and password
     Then Verify success message 'You have been successfully subscribed!' is visible
     And Finally i close the browserrr
 
-@Smoke
+@Thirtynine
     Scenario: Submit contact form with message and file upload
     When Click on 'Contact Us' button
     Then Verify 'GET IN TOUCH' is visible
     And Enter name, email, subject and message
     And Finally i close the browserrr
 
-@Sanity
+@Fourty
     Scenario: Submit contact form with message and file upload
     When Click on 'Contact Us' button
     Then Verify 'GET IN TOUCH' is visible
@@ -375,7 +376,7 @@ Scenario: Login user with incorrect email and password
     Then Verify success message 'Success! Your details have been submitted successfully.' is visible
     And Click 'Home' button and verify that landed to home page successfully
         And Finally i close the browserrr
-@Sanity
+@FourtyOne
         Scenario: Verify search functionality for products
     When Click on 'Products' button
     Then Verify user is navigated to ALL PRODUCTS page successfully
@@ -383,7 +384,7 @@ Scenario: Login user with incorrect email and password
     Then Verify 'SEARCHED PRODUCTS' is visible
     Then Verify all the products related to search are visible
 
-@Sanity
+@FourtyTwo
      Scenario: Verify all products and product detail page functionality
     When Click on 'Products' button
     Then Verify user is navigated to ALL PRODUCTS page successfully
@@ -393,7 +394,7 @@ Scenario: Login user with incorrect email and password
     Then Verify that product detail is visible: product name, category, price, availability, condition, brand
     And Finally i close the browserrr
 
-@Sanity
+@FourtyThree
     Scenario: User should be able to sign up 
     When Click on Signup button
     Then Verify new sign up is visible
@@ -401,7 +402,7 @@ Scenario: Login user with incorrect email and password
     And Click 'Signup' button
     And Finally i close the browserrr
 
-@Sanity
+@FourtyFour
     Scenario: Add Products to Cart
     When Click the on 'Products' button
     And Hover over first product and click 'Add to cart'
@@ -412,7 +413,7 @@ Scenario: Login user with incorrect email and password
     And Verify their prices, quantity and total price
     Then Finally i close the browserrr
 
-@Sanity
+@FourtyFour
     Scenario:Verify Subscription in Cart page
     When Click on the 'Cart' button
     And Scroll down to footer
@@ -422,7 +423,7 @@ Scenario: Login user with incorrect email and password
     Then Finally i close the browserrr
 
 
-    @Smoke
+    @FourtyFour
     Scenario Outline: Verify login functionality with valid Credentials
 Given User should launch the browser
 When User should write "<username>" and "<password>"
@@ -434,7 +435,7 @@ Examples:
 |username|password|
 |standard_user|secret_sauce|
  
-@Smoke
+@FourtyFive
 Scenario Outline: Verify User is able Select Product
 Given User should launch the browser
 When User should write "<username>" and "<password>"
@@ -446,7 +447,7 @@ Examples:
 |username|password|
 |standard_user|secret_sauce|
 
-@Sanity
+@FourtyFive
 Scenario: Automation Practice Form Interaction
   Given user lauch the automation practice  
   When User select radio button
@@ -456,7 +457,7 @@ Scenario: Automation Practice Form Interaction
   And User navigate to the default window
   Then user send the input value
 
-@Sanity
+@Fourtysix
 Scenario: Checkout Process
   Given User launch Application  
   When User input the first name
@@ -465,32 +466,32 @@ Scenario: Checkout Process
   And User Click the continue button
   
 
-@Regression
+@FourtySeven
 Scenario: Add to Cart
   Given user launch the application with credentilas
   When user click add to cart button for sauce labs BackPack
   Then user click the cart icon and navigates to Swag labs
 
-@Sanity
+@FourtySeven
 Scenario: HerokuApp - Add Remove Elements
   Given user lauch the herokuapp automation page  
   When User click the add remove elements
   Then verify stale element execption
 
-@Sanity
+@FourtySeven
 Scenario: LetCode - Dropdown Interaction
   Given user lauch the letcode dropdown button automation page  
   When User get the dropdown button
   Then User get multiselect
 
-@Sanity
+@fourtynine
 Scenario: LetCode - Alert Interaction
   Given user lauch the letcode automation page  
   When User click the simple alert
   When User click confirm alert
   Then A confirmation popup should appear
 
-@Sanity
+@fourtyeight
 Scenario: LetCode - Button Properties
   Given user lauch the letcode button automation page  
   When User get the location of the button
@@ -498,7 +499,7 @@ Scenario: LetCode - Button Properties
   When User get the size of the button
   Then A confirmation on disable button
 
-@Sanity
+@fifty
 Scenario: End-to-End Hotel Booking on Demo Application
   Given user launch The Application  
   When user Enter The Username In Username Filed
@@ -527,7 +528,7 @@ Scenario: End-to-End Hotel Booking on Demo Application
   When user Click My Itineary Button
   Then user Click Logout Button
 
-@Sanity
+@fiftyone
 Scenario Outline: Validation of login using valid credentials
   Given the user should be in login page
   When the user enter the username "<username>" and password "<password>"
@@ -538,7 +539,7 @@ Scenario Outline: Validation of login using valid credentials
     | username                    | password    | title       |
     | princyprabha2609@gmail.com | Princy@119  | My Account  |
 
-@Sanity
+@fiftytwo
 Scenario Outline: Validation of login using invalid credentials
   Given the user should be in login page
   When the user enters the invalid username "<username>" and password "<password>"
@@ -550,7 +551,7 @@ Scenario Outline: Validation of login using invalid credentials
     | princyprabha2609@gmail.com | Chinnu@211 | Warning: No match for E-Mail Address and/or Password. |
     | princyp6@gmail.com         | Princy@211 | Warning: No match for E-Mail Address and/or Password. |
 
-@Regression
+@fiftythree
 Scenario Outline: Validate the monitors page
   Given the user is on the homepage
   When the user navigates to Components -> Monitors
@@ -560,10 +561,12 @@ Scenario Outline: Validate the monitors page
     | title    |
     | Monitors |
 
-@Regression
+@fiftyfour
 Scenario: Adding a new valid shipping address
   Given I am logged in to my account
   And I navigate to the Address Book section
+  When I click on the Add Address button
+  And I enter the following shipping address details:
     | First Name | Princy         |
     | Last Name  | PS             |
     | Company    | Exp Inc        |
@@ -576,27 +579,27 @@ Scenario: Adding a new valid shipping address
   And I click the Continue button to proceed
   Then the new shipping address should be successfully added to my address book
 
-@Regression
+@FiftyFive
 Scenario: Add a single product to the cart 
   Given I am on the Swag Labs inventory page
   When I click the Add to cart button for Sauce Labs Backpack
     
 
-@Smoke
+@Fiftysix
 Scenario: Verify product is added to the cart page
   Given I have added "Sauce Labs Backpack" to the cart
   When I click the cart icon
   Then I should be on the cart page
   And I should see "Sauce Labs Backpack" listed in the cart
 
-@Sanity
+@FiftyFive
 Scenario: Proceed to login
   Given The user should be login page
   When The user enter username "Admin" and password "admin123"
   And click on the "Login" button
   Then user should be directed to Dashboard page with title "OrangeHRM"
 
-    @Sanity
+    @FiftySeven
   Scenario: Verify slider updates the displayed value correctly
     Given I open the slider webpage
     When I move the slider to "0.5"
@@ -606,7 +609,7 @@ Scenario: Proceed to login
     When I move the slider to "5"
     Then I should see the displayed value as "5"
 
-     @Smoke
+     @FiftySeven
   Scenario Outline: Verify key press events
     Given I am on the Key Press page
     When I press the "<key>" key
@@ -620,20 +623,20 @@ Scenario: Proceed to login
       | ALT     |
       | SHIFT   |
 
-@Sanity
+@FiftyEight
 Scenario: Login as Admin with credentials 
   Given The user should be login page
   When The user enter username "Admin" and password "admin123"
   And click on the "Login" button
   Then user should be directed to Dashboard page with title "OrangeHRM"
 
-@Sanity
+@FiftyEight
 Scenario: Search for a module using sidebar search
   Given The user should be logged in
   When I enter "Recruitment" in the sidebar search field
   Then I should see the "Recruitment" module visible in the sidebar
 
-@Sanity
+@FiftyNine
 Scenario Outline: Validation of Login Credentials AHB
   Given User is on the Adactin Login page
   When User enters the valid "<Username>" and "<Password>" for the Adactin site
@@ -643,7 +646,7 @@ Scenario Outline: Validation of Login Credentials AHB
     | Username       | Password   |
     | adactin_user   | adac1234   |
 
-@Sanity
+@Sixty
 Scenario Outline: Login with different credentials
   Given User should Enters Login page
   When User should enter "<Username>" and "<Password>"
@@ -654,7 +657,7 @@ Scenario Outline: Login with different credentials
     | Username   | Password | message                 |
     | user001    | pass001  | Welcome to your account |
 
-@Sanity
+@sixtyone
 Scenario Outline: Toggle checkbox selection
   Given I open the checkbox page
   When I set checkbox <index> to "<state>"
@@ -665,7 +668,7 @@ Scenario Outline: Toggle checkbox selection
     | 1     | check  | checked       |
     | 2     | uncheck| unchecked     |
 
-    @Sanity
+    @sixtytwo
 	Scenario: Adding an item to the cart
     Given I navigate to the shopping page
     When I select a product

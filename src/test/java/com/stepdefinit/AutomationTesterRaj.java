@@ -56,34 +56,24 @@ public class AutomationTesterRaj {
 	public void user_enter_the_password_in_password_field() {
 
 		//		inputValue(login.getPassword(), "Raje@123");
-
 		booking.getPassword().sendKeys("Raje@123");
 
 	}
 	@Then("User Click On The Login Button And It Navigates To Search Hotel Page")
 	public void user_click_on_the_login_button_and_it_navigates_to_search_hotel_page() {
-
 		//		clickonElement(login.getSubmit());
-
 		booking.getSubmit().click();
-
 	}
 
 	@When("user Select The Location")
 	public void user_select_the_location() {
 
 		//		singledropdown(Search.getLocation(), "index", "1");
-
-		//		WebElement locationDropdown = booking.getLocation();
-		//		
-		//		Select select = new Select(booking.getLocation());
-		//		
+		//		WebElement locationDropdown = booking.getLocation();		//		
+		//		Select select = new Select(booking.getLocation());		//		
 		//		select.selectByIndex(1);
-
 		WebElement location= driver.findElement(By.xpath("//*[@id=\"location\"]"));
-
 		Select select = new Select(location);
-
 		select.selectByIndex(1);
 
    }
@@ -93,52 +83,38 @@ public class AutomationTesterRaj {
 
 //		singledropdown(Search.getHotels(), "index", "1");
 		
-		WebElement singledropdown = booking.getHotels();
-		
-		Select select = new Select(singledropdown);
-		
+		WebElement singledropdown = booking.getHotels();		
+		Select select = new Select(singledropdown);		
 		select.selectByIndex(1);
 
 	}
 	@When("user Select The RoomType")
 	public void user_select_the_room_type() {
 
-//		singledropdown(Search.getRoomtype(), "index", "1");
-		
-		WebElement singledropdown = booking.getRoomtype();
-		
-        Select select = new Select(singledropdown);
-		
-		select.selectByIndex(1);
-		
-		
+//		singledropdown(Search.getRoomtype(), "index", "1");		
+		WebElement singledropdown = booking.getRoomtype();		
+        Select select = new Select(singledropdown);		
+		select.selectByIndex(1);		
 
 	}
 	@When("user Select The NumberofRooms")
-	public void user_select_the_numberof_rooms() {
+	public void user_select_the_numberof_rooms() {	
 		
-		
-//		singledropdown(Search.getNumberofrooms(), "index", "1");
-		
-		WebElement singledropdown = booking.getNumberofrooms();
-		
-        Select select = new Select(singledropdown);
-		
+//		singledropdown(Search.getNumberofrooms(), "index", "1");		
+		WebElement singledropdown = booking.getNumberofrooms();		
+        Select select = new Select(singledropdown);		
 		select.selectByIndex(1);
 
 	}
 	@When("user Enters The CheckinDate")
 	public void user_enters_the_checkin_date() {
 
-//		inputValue(Search.getcheckinDate(), "21/03/2025");
-		
+//		inputValue(Search.getcheckinDate(), "21/03/2025");		
 		booking.getcheckinDate().sendKeys("21/06/2025");
 	}
 	@When("user Enters The CheckOutDate")
 	public void user_enters_the_check_out_date() {
-
-//		inputValue(Search.getcheckoutDate(), "21/03/2025");
-		
+//		inputValue(Search.getcheckoutDate(), "21/03/2025");		
 		booking.getcheckoutDate().sendKeys("21/06/2025");
 
 	}
@@ -146,71 +122,49 @@ public class AutomationTesterRaj {
 	public void user_select_the_adult_per_room() {
 //		singledropdown(Search.getadultperroom(), "index", "1");
 		
-       WebElement singledropdown = booking.getadultperroom();
-		
-        Select select = new Select(singledropdown);
-		
+       WebElement singledropdown = booking.getadultperroom();		
+        Select select = new Select(singledropdown);		
 		select.selectByIndex(1);
 
 	}
 	@When("user Select The ChildrenPerRoom")
 	public void user_select_the_children_per_room() {
 
-//		singledropdown(Search.getchildperroom(), "index", "1");
-		
-		 WebElement singledropdown = booking.getchildperroom();
-			
-	        Select select = new Select(singledropdown);
-			
+//		singledropdown(Search.getchildperroom(), "index", "1");		
+		 WebElement singledropdown = booking.getchildperroom();			
+	        Select select = new Select(singledropdown);			
 			select.selectByIndex(1);
-		
-		
-
 	}
 	@Then("User Click on the Search Button And It Navigates To Select Hotel page")
 	public void user_click_on_the_search_button_and_it_navigates_to_select_hotel_page() {
 
-//		clickonElement(Search.getsearchhotel());
-		
+//		clickonElement(Search.getsearchhotel());		
 		booking.getsearchhotel().click();
-
-
 	}
 	
 	@When("user Select The RadioButton")
 	public void user_select_the_radio_button() {
 		
-//		clickonElement(Select.getradiobutton());
-		
-		booking.getradiobutton().click();
-		
-		
-		
-	   
+//		clickonElement(Select.getradiobutton());		
+		booking.getradiobutton().click();	   
 	}
 	@When("user Select The ContinueButton")
-	public void user_select_the_continue_button() {
-		
-//		clickonElement(Select.getcontinuebutton());
-		
-		booking.getcontinuebutton().click();
-	    
+	public void user_select_the_continue_button() {		
+//		clickonElement(Select.getcontinuebutton());		
+		booking.getcontinuebutton().click();	    
 	}
 	
 	@When("user Enters The FirstName")
 	public void user_enters_the_first_name() {
 		
-//	inputValue(Payment.getFirstName(), "rajasekar");
-	
-	booking.getFirstName().sendKeys("rajasekar");
-	   
+//	inputValue(Payment.getFirstName(), "rajasekar");	
+	booking.getFirstName().sendKeys("rajasekar");	   
 	}
 	
 	@When("user Enters The LastName")
 	public void user_enters_the_last_name() {
 		
-//    inputValue(Payment.getLastName(), "inbasekaran");
-    
+//    inputValue(Payment.getLastName(), "inbasekaran");    
     booking.getLastName().sendKeys("inbasekaran");
 	   
 	}
@@ -218,16 +172,14 @@ public class AutomationTesterRaj {
 	@When("user Enters The Address")
 	public void user_enters_the_address() {
 		
-//	inputValue(Payment.getAddress(), "No/2/91 A Kovur Chennai");
-	
+//	inputValue(Payment.getAddress(), "No/2/91 A Kovur Chennai");	
 	booking.getAddress().sendKeys("No/2/91 A Kovur Chennai");
 	   
 	}
 	@When("user Enters The CCN Number")
 	public void user_enters_the_ccn_number() {
 		
-//	inputValue(Payment.getCCNNumber(), "1234567890123456");
-	
+//	inputValue(Payment.getCCNNumber(), "1234567890123456");	
 	booking.getCCNNumber().sendKeys("1234567890123456");
 	
 	}
@@ -237,10 +189,8 @@ public class AutomationTesterRaj {
 		
 //	singledropdown(Payment.getCCType(), "index", "1");
 		
-		 WebElement singledropdown = booking.getCCType();
-			
-	      Select select = new Select(singledropdown);
-			
+		 WebElement singledropdown = booking.getCCType();			
+	      Select select = new Select(singledropdown);			
 			select.selectByIndex(1);
 	 
 	}
@@ -249,10 +199,8 @@ public class AutomationTesterRaj {
 		
 //	singledropdown(Payment.getCCExpiryMonth(), "index", "1");
 		
-		 WebElement singledropdown = booking.getCCExpiryMonth();
-			
-	      Select select = new Select(singledropdown);
-			
+		 WebElement singledropdown = booking.getCCExpiryMonth();			
+	      Select select = new Select(singledropdown);			
 			select.selectByIndex(1);
 	
 	}
@@ -262,21 +210,16 @@ public class AutomationTesterRaj {
 		
 //	singledropdown(Payment.getCCExpiryYear(), "index", "10");
 	
-	 WebElement singledropdown = booking.getCCExpiryYear();
-		
-     Select select = new Select(singledropdown);
-		
+	 WebElement singledropdown = booking.getCCExpiryYear();		
+     Select select = new Select(singledropdown);		
 		select.selectByIndex(10);
-
 	}
 	
 	@When("user Enters The CC CVV")
 	public void user_enters_the_cc_cvv() {
 		
-//    inputValue(Payment.getCC_CVV(), "426");
-		
+//    inputValue(Payment.getCC_CVV(), "426");		
 		booking.getCC_CVV().sendKeys("426");
-
 	}
 	
 	@Then("User Click on the BookNow Button It Navigates To Booking Cofirmation Page")
@@ -397,9 +340,7 @@ public class AutomationTesterRaj {
 	public void user_send_the_input_value() {
 
 		WebElement enteryourname= driver.findElement(By.xpath("//*[@id=\"name\"]"));
-
-		enteryourname.sendKeys("raj");
-		
+		enteryourname.sendKeys("raj");		
 		driver.quit();
 
 	}
@@ -407,12 +348,26 @@ public class AutomationTesterRaj {
 	
 	
 	@Given("User launch Application")
-public void user_launch_application() {
+public void user_launch_application() throws Exception {
 		 WebDriverManager.chromedriver().setup();
 	driver.get("https://www.saucedemo.com/");
 		sauce.user_name().sendKeys("standard_user");
 		sauce.password().sendKeys("secret_sauce");
-		sauce.login_button().click();
+		String parentwindow = driver.getWindowHandle();
+		System.out.println("Parent window ID: " + parentwindow);
+		sauce.login_button().click();		
+
+		// Set<String> childwindow = driver.getWindowHandles();
+		// for(String ch : childwindow){
+		// 	if(parentwindow.equals(ch)){
+		// 		driver.switchTo().window(ch);
+		// 		System.out.println("Child window ID: " + ch);
+		// 		System.out.println("Get Tittle" + " " + driver.getTitle());
+		// 	}
+		// }
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+		Thread.sleep(2000);
+		//driver.switchTo().alert().accept();
 		WebElement backpack= driver.findElement(By.id("add-to-cart-sauce-labs-backpack"));
 		backpack.click();
 		  WebElement cartBadge = driver.findElement(By.className("shopping_cart_badge"));
@@ -492,14 +447,12 @@ public void user_input_the_first_name() {
         assertEquals("1", cartBadge.getText());
         WebElement cartclick= driver.findElement(By.xpath("//* [contains(@id,'shopping_cart_container')]"));
 		cartclick.click();
-
 	}
 	
 	@Given("user lauch the herokuapp automation page")
 	public void user_lauch_the_herokuapp_automation_page() {
 		 WebDriverManager.chromedriver().setup();
 		driver.get("https://the-internet.herokuapp.com/");
-
 	}
 
 
@@ -620,21 +573,17 @@ public void user_lauch_the_letcode_automation_page() {
     driver.get("https://letcode.in/alert");
 }
 @When("User click the simple alert")
-public void user_click_the_simple_alert() {
-    	WebElement simpleAlert= driver.findElement(By.id("accept"));
-		
+public void user_click_the_simple_alert() throws InterruptedException {
+    	WebElement simpleAlert= driver.findElement(By.id("accept"));		
 		simpleAlert.click();
 		 
 		//Thread.sleep(3000);
 		
-		Alert alert = driver.switchTo().alert();
-		
-		String text= alert.getText();
-		
-		System.out.println("Alert text is " + text);
-		 
-		alert.accept();
-    
+		Alert alert = driver.switchTo().alert();	
+		Thread.sleep(2000);	
+		String text= alert.getText();		
+		System.out.println("Alert text is " + text);		 
+		alert.accept();    
 }
 @When("User click confirm alert")
 public void user_click_confirm_alert() {
@@ -755,9 +704,7 @@ public void user_should_be_able_to_see(String message) {
 
 @Given("I open the checkbox page")
 public void i_open_the_checkbox_page() {
-
-	driver.get("https://the-internet.herokuapp.com/checkboxes");
-    
+	driver.get("https://the-internet.herokuapp.com/checkboxes");    
 }
 
 @When("I set checkbox {int} to {string}")

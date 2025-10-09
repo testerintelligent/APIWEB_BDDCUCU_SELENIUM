@@ -73,17 +73,19 @@ public class QAfoxAddAdresssStepDef {
 	    driver.findElement(By.id("input-postcode")).sendKeys(data.get("Post Code"));
 	   	}
 	@When("I select country and region from dropdown")
-	public void i_select_country_from_dropdown() {
+	public void i_select_country_from_dropdown() throws InterruptedException {
 		//explicit wait 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		WebElement country = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//select[@id='input-country']")));
 		//WebElement country = driver.findElement(By.xpath("//select[@id = 'input-country']"));
 	    Select countrtList = new Select(country);
 	    countrtList.selectByIndex(5);
 	    
-	   	WebElement zone = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[@name='zone_id']")));
+		Thread.sleep(2000);
+
+	   	WebElement zone = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[@id='input-zone']")));
 	    Select region = new Select(zone);
-	    region.selectByIndex(1);	    
+	    region.selectByIndex(3);    
 	}
 	@When("I choose  Default Address")
 	public void i_choose_default_address() {

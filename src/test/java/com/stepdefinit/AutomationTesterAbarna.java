@@ -297,7 +297,7 @@ public void launch_browser_and_navigate() {
 	    }
 	    @When("Click on 'View Product' of first product")
 	    public void click_on_view_product_of_first_product() {
-	        WebElement firstProductViewButton = driver.findElement(By.xpath("(//a[@href='#'])[1]"));
+	        WebElement firstProductViewButton = driver.findElement(By.xpath("(//a[contains(text(),'View Product')])[1]"));
 	        firstProductViewButton.click();
 	    }
 
