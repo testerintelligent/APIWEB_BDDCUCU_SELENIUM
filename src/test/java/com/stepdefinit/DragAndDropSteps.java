@@ -5,6 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import io.cucumber.java.en.Given;
@@ -13,10 +14,12 @@ import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.time.Duration;
+import java.util.Map;
+
 import static org.junit.Assert.assertEquals;
 
 public class DragAndDropSteps {
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver;
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
     private By boxA = By.id("column-a");
@@ -24,8 +27,13 @@ public class DragAndDropSteps {
 
     @Given("I am on the Drag and Drop page")
     public void i_am_on_the_drag_and_drop_page() {
-    	 WebDriverManager.chromedriver().setup();
-        driver.manage().window().maximize();
+    WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headless");
+    options.addArguments("disable-infobars");
+    options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+    driver = new ChromeDriver(options);
+    driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  
         driver.get("https://the-internet.herokuapp.com/drag_and_drop");
         wait.until(ExpectedConditions.visibilityOfElementLocated(boxA));

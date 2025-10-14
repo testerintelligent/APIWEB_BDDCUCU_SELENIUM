@@ -53,5 +53,5 @@ public class BaseClass1 {
         String rand = RandomStringUtils.randomAlphabetic(n);
         return rand;
     }
-    
+
 }

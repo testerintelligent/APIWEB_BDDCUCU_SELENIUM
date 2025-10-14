@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -19,11 +20,16 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class QAfoxAddAdresssStepDef {
 	
-	WebDriver driver = new ChromeDriver();
+	WebDriver driver;
 
 	@Given("I am logged in to my account")
 	public void i_am_logged_in_to_my_account() throws InterruptedException {
-		 WebDriverManager.chromedriver().setup();
+	WebDriverManager.chromedriver().setup();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");
+		options.addArguments("disable-infobars");
+		options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+		driver = new ChromeDriver(options);
 		driver.get("https://tutorialsninja.com/demo/");
 		driver.manage().window().maximize();
 		Thread.sleep(3000);

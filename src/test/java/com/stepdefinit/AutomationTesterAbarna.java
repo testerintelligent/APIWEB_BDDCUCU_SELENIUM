@@ -2,6 +2,7 @@ package com.stepdefinit;
 
 import java.io.File;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
@@ -11,13 +12,15 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.interactions.Actions;
 
 public class AutomationTesterAbarna {
@@ -25,12 +28,16 @@ public class AutomationTesterAbarna {
     WebDriver driver;
     @Given("Launch browser and navigate to AutomationTester url")
 public void launch_browser_and_navigate() {
-	
-   // System.setProperty("webDriver.chrome.driver", "C:/Users/10669/OneDrive - Expleo France/Desktop/SampleTest/src/test/resources/drivers/chromedriver_proxy.exe");
-    driver= new ChromeDriver();
-    //driver = new EdgeDriver();
-    //  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
+	//BaseClass1.headless("chrome");   
+    WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headless");
+    options.addArguments("disable-infobars");
+    options.setExperimentalOption("prefs", Map.of(
+    "credentials_enable_service", false,
+    "profile.password_manager_enabled", false
+    ));
+    driver = new ChromeDriver(options);
     driver.manage().window().maximize();
     driver.get("https://automationexercise.com/");
 
@@ -61,7 +68,6 @@ public void launch_browser_and_navigate() {
 	    driver.findElement(By.xpath("//button[@data-qa='signup-button']")).click();
 
 	}
-
 
 	@And("Fill details: Title, Name, Email, Password, Date of birth")
 	public void fill_account_info() {

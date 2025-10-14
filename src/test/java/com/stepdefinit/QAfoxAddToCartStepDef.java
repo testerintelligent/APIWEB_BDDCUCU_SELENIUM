@@ -2,21 +2,29 @@ package com.stepdefinit;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Map;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.cucumber.java.en.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class QAfoxAddToCartStepDef {
 
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver;
 
     @Given("I am on the Swag Labs inventory page")
     public void i_am_on_the_swag_labs_inventory_page() {
-    	 WebDriverManager.chromedriver().setup();
+    WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headless");
+    options.addArguments("disable-infobars");
+    options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+    driver = new ChromeDriver(options);
         driver.get("https://www.saucedemo.com/");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");

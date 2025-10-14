@@ -1,7 +1,10 @@
 package com.stepdefinit;
 
+import java.util.Map;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import com.example.Pom.paraBank;
 
@@ -17,7 +20,11 @@ public class RegisterAndLogin {
     @Given("I launch the ParaBank website")
     public void i_launch_the_para_bank_website() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        options.addArguments("disable-infobars");
+        options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.get("https://parabank.parasoft.com/parabank/register.htm");
 

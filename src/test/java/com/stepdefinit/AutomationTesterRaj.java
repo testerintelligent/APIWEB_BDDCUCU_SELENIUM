@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.openqa.selenium.Alert;
@@ -14,6 +15,7 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -29,7 +31,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class AutomationTesterRaj {
 
-	WebDriver driver = new ChromeDriver();
+	WebDriver driver;
 
 	BookingHotel booking = new BookingHotel(driver);
 	com.example.Pom.PracticePage practice; 
@@ -39,7 +41,13 @@ public class AutomationTesterRaj {
 
 	@Given("user launch The Application")
 	public void user_launch_the_application() {
-		 WebDriverManager.chromedriver().setup();
+		WebDriverManager.chromedriver().setup();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");
+		options.addArguments("disable-infobars");
+		options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+		driver = new ChromeDriver(options);
+		driver.manage().window().maximize();
 		driver.get("https://adactinhotelapp.com/");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  
 
@@ -254,7 +262,12 @@ public class AutomationTesterRaj {
 	@Given("user lauch the automation practice")
 	public void user_lauch_the_automation_practice() {
 		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
+    ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headless");
+    options.addArguments("disable-infobars");
+    options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+    driver = new ChromeDriver(options);
+    driver.manage().window().maximize();
 		practice = new com.example.Pom.PracticePage(driver);
 		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  
@@ -349,8 +362,21 @@ public class AutomationTesterRaj {
 	
 	@Given("User launch Application")
 public void user_launch_application() throws Exception {
-		 WebDriverManager.chromedriver().setup();
-	driver.get("https://www.saucedemo.com/");
+		WebDriverManager.chromedriver().setup();
+		ChromeOptions options = new ChromeOptions();
+		
+		options.addArguments("user-data-dir=C:\\Selenium");
+ 
+        // Specify which profile folder to use (Default or Profile 1, etc.)
+        options.addArguments("profile-directory=Profile 3"); // or "Default"
+ 
+        // Recommended flags for automation stability
+        options.addArguments("--start-maximized");
+        options.addArguments("--disable-infobars");
+        options.addArguments("--remote-allow-origins=*");
+		driver = new ChromeDriver(options);
+		driver.manage().window().maximize();
+		driver.get("https://www.saucedemo.com/");
 		sauce.user_name().sendKeys("standard_user");
 		sauce.password().sendKeys("secret_sauce");
 		String parentwindow = driver.getWindowHandle();
@@ -422,7 +448,13 @@ public void user_input_the_first_name() {
 	
 	@Given("user launch the application with credentilas")
 	public void user_launch_the_application_with_credentilas() {
-		 WebDriverManager.chromedriver().setup();
+			WebDriverManager.chromedriver().setup();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");
+		options.addArguments("disable-infobars");
+		options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+		driver = new ChromeDriver(options);
+		driver.manage().window().maximize();
 		driver.get("https://www.saucedemo.com/");
 		sauce.user_name().sendKeys("standard_user");
 		sauce.password().sendKeys("secret_sauce");
@@ -451,7 +483,13 @@ public void user_input_the_first_name() {
 	
 	@Given("user lauch the herokuapp automation page")
 	public void user_lauch_the_herokuapp_automation_page() {
-		 WebDriverManager.chromedriver().setup();
+	WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headless");
+    options.addArguments("disable-infobars");
+    options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+    driver = new ChromeDriver(options);
+    driver.manage().window().maximize();
 		driver.get("https://the-internet.herokuapp.com/");
 	}
 
@@ -569,7 +607,12 @@ public void user_get_multiselect() {
 
  @Given("user lauch the letcode automation page")
 public void user_lauch_the_letcode_automation_page() {
-
+	WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headless");
+    options.addArguments("disable-infobars");
+    options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+    driver = new ChromeDriver(options);
     driver.get("https://letcode.in/alert");
 }
 @When("User click the simple alert")
@@ -619,7 +662,12 @@ public void a_confirmation_popup_should_appear() {
 
  @Given("user lauch the letcode button automation page")
 public void user_lauch_the_letcode_button_automation_page() {
-    	 WebDriverManager.chromedriver().setup();
+    WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headless");
+    options.addArguments("disable-infobars");
+    options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+    driver = new ChromeDriver(options);
     driver.get("https://letcode.in/button");
     
 }
@@ -676,7 +724,12 @@ public void a_confirmation_on_disable_button() {
 
 @Given("User should Enters Login page")
 public void user_should_enters_login_page() {
-
+	WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headless");
+    options.addArguments("disable-infobars");
+    options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+    driver = new ChromeDriver(options);
 	driver.get("https://the-internet.herokuapp.com/login");
     
 }
@@ -704,6 +757,12 @@ public void user_should_be_able_to_see(String message) {
 
 @Given("I open the checkbox page")
 public void i_open_the_checkbox_page() {
+	WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headless");
+    options.addArguments("disable-infobars");
+    options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+    driver = new ChromeDriver(options);
 	driver.get("https://the-internet.herokuapp.com/checkboxes");    
 }
 

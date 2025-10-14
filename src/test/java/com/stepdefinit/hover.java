@@ -2,6 +2,7 @@ package com.stepdefinit;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
@@ -9,6 +10,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,12 +18,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class hover {
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver;
     //WebDriverManager.chromedriver().setup();
     @Given("I enter the url of domains")
 public void i_enter_the_url_of_domains() {
+    WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headless");
+    options.addArguments("disable-infobars");
+    options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+    driver = new ChromeDriver(options);
+    driver.manage().window().maximize();
     driver.get("https://demowebshop.tricentis.com/");
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  
     driver.getTitle();

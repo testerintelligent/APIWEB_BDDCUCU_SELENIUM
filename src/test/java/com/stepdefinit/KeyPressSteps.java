@@ -4,6 +4,7 @@ import io.cucumber.java.en.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.time.Duration;
+import java.util.Map;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -11,6 +12,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 
 public class KeyPressSteps {
@@ -18,8 +20,13 @@ public class KeyPressSteps {
 
     @Given("I am on the Key Press page")
     public void i_am_on_the_key_press_page() {
-        driver = new ChromeDriver();
-        WebDriverManager.chromedriver().setup();
+    WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headless");
+    options.addArguments("disable-infobars");
+    options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+    driver = new ChromeDriver(options);
+    driver.manage().window().maximize();
         driver.manage().window().maximize();
         driver.get("https://the-internet.herokuapp.com/key_presses"); // Replace with actual URL
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  

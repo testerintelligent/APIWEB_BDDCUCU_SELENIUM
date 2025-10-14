@@ -1,12 +1,14 @@
 package com.stepdefinit;
 
 import java.time.Duration;
+import java.util.Map;
 import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -17,11 +19,17 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import io.cucumber.java.After;
 
 public class WinPopupPractice {
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver;
     private String mainWindowHandle;
     @Given("I enter the url of practice page")
-public void i_enter_the_url_of_practice_page() {
-    	 WebDriverManager.chromedriver().setup();
+public void i_enter_the_url_of_practice_page() {    	 
+         WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headless");
+    options.addArguments("disable-infobars");
+    options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+    driver = new ChromeDriver(options);
+    driver.manage().window().maximize();
     driver.get("https://rahulshettyacademy.com/AutomationPractice/");
     mainWindowHandle = driver.getWindowHandle(); // Assign here after page load
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  

@@ -2,9 +2,12 @@ package com.stepdefinit;
 
 import io.cucumber.java.en.*;
 
+import java.util.Map;
+
 import org.openqa.selenium.WebDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import com.example.Pom.AutomationExercise;
 
@@ -15,7 +18,11 @@ public class RegisterUser {
     @Given("I want to launch the browser and navigate to the Automation Exercise website")
     public void i_want_to_launch_the_browser_and_navigate_to_the_automation_exercise_website() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        options.addArguments("disable-infobars");
+        options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.get("https://automationexercise.com");
         AE = new AutomationExercise(driver);

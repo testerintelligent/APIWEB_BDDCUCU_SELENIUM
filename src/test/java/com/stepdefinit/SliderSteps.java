@@ -3,6 +3,7 @@ package com.stepdefinit;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,13 +13,20 @@ import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.time.Duration;
+import java.util.Map;
 
 public class SliderSteps {
-    WebDriver driver =  new ChromeDriver();
+    ChromeDriver driver;
 
     @Given("I open the slider webpage")
     public void i_open_the_slider_webpage() {
-    	 WebDriverManager.chromedriver().setup();
+    WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headless");
+    options.addArguments("disable-infobars");
+    options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+    driver = new ChromeDriver(options);
+    driver.manage().window().maximize();
         driver.get("https://the-internet.herokuapp.com/horizontal_slider"); // Replace with your actual slider URL
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

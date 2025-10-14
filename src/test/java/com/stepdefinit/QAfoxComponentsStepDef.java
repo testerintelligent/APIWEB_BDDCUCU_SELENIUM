@@ -2,12 +2,15 @@ package com.stepdefinit;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Map;
+
 import org.jspecify.annotations.Nullable;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -17,11 +20,16 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class QAfoxComponentsStepDef {
 	
-	WebDriver driver = new ChromeDriver();
+	WebDriver driver;
 	 
 	@Given("the user is on the homepage")
 	public void the_user_is_on_the_homepage() throws InterruptedException {
-		 WebDriverManager.chromedriver().setup();
+			WebDriverManager.chromedriver().setup();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");
+		options.addArguments("disable-infobars");
+		options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+		driver = new ChromeDriver(options);
 		driver.get("https://tutorialsninja.com/demo/");
 		driver.manage().window().maximize();
 		Thread.sleep(3000);

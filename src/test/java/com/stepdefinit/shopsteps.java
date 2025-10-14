@@ -1,11 +1,12 @@
 package com.stepdefinit;
 import java.util.List;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,6 +16,7 @@ import com.example.Pom.shoppingpage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import junit.framework.Assert;
 
 import java.time.Duration;
@@ -24,11 +26,17 @@ import java.time.Duration;
 
 public class shopsteps {
 
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver;
     shoppingpage shop = new shoppingpage();
 @Given("I navigate to the shopping page")
 public void i_navigate_to_the_shopping_page() {
-   
+   WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headless");
+    options.addArguments("disable-infobars");
+    options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+    driver = new ChromeDriver(options);
+    driver.manage().window().maximize();
   
    // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
      driver.get("https://magento.softwaretestingboard.com/");

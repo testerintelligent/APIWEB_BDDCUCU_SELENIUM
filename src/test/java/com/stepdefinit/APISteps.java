@@ -6,7 +6,7 @@ import io.cucumber.java.en.When;
 import io.restassured.response.Response;
 
 public class APISteps {
-    private Response response;
+    public Response response;
 
     @Given("the API is available")
     public void the_api_is_available() {

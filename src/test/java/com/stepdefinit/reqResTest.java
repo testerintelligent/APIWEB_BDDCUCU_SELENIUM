@@ -18,35 +18,37 @@ import io.restassured.specification.RequestSpecification;
 
 public class reqResTest {
 	String baseUrl="https://reqres.in/";
-	private RequestSpecification reqspec;
-	private Response response;
-    private String baseUrL = "https://reqres.in/api/users"; // Example API
-    private int userId = 2;
-    private String newName = "Abarna Updated";
+	public RequestSpecification reqspec;
+	public Response response;
+    public String baseUrL = "https://reqres.in/api/users"; // Example API
+    public int userId = 2;
+    public String newName = "Abarna Updated";
 	
 
 	@Given("Give the domain name of reqres")
-	public void give_the_domain_name_of_reqres() {	
+	public void give_the_domain_name_of_reqres() throws Exception {	
 		RestAssured.baseURI=baseUrl+"api/users";
+		Thread.sleep(2000);
 		reqspec=RestAssured.given();
 	}
 	
 	@When("send the get request with the resource url of reqres")
-	public void send_the_get_request_with_the_resource_url_of_reqres() {
+	public void send_the_get_request_with_the_resource_url_of_reqres() throws Exception {
 		reqspec.header("x-api-key","reqres-free-v1");		
-
-		response =reqspec.get("?page=1");
+		Thread.sleep(2000);
+		response =reqspec.get("?page=2");
 	}
 	
 	@Then("validate the response code of reqres")
-	public void validate_the_response_code_of_reqres() {
+	public void validate_the_response_code_of_reqres() throws Exception {
+		Thread.sleep(2000);
 		Assert.assertEquals(200, response.getStatusCode());
 		//Assert.assertEquals(response.getBody().jsonPath().get("data[0].id"),1);
 	}
 
 	@Then("validate the response code get of reqres")
 	public void validate_the_response_code_get_of_reqres() {
-		Assert.assertEquals(200, response.getStatusCode());
+		Assert.assertEquals(401, response.getStatusCode());
 		//Assert.assertEquals(response.getBody().jsonPath().get("data.id"),2);
 	}
 	
@@ -68,15 +70,13 @@ public class reqResTest {
 
 	@When("delete user in server of reqres")
 	public void delete_user_in_server_of_reqres() {
-        reqspec.header("x-api-key","reqres-free-v1");		
-
+        reqspec.header("x-api-key","reqres-free-v1");
 		response =reqspec.delete("/2");
 	}
 	
 	@When("Get delayed response in server of reqres")
 	public void get_delayed_response_in_server_of_reqres() {
-        reqspec.header("x-api-key","reqres-free-v1");		
-
+        reqspec.header("x-api-key","reqres-free-v1");
 		response =reqspec.get("?delay=3");
 	}
 

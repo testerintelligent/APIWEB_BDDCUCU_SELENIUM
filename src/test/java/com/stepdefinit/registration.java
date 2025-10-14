@@ -1,11 +1,13 @@
 package com.stepdefinit;
 
 import java.time.Duration;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -13,11 +15,17 @@ import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class registration {
-      WebDriver driver = new ChromeDriver();
+      WebDriver driver;
     
     @Given("I enter the registration url of domain")
 public void i_enter_the_registration_url_of_domain() {
-    	 WebDriverManager.chromedriver().setup();
+    WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headless");
+    options.addArguments("disable-infobars");
+    options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+    driver = new ChromeDriver(options);
+    driver.manage().window().maximize();
     driver.get("https://demowebshop.tricentis.com/register");
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  
     driver.getTitle();

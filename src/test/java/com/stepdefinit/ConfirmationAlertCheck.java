@@ -1,17 +1,21 @@
 package com.stepdefinit;
 
 import java.time.Duration;
+import java.util.Map;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ConfirmationAlertCheck {
     WebDriver driver;
@@ -19,12 +23,25 @@ public class ConfirmationAlertCheck {
 
     // ✅ Constructor to initialize WebDriver & WebDriverWait
     public ConfirmationAlertCheck() {
-        driver = new ChromeDriver();
+        WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headless");
+    options.addArguments("disable-infobars");
+    options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+    driver = new ChromeDriver(options);
+    driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     @Given("I enter the URL of the practice page for alert")
     public void i_enter_the_URL_of_the_practice_page_for_alert() {
+        WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headless");
+    options.addArguments("disable-infobars");
+    options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+    driver = new ChromeDriver(options);
+    driver.manage().window().maximize();
         driver.get("https://rahulshettyacademy.com/AutomationPractice/");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  
         driver.manage().window().maximize();

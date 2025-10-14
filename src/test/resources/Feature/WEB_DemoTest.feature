@@ -1,37 +1,37 @@
-
+@Alltest
 Feature: WEB_DemoTest
 
 Background: Check Automation Tester Website
 Given Launch browser and navigate to AutomationTester url
     Then Verify that home page is visible successfully
 
- @check
+ @Testone
   Scenario: Test the Navvigation and Back operations in Academic Domain
     Given I enter into the Academy Domain
     When I click the OpenWindow Element    
     And I navigated to another site
     Then again Back to the Main URL
  
- @check
+ @Test
   Scenario: Test the Navvigation and Back operations in Academic Domain
     Given I enter into the Academy Domain
     When I click the OpenWindow Element    
     And I navigated to another site
     Then again Back to the Main URL
  
- @check
+ @Test
     Scenario: Test the automation operations in RahulShettyAcademy
     Given I enter into the Academy Domain of Rahul
     When I click the OpenWindow button
     Then I navigated to that window
  
-@check
+@Test
 Scenario: Test the banking operations in customer Registration
     Given I enter the url of Registration of domain
     When I enter the customer Registration Details
     Then I can able to Register successfully
  
-@check
+@Test
 Scenario: Test the banking operations in customer CompDBlogin
     Given I enter the url of domain CompDB1login
     When I enter customer credentials of CompDB1login
@@ -306,10 +306,6 @@ Examples:
     Then I should see an alert with text "You selected a context menu"
     And I accept the alert
     And I close the browser
- 
-
- 
-
 
 @ThirtyThreee
 Scenario: Login user with incorrect email and password
@@ -813,7 +809,7 @@ Scenario Outline: Toggle checkbox selection
       |username       |password      |
       |standard_user  |secret_sauce  |
 
-  @Smoke @sauce_Product_LoginSuccessful
+  @SeventyFour
   Scenario Outline: Verify User is able to see success message after login
     Given User should launch the browser
     When User should write "<username>" and "<password>"
@@ -825,7 +821,7 @@ Scenario Outline: Toggle checkbox selection
       |username       |password      |
       |standard_user  |secret_sauce  |
 
-  @Regression @sauce_Product_addAllProducttoCart
+  @SeventyFive
   Scenario Outline: Verify User is able to add all product to the cart
     Given User should launch the browser
     When User should write "<username>" and "<password>"
@@ -837,7 +833,7 @@ Scenario Outline: Toggle checkbox selection
       |username       |password      |
       |standard_user  |secret_sauce  |
 
-  @Sanity @cyclos_login_test
+  @SeventySix
   Scenario Outline: Verify the cyclos site address
     Given User should load the url cyclos
     When User should enter the username and password "<username>" and "<password>"

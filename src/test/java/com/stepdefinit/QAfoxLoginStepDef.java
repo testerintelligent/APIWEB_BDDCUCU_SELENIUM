@@ -3,11 +3,13 @@ package com.stepdefinit;
 import static org.junit.Assert.assertEquals;
 
 import java.time.Duration;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 
 import io.cucumber.java.After;
@@ -16,12 +18,17 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class QAfoxLoginStepDef {
 	
-WebDriver driver = new ChromeDriver();
+WebDriver driver;
 
 	@Given("the user should be in login page")
 	public void the_user_should_be_in_login_page() throws InterruptedException {
-		 WebDriverManager.chromedriver().setup();
 
+		WebDriverManager.chromedriver().setup();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");
+		options.addArguments("disable-infobars");
+		options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+		driver = new ChromeDriver(options);		
 		driver.get("https://tutorialsninja.com/demo/");
 		driver.manage().window().maximize();
 		Thread.sleep(3000);

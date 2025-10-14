@@ -3,19 +3,28 @@ package com.stepdefinit;
 import static org.junit.Assert.assertTrue;
 
 import java.time.Duration;
+import java.util.Map;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.*;
 import io.cucumber.java.en.*;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class OHR_AddEmployeeStepDef {
 
-    WebDriver driver = new ChromeDriver();
+    ChromeDriver driver;
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
   
     @Given("The user should be login page")
     public void the_user_should_be_login_page() {
+        WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headless");
+    options.addArguments("disable-infobars");
+    options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+    driver = new ChromeDriver(options);
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
     }
 

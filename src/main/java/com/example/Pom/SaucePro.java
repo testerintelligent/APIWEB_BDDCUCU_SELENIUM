@@ -16,7 +16,7 @@ public class SaucePro extends BaseClass {
  	@FindBy(xpath = "//div[text()='Sauce Labs Bike Light']//parent::a//preceding::div//button[text()='Add to cart']")
 	 private WebElement click;
 	 
-	 @FindBy(xpath = "//div[text()='Sauce Labs Backpack']//parent::div//following::a/div[text()='Sauce Labs Fleece Jacket']")
+	 @FindBy(xpath = "//div[text()='Sauce Labs Fleece Jacket']//parent::a//parent::div//following-sibling::div//button[text()='Add to cart']")
 	 private WebElement click1;
 	 
 	 @FindBy(xpath = "//a[@class='shopping_cart_link']")

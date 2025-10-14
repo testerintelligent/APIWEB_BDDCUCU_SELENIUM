@@ -1,10 +1,12 @@
 package com.stepdefinit;
 
+import java.util.Map;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -20,7 +22,11 @@ public class SignUpWithExistingEmail {
 	public void i_want_to_launch_the_automation_exercise_website() {
 		 // Set up WebDriver and AutomationExercise
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        options.addArguments("disable-infobars");
+        options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         AE = new com.example.Pom.AutomationExercise(driver);  // Initialize AE with WebDriver
         driver.get("https://automationexercise.com");

@@ -1,5 +1,12 @@
 package com.stepdefinit;
 
+import java.io.IOException;
+import java.util.Set;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.example.Pom.SauceCart;
 import com.example.Pom.SauceLogin;
 import com.example.Pom.SaucePro;
@@ -11,20 +18,21 @@ import io.cucumber.java.en.When;
 
 //Inheritance - SauceStep is inherited from SuperClass(BaseClass.java)
 public class SauceStep extends BaseClass {
-//WebDriver driver;
+	WebDriver driver;
 	SaucePro pro;
 	SauceCart cart;
 	SauceLogin login;
 	
 	@Given("User should launch the browser") //steps for launching browser
-	public void user_should_launch_the_browser() {
+	public void user_should_launch_the_browser() throws Exception {
 	  LaunchBrowser();
+//	  clearurl();
 	  LaunchURL("https://www.saucedemo.com/");
 	//   driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 
 	@When("User should write {string} and {string}")
-public void user_should_write_and(String username, String password) {
+	public void user_should_write_and(String username, String password) {
     login = new SauceLogin();
 
    // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -40,13 +48,18 @@ public void user_should_write_and(String username, String password) {
 
 	//Clicking the SUbmit Button after entering username and password
 	@When("User should click the login button") 
-	public void user_should_click_the_login_button() {
-	  Click(login.getClick());
+	public void user_should_click_the_login_button() {		
+	  	Click(login.getClick());
 	}
 
 	@Then("User should verify success message after login")
-	public void user_should_verify_success_message_after_login() {
-	    login.getText();
+	public void user_should_verify_success_message_after_login() throws Exception {
+		try{
+			driver.switchTo().alert().accept();
+		}catch(Exception e){
+			System.out.println("No alert present" + e.getMessage());
+		}
+		login.getText();
 	       
 	}
 	
@@ -107,13 +120,18 @@ public void user_should_write_and(String username, String password) {
 	}
 
 	@Then("User should use dynamic path")
-	public void user_should_use_dynamic_path() {
+	public void user_should_use_dynamic_path() throws InterruptedException {
+		
 	    pro = new SaucePro();
+		Thread.sleep(5000);
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("alert('This is a JavaScript alert triggered by Selenium!');");
+		driver.switchTo().alert().accept();
 	    Click(pro.getClick());
-	    Click(pro.getClick1());
-	    Click(pro.getClick2());
+	    Click(pro.getClick1());	
+			
 	    Click(pro.getClick3());
-		//method override - EnterValue method used for username and password
+		
 	    EnterValue(pro.getFirst(), "kumar");
 	    EnterValue(pro.getLast(), "kumar");
 	    EnterValue(pro.getClick5(),"600096");
@@ -181,8 +199,8 @@ public void user_should_write_and(String username, String password) {
 	@Then("User should about")
 	public void user_should_about() {
 		 pro = new SaucePro();
-	  Click(pro.getMenuclick());
-	  Click(pro.getSiclick());
+	  	Click(pro.getMenuclick());
+	  	Click(pro.getSiclick());
 	  driver.close();
 	}
 

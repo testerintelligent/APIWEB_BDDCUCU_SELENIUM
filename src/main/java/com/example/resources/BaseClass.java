@@ -35,6 +35,7 @@ public class BaseClass {
 public static void LaunchBrowser() {
 	WebDriverManager.chromedriver().setup();
     ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headed");
     options.addArguments("disable-infobars");
     options.setExperimentalOption("prefs", Map.of(
     "credentials_enable_service", false,
@@ -126,5 +127,9 @@ public static void LaunchBrowser() {
 				.contentType(ContentType.JSON).accept(ContentType.JSON)
 				.body(new File(getproperty(responseBody))).when().post(param).then().assertThat()
 				.statusCode(statusCode).body(jsonObj, equalTo(value)).log().all();
+	}
+	public static String randomString(int i) {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'randomString'");
 	}
 }

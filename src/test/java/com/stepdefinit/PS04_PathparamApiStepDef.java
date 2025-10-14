@@ -17,8 +17,10 @@ public class PS04_PathparamApiStepDef {
 
     @When("I send GET request to {string} with path parameter id as {int}")
     public void i_send_get_request_with_path_param(String endpoint, int id) {
+
+        String id1 = String.valueOf(id);
         response = given()
-                      .pathParam("id", id)
+                      .pathParam("id", id1)
                    .when()
                       .get(endpoint + "/{id}");
     }

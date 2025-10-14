@@ -29,8 +29,7 @@ public class GetRestFullbooker {
 
 @Given("check the API is available")
 public void check_the_api_is_available() {
-    baseURI = "https://reqres.in";
-  
+    baseURI = "https://reqres.in";  
 }
 
 @When("I send GET request to {string}")
@@ -48,7 +47,7 @@ public void the_response_of_status_code_should_be(Integer int2) {
 @Then("the response should be contain user detail")
 public void the_response_should_be_contain_user_detail() {
     response.prettyPrint();
-    RestAssured.baseURI = "https://restful-booker.herokuapp.com";
+    //RestAssured.baseURI = "https://restful-booker.herokuapp.com";
 
 }
 

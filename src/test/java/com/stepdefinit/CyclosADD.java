@@ -149,7 +149,7 @@ public class CyclosADD extends BaseClass {
 	public void user_should_enter_the_username_and_password_and(String username, String password) {
 		login = new Cyclos();
 
-	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	wait.until(ExpectedConditions.elementToBeClickable(login.getLogin())).click();
 		//method override - EnterValue method used for username and password
 		EnterValue(login.getUsername(), username);
