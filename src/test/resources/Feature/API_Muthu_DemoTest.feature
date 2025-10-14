@@ -196,6 +196,8 @@ And  The ID of the First User Name Should Be 1
     Then I should get 200 OK response
     And I should receive a token in response
 
+# test
+
 @Sanitingtest 
     Scenario: Get user details 
     Given check the API is available 
