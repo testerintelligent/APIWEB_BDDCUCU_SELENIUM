@@ -18,7 +18,7 @@ import io.restassured.specification.RequestSpecification;
 
 public class GetRestFullbooker {
 
-    private Response response;
+    public Response response;
     RequestSpecification request;
     // Response response;
     // private RequestSpecification request;
@@ -39,8 +39,13 @@ public void i_send_get_request_to(String enpoint) {
 }
 
 @Then("the response of status code should be {int}")
-public void the_response_of_status_code_should_be(Integer int2) {
-    response.then().statusCode(int2);
+public void the_response_of_status_code_should_be(Integer expectedstatuscode) {
+    //response.then().statusCode(expectedstatuscode);
+        if (response.getStatusCode() == expectedstatuscode) {
+            System.out.println("Test Passed: Status code is " + expectedstatuscode);
+        } else {
+            throw new AssertionError("Test Failed: Expected status code " + expectedstatuscode + " but got " + response.getStatusCode());
+        }
     
 }
 

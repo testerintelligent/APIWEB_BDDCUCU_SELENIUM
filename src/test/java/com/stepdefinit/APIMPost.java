@@ -74,7 +74,7 @@ public class APIMPost extends BaseClass1 {
 
     @When("I send PUT request with endpoint {string}")
     public void i_send_put_request_with_endpoint(String endpointB) {
-        String randStr = BaseClass.randomString(4);
+        String randStr = "Felix";
         response = given().log().all().header("Content-Type", "application/json").header("x-api-key", "reqres-free-v1")
                 .body("{\r\n" + //
                         "        \"name\": \"" + randStr + "\",\r\n" + //

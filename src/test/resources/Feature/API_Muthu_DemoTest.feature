@@ -1,25 +1,25 @@
 
-@checks
+@sm
 Feature: API_reqres_DemoTest
 
 Background:
 Given The Base URI is "https://reqres.in"
 And The Base URL is set to "https://jsonplaceholder.typicode.com"
 
- @Smoke @SmokeTest
+ @Smoke @SmokeTest 
   Scenario: Create a new user with name and job
     Given I have the username "morpheus" and job "leader"
     When I post a POST request to register the user
     Then I should receive status code as 201
     And the response should contain name "morpheus" and job "leader"
 
-@SmokingTest
+@SmokingTest 
   Scenario: Get single User of ReqRes Api
     Given Give the domain name of reqres
     When send the get request with the single resource url of reqres
     Then validate the response code get of reqres
 
-@Smoke @SmokeTest
+@Smoke @SmokeTest 
   Scenario: delete a User of ReqRes Api
     Given Give the domain name of reqres
     When delete user in server of reqres
@@ -52,7 +52,7 @@ And The Base URL is set to "https://jsonplaceholder.typicode.com"
     When I send a Patch request to update user details
     Then The response should contain the updated name
 
-@Sanity 
+@Sanity @sn
   Scenario: Checking All HTTP Methods
     Given Navigate to the URL
     When I check all methods and assestion
@@ -74,7 +74,7 @@ And The Base URL is set to "https://jsonplaceholder.typicode.com"
     Then the response status codes should be 201
     And the response should contain the user ID and creation timestamp
 
-@Smoke @SmokeTest_N
+@Smoke @SmokeTest_N 
 Scenario Outline: Verify the cyclos site address
     Given User should load the url cyclos
     When User should enter the username and password "<username>" and "<password>"
@@ -105,14 +105,14 @@ Scenario Outline: Verify the cyclos site address
     When I send a DELETE request to remove the user with ID 2
     Then I should receive a success delete response
 	
-@Sanitingtest
+@Sanitingtest 
   Scenario: Get user details 
     Given the API is available 
     When I send a GET request to "/api/users/2" 
     Then the response status code should be 200 
     And the response should contain user detail
 
-@Sanitingtest
+@Sanitingtest 
 Scenario: Get List Users of ReqRes Api
 Given Give the domain name of reqres
 When send the get request with the resource url of reqres
@@ -165,21 +165,23 @@ When I fetch the Product
 Then The response should be 200
 And the Product tittle should be "DANVOUY Women's T Shirt Casual Cotton Short"
 
-@Sanity @SmokeTest_N
+@Sanity @SmokeTest_N 
 Scenario: Update the product with put request
+Given The Fake store API is available
 When I send a put request to update product 18
 Then the status code should be 200
 And the response should contain desription "changed string"
 
-@Smoke @SmokeTest_N
+@Smoke @SmokeTest_N 
 Scenario: Delete product with ID 18
+Given The Fake store API is available
 When I send a DELETE request for product ID 18
 Then the response status should be 200
 And the deleted product ID should be 18
 
 
 
-@Sanity
+@Sanity 
 Scenario: fetch users from page 1
 
 When I send GET request to "api/users" with query parameter "page=1"
@@ -187,33 +189,33 @@ Then The Respose Code Should be 200
 And  The ID of the First User Name Should Be 1
 
 
-@Sanity
+@Sanity 
     Scenario: Verify token is generated with valid credentials
     Given I set the base URI
     When I send POST request to /auth with valid credentials
     Then I should get 200 OK response
     And I should receive a token in response
 
-@Sanitingtest
+@Sanitingtest 
     Scenario: Get user details 
     Given check the API is available 
     When I send GET request to "/api/users/2" 
     Then the response of status code should be 200
     And the response should be contain user detail
 
-@Smoke
+@Smoke 
     Scenario: Update user name successfully
     Given I have the user ID and the new user name
     When I send a Patch request to update the user
     Then the response should contain the updated name
 
-@Smoke
+@Smoke 
     Scenario: Validate GET API using RESTASSURED with path parameter
     Given The API is up
     When I send GET request to "/api/users" with path parameter id as 2
     Then The response status code should will be 200
 
-@Smoke
+@Smoke 
   Scenario Outline: Verify the cyclos site address
     Given User should load the url cyclos
     When User should enter the username and password "<username>" and "<password>"
@@ -226,7 +228,7 @@ And  The ID of the First User Name Should Be 1
     |username|password|
     |demo|1234|
 
-@Sanitingtest
+@Sanitingtest 
 Scenario Outline: Get List Users of ReqRes Api
   Given Give the domain name of reqres
   When send the get request with the resource url of reqres
@@ -235,7 +237,7 @@ Scenario Outline: Get List Users of ReqRes Api
     | dummy |
     | test  |
 
-@@SmokingTest
+@@SmokingTest 
 Scenario Outline: Get single User of ReqRes Api
   Given Give the domain name of reqres
   When send the get request with the single resource url of reqres

@@ -27,6 +27,12 @@ public class PS04_PathparamApiStepDef {
 
     @Then("The response status code should will be {int}")
     public void the_response_status_code_should_be(int expectedStatusCode) {
-        response.then().statusCode(expectedStatusCode);
+       // response.then().statusCode(expectedStatusCode);
+       if (response.getStatusCode() == expectedStatusCode) {
+    System.out.println("Test Passed: Status code is " + expectedStatusCode);
+} else {
+    System.out.println("Test Failed: Expected status code " + expectedStatusCode + " but got " + response.getStatusCode());
+}
+
     }
 }

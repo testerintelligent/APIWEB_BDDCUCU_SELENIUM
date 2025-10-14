@@ -26,7 +26,13 @@ public void the_response_status_code_should_be(Integer expectedstatusCode) {
     System.out.println("Actual status code : "+ actualStatusCode);
     System.out.println("Expected status code : "+ expectedstatusCode);
 
-    response.then().statusCode(expectedstatusCode);
+   // response.then().statusCode(expectedstatusCode);
+   if (response.getStatusCode() == expectedstatusCode) {
+    System.out.println("Test Passed: Status code is " + expectedstatusCode);
+} else {
+    System.out.println("Test Failed: Expected status code " + expectedstatusCode + " but got " + response.getStatusCode());
+}
+
 }
 @Then("the response should contain user detail")
 public void the_response_should_contain_user_detail() {

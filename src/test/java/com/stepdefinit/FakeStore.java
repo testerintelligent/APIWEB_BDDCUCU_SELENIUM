@@ -97,8 +97,12 @@ public class FakeStore {
     @Then("the status code should be {int}")
     public void the_status_code_should_be(Integer statusCode) {
 
-        Assert.assertEquals(statusCode, response.getStatusCode());
-
+        //Assert.assertEquals(statusCode, response.getStatusCode());
+        if (response.getStatusCode() == statusCode) {
+        System.out.println("Test Passed: Status code is " + statusCode);
+    } else {
+        throw new AssertionError("Test Failed: Expected status code " + statusCode + " but got " + response.getStatusCode());
+}
     }
 
     @Then("the response should contain desription {string}")
@@ -120,7 +124,12 @@ public class FakeStore {
 
     @Then("the response status should be {int}")
     public void the_response_status_should_be(Integer statusCode) {
-        Assert.assertEquals(200, response.getStatusCode());
+       // Assert.assertEquals(200, response.getStatusCode());
+         if (response.getStatusCode() == 200) {
+            System.out.println("Test Passed: Status code is 200");
+        } else {
+            throw new AssertionError("Test Failed: Expected status code 200 but got " + response.getStatusCode());
+        }
 
     }
 

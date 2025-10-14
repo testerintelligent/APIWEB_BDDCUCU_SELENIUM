@@ -16,7 +16,7 @@ public class GetStepsRestAssured {
 
     @When("I send the GET HTTP request")
     public void sendGetRequest() {
-        response = given().when().get();
+        response = given().header("x-api-key", "reqres-free-v1").when().get();
     }
 
     @Then("I should receive a {int} status codes")
