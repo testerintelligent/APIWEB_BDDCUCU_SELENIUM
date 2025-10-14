@@ -16,9 +16,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class DemoBlazeLogin {
 
     WebDriver driver;
-    DemoBlazePom demoBlaze;
-
-    
+    DemoBlazePom demoBlaze;    
 
     @Given("I launch the website")
     public void i_launch_the_website() {

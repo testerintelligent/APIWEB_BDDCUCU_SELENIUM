@@ -74,7 +74,7 @@ And The Base URL is set to "https://jsonplaceholder.typicode.com"
     Then the response status codes should be 201
     And the response should contain the user ID and creation timestamp
 
-@Smoke @SmokeTest_N 
+@Jerrin
 Scenario Outline: Verify the cyclos site address
     Given User should load the url cyclos
     When User should enter the username and password "<username>" and "<password>"
@@ -217,7 +217,7 @@ And  The ID of the First User Name Should Be 1
     When I send GET request to "/api/users" with path parameter id as 2
     Then The response status code should will be 200
 
-@Smoke 
+@Jerrin
   Scenario Outline: Verify the cyclos site address
     Given User should load the url cyclos
     When User should enter the username and password "<username>" and "<password>"
