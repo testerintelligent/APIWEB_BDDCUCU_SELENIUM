@@ -1,5 +1,5 @@
 
-@sm
+@all
 Feature: API_reqres_DemoTest
 
 Background:
@@ -74,7 +74,7 @@ And The Base URL is set to "https://jsonplaceholder.typicode.com"
     Then the response status codes should be 201
     And the response should contain the user ID and creation timestamp
 
-@Jerrin
+@Smoke @SmokeTest_N 
 Scenario Outline: Verify the cyclos site address
     Given User should load the url cyclos
     When User should enter the username and password "<username>" and "<password>"
@@ -196,8 +196,6 @@ And  The ID of the First User Name Should Be 1
     Then I should get 200 OK response
     And I should receive a token in response
 
-# test
-
 @Sanitingtest 
     Scenario: Get user details 
     Given check the API is available 
@@ -217,7 +215,7 @@ And  The ID of the First User Name Should Be 1
     When I send GET request to "/api/users" with path parameter id as 2
     Then The response status code should will be 200
 
-@Jerrin
+@Smoke 
   Scenario Outline: Verify the cyclos site address
     Given User should load the url cyclos
     When User should enter the username and password "<username>" and "<password>"

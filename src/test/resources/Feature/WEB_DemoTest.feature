@@ -1,4 +1,4 @@
-@Alltest
+@all
 Feature: WEB_DemoTest
 
 Background: Check Automation Tester Website

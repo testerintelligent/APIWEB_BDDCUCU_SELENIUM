@@ -1,10 +1,8 @@
-@Felix
+@all
 Feature: API_jsonplaceholder_DemoTest
 
   Background:
     Given Base URL is set to "https://jsonplaceholder.typicode.com"
-
-
 
   Scenario: Add numbers
     When I add 2 and 3

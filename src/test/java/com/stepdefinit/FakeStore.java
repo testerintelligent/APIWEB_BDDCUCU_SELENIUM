@@ -108,16 +108,9 @@ public class FakeStore {
     public void the_response_should_contain_desription(String expectedDescription) {
 
         String actualDescription = response.jsonPath().getString("description");
-        //Assert.assertEquals(actualDescription, expectedDescription);
-        if (actualDescription.equals(expectedDescription)) {
-        System.out.println("Descriptions match: " + actualDescription);
-    } else {
-        System.out.println("Descriptions do not match!");
-        System.out.println("Expected: " + expectedDescription);
-        System.out.println("Actual  : " + actualDescription);
-        // Optionally, fail the test manually
-        Assert.fail("Description mismatch");
-    }
+        System.out.println("Debug =" + actualDescription);
+        System.out.println("Debug =" + response.body());
+        Assert.assertEquals(actualDescription, expectedDescription);
     }
 
     @When("I send a DELETE request for product ID {int}")
