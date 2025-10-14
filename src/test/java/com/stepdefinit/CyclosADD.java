@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.time.Duration;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -138,11 +140,15 @@ public class CyclosADD extends BaseClass {
 
 	// loading the URL
 	@Given("User should load the url cyclos")
-	public void user_should_load_the_url_cyclos() {
+	public void user_should_load_the_url_cyclos() throws Exception {
 		LaunchBrowser();
+		Thread.sleep(2000);
 		LaunchURL("https://demo.cyclos.org/ui/home");
 		// driver.manage().timeouts().implicitlyWait(null)(15, TimeUnit.SECONDS);
 		System.out.println("cycols url successfully done");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		WebElement loginclick = driver.findElement(By.xpath("//a[@id=\"login-link\"]"));
+		loginclick.click();
 	}
 
 	@When("User should enter the username and password {string} and {string}")
@@ -158,12 +164,12 @@ public class CyclosADD extends BaseClass {
 
 	// Goto profile option
 	@When("User should navigate to profile")
-	public void user_should_navigate_to_profile() {
+	public void user_should_navigate_to_profile() throws Exception {
 		login.getSubmit().click();
-
-	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	wait.until(ExpectedConditions.elementToBeClickable(login.getUser())).getText();
-		login.getUser().getText();
+		Thread.sleep(2000);
+	// WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	// wait.until(ExpectedConditions.elementToBeClickable(login.getUser())).getText();
+		//login.getUser().getText();
 	}
 
 }
