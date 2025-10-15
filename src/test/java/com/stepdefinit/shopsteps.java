@@ -1,22 +1,36 @@
 package com.stepdefinit;
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Map;
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+<<<<<<< HEAD
 import org.openqa.selenium.chrome.ChromeOptions;
+=======
+
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+<<<<<<< HEAD
 import com.Pom.shoppingpage;
+=======
+import com.example.Pom.shoppingpage;
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+<<<<<<< HEAD
 import io.github.bonigarcia.wdm.WebDriverManager;
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 import junit.framework.Assert;
 
 import java.time.Duration;
@@ -26,6 +40,7 @@ import java.time.Duration;
 
 public class shopsteps {
 
+<<<<<<< HEAD
     WebDriver driver;
     shoppingpage shop = new shoppingpage();
 @Given("I navigate to the shopping page")
@@ -37,6 +52,13 @@ public void i_navigate_to_the_shopping_page() {
     options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
     driver = new ChromeDriver(options);
     driver.manage().window().maximize();
+=======
+    WebDriver driver = new ChromeDriver();
+    shoppingpage shop = new shoppingpage();
+@Given("I navigate to the shopping page")
+public void i_navigate_to_the_shopping_page() {
+   
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
   
    // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
      driver.get("https://magento.softwaretestingboard.com/");

@@ -1,5 +1,6 @@
 package com.common;
 
+<<<<<<< HEAD
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
@@ -69,12 +70,19 @@ public class BaseClass1 {
 		}
 		return driver;
 	}
+=======
+import org.apache.commons.lang.RandomStringUtils;
+
+public class BaseClass1 {
+    public static String userID;
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
     public static String randomString(int n) {
         String rand = RandomStringUtils.randomAlphabetic(n);
         return rand;
     }
 
+<<<<<<< HEAD
 	public void closeBrowser() {
         driver.quit();
     }
@@ -192,4 +200,6 @@ public class BaseClass1 {
         return randomNum;
     }
 
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 }

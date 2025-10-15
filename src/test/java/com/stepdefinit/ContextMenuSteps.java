@@ -6,19 +6,29 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+<<<<<<< HEAD
 import org.openqa.selenium.chrome.ChromeOptions;
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
+<<<<<<< HEAD
 import java.util.Map;
 
 public class ContextMenuSteps {
     ChromeDriver driver;
+=======
+
+public class ContextMenuSteps {
+    WebDriver driver = new ChromeDriver();
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     Alert alert;
 
     @Given("I open the context menu webpage")
     public void i_open_the_context_menu_webpage() {
+<<<<<<< HEAD
 WebDriverManager.chromedriver().setup();
     ChromeOptions options = new ChromeOptions();
 	options.addArguments("--headless");
@@ -26,6 +36,9 @@ WebDriverManager.chromedriver().setup();
     options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
     driver = new ChromeDriver(options);
     driver.manage().window().maximize();
+=======
+    	 WebDriverManager.chromedriver().setup();
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  
         driver.get("https://the-internet.herokuapp.com/context_menu");  

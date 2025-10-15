@@ -1,12 +1,19 @@
 package com.stepdefinit;
 
+<<<<<<< HEAD
 import java.util.Map;
 
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+<<<<<<< HEAD
 import org.openqa.selenium.chrome.ChromeOptions;
+=======
+
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -16,12 +23,17 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class SignUpWithExistingEmail {
 	
 	WebDriver driver;
+<<<<<<< HEAD
 	com.Pom.AutomationExercise AE;
+=======
+	com.example.Pom.AutomationExercise AE;
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 	
 	@Given("I want to launch the Automation Exercise website")
 	public void i_want_to_launch_the_automation_exercise_website() {
 		 // Set up WebDriver and AutomationExercise
         WebDriverManager.chromedriver().setup();
+<<<<<<< HEAD
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         options.addArguments("disable-infobars");
@@ -29,6 +41,11 @@ public class SignUpWithExistingEmail {
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         AE = new com.Pom.AutomationExercise(driver);  // Initialize AE with WebDriver
+=======
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        AE = new com.example.Pom.AutomationExercise(driver);  // Initialize AE with WebDriver
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
         driver.get("https://automationexercise.com");
 	}
 

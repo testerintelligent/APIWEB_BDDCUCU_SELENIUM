@@ -1,7 +1,12 @@
 package  com.stepdefinit;
 
 import java.time.Duration;
+<<<<<<< HEAD
 import java.util.Map;
+=======
+
+
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import org.openqa.selenium.JavascriptExecutor;
 
@@ -9,11 +14,18 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+<<<<<<< HEAD
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Pom.bookingpage;
+=======
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.example.Pom.bookingpage;
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
@@ -22,12 +34,17 @@ import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class booking {
+<<<<<<< HEAD
     WebDriver driver;
+=======
+    WebDriver driver = new ChromeDriver();
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     bookingpage bookingPage = new bookingpage(driver); // Pass driver to POM class
 
     @Given("Open the booking application")
     public void open_the_booking_application() {
+<<<<<<< HEAD
     WebDriverManager.chromedriver().setup();
     ChromeOptions options = new ChromeOptions();
 	options.addArguments("--headless");
@@ -39,6 +56,13 @@ public class booking {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  
         System.out.println("User landed on homepage");
+=======
+    	 WebDriverManager.chromedriver().setup();
+        driver.get("https://automationintesting.online/");
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  
+        System.out.println("✅ User landed on homepage");
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     }
 
     @When("select the room")
@@ -68,7 +92,11 @@ public class booking {
         // driver.findElement(bookingPage.emailPath).sendKeys("krithikakrishna@gmail.com");
         // driver.findElement(bookingPage.phonePath).sendKeys("927262728283");
 
+<<<<<<< HEAD
         System.out.println("Entered booking details");
+=======
+        System.out.println("✅ Entered booking details");
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     }
 
     @Then("Book the ticket")

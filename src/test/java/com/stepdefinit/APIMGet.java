@@ -21,8 +21,13 @@ public class APIMGet {
     }
 
     @Then("the response's status code is {int}")
+<<<<<<< HEAD
     public void the_response_s_status_code_is(Integer expectingcode) {
         response.then().statusCode(expectingcode);
+=======
+    public void the_response_s_status_code_is(Integer int1) {
+        response.then().statusCode(int1);
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     }
 
     @Then("validate the response should contain user detail")

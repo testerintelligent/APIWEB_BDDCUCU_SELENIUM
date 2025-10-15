@@ -1,17 +1,24 @@
 package com.stepdefinit;
 
 import java.time.Duration;
+<<<<<<< HEAD
 import java.util.Map;
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+<<<<<<< HEAD
 import org.openqa.selenium.chrome.ChromeOptions;
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+<<<<<<< HEAD
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class CompDBRegistration {
@@ -25,6 +32,13 @@ public void i_enter_the_url_of_registraion_domain() {
     options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
     driver = new ChromeDriver(options);
     driver.manage().window().maximize();
+=======
+
+public class CompDBRegistration {
+     WebDriver driver=new ChromeDriver();
+    @Given("I enter the url of Registraion domain")
+public void i_enter_the_url_of_registraion_domain() {
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     // Write code here that turns the phrase above into concrete actions
      driver.get("https://demowebshop.tricentis.com/register");
      driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  

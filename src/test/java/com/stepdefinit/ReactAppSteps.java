@@ -2,7 +2,10 @@ package com.stepdefinit;
 
 import io.cucumber.java.en.*;
 import io.restassured.response.Response;
+<<<<<<< HEAD
 import junit.framework.Assert;
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
@@ -57,16 +60,27 @@ public class ReactAppSteps {
     @When("I send a POST request with valid training data for employee {string}")
     public void i_send_a_post_request_with_valid_training_data(String employeeName) {
         Map<String, Object> requestBody = new HashMap<>();
+<<<<<<< HEAD
         requestBody.put("empId","A1345");
         requestBody.put("employeeName", employeeName);
         requestBody.put("course", "Java");
         requestBody.put("startDate", "2025-10-08");
         requestBody.put("endDate", "2025-10-08");
+=======
+        requestBody.put("employeeName", employeeName);
+        requestBody.put("course", "Java");
+        requestBody.put("startDate", "2025-07-24");
+        requestBody.put("endDate", "2025-07-24");
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
         requestBody.put("status", "Completed");
         requestBody.put("trainerName", "string");
         requestBody.put("trainingType", "Udemy");
         requestBody.put("percentCompleted", 100);
+<<<<<<< HEAD
         requestBody.put("projectName", "EFG");        
+=======
+        requestBody.put("projectName", "ABC");
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
         response = given()
                       .header("Content-Type", "application/json")
@@ -81,16 +95,21 @@ public class ReactAppSteps {
     }
 
     @Then("code should be {int}")
+<<<<<<< HEAD
     public void code_should_be(Integer expectedStatusCode) {                                                
         int actualStatusCode = response.getStatusCode();
         System.out.println("Actual status code : " + actualStatusCode);
         Assert.assertEquals("Status code mismatch!",expectedStatusCode.intValue(),actualStatusCode);
 
+=======
+    public void code_should_be(Integer expectedStatusCode) {
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
         response.then().statusCode(expectedStatusCode);
     }
 
     @Then("the response should contain employeeName as {string}")
     public void the_response_should_contain_employeeName_as(String expectedName) {
+<<<<<<< HEAD
         String actualname = response.jsonPath().getString("employeeName");
         System.out.println("Actual Employee Name : " + actualname);
         //response.then().body("employeeName", equalTo(expectedName));
@@ -98,12 +117,22 @@ public class ReactAppSteps {
 
     @When("I send a PUT request to the API with endpoint {string}")
     public void i_send_a_put_request_to_the_api_with_endpoint(String endpointB) {
+=======
+        response.then().body("employeeName", equalTo(expectedName));
+    }
+
+    @When("I send a PUT request to the API with endpoint {string}")
+public void i_send_a_put_request_to_the_api_with_endpoint(String endpointB) {
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
     response = given().log().all()
             .header("Content-Type", "application/json")
             .body("{\n" +
                     "  \"_id\": \"688baa23f91ef3e7e477cc85\",\n" +
+<<<<<<< HEAD
                     "  \"employeeId\": \"A1345\",\n" +
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
                     "  \"employeeName\": \"Rajasekar.I\",\n" +
                     "  \"course\": \"Java\",\n" +
                     "  \"startDate\": \"2025-07-24T00:00:00.000Z\",\n" +
@@ -131,9 +160,15 @@ public void the_status_code_contains(String code3) {
     String responseBody = response.asString();
     boolean contains = responseBody.contains(code3);
     if (contains) {
+<<<<<<< HEAD
         System.out.println("Response body contains: " + code3);
     } else {
         System.out.println("Response does not contain expected code.");
+=======
+        System.out.println("✅ Response body contains: " + code3);
+    } else {
+        System.out.println("❌ Response does not contain expected code.");
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     }
 
     

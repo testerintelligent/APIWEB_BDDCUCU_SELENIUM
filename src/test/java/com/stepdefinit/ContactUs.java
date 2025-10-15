@@ -1,18 +1,28 @@
 package com.stepdefinit;
 
 import java.time.Duration;
+<<<<<<< HEAD
 import java.util.Map;
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+<<<<<<< HEAD
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Pom.*;
+=======
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.example.Pom.*;
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -21,12 +31,17 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ContactUs {
 	WebDriver driver;
+<<<<<<< HEAD
 	com.Pom.AutomationExercise AE;
+=======
+	com.example.Pom.AutomationExercise AE;
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 	
 	
 	@Given("I want to launch the website to check the contact form")
 	public void i_want_to_launch_the_website_to_check_the_contact_form() {
 		  // Set up WebDriver and AutomationExercise
+<<<<<<< HEAD
         // WebDriverManager.chromedriver().setup();
         // driver = new ChromeDriver();
         // driver.manage().window().maximize();
@@ -42,6 +57,12 @@ public class ContactUs {
     driver = new ChromeDriver(options);
     driver.manage().window().maximize();
         AE = new com.Pom.AutomationExercise(driver);  // Initialize AE with WebDriver
+=======
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        AE = new com.example.Pom.AutomationExercise(driver);  // Initialize AE with WebDriver
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
         driver.get("https://automationexercise.com");
 	}
 	
@@ -57,6 +78,7 @@ public class ContactUs {
 
 	@When("Enter the relevant contents")
 	public void enter_the_relevant_contents() {
+<<<<<<< HEAD
 	   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	   WebElement contactName =  driver.findElement(By.xpath("//input[@name='name']"));
 	   contactName.sendKeys("Test");
@@ -64,6 +86,12 @@ public class ContactUs {
 	   WebElement contactEmail =  driver.findElement(By.xpath("//input[@name='email']"));
 	   contactEmail.sendKeys("Test@test.com");
 	   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+=======
+	   WebElement contactName =  driver.findElement(By.xpath("//input[@name='name']"));
+	   contactName.sendKeys("Test");
+	   WebElement contactEmail =  driver.findElement(By.xpath("//input[@name='email']"));
+	   contactEmail.sendKeys("Test@test.com");
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 	   WebElement contactSubject =  driver.findElement(By.xpath("//input[@name='subject']"));
 	   contactSubject.sendKeys("For testing functions");
 	 

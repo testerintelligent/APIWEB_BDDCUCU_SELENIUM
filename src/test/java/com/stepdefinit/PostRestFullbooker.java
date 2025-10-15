@@ -43,12 +43,16 @@ public class PostRestFullbooker {
 
     @Then("I should get 200 OK response")
     public void i_should_get_200_ok_response() {
+<<<<<<< HEAD
         //assertEquals(200, response.getStatusCode());
             if (response.getStatusCode() == 200) {
         System.out.println("Test Passed: Status code is 200");
     } else {
         System.out.println("Test Failed: Expected status code 200 but got " + response.getStatusCode());
     }
+=======
+        assertEquals(200, response.getStatusCode());
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     }
 
     @And("I should receive a token in response")

@@ -3,8 +3,12 @@ package com.stepdefinit;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+<<<<<<< HEAD
 
 import org.junit.Assert;
+=======
+import org.testng.Assert;
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import com.google.gson.JsonObject;
 
@@ -19,6 +23,7 @@ import io.restassured.specification.RequestSpecification;
 
 public class reqResTest {
 	String baseUrl="https://reqres.in/";
+<<<<<<< HEAD
 	public RequestSpecification reqspec;
 	public Response response;
     public String baseUrL = "https://reqres.in/api/users"; // Example API
@@ -30,10 +35,23 @@ public class reqResTest {
 	public void give_the_domain_name_of_reqres() throws Exception {	
 		RestAssured.baseURI=baseUrl+"api/users";
 		Thread.sleep(2000);
+=======
+	private RequestSpecification reqspec;
+	private Response response;
+    private String baseUrL = "https://reqres.in/api/users"; // Example API
+    private int userId = 2;
+    private String newName = "Abarna Updated";
+	
+
+	@Given("Give the domain name of reqres")
+	public void give_the_domain_name_of_reqres() {	
+		RestAssured.baseURI=baseUrl+"api/users";
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 		reqspec=RestAssured.given();
 	}
 	
 	@When("send the get request with the resource url of reqres")
+<<<<<<< HEAD
 	public void send_the_get_request_with_the_resource_url_of_reqres() throws Exception {
 		reqspec.header("x-api-key","reqres-free-v1");		
 		Thread.sleep(2000);
@@ -49,17 +67,32 @@ public class reqResTest {
 	} else {
     System.out.println("Test Failed: Expected status code 200 but got " + response.getStatusCode());
 	}
+=======
+	public void send_the_get_request_with_the_resource_url_of_reqres() {
+		reqspec.header("x-api-key","reqres-free-v1");		
+
+		response =reqspec.get("?page=1");
+	}
+	
+	@Then("validate the response code of reqres")
+	public void validate_the_response_code_of_reqres() {
+		Assert.assertEquals(200, response.getStatusCode());
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 		//Assert.assertEquals(response.getBody().jsonPath().get("data[0].id"),1);
 	}
 
 	@Then("validate the response code get of reqres")
 	public void validate_the_response_code_get_of_reqres() {
+<<<<<<< HEAD
 	//	Assert.assertEquals(200, response.getStatusCode());
 		if (response.getStatusCode() == 200) {
 		System.out.println("Test Passed: Status code is 200");
 	} else {
 		System.out.println("Test Failed: Expected status code 200 but got " + response.getStatusCode());
 	}
+=======
+		Assert.assertEquals(200, response.getStatusCode());
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 		//Assert.assertEquals(response.getBody().jsonPath().get("data.id"),2);
 	}
 	
@@ -81,13 +114,23 @@ public class reqResTest {
 
 	@When("delete user in server of reqres")
 	public void delete_user_in_server_of_reqres() {
+<<<<<<< HEAD
         reqspec.header("x-api-key","reqres-free-v1");
+=======
+        reqspec.header("x-api-key","reqres-free-v1");		
+
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 		response =reqspec.delete("/2");
 	}
 	
 	@When("Get delayed response in server of reqres")
 	public void get_delayed_response_in_server_of_reqres() {
+<<<<<<< HEAD
         reqspec.header("x-api-key","reqres-free-v1");
+=======
+        reqspec.header("x-api-key","reqres-free-v1");		
+
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 		response =reqspec.get("?delay=3");
 	}
 

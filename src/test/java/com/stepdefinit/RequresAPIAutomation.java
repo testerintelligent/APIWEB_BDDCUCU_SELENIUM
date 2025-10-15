@@ -43,7 +43,12 @@ public class RequresAPIAutomation {
 	@Then("The Respose Code Should be {int}")
 	public void the_respose_code_should_be(Integer statusCode) {
 
+<<<<<<< HEAD
 		System.out.println("Success");
+=======
+		assertEquals(statusCode.intValue(),response.getStatusCode());
+
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 	}
 
 
@@ -53,9 +58,13 @@ public class RequresAPIAutomation {
 	List<Map<String, Object>> users = response.jsonPath().getList("data");
     if (users.isEmpty()) {
         throw new AssertionError("No users found in the response!");
+<<<<<<< HEAD
     }else{
 		System.out.println("Success");
 	}
+=======
+    }
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
     int actualId = (int) users.get(0).get("id");
     assertEquals(expectedId.intValue(), actualId);
