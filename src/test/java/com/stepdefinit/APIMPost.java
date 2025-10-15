@@ -1,8 +1,14 @@
 package com.stepdefinit;
 
 import static org.hamcrest.Matchers.equalTo;
+<<<<<<< HEAD
 import com.common.BaseClass1;
 import com.resources.BaseClass;
+=======
+
+import com.common.BaseClass1;
+import com.example.resources.BaseClass;
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -70,11 +76,21 @@ public class APIMPost extends BaseClass1 {
         } else {
             System.out.println("Error code received!");
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     }
 
     @When("I send PUT request with endpoint {string}")
     public void i_send_put_request_with_endpoint(String endpointB) {
+<<<<<<< HEAD
         String randStr = "Felix";
+=======
+
+        String randStr = BaseClass1.randomString(4);
+
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
         response = given().log().all().header("Content-Type", "application/json").header("x-api-key", "reqres-free-v1")
                 .body("{\r\n" + //
                         "        \"name\": \"" + randStr + "\",\r\n" + //

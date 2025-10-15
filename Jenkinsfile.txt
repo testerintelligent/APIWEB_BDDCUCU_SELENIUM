@@ -14,7 +14,11 @@ pipeline
         stage('Checkout Code') {
             steps {
                 git branch: 'main',
+<<<<<<< HEAD
                     url: 'https://github.com/auxilinfelix/Cloned_Tester_Intelligent.git'
+=======
+                    url: 'https://github.com/testerintelligent/APIWEB_BDDCUCU_SELENIUM.git'
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
             }
         }
 

@@ -1,24 +1,39 @@
 
 package com.stepdefinit;
 import java.time.Duration;
+<<<<<<< HEAD
 import java.util.Map;
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+<<<<<<< HEAD
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.FindBy;
 
 import com.Pom.LoginPage;
+=======
+import org.openqa.selenium.support.FindBy;
+
+import com.example.Pom.LoginPage;
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+<<<<<<< HEAD
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class loginTest {
     WebDriver driver;
+=======
+
+public class loginTest {
+    WebDriver driver = new ChromeDriver();
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     LoginPage loginPage = new LoginPage(driver);
 
     @FindBy(xpath="//input[@class='button-1 login-button']")
@@ -26,6 +41,7 @@ public class loginTest {
 
 @Given("I enter the url of domain")
 public void i_enter_the_url_of_domain() {
+<<<<<<< HEAD
     WebDriverManager.chromedriver().setup();
     ChromeOptions options = new ChromeOptions();
 	options.addArguments("--headless");
@@ -33,6 +49,8 @@ public void i_enter_the_url_of_domain() {
     options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
     driver = new ChromeDriver(options);
     driver.manage().window().maximize();
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     driver.get("https://demowebshop.tricentis.com/login");
     driver.manage().window().maximize();
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));    

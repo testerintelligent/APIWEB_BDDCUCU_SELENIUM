@@ -2,19 +2,26 @@ package com.stepdefinit;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+<<<<<<< HEAD
 import java.util.Map;
 
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+<<<<<<< HEAD
 import org.openqa.selenium.chrome.ChromeOptions;
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import io.cucumber.java.en.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class QAfoxAddToCartStepDef {
 
+<<<<<<< HEAD
     WebDriver driver;
 
     @Given("I am on the Swag Labs inventory page")
@@ -25,6 +32,13 @@ public class QAfoxAddToCartStepDef {
     options.addArguments("disable-infobars");
     options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
     driver = new ChromeDriver(options);
+=======
+    WebDriver driver = new ChromeDriver();
+
+    @Given("I am on the Swag Labs inventory page")
+    public void i_am_on_the_swag_labs_inventory_page() {
+    	 WebDriverManager.chromedriver().setup();
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
         driver.get("https://www.saucedemo.com/");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");

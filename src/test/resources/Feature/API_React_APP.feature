@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 @all
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 Feature: Get training data from local API
 
   @reactApp

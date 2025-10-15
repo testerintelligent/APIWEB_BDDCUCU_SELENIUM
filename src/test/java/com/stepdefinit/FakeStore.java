@@ -1,12 +1,20 @@
 package com.stepdefinit;
 
+<<<<<<< HEAD
+=======
+import org.testng.Assert;
+
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 import io.restassured.response.Response;
+<<<<<<< HEAD
 import junit.framework.Assert;
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 public class FakeStore {
 
@@ -96,20 +104,30 @@ public class FakeStore {
     @Then("the status code should be {int}")
     public void the_status_code_should_be(Integer statusCode) {
 
+<<<<<<< HEAD
         //Assert.assertEquals(statusCode, response.getStatusCode());
         if (response.getStatusCode() == statusCode) {
         System.out.println("Test Passed: Status code is " + statusCode);
     } else {
             System.out.println("Success");}
+=======
+        Assert.assertEquals(statusCode, response.getStatusCode());
+
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     }
 
     @Then("the response should contain desription {string}")
     public void the_response_should_contain_desription(String expectedDescription) {
 
         String actualDescription = response.jsonPath().getString("description");
+<<<<<<< HEAD
         System.out.println("Debug =" + actualDescription);
         System.out.println("Debug =" + response.body());
         Assert.assertEquals(actualDescription, expectedDescription);
+=======
+        Assert.assertEquals(actualDescription, expectedDescription);
+
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     }
 
     @When("I send a DELETE request for product ID {int}")
@@ -123,12 +141,16 @@ public class FakeStore {
 
     @Then("the response status should be {int}")
     public void the_response_status_should_be(Integer statusCode) {
+<<<<<<< HEAD
        // Assert.assertEquals(200, response.getStatusCode());
          if (response.getStatusCode() == 200) {
             System.out.println("Test Passed: Status code is 200");
         } else {
             System.out.println("Success");
         }
+=======
+        Assert.assertEquals(200, response.getStatusCode());
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
     }
 

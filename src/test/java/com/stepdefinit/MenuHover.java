@@ -3,17 +3,24 @@ package com.stepdefinit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+<<<<<<< HEAD
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 
 import java.time.Duration;
 import java.util.Map;
+=======
+import org.openqa.selenium.interactions.Actions;
+
+import java.time.Duration;
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import org.openqa.selenium.By;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+<<<<<<< HEAD
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class MenuHover {
@@ -28,6 +35,14 @@ public void menu_items_should_be_loaded_properly() {
     options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
     driver = new ChromeDriver(options);
     driver.manage().window().maximize();
+=======
+
+public class MenuHover {
+    WebDriver driver = new ChromeDriver();
+
+@Given("Menu items should be loaded properly")
+public void menu_items_should_be_loaded_properly() {
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     driver.get("https://demowebshop.tricentis.com/");
     driver.manage().window().maximize();
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  

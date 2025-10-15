@@ -1,5 +1,6 @@
 package com.stepdefinit;
 
+<<<<<<< HEAD
 import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
@@ -7,6 +8,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import com.Pom.paraBank;
+=======
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.example.Pom.paraBank;
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -20,11 +27,15 @@ public class RegisterAndLogin {
     @Given("I launch the ParaBank website")
     public void i_launch_the_para_bank_website() {
         WebDriverManager.chromedriver().setup();
+<<<<<<< HEAD
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         options.addArguments("disable-infobars");
         options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
         driver = new ChromeDriver(options);
+=======
+        driver = new ChromeDriver();
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
         driver.manage().window().maximize();
         driver.get("https://parabank.parasoft.com/parabank/register.htm");
 

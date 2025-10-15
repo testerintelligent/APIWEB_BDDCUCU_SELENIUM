@@ -3,7 +3,10 @@ package com.stepdefinit;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+<<<<<<< HEAD
 import org.openqa.selenium.chrome.ChromeOptions;
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,6 +16,7 @@ import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.time.Duration;
+<<<<<<< HEAD
 import java.util.Map;
 
 public class SliderSteps {
@@ -27,6 +31,15 @@ public class SliderSteps {
     options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
     driver = new ChromeDriver(options);
     driver.manage().window().maximize();
+=======
+
+public class SliderSteps {
+    WebDriver driver =  new ChromeDriver();
+
+    @Given("I open the slider webpage")
+    public void i_open_the_slider_webpage() {
+    	 WebDriverManager.chromedriver().setup();
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
         driver.get("https://the-internet.herokuapp.com/horizontal_slider"); // Replace with your actual slider URL
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

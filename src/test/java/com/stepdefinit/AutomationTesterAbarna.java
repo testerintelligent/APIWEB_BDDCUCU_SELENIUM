@@ -2,7 +2,10 @@ package com.stepdefinit;
 
 import java.io.File;
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Map;
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
@@ -12,15 +15,22 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+<<<<<<< HEAD
 import org.openqa.selenium.chrome.ChromeOptions;
+=======
+
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 import org.openqa.selenium.support.ui.Select;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+<<<<<<< HEAD
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 import org.openqa.selenium.interactions.Actions;
 
 public class AutomationTesterAbarna {
@@ -28,6 +38,7 @@ public class AutomationTesterAbarna {
     WebDriver driver;
     @Given("Launch browser and navigate to AutomationTester url")
 public void launch_browser_and_navigate() {
+<<<<<<< HEAD
 	//BaseClass1.headless("chrome");   
     WebDriverManager.chromedriver().setup();
     ChromeOptions options = new ChromeOptions();
@@ -38,6 +49,14 @@ public void launch_browser_and_navigate() {
     "profile.password_manager_enabled", false
     ));
     driver = new ChromeDriver(options);
+=======
+	
+   // System.setProperty("webDriver.chrome.driver", "C:/Users/10669/OneDrive - Expleo France/Desktop/SampleTest/src/test/resources/drivers/chromedriver_proxy.exe");
+    driver= new ChromeDriver();
+    //driver = new EdgeDriver();
+    //  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     driver.manage().window().maximize();
     driver.get("https://automationexercise.com/");
 
@@ -69,6 +88,10 @@ public void launch_browser_and_navigate() {
 
 	}
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 	@And("Fill details: Title, Name, Email, Password, Date of birth")
 	public void fill_account_info() {
 	    driver.findElement(By.id("id_gender1")).click(); 
@@ -303,7 +326,11 @@ public void launch_browser_and_navigate() {
 	    }
 	    @When("Click on 'View Product' of first product")
 	    public void click_on_view_product_of_first_product() {
+<<<<<<< HEAD
 	        WebElement firstProductViewButton = driver.findElement(By.xpath("(//a[contains(text(),'View Product')])[1]"));
+=======
+	        WebElement firstProductViewButton = driver.findElement(By.xpath("(//a[@href='#'])[1]"));
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 	        firstProductViewButton.click();
 	    }
 

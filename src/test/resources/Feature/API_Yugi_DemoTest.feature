@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 @ThirdFeature
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 Feature: API_jsonplaceholder_DemoTest
 
   Background:
     Given Base URL is set to "https://jsonplaceholder.typicode.com"
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
   Scenario: Add numbers
     When I add 2 and 3
     Then the result should be 5

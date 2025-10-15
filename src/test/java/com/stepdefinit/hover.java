@@ -2,7 +2,10 @@ package com.stepdefinit;
 
 import java.time.Duration;
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Map;
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
@@ -10,7 +13,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+<<<<<<< HEAD
 import org.openqa.selenium.chrome.ChromeOptions;
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,6 +24,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+<<<<<<< HEAD
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class hover {
@@ -32,6 +39,14 @@ public void i_enter_the_url_of_domains() {
     options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
     driver = new ChromeDriver(options);
     driver.manage().window().maximize();
+=======
+
+public class hover {
+    WebDriver driver = new ChromeDriver();
+    //WebDriverManager.chromedriver().setup();
+    @Given("I enter the url of domains")
+public void i_enter_the_url_of_domains() {
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     driver.get("https://demowebshop.tricentis.com/");
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  
     driver.getTitle();

@@ -1,5 +1,6 @@
 package com.stepdefinit;
 
+<<<<<<< HEAD
 import java.io.IOException;
 import java.util.Set;
 
@@ -11,6 +12,12 @@ import com.Pom.SauceCart;
 import com.Pom.SauceLogin;
 import com.Pom.SaucePro;
 import com.resources.BaseClass;
+=======
+import com.example.Pom.SauceCart;
+import com.example.Pom.SauceLogin;
+import com.example.Pom.SaucePro;
+import com.example.resources.BaseClass;
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -18,21 +25,34 @@ import io.cucumber.java.en.When;
 
 //Inheritance - SauceStep is inherited from SuperClass(BaseClass.java)
 public class SauceStep extends BaseClass {
+<<<<<<< HEAD
 	WebDriver driver;
+=======
+//WebDriver driver;
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 	SaucePro pro;
 	SauceCart cart;
 	SauceLogin login;
 	
 	@Given("User should launch the browser") //steps for launching browser
+<<<<<<< HEAD
 	public void user_should_launch_the_browser() throws Exception {
 	  LaunchBrowser();
 //	  clearurl();
+=======
+	public void user_should_launch_the_browser() {
+	  LaunchBrowser();
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 	  LaunchURL("https://www.saucedemo.com/");
 	//   driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 
 	@When("User should write {string} and {string}")
+<<<<<<< HEAD
 	public void user_should_write_and(String username, String password) {
+=======
+public void user_should_write_and(String username, String password) {
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     login = new SauceLogin();
 
    // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -48,6 +68,7 @@ public class SauceStep extends BaseClass {
 
 	//Clicking the SUbmit Button after entering username and password
 	@When("User should click the login button") 
+<<<<<<< HEAD
 	public void user_should_click_the_login_button() {		
 	  	Click(login.getClick());
 	}
@@ -60,6 +81,15 @@ public class SauceStep extends BaseClass {
 			System.out.println("No alert present" + e.getMessage());
 		}
 		login.getText();
+=======
+	public void user_should_click_the_login_button() {
+	  Click(login.getClick());
+	}
+
+	@Then("User should verify success message after login")
+	public void user_should_verify_success_message_after_login() {
+	    login.getText();
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 	       
 	}
 	
@@ -120,6 +150,7 @@ public class SauceStep extends BaseClass {
 	}
 
 	@Then("User should use dynamic path")
+<<<<<<< HEAD
 	public void user_should_use_dynamic_path() throws InterruptedException {
 		
 	    pro = new SaucePro();
@@ -132,6 +163,15 @@ public class SauceStep extends BaseClass {
 			
 	    Click(pro.getClick3());
 		
+=======
+	public void user_should_use_dynamic_path() {
+	    pro = new SaucePro();
+	    Click(pro.getClick());
+	    Click(pro.getClick1());
+	    Click(pro.getClick2());
+	    Click(pro.getClick3());
+		//method override - EnterValue method used for username and password
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 	    EnterValue(pro.getFirst(), "kumar");
 	    EnterValue(pro.getLast(), "kumar");
 	    EnterValue(pro.getClick5(),"600096");
@@ -199,8 +239,13 @@ public class SauceStep extends BaseClass {
 	@Then("User should about")
 	public void user_should_about() {
 		 pro = new SaucePro();
+<<<<<<< HEAD
 	  	Click(pro.getMenuclick());
 	  	Click(pro.getSiclick());
+=======
+	  Click(pro.getMenuclick());
+	  Click(pro.getSiclick());
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 	  driver.close();
 	}
 

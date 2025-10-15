@@ -4,11 +4,17 @@ import static org.junit.Assert.assertTrue;
 
 
 import java.time.Duration;
+<<<<<<< HEAD
 import java.util.Map;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+=======
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 
@@ -19,22 +25,33 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.*;
 
 import io.cucumber.java.en.*;
+<<<<<<< HEAD
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class OHR_SearchAndScroll {
 
     ChromeDriver driver;
+=======
+
+public class OHR_SearchAndScroll {
+
+    WebDriver driver;
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     WebDriverWait wait;
 
     
     @Given("The user should be logged in")
     public void the_user_should_be_login_page() {
+<<<<<<< HEAD
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         options.addArguments("disable-infobars");
         options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
         driver = new ChromeDriver(options);
+=======
+        driver = new ChromeDriver();
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");

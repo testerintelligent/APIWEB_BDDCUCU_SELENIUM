@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+<<<<<<< HEAD
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
@@ -25,6 +26,21 @@ public void i_navigate_to_the_login_page() {
     options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
     driver = new ChromeDriver(options);
     driver.manage().window().maximize();
+=======
+import java.time.Duration;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class DemoBlazeFF {
+    WebDriver driver = new ChromeDriver();
+
+    
+@Given("I navigate to the login page")
+public void i_navigate_to_the_login_page() {
+    //System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+    driver = new ChromeDriver();
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     driver.get("https://www.demoblaze.com/");
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     WebElement loginURL = driver.findElement(By.xpath("//a[text()='Log in']"));

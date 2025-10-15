@@ -1,12 +1,16 @@
 package com.stepdefinit;
 
 import java.time.Duration;
+<<<<<<< HEAD
 import java.util.Map;
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+<<<<<<< HEAD
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.cucumber.java.en.Given;
@@ -27,6 +31,16 @@ public void i_enter_the_url_of_domain_CompDB1login() {
     ));
     driver = new ChromeDriver(options);
     driver.manage().window().maximize();
+=======
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
+
+public class ComputerRegDBM {
+     WebDriver driver = new ChromeDriver();
+@Given("I enter the url of domain CompDB1login")
+public void i_enter_the_url_of_domain_CompDB1login() {
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     // Write code here that turns the phrase above into concrete actions
     driver.get("https://demowebshop.tricentis.com/Login");
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  

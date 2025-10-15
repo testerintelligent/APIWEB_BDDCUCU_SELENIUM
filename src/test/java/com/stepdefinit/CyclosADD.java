@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.time.Duration;
 
 import org.junit.Assert;
+<<<<<<< HEAD
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,6 +13,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Pom.Cyclos;
 import com.resources.BaseClass;
+=======
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.example.Pom.Cyclos;
+import com.example.resources.BaseClass;
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -140,6 +148,7 @@ public class CyclosADD extends BaseClass {
 
 	// loading the URL
 	@Given("User should load the url cyclos")
+<<<<<<< HEAD
 	public void user_should_load_the_url_cyclos() throws Exception {
 		LaunchBrowser();
 		Thread.sleep(2000);
@@ -149,13 +158,24 @@ public class CyclosADD extends BaseClass {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		WebElement loginclick = driver.findElement(By.xpath("//a[@id=\"login-link\"]"));
 		loginclick.click();
+=======
+	public void user_should_load_the_url_cyclos() {
+		LaunchBrowser();
+		LaunchURL("https://demo.cyclos.org/ui/home");
+		// driver.manage().timeouts().implicitlyWait(null)(15, TimeUnit.SECONDS);
+		System.out.println("cycols url successfully done");
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 	}
 
 	@When("User should enter the username and password {string} and {string}")
 	public void user_should_enter_the_username_and_password_and(String username, String password) {
 		login = new Cyclos();
 
+<<<<<<< HEAD
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+=======
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 	wait.until(ExpectedConditions.elementToBeClickable(login.getLogin())).click();
 		//method override - EnterValue method used for username and password
 		EnterValue(login.getUsername(), username);
@@ -164,12 +184,21 @@ public class CyclosADD extends BaseClass {
 
 	// Goto profile option
 	@When("User should navigate to profile")
+<<<<<<< HEAD
 	public void user_should_navigate_to_profile() throws Exception {
 		login.getSubmit().click();
 		Thread.sleep(2000);
 	// WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	// wait.until(ExpectedConditions.elementToBeClickable(login.getUser())).getText();
 		//login.getUser().getText();
+=======
+	public void user_should_navigate_to_profile() {
+		login.getSubmit().click();
+
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	wait.until(ExpectedConditions.elementToBeClickable(login.getUser())).getText();
+		login.getUser().getText();
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 	}
 
 }

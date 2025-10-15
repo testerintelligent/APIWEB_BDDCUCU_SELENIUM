@@ -1,17 +1,24 @@
 package com.stepdefinit;
 
 import java.time.Duration;
+<<<<<<< HEAD
 import java.util.Map;
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+<<<<<<< HEAD
 import org.openqa.selenium.chrome.ChromeOptions;
+=======
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+<<<<<<< HEAD
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class OpenWindow {
@@ -29,6 +36,14 @@ public void i_enter_into_the_academy_domain_of_rahul() {
     ));
     driver = new ChromeDriver(options);
     driver.manage().window().maximize();
+=======
+
+public class OpenWindow {
+    WebDriver driver= new ChromeDriver();
+
+@Given("I enter into the Academy Domain of Rahul")
+public void i_enter_into_the_academy_domain_of_rahul() {
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     driver.get("https://rahulshettyacademy.com/AutomationPractice/");
     driver.manage().window().maximize(); 
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));   

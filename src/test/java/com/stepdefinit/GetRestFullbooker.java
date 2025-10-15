@@ -18,7 +18,11 @@ import io.restassured.specification.RequestSpecification;
 
 public class GetRestFullbooker {
 
+<<<<<<< HEAD
     public Response response;
+=======
+    private Response response;
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     RequestSpecification request;
     // Response response;
     // private RequestSpecification request;
@@ -29,7 +33,12 @@ public class GetRestFullbooker {
 
 @Given("check the API is available")
 public void check_the_api_is_available() {
+<<<<<<< HEAD
     baseURI = "https://reqres.in";  
+=======
+    baseURI = "https://reqres.in";
+  
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 }
 
 @When("I send GET request to {string}")
@@ -39,6 +48,7 @@ public void i_send_get_request_to(String enpoint) {
 }
 
 @Then("the response of status code should be {int}")
+<<<<<<< HEAD
 public void the_response_of_status_code_should_be(Integer expectedstatuscode) {
     //response.then().statusCode(expectedstatuscode);
         if (response.getStatusCode() == expectedstatuscode) {
@@ -46,13 +56,21 @@ public void the_response_of_status_code_should_be(Integer expectedstatuscode) {
         } else {
             System.out.println("Success");;
         }
+=======
+public void the_response_of_status_code_should_be(Integer int2) {
+    response.then().statusCode(int2);
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
     
 }
 
 @Then("the response should be contain user detail")
 public void the_response_should_be_contain_user_detail() {
     response.prettyPrint();
+<<<<<<< HEAD
     //RestAssured.baseURI = "https://restful-booker.herokuapp.com";
+=======
+    RestAssured.baseURI = "https://restful-booker.herokuapp.com";
+>>>>>>> b8c78c13ff253177f65b06dd8f8ae72564851a19
 
 }
 
