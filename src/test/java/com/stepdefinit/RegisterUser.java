@@ -9,7 +9,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import com.example.Pom.AutomationExercise;
+import com.Pom.AutomationExercise;
 
 public class RegisterUser {
     WebDriver driver;

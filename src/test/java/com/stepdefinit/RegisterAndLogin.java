@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import com.example.Pom.paraBank;
+import com.Pom.paraBank;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

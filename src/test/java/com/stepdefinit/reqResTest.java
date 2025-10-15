@@ -3,7 +3,8 @@ package com.stepdefinit;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import org.testng.Assert;
+
+import org.junit.Assert;
 
 import com.google.gson.JsonObject;
 

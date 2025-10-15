@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.FindBy;
 
-import com.example.Pom.LoginPage;
+import com.Pom.LoginPage;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

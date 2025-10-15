@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.example.Pom.*;
+import com.Pom.*;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -21,7 +21,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ContactUs {
 	WebDriver driver;
-	com.example.Pom.AutomationExercise AE;
+	com.Pom.AutomationExercise AE;
 	
 	
 	@Given("I want to launch the website to check the contact form")
@@ -41,7 +41,7 @@ public class ContactUs {
     ));
     driver = new ChromeDriver(options);
     driver.manage().window().maximize();
-        AE = new com.example.Pom.AutomationExercise(driver);  // Initialize AE with WebDriver
+        AE = new com.Pom.AutomationExercise(driver);  // Initialize AE with WebDriver
         driver.get("https://automationexercise.com");
 	}
 	

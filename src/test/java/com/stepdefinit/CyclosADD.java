@@ -10,8 +10,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.example.Pom.Cyclos;
-import com.example.resources.BaseClass;
+import com.Pom.Cyclos;
+import com.resources.BaseClass;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

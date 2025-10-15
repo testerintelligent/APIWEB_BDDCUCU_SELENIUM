@@ -16,7 +16,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class SignUpWithExistingEmail {
 	
 	WebDriver driver;
-	com.example.Pom.AutomationExercise AE;
+	com.Pom.AutomationExercise AE;
 	
 	@Given("I want to launch the Automation Exercise website")
 	public void i_want_to_launch_the_automation_exercise_website() {
@@ -28,7 +28,7 @@ public class SignUpWithExistingEmail {
         options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        AE = new com.example.Pom.AutomationExercise(driver);  // Initialize AE with WebDriver
+        AE = new com.Pom.AutomationExercise(driver);  // Initialize AE with WebDriver
         driver.get("https://automationexercise.com");
 	}
 

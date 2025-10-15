@@ -13,7 +13,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.example.Pom.bookingpage;
+import com.Pom.bookingpage;
 
 import io.cucumber.java.After;
 import io.cucumber.java.en.Given;

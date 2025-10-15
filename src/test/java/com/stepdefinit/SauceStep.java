@@ -7,10 +7,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.example.Pom.SauceCart;
-import com.example.Pom.SauceLogin;
-import com.example.Pom.SaucePro;
-import com.example.resources.BaseClass;
+import com.Pom.SauceCart;
+import com.Pom.SauceLogin;
+import com.Pom.SaucePro;
+import com.resources.BaseClass;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

@@ -1,13 +1,12 @@
 package com.stepdefinit;
 
-import org.testng.Assert;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 import io.restassured.response.Response;
+import junit.framework.Assert;
 
 public class FakeStore {
 

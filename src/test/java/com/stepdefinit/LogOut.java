@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import com.example.Pom.AutomationExercise;
+import com.Pom.AutomationExercise;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;

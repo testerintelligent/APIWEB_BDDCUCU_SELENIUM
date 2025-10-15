@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import com.example.Pom.DemoBlazePom;
+import com.Pom.DemoBlazePom;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

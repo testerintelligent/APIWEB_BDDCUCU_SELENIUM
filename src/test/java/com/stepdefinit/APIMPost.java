@@ -2,7 +2,7 @@ package com.stepdefinit;
 
 import static org.hamcrest.Matchers.equalTo;
 import com.common.BaseClass1;
-import com.example.resources.BaseClass;
+import com.resources.BaseClass;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
