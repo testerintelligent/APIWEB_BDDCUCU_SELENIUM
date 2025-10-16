@@ -1,5 +1,4 @@
-@all
-@smoke
+@TwelthFeatureFile
 Feature: Web_AutomationExercise_Forms_Validation
 
 

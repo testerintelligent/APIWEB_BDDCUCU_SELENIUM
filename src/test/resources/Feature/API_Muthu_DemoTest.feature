@@ -1,5 +1,5 @@
 
-@sm
+@SecondFeatureFile
 Feature: API_reqres_DemoTest
 
 Background:

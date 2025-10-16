@@ -61,7 +61,7 @@ public class APIMPost extends BaseClass1 {
     // }
 
     @Then("the response code should be {int}")
-    public void verifyStatusCode(int expectedStatusCode) {
+    public void verifyStatusCoding(int expectedStatusCode) {
         int expected = expectedStatusCode;
         int actual = response.getStatusCode();
 

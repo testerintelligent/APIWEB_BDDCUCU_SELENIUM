@@ -35,8 +35,8 @@ public void user_enters_the_valid_and_for_the_adactin_site(String userName, Stri
         driver.findElement(By.xpath("//input[@id='password']")).sendKeys(password);
     
 }
-@When("User clicks the login button")
-public void user_clicks_the_login_button() {
+@When("User clicks the login buttons")
+public void user_clicks_the_login_buttons() {
     driver.findElement(By.xpath("//input[@type='Submit']")).click();
     
 }

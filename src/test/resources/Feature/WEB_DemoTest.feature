@@ -1,4 +1,4 @@
-@all
+@ThirteenFeatureFile
 Feature: WEB_DemoTest
 
 Background: Check Automation Tester Website
@@ -349,7 +349,7 @@ Scenario: Login user with incorrect email and password
 
 @ThirtyEight
     Scenario: Verify Subscription section functionality
-    When Scroll down to footer
+    When Scroll down to footering
     Then Verify text 'SUBSCRIPTION'
     When Enter email address in input and click arrow button
     Then Verify success message 'You have been successfully subscribed!' is visible
@@ -412,7 +412,7 @@ Scenario: Login user with incorrect email and password
 @FourtyFour
     Scenario:Verify Subscription in Cart page
     When Click on the 'Cart' button
-    And Scroll down to footer
+    And Scroll down to footering
     Then Verify text 'SUBSCRIPTION'
     When Enter email address in input and click arrow button
     Then Verify success message 'You have been successfully subscribed!' is visible

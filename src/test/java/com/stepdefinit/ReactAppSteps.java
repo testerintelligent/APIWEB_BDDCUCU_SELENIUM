@@ -121,7 +121,7 @@ public class ReactAppSteps {
             .extract().response();
 }
 
-@Then("I should receive the response")
+@Then("I should receive the responses")
 public void i_should_receive_the_response3() {
     System.out.println("Response Body:\n" + response.asString());
 }

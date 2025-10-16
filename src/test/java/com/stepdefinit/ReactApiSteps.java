@@ -69,7 +69,7 @@ public void i_create_a_new_training_record() {
             .extract()
             .response();
 }
-@Then("the response code should be {int}")
+@Then("the response code should be expected {int}")
     public void the_response_code_should_be(int expectedStatusCode) throws InterruptedException {
         BaseClass1.winWait(2000);
         Assert.assertEquals(expectedStatusCode, response.getStatusCode());

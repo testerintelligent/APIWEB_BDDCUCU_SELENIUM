@@ -336,7 +336,7 @@ public void launch_browser_and_navigate() {
 	        Assert.assertTrue("Products list is not visible", products.size() > 0);
 	    }
 	    
-	    @When("Scroll down to footer")
+	    @When("Scroll down to footering")
 	    public void scroll_down_to_footer() {
 	        JavascriptExecutor js = (JavascriptExecutor) driver;
 	        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");

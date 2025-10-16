@@ -1,4 +1,4 @@
-@all
+@ThirdFeatureFile
 Feature: Get training data from local API
 
   @reactApp

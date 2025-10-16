@@ -4,20 +4,20 @@ import io.cucumber.java.en.When;
 
 public class HomePage {
 
-    @When("Scroll down to footer")
-    public void scroll_down_to_footer() throws InterruptedException {
+    // @When("Scroll down to footer")
+    // public void scroll_down_to_footer() throws InterruptedException {
 
-        System.out.println("Scrolling down to footer...");
-        /*
-         * driver.get("https://www.automationexercise.com/");
-         * Thread.sleep(2000);
-         * JavascriptExecutor js = (JavascriptExecutor) driver;
-         * js.executeScript("window.scrollBy(0,5000)");
-         * Thread.sleep(2000);
-         * // Wait for 2 seconds to ensure the scroll is complete
-         * System.out.println("Scrolled down to footer");
-         */
-    }
+    //     System.out.println("Scrolling down to footer...");
+    //     /*
+    //      * driver.get("https://www.automationexercise.com/");
+    //      * Thread.sleep(2000);
+    //      * JavascriptExecutor js = (JavascriptExecutor) driver;
+    //      * js.executeScript("window.scrollBy(0,5000)");
+    //      * Thread.sleep(2000);
+    //      * // Wait for 2 seconds to ensure the scroll is complete
+    //      * System.out.println("Scrolled down to footer");
+    //      */
+    // }
 
     @When("Verify the text SUBSCRIPTION")
     public void verify_the_text_subscription() {

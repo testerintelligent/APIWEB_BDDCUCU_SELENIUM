@@ -741,8 +741,8 @@ public void user_should_enter_and(String username, String password) {
     driver.findElement(By.id("password")).sendKeys("password");
    
 }
-@When("User clicks the login buttons")
-public void user_clicks_the_login_buttons() {
+@When("User clicking the login buttons")
+public void user_clicking_the_login_buttons() {
 
 	driver.findElement(By.cssSelector("button[type='submit']")).click();
  
