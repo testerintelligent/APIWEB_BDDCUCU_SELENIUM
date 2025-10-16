@@ -1,4 +1,4 @@
-@TwelthFeatureFile
+@Features
 Feature: Web_AutomationExercise_Forms_Validation
 
 

@@ -1,4 +1,4 @@
-@EleventhFeatureFile
+@Features
 Feature: Web_AutomationExercise_Register_Functionality
 
 Scenario: Successful login

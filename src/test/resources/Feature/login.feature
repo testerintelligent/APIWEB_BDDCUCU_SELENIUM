@@ -1,4 +1,4 @@
-@SixthFeatureFile
+@Features
 @regression
 Feature: Web_DemoSaas_Login_Validation
   
