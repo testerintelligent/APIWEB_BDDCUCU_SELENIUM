@@ -1,12 +1,12 @@
 package com.stepdefinit;
 
+import org.junit.Assert;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 import io.restassured.response.Response;
-import junit.framework.Assert;
 
 public class FakeStore {
 
@@ -136,7 +136,8 @@ public class FakeStore {
     public void the_deleted_product_id_should_be(Integer expectedId) {
 
         int returnedId = response.jsonPath().getInt("id");
-        Assert.assertEquals(returnedId, expectedId);
+        //Assert.assertEquals(returnedId, expectedId);
+        Assert.assertEquals(returnedId,expectedId);
 
     }
 

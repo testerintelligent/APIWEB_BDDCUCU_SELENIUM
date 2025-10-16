@@ -3,33 +3,18 @@ package com.resources;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.List;
 import java.util.Map;
 import java.util.Properties;
-import java.util.Random;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang.RandomStringUtils;
 
 import static org.hamcrest.Matchers.equalTo;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.io.FileHandler;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import static io.restassured.RestAssured.given;
@@ -89,6 +74,10 @@ public static void LaunchBrowser() {
 	public static void EnterValue(WebElement w, String s) {
 		w.sendKeys(s);
 	}
+
+		public void closeBrowser() {
+        driver.quit();
+    }
 
 	public static void moveToElement(WebElement m) {
 		a = new Actions(driver);

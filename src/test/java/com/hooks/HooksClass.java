@@ -1,17 +1,17 @@
 package com.hooks;
 
-import com.common.BaseClass;
+import com.resources.BaseClass;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
-public class HooksClass extends BaseClass1 {
+public class HooksClass extends BaseClass {
 
-    common.BaseClass base = new common.BaseClass();
+    BaseClass base = new BaseClass();
 
     @Before
     public void beforeScenario() {
         System.out.println("=== Launching Browser ===");
-        base.browserLaunch();
+        base.LaunchBrowser();
     }
 
     @After

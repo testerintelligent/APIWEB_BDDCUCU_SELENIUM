@@ -1,7 +1,6 @@
 package com.Pom;
 
 import java.time.Duration;
-
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;

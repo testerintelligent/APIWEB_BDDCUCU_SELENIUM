@@ -45,7 +45,7 @@ public class booking {
     public void select_the_room() {
         // WebElement bookRoomButton = wait.until(ExpectedConditions.elementToBeClickable(bookingPage.bookRoomPath));
         // bookRoomButton.click();
-        System.out.println("✅ Room selection successful");
+        System.out.println("Room selection successful");
     }
 
     @When("select the date")
@@ -57,7 +57,7 @@ public class booking {
         // js.executeScript("arguments[0].click();", startDate);
         // js.executeScript("arguments[0].click();", endDate);
 
-        System.out.println("✅ Selected start date and end date successfully");
+        System.out.println("Selected start date and end date successfully");
     }
 
 
@@ -75,7 +75,7 @@ public class booking {
     public void book_the_ticket() {
         // WebElement bookTicBut = wait.until(ExpectedConditions.elementToBeClickable(bookingPage.bookButtonPath));
         // bookTicBut.click();
-        System.out.println("✅ Booking request submitted");
+        System.out.println(" Booking request submitted");
     }
 
     @Then("Confirm the booking")
@@ -83,9 +83,9 @@ public class booking {
     //     boolean isBookingConfirmed = !driver.findElements(bookingPage.cancelButtonPath).isEmpty();
 
     //     if (isBookingConfirmed) {
-    //         System.out.println("✅ Booking confirmed!");
+    //         System.out.println(" Booking confirmed!");
     //     } else {
-            System.out.println("❌ Booking failed, no cancel button found.");
+            System.out.println(" Booking failed, no cancel button found.");
 //}
         driver.close();
 
