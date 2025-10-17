@@ -21,7 +21,7 @@ pipeline
         stage('Build and Test') {
             steps {
                 
-                bat 'mvn clean test -Dtest=com.runner.RunnerClass'
+                bat 'mvn -Dtest=TestRunner test'
             }
         }
     }
@@ -35,15 +35,17 @@ pipeline
 			cucumber buildStatus: 'UNCHANGED', 
             customCssFiles: '', 
             customJsFiles: '', 
-            fileIncludePattern: '**/*.json', 
-            jsonReportDirectory: 'target/cucumber-report/', 
-            reportTitle: 'Report', 
+             jsonReportDirectory: 'target/cucumber-report',
+                        fileIncludePattern: 'cucumber.json',
+                        reportTitle: 'Report',
             sortingMethod: 'ALPHABETICAL', 
             trendsLimit: 5
 
-            junit 'target/cucumber-report/Cucumber.xml'
+            junit '**/*.xml'
 
         }
+
+       
 
     }
 }

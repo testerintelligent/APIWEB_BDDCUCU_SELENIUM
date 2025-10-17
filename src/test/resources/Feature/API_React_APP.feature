@@ -1,4 +1,4 @@
-@Features 
+@FeaturesFile
 Feature: Get training data from local API
 
   @reactApp

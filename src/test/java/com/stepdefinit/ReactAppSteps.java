@@ -3,15 +3,12 @@ package com.stepdefinit;
 import io.cucumber.java.en.*;
 import io.restassured.response.Response;
 import junit.framework.Assert;
-
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class ReactAppSteps {
-
 
     private String endpoint;
     private Response response;
@@ -80,7 +77,7 @@ public class ReactAppSteps {
         System.out.println("Response: " + response.prettyPrint());
     }
 
-    @Then("code should be {int}")
+@Then("code should be {int}")
     public void code_should_be(Integer expectedStatusCode) {                                                
         int actualStatusCode = response.getStatusCode();
         System.out.println("Actual status code : " + actualStatusCode);
@@ -135,12 +132,7 @@ public void the_status_code_contains(String code3) {
     } else {
         System.out.println("Response does not contain expected code.");
     }
-
-    
-
-
     }
-
 }
 
 
