@@ -36,12 +36,12 @@ pipeline
             customCssFiles: '', 
             customJsFiles: '', 
             fileIncludePattern: '**/*.json', 
-            jsonReportDirectory: 'target/cucumber-report/cucumber.json', 
+            jsonReportDirectory: '**/*.json', 
             reportTitle: 'Report', 
             sortingMethod: 'ALPHABETICAL', 
             trendsLimit: 5
 
-            junit 'target/cucumber-report/Cucumber.xml'
+            junit '**/*.xml'
 
         }
 
