@@ -35,15 +35,17 @@ pipeline
 			cucumber buildStatus: 'UNCHANGED', 
             customCssFiles: '', 
             customJsFiles: '', 
-            fileIncludePattern: '**/*.json', 
-            jsonReportDirectory: '**/*.json', 
-            reportTitle: 'Report', 
+             jsonReportDirectory: 'target/cucumber-report',
+                        fileIncludePattern: 'cucumber.json',
+                        reportTitle: 'Report',
             sortingMethod: 'ALPHABETICAL', 
             trendsLimit: 5
 
             junit '**/*.xml'
 
         }
+
+       
 
     }
 }
