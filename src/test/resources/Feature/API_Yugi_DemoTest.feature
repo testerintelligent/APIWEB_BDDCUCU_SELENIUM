@@ -1,4 +1,4 @@
-@Features
+@Features 
 Feature: API_jsonplaceholder_DemoTest
 
   Background:

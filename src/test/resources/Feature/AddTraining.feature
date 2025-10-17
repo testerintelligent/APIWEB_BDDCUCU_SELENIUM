@@ -1,4 +1,4 @@
-@Features @test1
+@Features 
 @smoke
 Feature: Web_React_Create_New_Record
 

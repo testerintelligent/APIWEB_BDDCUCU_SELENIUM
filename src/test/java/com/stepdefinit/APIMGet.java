@@ -17,7 +17,7 @@ public class APIMGet {
 
     @When("I sends a GET request to {string}")
     public void i_sends_a_get_request_to(String endpoint) {
-        response = given().when().get(endpoint);
+        response = given().header("x-api-key", "reqres-free-v1").when().get(endpoint);
     }
 
     @Then("the response's status code is {int}")
