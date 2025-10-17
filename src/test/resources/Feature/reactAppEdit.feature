@@ -1,4 +1,4 @@
-@Features
+@FeaturesFile
 Feature: Web_React_Create_Edit_And_Delete
 
 Scenario Outline: Validating the creation of new training

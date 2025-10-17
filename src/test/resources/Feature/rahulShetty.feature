@@ -1,4 +1,4 @@
-@Features
+@FeaturesFile
 @smoke
 Feature: Web_RahulShetty_Frames_Alert_Validations
 
