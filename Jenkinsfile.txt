@@ -21,7 +21,7 @@ pipeline
         stage('Build and Test') {
             steps {
                 
-                bat 'mvn clean test -Dtest=com.runner.RunnerClass'
+                bat 'mvn -Dtest=TestRunner test'
             }
         }
     }
