@@ -1,5 +1,5 @@
 
-@FeaturesTow
+@FeaturesFile
 Feature: API_reqres_DemoTest
 
 Background:

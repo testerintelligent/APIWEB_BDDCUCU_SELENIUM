@@ -1,7 +1,5 @@
 @FeaturesFile
-@smoke
 Feature: Web_AutomationExercise_Add_To_Cart_Scenario
-
 
     Scenario Outline: Adding review for product and validating response
         Given launching the url1 "https://www.automationexercise.com/"
@@ -20,8 +18,6 @@ Feature: Web_AutomationExercise_Add_To_Cart_Scenario
             | Mary | a.b@gmail.com | good quality |
     #|Muthu|b.c@gmail.com|nice product|
 
-
-
     Scenario: Add to cart from recommended items
         Given Launch the given URL "https://www.automationexercise.com/"
         When Scroll to bottom of home page
@@ -29,8 +25,6 @@ Feature: Web_AutomationExercise_Add_To_Cart_Scenario
         And click on add to cart
         And click on cart button
         And verify if the products are displayed
-
-
 
     Scenario: Validating the brand page of products
         Given launching the url "https://www.automationexercise.com/"
@@ -41,9 +35,6 @@ Feature: Web_AutomationExercise_Add_To_Cart_Scenario
         And click on any other brand
         And verify if the user is navigated to the coresponding brand page "Brand - Madame Products"
         Then navigate back to the home page
-
-
-
 
     Scenario: View products based on category
         Given launching the url "https://www.automationexercise.com/"
