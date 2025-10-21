@@ -3,9 +3,9 @@ package com.resources;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Map;
 import java.util.Properties;
-
 
 import static org.hamcrest.Matchers.equalTo;
 
@@ -21,7 +21,7 @@ import static io.restassured.RestAssured.given;
 import io.restassured.http.ContentType;
 
 public class BaseClass {
-	//Intializing the variable
+	// Intializing the variable
 	public static WebDriver driver;
 	public static Actions a;
 	public static Select s;
@@ -30,19 +30,19 @@ public class BaseClass {
 	public static String addressLine1;
 	public static String city;
 	public static String region;
-	
-public static void LaunchBrowser() {
-	WebDriverManager.chromedriver().setup();
-    ChromeOptions options = new ChromeOptions();
-	options.addArguments("--headed");
-    options.addArguments("disable-infobars");
-    options.setExperimentalOption("prefs", Map.of(
-    "credentials_enable_service", false,
-    "profile.password_manager_enabled", false
-    ));
-    driver = new ChromeDriver(options);
-    driver.manage().window().maximize();
-}
+
+	public static void LaunchBrowser() {
+		WebDriverManager.chromedriver().setup();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headed");
+		options.addArguments("disable-infobars");
+		options.setExperimentalOption("prefs", Map.of(
+				"credentials_enable_service", false,
+				"profile.password_manager_enabled", false));
+		driver = new ChromeDriver(options);
+		driver.manage().window().maximize();
+	}
+
 	public static String getproperty(String value) throws IOException { // Declaring and Handling IOException
 		FileInputStream file = new FileInputStream("Config\\config.properties");
 		Properties p = new Properties();
@@ -53,7 +53,6 @@ public static void LaunchBrowser() {
 	public static void LaunchURL(String URL) {
 		driver.get(URL);
 	}
-	
 
 	public static void Click(WebElement c) {
 		c.click();
@@ -75,9 +74,10 @@ public static void LaunchBrowser() {
 		w.sendKeys(s);
 	}
 
-		public void closeBrowser() {
-        driver.quit();
-    }
+	public void closeBrowser() {
+		WebDriver driver = new ChromeDriver();
+		driver.quit();
+	}
 
 	public static void moveToElement(WebElement m) {
 		a = new Actions(driver);
@@ -114,7 +114,7 @@ public static void LaunchBrowser() {
 		s.selectByVisibleText(text);
 	}
 
-	    	//API POST Request with Header
+	// API POST Request with Header
 	public void POST(String responseBody, String param, int statusCode, String jsonObj, String value)
 			throws IOException {
 		given().header("Authorization", "Basic ZGVtbzoxMjM0").header("Content-Type", "application/json")
@@ -123,5 +123,10 @@ public static void LaunchBrowser() {
 				.statusCode(statusCode).body(jsonObj, equalTo(value)).log().all();
 	}
 
+	public void browserLaunch() {
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+	}
 
 }

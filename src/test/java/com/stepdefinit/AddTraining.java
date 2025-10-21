@@ -6,17 +6,21 @@ import java.time.Duration;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.common.BaseClass1;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class AddTraining extends BaseClass1 {
+public class AddTraining extends BaseClass1{
 
     // public static WebDriver driver;
+    WebDriver driver = new ChromeDriver();
 
     @Then("verify if the error msg is shown")
     public void verify_if_the_error_msg_is_shown() throws IOException, InterruptedException {

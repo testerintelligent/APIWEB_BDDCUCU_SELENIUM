@@ -40,7 +40,7 @@ public class AddReview extends BaseClass1 {
 
     @When("click on view product")
     public void click_on_view_product() throws InterruptedException {
-        explicitWaitClick("(//a[@style='color: brown;'])[2]");
+        explicitWaitClick("//a[text() = ' Products']");
         winWait(2000);
 
     }

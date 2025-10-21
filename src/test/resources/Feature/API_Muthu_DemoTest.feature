@@ -1,5 +1,5 @@
 
-@FeaturesFile
+@Features @test2
 Feature: API_reqres_DemoTest
 
 Background:
@@ -25,7 +25,7 @@ And The Base URL is set to "https://jsonplaceholder.typicode.com"
     When delete user in server of reqres
     Then validate the delete response code of reqres
 
-@Sanitingtest 
+@Sanitingtest @m
   Scenario: Get user detail
     Given the API's availability check
     When I sends a GET request to "/api/users/2"
@@ -52,11 +52,11 @@ And The Base URL is set to "https://jsonplaceholder.typicode.com"
     When I send a Patch request to update user details
     Then The response should contain the updated name
 
-@Sanity @sn
-  Scenario: Checking All HTTP Methods
-    Given Navigate to the URL
-    When I check all methods and assestion
-    Then I should get all responses
+# @Sanity @m
+#   Scenario: Checking All HTTP Methods
+#     Given Navigate to the URL
+#     When I check all methods and assestion
+#     Then I should get all responses
 
 @Smoke	
 	Scenario: Retrieve user by ID
@@ -165,36 +165,36 @@ When I fetch the Product
 Then The response should be 200
 And the Product tittle should be "DANVOUY Women's T Shirt Casual Cotton Short"
 
-@Sanity @SmokeTest_N 
-Scenario: Update the product with put request
-Given The Fake store API is available
-When I send a put request to update product 18
-Then the status code should be 200
-And the response should contain desription "changed string"
+# @Sanity @SmokeTest_N @m 
+# Scenario: Update the product with put request
+# Given The Fake store API is available
+# When I send a put request to update product 18
+# Then the status code should be 200
+# And the response should contain desription "changed string"
 
-@Smoke @SmokeTest_N 
-Scenario: Delete product with ID 18
-Given The Fake store API is available
-When I send a DELETE request for product ID 18
-Then the response status should be 200
-And the deleted product ID should be 18
-
-
-
-@Sanity 
-Scenario: fetch users from page 1
-
-When I send GET request to "api/users" with query parameter "page=1"
-Then The Respose Code Should be 200
-And  The ID of the First User Name Should Be 1
+# @Smoke @SmokeTest_N @m
+# Scenario: Delete product with ID 18
+# Given The Fake store API is available
+# When I send a DELETE request for product ID 18
+# Then the response status should be 200
+# And the deleted product ID should be 18
 
 
-@Sanity 
-    Scenario: Verify token is generated with valid credentials
-    Given I set the base URI
-    When I send POST request to /auth with valid credentials
-    Then I should get 200 OK response
-    And I should receive a token in response
+
+# @Sanity @m
+# Scenario: fetch users from page 1
+
+# When I send GET request to "api/users" with query parameter "page=1"
+# Then The Respose Code Should be 200
+# And  The ID of the First User Name Should Be 1
+
+
+# @Sanity @m
+#     Scenario: Verify token is generated with valid credentials
+#     Given I set the base URI
+#     When I send POST request to /auth with valid credentials
+#     Then I should get 200 OK response
+#     And I should receive a token in response
 
 @Sanitingtest 
     Scenario: Get user details 

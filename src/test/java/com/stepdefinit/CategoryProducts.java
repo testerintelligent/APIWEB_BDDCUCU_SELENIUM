@@ -1,13 +1,19 @@
 package com.stepdefinit;
 
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
 import com.common.BaseClass1;
+
 import io.cucumber.java.en.When;
 
 public class CategoryProducts extends BaseClass1 {
 
+    WebDriver driver = new ChromeDriver();
+
     @When("click product button")
     public void click_product_button() throws InterruptedException {
         winWait(500);
+        driver.manage().window().maximize();
         driver.get("https://www.automationexercise.com/products");
         winWait(2000);
     }
