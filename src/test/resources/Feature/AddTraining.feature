@@ -1,5 +1,4 @@
 @Features 
-@smoke
 Feature: Web_React_Create_New_Record
 
 Scenario Outline: Validating the creation of new training

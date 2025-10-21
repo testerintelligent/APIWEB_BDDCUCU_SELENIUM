@@ -1,5 +1,5 @@
 
-@Features @test2
+@Features
 Feature: API_reqres_DemoTest
 
 Background:

@@ -21,8 +21,7 @@ import junit.framework.Assert;
 public class automationbooks {
 	
      WebDriver driver;
-     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-    
+     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));    
      
     @Given("I enter the url of bookstore")
 public void i_enter_the_url_of_bookstore() {

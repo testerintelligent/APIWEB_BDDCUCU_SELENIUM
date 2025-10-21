@@ -13,6 +13,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -20,17 +21,22 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestCasePage {
-    public static WebDriver driver;
+    public static ChromeDriver driver;
     public static TakesScreenshot ts;
 
     @Given("launching the url {string}")
     public void launching_the_url(String url) {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get(url);
-
+        WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+	//options.addArguments("--headless");
+    options.addArguments("disable-infobars");
+    options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+    driver = new ChromeDriver(options);
+    driver.manage().window().maximize();
+    driver.get(url);
     }
 
     @When("verify that the home page is visible successfully")

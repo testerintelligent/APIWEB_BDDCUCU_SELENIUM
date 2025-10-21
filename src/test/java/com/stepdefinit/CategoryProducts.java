@@ -1,6 +1,7 @@
 package com.stepdefinit;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import com.common.BaseClass1;
 
@@ -13,8 +14,15 @@ public class CategoryProducts extends BaseClass1 {
     @When("click product button")
     public void click_product_button() throws InterruptedException {
         winWait(500);
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         driver.get("https://www.automationexercise.com/products");
+        winWait(2000);
+    }
+
+    @When("clicking the product button icon")
+    public void clicking_the_product_button_icon() throws InterruptedException {
+        winWait(500);
+        driver.findElement(By.partialLinkText(" Products")).click();            
         winWait(2000);
     }
 
@@ -22,14 +30,12 @@ public class CategoryProducts extends BaseClass1 {
     public void click_on_category_women() throws InterruptedException {
         explicitWaitClick("(//a[@data-toggle='collapse'][@data-parent='#accordian'])[1]");
         winWait(500);
-
     }
 
     @When("click on a sub category")
     public void click_on_a_sub_category() throws InterruptedException {
         explicitWaitClick("//a[text()='Tops ']");
         winWait(500);
-
     }
 
     @When("Verify that category page is displayed and confirm text {string}")
@@ -42,7 +48,6 @@ public class CategoryProducts extends BaseClass1 {
         // if (actual.equals(data)) {
         System.out.println("User is navigated to the page : " + data);
         // }
-
     }
 
     @When("click on Category Men")
@@ -51,7 +56,6 @@ public class CategoryProducts extends BaseClass1 {
         winWait(1000);
         explicitWaitClick("//a[text()='Tshirts ']");
         winWait(500);
-
     }
 
     @When("Verify that the category page is displayed and confirm text {string}")

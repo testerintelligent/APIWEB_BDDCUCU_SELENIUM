@@ -25,7 +25,6 @@ public class AddFromRecommendedItems {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(url);
-
     }
 
     @When("Scroll to bottom of home page")
