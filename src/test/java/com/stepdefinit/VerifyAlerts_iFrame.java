@@ -1,49 +1,59 @@
 package com.stepdefinit;
 
 import java.util.List;
+import java.util.Map;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import com.common.BaseClass1;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class VerifyAlerts_iFrame extends BaseClass1 {
+    ChromeDriver driver;
+
+    @Given("I navigate to the automation practice page")
+    public void i_navigate_to_the_automation_practice_page() throws InterruptedException {
+         WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headless");
+    options.addArguments("disable-infobars");
+    options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+    driver = new ChromeDriver(options);
+    driver.manage().window().maximize();
+        driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+        winWait(2000);
+    }
 
     @When("I switch to the iframe")
     public void i_switch_to_the_iframe() throws InterruptedException {
         // //iframe[@name='iframe-name'][@id='courses-iframe']
-
         List<WebElement> li = driver.findElements(By.tagName("iframe"));
         System.out.println(li.size());
         driver.switchTo().frame(0);
         winWait(2000);
-
     }
 
     @Then("I should see the {string} link inside the iframe")
     public void i_should_see_the_link_inside_the_iframe(String string) throws InterruptedException {
         boolean displayed = driver.findElement(By.xpath("(//a[contains(@class,'new-navbar-highlighter')])[2]"))
                 .isDisplayed();
+                winWait(1000);
         if (displayed) {
             System.out.println("Link displayed : " + string);
         } else {
             System.out.println("Link not displayed======");
-        }
-        winWait(1000);
+        }        
         driver.switchTo().parentFrame();
-        System.out.println("Switched to parent frame");
+        //System.out.println("Switched to parent frame");
     }
-
-    @Given("I navigate to the automation practice page")
-    public void i_navigate_to_the_automation_practice_page() throws InterruptedException {
-        driver.get("https://rahulshettyacademy.com/AutomationPractice/");
-        winWait(2000);
-    }
-
+    
     @When("I enter {string} in the alert textbox")
     public void i_enter_in_the_alert_textbox(String data1) throws InterruptedException {
         WebElement element = driver.findElement(By.xpath("//input[@id='name']"));

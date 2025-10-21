@@ -96,8 +96,7 @@ public class AutomationExercise {
     public WebElement continueButton;
     
     @FindBy(xpath = "//h2[contains(text(),'Login to your account')]")
-    public WebElement logintoyouAccount;
-    
+    public WebElement logintoyouAccount;    
 
     @FindBy(xpath = "//a[contains(text(),' Logged in as ')]")
     public WebElement loggedInText;
@@ -122,9 +121,9 @@ public class AutomationExercise {
     public void verifyHome() {
         waitForElementToBeVisible(homeButton);
         if (homeButton.isDisplayed()) {
-            System.out.println("✅ Home page is visible.");
+            System.out.println(" Home page is visible.");
         } else {
-            throw new AssertionError("❌ Home page is NOT visible.");
+            throw new AssertionError(" Home page is NOT visible.");
         }
     }
 
@@ -132,14 +131,12 @@ public class AutomationExercise {
     	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     	WebElement loginLink = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//ul[@class='nav navbar-nav']//a[contains(text(),'Signup / Login')]")));
     	loginLink.click();
-
-
     }
     
     public void clickontestcase() {
     	TestcasesButton.click();
-
 	}
+
     public void verifytestcase() {
 		WebElement testcase = driver.findElement(By.xpath("//b[contains(text(),'Test Cases')]"));
 		boolean te = testcase.isDisplayed();
@@ -178,7 +175,7 @@ public class AutomationExercise {
     public void verifyEnterAccountInfoVisible() {
         waitForElementToBeVisible(enterAccountInfoText);
         if (!enterAccountInfoText.isDisplayed()) {
-            throw new AssertionError("❌ 'ENTER ACCOUNT INFORMATION' is not visible");
+            throw new AssertionError("'ENTER ACCOUNT INFORMATION' is not visible");
         }
     }
 
@@ -214,7 +211,7 @@ public class AutomationExercise {
     public void verifyAccountCreated() {
         waitForElementToBeVisible(accountCreatedText);
         if (!accountCreatedText.isDisplayed()) {
-            throw new AssertionError("❌ Account not created successfully.");
+            throw new AssertionError(" Account not created successfully.");
         }
     }
 
@@ -226,7 +223,7 @@ public class AutomationExercise {
     public void verifyLoggedInUsernameVisible() {
         waitForElementToBeVisible(loggedInText);
         if (!loggedInText.isDisplayed()) {
-            throw new AssertionError("❌ Logged in username is not visible.");
+            throw new AssertionError("Logged in username is not visible.");
         }
     }
 
@@ -245,7 +242,7 @@ public class AutomationExercise {
     public void verifyAccountDeleted() {
         waitForElementToBeVisible(accountDeletedText);
         if (!accountDeletedText.isDisplayed()) {
-            throw new AssertionError("❌ Account not deleted.");
+            throw new AssertionError("Account not deleted.");
         }
     }
 
@@ -253,9 +250,9 @@ public class AutomationExercise {
         waitForElementToBeVisible(newUserSignupSection);
         boolean isVisible = newUserSignupSection.isDisplayed();
         if (isVisible) {
-            System.out.println("✅ New User Signup section is visible.");
+            System.out.println("New User Signup section is visible.");
         } else {
-            throw new AssertionError("❌ New User Signup section is NOT visible.");
+            throw new AssertionError("New User Signup section is NOT visible.");
         }
     }
 
@@ -264,7 +261,7 @@ public class AutomationExercise {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement textElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//b[contains(text(),'Enter Account Information')]")));
         if (!textElement.isDisplayed()) {
-            throw new AssertionError("❌ Text '" + text + "' is not visible.");
+            throw new AssertionError("Text '" + text + "' is not visible.");
         }
     }
 }

@@ -14,7 +14,6 @@ When User enters username "<username>"
 And User enters password "<password>"
 And User clicks the login button
 Then Login should be successful
-
 Examples:
 |username|password| 
 |testuser1@1991.com|testuser123|

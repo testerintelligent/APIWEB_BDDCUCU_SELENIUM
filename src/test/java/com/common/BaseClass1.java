@@ -6,6 +6,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import org.apache.commons.io.FileUtils;
@@ -100,7 +101,7 @@ public class BaseClass1 {
          element = (WebElement)wait.until(ExpectedConditions.visibilityOfElementLocated((By)elementOrLocator));
       }
 
-      element.sendKeys(new CharSequence[]{value});
+      element.sendKeys(value);
       return value;
    }
 
@@ -191,5 +192,48 @@ public class BaseClass1 {
         int randomNum = random.nextInt(num);
         return randomNum;
     }
+
+    public static void LaunchBrowser() {
+	WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headed");
+    options.addArguments("disable-infobars");
+    options.setExperimentalOption("prefs", Map.of(
+    "credentials_enable_service", false,
+    "profile.password_manager_enabled", false
+    ));
+    driver = new ChromeDriver(options);
+    driver.manage().window().maximize();
+}
+
+        public static void launchBrowser(String browserName) {
+		try {
+			if (browserName.equalsIgnoreCase("chrome")) {
+				System.setProperty("webdriver.chrome.silentOutput", "true");
+				WebDriverManager.chromedriver().setup();
+				ChromeOptions chromeOptions =new ChromeOptions();
+				chromeOptions.addArguments("--remote-allow-origins=*");
+				driver = new ChromeDriver(chromeOptions);
+			} else if (browserName.equalsIgnoreCase("firefox")) {
+				System.setProperty("webdriver.firefox.silentOutput", "true");
+				WebDriverManager.firefoxdriver().setup();
+				driver = new FirefoxDriver();
+
+			} else if (browserName.equalsIgnoreCase("ie")) {
+				System.setProperty("webdriver.ie.silentOutput", "true");
+				WebDriverManager.iedriver().setup();
+				driver = new InternetExplorerDriver();
+			} else if (browserName.equalsIgnoreCase("edge")) {
+				System.setProperty("webdriver.edge.silentOutput", "true");
+				WebDriverManager.edgedriver().setup();
+				driver = new EdgeDriver();
+			}
+          // driver.manage().window().maximize();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		//return driver;
+
+	}
 
 }

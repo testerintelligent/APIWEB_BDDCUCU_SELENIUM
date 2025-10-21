@@ -1,5 +1,4 @@
 @FeaturesFile
-@smoke
 Feature: Web_RahulShetty_Frames_Alert_Validations
 
     Scenario: Switch to iframe and verify content
@@ -14,20 +13,16 @@ Feature: Web_RahulShetty_Frames_Alert_Validations
         Then an alert with text containing "<name>" should appear
         And accept the alert
 
-    Scenario: Handling confirm Alert
+    Scenario Outline: Handling confirm Alert
         Given I navigate to the automation practice page
         When I enter "<name>" in the alert textbox
         And I click on the Confirm button
         Then a confirm box with text containing "<name>" should appear
         And dismiss the alert
-
         Examples:
             | name   |
             | Muthu  |
             | Dhilip |
-
-
-
 
     Scenario: Validation of elements in practicepage
         Given launch the url "https://rahulshettyacademy.com/AutomationPractice/"

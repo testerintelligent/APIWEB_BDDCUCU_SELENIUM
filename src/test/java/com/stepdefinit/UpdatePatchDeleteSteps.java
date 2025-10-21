@@ -12,7 +12,6 @@ import io.restassured.response.Response;
 public class UpdatePatchDeleteSteps {
 
     private String response;
-
     Response resp;
 
     @Given("the API is up and running")

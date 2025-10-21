@@ -1,15 +1,15 @@
 package com.Pom;
 
+import com.common.BaseClass1;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.junit.Assert;
 
-public class LoginPage {
-    WebDriver driver = new ChromeDriver();
+public class LoginPage extends BaseClass1 {
+    WebDriver driver;
     public By customerlogin=(By.xpath("//input[@id='Email']"));
     
     @FindBy(xpath=("//input[@id='Password']"))
@@ -17,9 +17,9 @@ public class LoginPage {
 
     public By loginButton = (By.xpath("//input[@class='button-1 login-button']"));
     
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);  // Initialize elements        
+    public LoginPage(WebDriver driver2) {
+        this.driver = driver2;
+        PageFactory.initElements(driver2, this);  // Initialize elements        
     }
     public void enterPassword(String password) {
         passwordTextbox.sendKeys(password);
@@ -29,12 +29,15 @@ public class LoginPage {
     driver.get(url);
 }
 
+@FindBy(xpath="//input[@data-qa=\"login-email\"]")
+public WebElement loginname;
+
 public void enterUsername(String username){
-    driver.findElement(By.name("email")).sendKeys(username);
+    waitinputText(loginname, username, 10);
 }
 
 public void enterPasswords(String password){
-    driver.findElement(By.name("password")).sendKeys(password);
+    driver.findElement(By.xpath("//input[@placeholder=\"Password\"]")).sendKeys(password);
 }
 
 public void loginClick(){

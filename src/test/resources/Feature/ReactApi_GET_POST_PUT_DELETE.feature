@@ -1,5 +1,4 @@
 @FeaturesFile
-@smoke_API
 Feature: API_Web_React_E-E_Validation
 Background:
   Given The base URI of API is "http://10.192.190.130:5000"
