@@ -37,7 +37,7 @@ import io.restassured.http.ContentType;
 
 public class BaseClass1 {
     public static String userID;
-    public static WebDriver driver;
+    public static ChromeDriver driver;
 
      public static WebDriver headless(String browserName) {
 		try {
@@ -52,17 +52,17 @@ public class BaseClass1 {
 				WebDriverManager.firefoxdriver().setup();
 				FirefoxOptions firefox = new FirefoxOptions();
 				firefox.addArguments("--headless");
-				driver = new FirefoxDriver(firefox);
+				WebDriver driver = new FirefoxDriver(firefox);
 
 			} else if (browserName.equalsIgnoreCase("ie")) {
 				System.setProperty("webdriver.ie.silentOutput", "true");
 				WebDriverManager.iedriver().setup();
-				driver = new InternetExplorerDriver();
+				WebDriver driver = new InternetExplorerDriver();
 			} else if (browserName.equalsIgnoreCase("edge")) {
 				WebDriverManager.edgedriver().setup();
 				EdgeOptions edgeOptions = new EdgeOptions();
 				edgeOptions.addArguments("--headless");
-				driver = new EdgeDriver(edgeOptions);
+				WebDriver driver = new EdgeDriver(edgeOptions);
 			}
             driver.manage().window().maximize();
 		} catch (Exception e) {
@@ -217,16 +217,16 @@ public class BaseClass1 {
 			} else if (browserName.equalsIgnoreCase("firefox")) {
 				System.setProperty("webdriver.firefox.silentOutput", "true");
 				WebDriverManager.firefoxdriver().setup();
-				driver = new FirefoxDriver();
+				WebDriver driver = new FirefoxDriver();
 
 			} else if (browserName.equalsIgnoreCase("ie")) {
 				System.setProperty("webdriver.ie.silentOutput", "true");
 				WebDriverManager.iedriver().setup();
-				driver = new InternetExplorerDriver();
+				WebDriver driver = new InternetExplorerDriver();
 			} else if (browserName.equalsIgnoreCase("edge")) {
 				System.setProperty("webdriver.edge.silentOutput", "true");
 				WebDriverManager.edgedriver().setup();
-				driver = new EdgeDriver();
+				WebDriver driver = new EdgeDriver();
 			}
           // driver.manage().window().maximize();
 		} catch (Exception e) {

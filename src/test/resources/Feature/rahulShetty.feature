@@ -1,4 +1,4 @@
-@FeaturesFile
+@FeaturesFileRagul
 Feature: Web_RahulShetty_Frames_Alert_Validations
 
     Scenario: Switch to iframe and verify content
@@ -24,10 +24,11 @@ Feature: Web_RahulShetty_Frames_Alert_Validations
             | Muthu  |
             | Dhilip |
 
+@ValidatingFeature
     Scenario: Validation of elements in practicepage
         Given launch the url "https://rahulshettyacademy.com/AutomationPractice/"
         When clicking the radio button
-        And enter the conuntry name "Indi"
+        And enter the country name "India"
         And select the option from drop down
         And click the check box
         Then click the home button

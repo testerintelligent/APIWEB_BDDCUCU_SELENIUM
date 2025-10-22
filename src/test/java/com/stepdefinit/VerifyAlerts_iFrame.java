@@ -22,7 +22,7 @@ public class VerifyAlerts_iFrame extends BaseClass1 {
     public void i_navigate_to_the_automation_practice_page() throws InterruptedException {
          WebDriverManager.chromedriver().setup();
     ChromeOptions options = new ChromeOptions();
-	options.addArguments("--headless");
+	//options.addArguments("--headless");
     options.addArguments("disable-infobars");
     options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
     driver = new ChromeDriver(options);
