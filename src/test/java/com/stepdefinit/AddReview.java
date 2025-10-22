@@ -40,7 +40,7 @@ public class AddReview extends BaseClass1 {
 
     @When("Verify user entered the all products page")
     public void verify_user_entered_the_all_products_page() throws Exception{
-        winWait(2000);
+            winWait(5000);
         WebElement textdisplays = driver.findElement(By.xpath("//h2[(text()='All Products')]"));
        JavascriptExecutor js = (JavascriptExecutor)driver;
        js.executeScript("arguments[0].scrollIntoView(true);", textdisplays);
@@ -54,9 +54,10 @@ public class AddReview extends BaseClass1 {
 
     @When("click on view product")
     public void click_on_view_product() throws Exception {
-        WebElement viewprod = driver.findElement(By.xpath("//h2[text()='All Products']"));
+        WebElement viewprod = driver.findElement(By.xpath("(//a[text()='View Product'])[1]"));
+        Thread.sleep(2000);
         JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeAsyncScript("arguments[0].scrollIntoView(true)", viewprod);
+        js.executeScript("arguments[0].scrollIntoView(true)", viewprod);
         winWait(1000);
         WebElement viewprodlist = driver.findElement(By.xpath("(//a[text()='View Product'])[1]"));
         viewprodlist.click();
