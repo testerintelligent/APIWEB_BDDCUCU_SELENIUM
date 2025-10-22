@@ -1,4 +1,4 @@
-@FeaturesFileRagul
+@FeaturesFile
 Feature: Web_RahulShetty_Frames_Alert_Validations
 
     Scenario: Switch to iframe and verify content

@@ -1,5 +1,4 @@
 @FeaturesFile
-@regression
 Feature: Web_DemoSaas_Login_Validation
   
   Scenario: Successful login
