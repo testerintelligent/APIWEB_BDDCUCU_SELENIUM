@@ -23,8 +23,12 @@ public class AddReview extends BaseClass1 {
     public void launching_the_url1(String url) throws Exception {
         WebDriverManager.chromedriver().setup();
     ChromeOptions options = new ChromeOptions();
-	//options.addArguments("--headless");
-    options.addArguments("disable-infobars");
+	//options.addArguments("--headless=new");
+    options.addArguments("--disable-gpu");
+    options.addArguments("--no-sandbox");
+    options.addArguments("--disable-dev-shm-usage");
+    options.addArguments("--remote-allow-origins=*");
+    options.addArguments("--window-size=1920,1080");
     options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
     driver = new ChromeDriver(options);
     driver.manage().window().maximize();

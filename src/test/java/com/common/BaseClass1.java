@@ -119,7 +119,7 @@ public class BaseClass1 {
 	    public static void pressDown(int count) throws InterruptedException {
         Actions actions = new Actions(driver);
         for (int i = 0; i < count; i++) {
-            actions.sendKeys(Keys.DOWN).perform();
+            actions.sendKeys(Keys.ARROW_DOWN).build().perform();
             Thread.sleep(500); // slight wait to simulate user interaction
         }
     }

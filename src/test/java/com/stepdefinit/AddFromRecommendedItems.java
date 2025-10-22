@@ -1,6 +1,7 @@
 package com.stepdefinit;
 
 import java.time.Duration;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -8,11 +9,13 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class AddFromRecommendedItems {
     public static WebDriver driver;
@@ -22,8 +25,17 @@ public class AddFromRecommendedItems {
     @Given("Launch the given URL {string}")
     public void launch_the_given_url(String url) {
 
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        WebDriverManager.chromedriver().setup();
+    ChromeOptions options = new ChromeOptions();
+	//options.addArguments("--headless=new");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--window-size=1920,1080");
+        options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
+        driver = new ChromeDriver(options);
+            driver.manage().window().maximize();
         driver.get(url);
     }
 

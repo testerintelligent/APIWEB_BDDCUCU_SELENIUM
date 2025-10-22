@@ -2,6 +2,7 @@ package com.stepdefinit;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -20,13 +21,20 @@ import io.cucumber.java.en.When;
 public class AddTraining extends BaseClass1{
 
     // public static WebDriver driver;
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver;
+    WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+    @Given("launch the employee training url {string}")
+    public void launch_the_employee_training_url(String url) throws InterruptedException {
+        driver = new ChromeDriver();
+        winWait(1000);
+        driver.get(url);
+        winWait(1000);
+    }
 
     @Then("verify if the error msg is shown")
     public void verify_if_the_error_msg_is_shown() throws IOException, InterruptedException {
-
         winWait(5000);
-
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         try {
             Alert alert = wait.until(ExpectedConditions.alertIsPresent());
@@ -82,12 +90,7 @@ public class AddTraining extends BaseClass1{
 
     }
 
-    @Given("launch the employee training url {string}")
-    public void launch_the_employee_training_url(String url) throws InterruptedException {
-        winWait(1000);
-        driver.get(url);
-        winWait(1000);
-    }
+    
 
     // @Given("launch the employee training url")
     // public void launch_the_employee_training_url() throws InterruptedException {
@@ -103,17 +106,17 @@ public class AddTraining extends BaseClass1{
         BaseClass1.winWait(1000);
         // BaseClass.click(new AddTrainingLocator().getAddTrainingBtn());
         // BaseClass.winWait(2000);
-        explicitWaitClick("//button[@type='button'][@aria-label='Add Training']");
+        waits.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[@class=\\\"MuiTouchRipple-root css-r3djoj-MuiTouchRipple-root\\\"])[2]")));
+        WebElement addbtnclick = driver.findElement(By.xpath("(//span[@class=\"MuiTouchRipple-root css-r3djoj-MuiTouchRipple-root\"])[2]"));        
+        waits.until(ExpectedConditions.elementToBeClickable(addbtnclick)).click();
         BaseClass1.winWait(1000);
         System.out.println("clicked=====");
-
     }
 
     @When("verify the user is navigated to the add training page")
     public void verify_the_user_is_navigated_to_the_add_training_page() throws InterruptedException {
         System.out.println("User is navigated to add training page");
-        BaseClass1.winWait(1000);
-
+        BaseClass1.winWait(2000);
     }
 
     @When("Select the project name {string}")
@@ -121,13 +124,13 @@ public class AddTraining extends BaseClass1{
         WebElement projectName = driver.findElement(By.xpath("(//div[@tabindex='0'][@role='combobox'])[1]"));
         click(projectName);
         System.out.println("Project name clicked==========");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         int n = Integer.parseInt(index);
         winWait(1000);
         pressDown(n);
         winWait(1000);
         pressEnter();
         winWait(1000);
-
     }
 
     @When("enter the employee name {string}")

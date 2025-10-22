@@ -1,31 +1,46 @@
 package com.stepdefinit;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import com.Pom.loginOR;
 import com.common.BaseClass1;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class LoginSteps extends BaseClass1 {
     public static ChromeDriver driver;
 
     @Given("I open the login page")
     public void open_login_page() {
-        driver = new ChromeDriver();
+        WebDriverManager.chromedriver().setup();
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless=new");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--window-size=1920,1080");
+
+             driver = new ChromeDriver(options);
+             driver.manage().window().maximize();
         driver.get("https://demo-saas.bugbug.io/sign-in");
     }
 
     @When("I enter valid credentials")
-    public void enter_credentials() {
+    public void enter_credentials() throws Exception {
+        winWait(2000);
         driver.findElement(loginOR.EMAIL_INPUT).sendKeys("felixjerrin@gmail.com");
         driver.findElement(loginOR.PASSWORD_INPUT).sendKeys("Felixjerry@1234");
         driver.findElement(loginOR.LOGIN_BUTTON).click();
     }
 
     @Then("I should see the homepage")
-    public void verify_homepage() {
+    public void verify_homepage() throws Exception {
+        winWait(2000);
         String title = driver.getTitle();
         System.out.println("Page title: " + title);
         // Update this check to match the actual homepage title after login
