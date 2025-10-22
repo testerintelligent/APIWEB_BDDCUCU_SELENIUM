@@ -1,7 +1,7 @@
 @FeaturesFileRagul
 Feature: Web_AutomationExercise_Add_To_Cart_Scenario
 
-    @MaryScenario
+
     Scenario Outline: Adding review for product and validating response
         Given launching the url1 "https://www.automationexercise.com/"
         When click the product button
@@ -26,7 +26,7 @@ Feature: Web_AutomationExercise_Add_To_Cart_Scenario
         And click on add to cart
         And click on cart button
         And verify if the products are displayed
-    @validating
+
     Scenario: Validating the brand page of products
         Given launching the Automation website url "https://www.automationexercise.com/"
         When clicking product button
@@ -36,7 +36,7 @@ Feature: Web_AutomationExercise_Add_To_Cart_Scenario
         And click on any other brand
         And verify if the user is navigated to the coresponding brand page "Brand - Madame Products"
         Then navigate back to the home page
-@TestingScenario
+
     Scenario: View products based on category
         Given launching the website url "https://www.automationexercise.com/"
         When clicking the product hyperlink text

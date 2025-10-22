@@ -24,7 +24,7 @@ Feature: Web_RahulShetty_Frames_Alert_Validations
             | Muthu  |
             | Dhilip |
 
-@ValidatingFeature
+
     Scenario: Validation of elements in practicepage
         Given launch the url "https://rahulshettyacademy.com/AutomationPractice/"
         When clicking the radio button
