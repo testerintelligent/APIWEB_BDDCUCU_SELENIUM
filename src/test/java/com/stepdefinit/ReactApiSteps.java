@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.common.BaseClass;
 import com.common.BaseClass1;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -132,10 +133,11 @@ driver.quit();
 }
 
 @Then("I verify the updated training record is reflected on the web UI")
-public void i_verify_the_updated_training_record_is_reflected_on_the_web_ui() {
+public void i_verify_the_updated_training_record_is_reflected_on_the_web_ui() throws Exception {
         driver = new ChromeDriver();
     driver.manage().window().maximize();
 driver.get("http://10.192.190.130:3000/");
+BaseClass1.winWait(2000);
 boolean isPresent = !driver.findElements(By.xpath("//td[text()='MarkAntony']")).isEmpty();
 Assert.assertTrue("Updated training record should be visible on UI", isPresent);
 driver.quit();
