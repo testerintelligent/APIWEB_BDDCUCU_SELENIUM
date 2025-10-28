@@ -1,4 +1,4 @@
-@FeaturesFile
+@FeaturesFileWebAutomation
 Feature: Web_AutomationExercise_Add_To_Cart_Scenario
 
 
