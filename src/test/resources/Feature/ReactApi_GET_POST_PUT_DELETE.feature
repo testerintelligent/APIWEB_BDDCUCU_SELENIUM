@@ -17,7 +17,7 @@ Scenario: Put_Request
 
 Scenario: Get_Request
   When I send a GET request to the API with endpoint "/api/trainings"
-  Then I should receive the responses 
+  Then I should receive the response 
   And the status code is "200"
 
 Scenario: Delete_Request

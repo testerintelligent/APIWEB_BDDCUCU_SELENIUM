@@ -3,6 +3,7 @@ package com.stepdefinit;
 import org.apache.commons.lang.RandomStringUtils;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.common.BaseClass1;
 import io.cucumber.java.en.Given;
@@ -16,6 +17,7 @@ public class ReactApi_P_G_P_D extends BaseClass1 {
     private String trainingId;
     private Response response;
     private String responseBody;
+    public ChromeDriver driver;
 
     @Given("The base URI of API is {string}")
     public void the_base_uri_of_api_is(String baseURI) {
@@ -70,7 +72,8 @@ public class ReactApi_P_G_P_D extends BaseClass1 {
 
     @Then("validate if a new training is CREATED in the Web")
     public void validate_if_a_new_training_is_created_in_the_web() throws InterruptedException {
-
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.get("http://10.192.190.130:3000/");
         Thread.sleep(1000);
         boolean isPresent = !driver.findElements(By.xpath(
@@ -128,7 +131,8 @@ public class ReactApi_P_G_P_D extends BaseClass1 {
 
     @Then("validate if the corresponding record got UPDATED in the Web")
     public void validate_if_the_corresponding_record_got_updated_in_the_web() throws InterruptedException {
-
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.get("http://10.192.190.130:3000/");
         Thread.sleep(1000);
         boolean isPresent1 = !driver.findElements(By.xpath(
@@ -189,6 +193,8 @@ public class ReactApi_P_G_P_D extends BaseClass1 {
 
     @Then("validate if the corresponding record got DELETED in the Web")
     public void validate_if_the_corresponding_record_got_deleted_in_the_web() throws InterruptedException {
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.get("http://10.192.190.130:3000/");
         Thread.sleep(1000);
         boolean empty = driver.findElements(By.xpath(
