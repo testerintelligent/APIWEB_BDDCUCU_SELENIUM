@@ -44,8 +44,8 @@ public class VerifyPracticePage extends BaseClass1 {
         sendname.sendKeys(name);
         //sendKeys(driver.findElement(By.xpath("//input[@id='autocomplete'][@type='text']")), name);
         winWait(2000);
-        pressDown(2);
-        pressEnter();
+        pressDown(driver,2);
+        pressEnter(driver);
         winWait(2000);
     }
 
