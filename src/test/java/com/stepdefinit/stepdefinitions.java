@@ -50,7 +50,7 @@ public void i_should_receive_a_status_code_of(Integer expectedStatus) {
     //     return;  // Exit the method, so test won't fail here
     // }
     
-    response.then().statusCode(expectedStatus);
+      response.then().statusCode(expectedStatus);
 }
 
     @Then("the response should contain the user with name {string} and job {string}")
@@ -65,7 +65,7 @@ public void i_send_a_delete_request_to_delete_the_user() {
     //     // You can optionally assign a default userId or just skip sending the request.
     //     return;  // Exit early, test will pass but no delete request sent
     // }
-int deleteId = 100;
+        int deleteId = 100;
     response = request.when().delete("/posts/"+deleteId);
 }
 
