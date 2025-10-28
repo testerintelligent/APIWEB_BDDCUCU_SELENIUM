@@ -22,7 +22,7 @@ public class AddTraining extends BaseClass1{
 
     // public static WebDriver driver;
     WebDriver driver;
-    WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
+   // WebDriverWait waits; 
 
     @Given("launch the employee training url {string}")
     public void launch_the_employee_training_url(String url) throws InterruptedException {
@@ -106,8 +106,9 @@ public class AddTraining extends BaseClass1{
         BaseClass1.winWait(1000);
         // BaseClass.click(new AddTrainingLocator().getAddTrainingBtn());
         // BaseClass.winWait(2000);
-        waits.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[@class=\\\"MuiTouchRipple-root css-r3djoj-MuiTouchRipple-root\\\"])[2]")));
-        WebElement addbtnclick = driver.findElement(By.xpath("(//span[@class=\"MuiTouchRipple-root css-r3djoj-MuiTouchRipple-root\"])[2]"));        
+       // waits.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[@class=\\\"MuiTouchRipple-root css-r3djoj-MuiTouchRipple-root\\\"])[2]")));
+        WebElement addbtnclick = driver.findElement(By.xpath("//button[@aria-label=\"Add Training\"]"));   
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));     
         waits.until(ExpectedConditions.elementToBeClickable(addbtnclick)).click();
         BaseClass1.winWait(1000);
         System.out.println("clicked=====");
@@ -127,9 +128,9 @@ public class AddTraining extends BaseClass1{
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         int n = Integer.parseInt(index);
         winWait(1000);
-        pressDown(n);
+        pressDown(driver, n);
         winWait(1000);
-        pressEnter();
+        pressEnter(driver);
         winWait(1000);
     }
 
@@ -139,21 +140,18 @@ public class AddTraining extends BaseClass1{
         // js.executeScript();
         sendKeys(driver.findElement(By.xpath("//input[@type='text'][@name='employeeName']")), data2);
         BaseClass1.winWait(1000);
-
     }
 
     @When("enter the course {string}")
     public void enter_the_course(String data3) throws InterruptedException {
         sendKeys(driver.findElement(By.xpath("//input[@name='course']")), data3);
         BaseClass1.winWait(1000);
-
     }
 
     @When("enter the trainer name {string}")
     public void enter_the_trainer_name(String data4) throws InterruptedException {
         sendKeys(driver.findElement(By.xpath("//input[@name='trainerName']")), data4);
         BaseClass1.winWait(1000);
-
     }
 
     @When("select the training type {string}")
@@ -164,44 +162,38 @@ public class AddTraining extends BaseClass1{
         System.out.println("Training type clicked==");
         int n = Integer.parseInt(data5);
         winWait(1000);
-        pressDown(n);
+        pressDown(driver,n);
         winWait(1000);
-        pressEnter();
+        pressEnter(driver);
         winWait(1000);
-
         // sendKeys(driver.findElement(By.xpath("//div[text()='Udemy']")), data5);
         // BaseClass.winWait(1000);
-
     }
 
     @When("enter the start date {string}")
     public void enter_the_start_date(String data6) throws InterruptedException {
         sendKeys(driver.findElement(By.xpath(" //input[@name='startDate']")), data6);
         BaseClass1.winWait(1000);
-
     }
 
     @When("enter the end date {string}")
     public void enter_the_end_date(String data7) throws InterruptedException {
         sendKeys(driver.findElement(By.xpath("// input[@name='endDate']")), data7);
         BaseClass1.winWait(1000);
-
     }
 
     @When("select the status {string}")
     public void select_the_status(String data8) throws InterruptedException {
-
         WebElement status = driver.findElement(By.xpath("(//div[@tabindex='0'][@role='combobox'])[3]"));
         click(status);
         System.out.println("Status clicked==");
         int n = Integer.parseInt(data8);
         winWait(1000);
-        pressUp(n);
+        pressUp(driver,n);
         // pressDown(n);
         winWait(1000);
-        pressEnter();
+        pressEnter(driver);
         winWait(1000);
-
         // BaseClass.winWait(1000);
         // sendKeys(driver.findElement(By.xpath("//div[text()='Completed']")), data8);
         // pressEnter();
@@ -211,23 +203,22 @@ public class AddTraining extends BaseClass1{
 
     @When("enter the percentage completed {string}")
     public void enter_the_percentage_completed(String data9) throws InterruptedException {
+        WebDriverWait waits1 = new WebDriverWait(driver, Duration.ofSeconds(10));
+        waits1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='percentCompleted']")));
         WebElement element = driver.findElement(By.xpath("//input[@name='percentCompleted']"));
         element.clear();
         BaseClass1.winWait(500);
         sendKeys(element, data9);
         BaseClass1.winWait(500);
-
     }
 
     @When("click the add button")
     public void click_the_add_button() throws InterruptedException, IOException {
-        explicitWaitClick("//button[@type='button'][text()='Add']");
+        driver.findElement(By.xpath("//button[@type='button'][text()='Add']"));
         BaseClass1.winWait(1000);
 
         // takesScreenshot1();
-
         // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
         // try {
         // Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         // System.out.println("Alert Text: " + alert.getText());

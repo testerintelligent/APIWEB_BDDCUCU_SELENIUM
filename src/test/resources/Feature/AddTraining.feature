@@ -1,7 +1,7 @@
 @FeaturesFile
 Feature: Web_React_Create_New_Record
 
-@Startone
+@AddTrainingScenario
 Scenario Outline: Validating the creation of new training
 
 Given launch the employee training url "http://10.192.190.130:3000/"
@@ -24,7 +24,7 @@ Then verify if the page is navigated to details page
 
 Examples: 
 |index|name|course|trainerName|trainingType|startDate|endDate|status|percentage|
-|3|Dhilip|Selenium|Kumar|0|07232025|07252025|0|0|
+|2|Dhilip|Selenium|Kumar|0|07232025|07252025|0|0|
 # |1|Muthu|Playwright|Navin|1|08152025|08162025|1|70|
 # |2|Divya|Cypress|Priya|2|10032025|10042025|2|95|
 # |3|Dhilip|CSharp|Raja|3|05172025|05182025|1|69|

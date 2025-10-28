@@ -111,16 +111,16 @@ public class BaseClass1 {
     }
 
     // ✅ Replaced Robot with WebDriver Keys
-    public static void pressEnter() {
+    public static void pressEnter(WebDriver driver) {
         Actions actions = new Actions(driver);
-        actions.sendKeys(Keys.ENTER).perform();
+        actions.sendKeys(Keys.ENTER).build().perform();
     }
 
-	    public static void pressDown(int count) throws InterruptedException {
+	    public static void pressDown(WebDriver driver,int count) throws InterruptedException  {
         Actions actions = new Actions(driver);
         for (int i = 0; i < count; i++) {
             actions.sendKeys(Keys.ARROW_DOWN).build().perform();
-            Thread.sleep(500); // slight wait to simulate user interaction
+            Thread.sleep(2000); // slight wait to simulate user interaction
         }
     }
 
@@ -134,10 +134,10 @@ public class BaseClass1 {
         return LocalDateTime.now().format(formatter);
     }
 
-	    public static void pressUp(int count) throws InterruptedException {
+	    public static void pressUp(WebDriver driver,int count) throws InterruptedException {
         Actions actions = new Actions(driver);
         for (int i = 0; i < count; i++) {
-            actions.sendKeys(Keys.UP).perform();
+            actions.sendKeys(Keys.ARROW_UP).build().perform();
             Thread.sleep(500); // slight wait to simulate user interaction
         }
     }

@@ -5,6 +5,8 @@ import java.util.Map;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 import com.common.BaseClass1;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -121,21 +123,32 @@ public void i_store_the_training_id_from_response() {
     }
 @Then("I verify the new training record is visible on the web UI")
 public void i_verify_the_new_training_record_is_visible_on_the_web_ui() {
+    driver = new ChromeDriver();
+    driver.manage().window().maximize();
 driver.get("http://10.192.190.130:3000/");
 boolean isPresent = !driver.findElements(By.xpath("//td[text()='Mark']")).isEmpty();
 Assert.assertTrue("New training record should be visible on UI", isPresent);
+driver.quit();
 }
+
 @Then("I verify the updated training record is reflected on the web UI")
 public void i_verify_the_updated_training_record_is_reflected_on_the_web_ui() {
+        driver = new ChromeDriver();
+    driver.manage().window().maximize();
 driver.get("http://10.192.190.130:3000/");
 boolean isPresent = !driver.findElements(By.xpath("//td[text()='MarkAntony']")).isEmpty();
 Assert.assertTrue("Updated training record should be visible on UI", isPresent);
+driver.quit();
 }
+
 @Then("I verify the training record is no longer visible on the web UI")
 public void i_verify_the_training_record_is_no_longer_visible_on_the_web_ui() {
+        driver = new ChromeDriver();
+    driver.manage().window().maximize();
 driver.get("http://10.192.190.130:3000/");
-boolean isNotPresent = driver.findElements(By.xpath("//td[text()='MarkAntony']")).isEmpty();
+boolean isNotPresent = !driver.findElements(By.xpath("//td[text()='MarkAntony']")).isEmpty();
 Assert.assertTrue("Training record should no longer be visible on UI", isNotPresent);
+driver.quit();
 }
 
 }
