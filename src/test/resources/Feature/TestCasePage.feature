@@ -12,7 +12,6 @@ Feature: Web_AutomationExercise_Forms_Validation
         And Click on Test Cases button
         Then Verify that the user is navigated to test cases page successfully
 
-  
     Scenario: Verify Product Detail page
         Given launching the url "https://www.automationexercise.com/"
         When verify that the home page is visible successfully

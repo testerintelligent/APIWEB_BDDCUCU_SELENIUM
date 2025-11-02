@@ -90,15 +90,12 @@ public class AddTraining extends BaseClass1{
 
     }
 
-    
-
     // @Given("launch the employee training url")
     // public void launch_the_employee_training_url() throws InterruptedException {
     // BaseClass.winWait(1000);
 
     // driver.get("http://10.192.190.130:3000/");
     // BaseClass.winWait(1000);
-
     // }
 
     @When("click the add training button")
@@ -166,8 +163,6 @@ public class AddTraining extends BaseClass1{
         winWait(1000);
         pressEnter(driver);
         winWait(1000);
-        // sendKeys(driver.findElement(By.xpath("//div[text()='Udemy']")), data5);
-        // BaseClass.winWait(1000);
     }
 
     @When("enter the start date {string}")
@@ -198,7 +193,6 @@ public class AddTraining extends BaseClass1{
         // sendKeys(driver.findElement(By.xpath("//div[text()='Completed']")), data8);
         // pressEnter();
         // BaseClass.winWait(1000);
-
     }
 
     @When("enter the percentage completed {string}")
@@ -226,7 +220,6 @@ public class AddTraining extends BaseClass1{
         // } catch (Exception e) {
         // System.out.println("Alert not found or disappeared");
         // }
-
         // takesScreenshot1();
     }
 

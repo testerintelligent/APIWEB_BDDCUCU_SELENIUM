@@ -1,5 +1,7 @@
 package com.stepdefinit;
 
+import org.openqa.selenium.chrome.ChromeDriver;
+
 import com.Pom.ReactAppEdit;
 import com.common.BaseClass1;
 
@@ -9,12 +11,16 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class ReactAppEditSteps extends BaseClass1 {
-ReactAppEdit edit;
+    ChromeDriver driver;
+    ReactAppEdit edit;// = new ReactAppEdit(null);
 
 @Given("user in on react app page")
 public void user_in_on_react_app_page() {
+    driver = new ChromeDriver();
+    driver.manage().window().maximize();
     edit = new ReactAppEdit(driver);
-    edit.reactAppPage("http://10.192.190.130:3000/");
+    //edit.reactAppPage("http://10.192.190.130:3000/");
+    driver.get("http://10.192.190.130:3000/");
 }
 
 @When("user click on training summary")
