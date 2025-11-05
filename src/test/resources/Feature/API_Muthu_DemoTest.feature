@@ -1,4 +1,3 @@
-
 @FeaturesFiles
 Feature: API_reqres_DemoTest
 
@@ -11,7 +10,7 @@ And The Base URL is set to "https://jsonplaceholder.typicode.com"
     Given I have the username "morpheus" and job "leader"
     When I post a POST request to register the user
     Then I should receive status code as 201
-    And the response should contain name "morpheus" and job "leader"
+    And the response should contain name "morpheus" and job "leader"  
 
 @SmokingTest 
   Scenario: Get single User of ReqRes Api

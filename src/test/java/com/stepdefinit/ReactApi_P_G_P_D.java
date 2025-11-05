@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.common.BaseClass1;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -108,7 +109,6 @@ public class ReactApi_P_G_P_D extends BaseClass1 {
                 .when().put(endpoint2 + BaseClass1.userID);
 
         responseBody = response.then().log().all().assertThat().statusCode(200).extract().asString();
-
     }
 
     @Then("I should receive the put response")

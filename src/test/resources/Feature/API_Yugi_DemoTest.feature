@@ -19,7 +19,7 @@ Feature: API_jsonplaceholder_DemoTest
     When I send a DELETE request to delete the user
     Then I should receive a status code of 200
     
-@Regression
+@Regression 
   Scenario: Fetch user details by ID
     Given I have the user ID 2
     When I send a GET request to fetch user
