@@ -1,4 +1,4 @@
-@FeaturesFile
+@FeaturesFiles
 Feature: API_Web_React_CRUD_Scenarios
 @demo
 Scenario: Get method using react app all training records

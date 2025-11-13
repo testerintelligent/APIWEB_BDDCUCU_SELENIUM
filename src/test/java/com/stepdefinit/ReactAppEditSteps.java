@@ -5,7 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import com.Pom.ReactAppEdit;
 import com.common.BaseClass1;
 
-import com.common.BaseClass1;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -52,6 +51,7 @@ edit.editCourse(course);
 @Then("click on update button")
 public void click_on_update_button() {
 edit.updateClick();
+driver.quit();
 }
 
 @Then("search for course {string}")
@@ -73,11 +73,13 @@ public void search_for_employeename(String employeename) {
 public void click_delete_on_first_record() throws InterruptedException {
     BaseClass1.winWait(2000);
     edit.deleteTrainingClick();
+    driver.quit();
 }
 
 @Then("delete all records of {string} course")
 public void delete_all_records_of_course(String coursename) {
 edit.deleteAllByCourseRecords(coursename);
+driver.quit();
 }
 
 @Then("filter Start Date by CurrentdateTime")

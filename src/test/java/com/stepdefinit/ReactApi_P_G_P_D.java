@@ -83,7 +83,7 @@ public class ReactApi_P_G_P_D extends BaseClass1 {
 
         Assert.assertTrue(isPresent);
         System.out.println("New training record is created in Web");
-
+        driver.quit();
     }
 
     @When("I send a PUT request to the API with endpoint {string} and name {int}")
@@ -141,6 +141,7 @@ public class ReactApi_P_G_P_D extends BaseClass1 {
 
         Assert.assertTrue(isPresent1);
         System.out.println("Training record got updated in Web!");
+        driver.quit();
 
     }
 
@@ -203,7 +204,7 @@ public class ReactApi_P_G_P_D extends BaseClass1 {
 
         Assert.assertTrue(empty);
         System.out.println("Training record got deleted in Web!");
-
+        driver.quit();
     }
 
 }

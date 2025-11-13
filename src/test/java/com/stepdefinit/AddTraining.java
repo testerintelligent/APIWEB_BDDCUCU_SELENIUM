@@ -45,7 +45,7 @@ public class AddTraining extends BaseClass1{
         } finally {
             System.out.println("Error msg is shown");
         }
-
+        driver.quit();
         // try {
         // Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         // System.out.println("Alert Text: " + alert.getText());

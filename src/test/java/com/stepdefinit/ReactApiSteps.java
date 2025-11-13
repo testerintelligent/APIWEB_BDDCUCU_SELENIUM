@@ -47,6 +47,7 @@ List<Map<String, Object>> trainings = response.jsonPath().getList("$");
     } else {
         System.out.println("No training records found");
     }
+    driver.quit();
 }
 @When("I create a new training record")
 public void i_create_a_new_training_record() {
@@ -76,6 +77,7 @@ public void i_create_a_new_training_record() {
     public void the_response_code_should_be(int expectedStatusCode) throws InterruptedException {
         BaseClass1.winWait(2000);
         Assert.assertEquals(expectedStatusCode, response.getStatusCode());
+        driver.quit();
 }
 
 @Then("I store the training ID from response")

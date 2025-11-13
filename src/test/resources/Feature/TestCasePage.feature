@@ -1,11 +1,6 @@
-@FeaturesFile
+@FeaturesFiles
 Feature: Web_AutomationExercise_Forms_Validation
-
-
-    #   Background: launching url
-    #      Given launching the url "https://www.automationexercise.com/"
-
-    
+   
     Scenario: Verify Test Case Page
         Given launching the url "https://www.automationexercise.com/"
         When verify that the home page is visible successfully

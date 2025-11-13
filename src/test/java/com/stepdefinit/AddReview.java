@@ -113,5 +113,6 @@ public class AddReview extends BaseClass1 {
         if (actual.equals("Thank you for your review.")) {
             System.out.println("Response validated!");
         }
+        driver.quit();
     }
 }

@@ -79,7 +79,7 @@ public class VerifyPracticePage extends BaseClass1 {
     @Then("verify if navigated to home page")
     public void verify_if_navigated_to_home_page() {
         System.out.println("Navigated to home page successfully!");
-
+        driver.quit();
     }
 
 }

@@ -167,6 +167,7 @@ public class CyclosADD extends BaseClass {
 	public void user_should_navigate_to_profile() throws Exception {
 		login.getSubmit().click();
 		Thread.sleep(2000);
+		driver.quit();
 	// WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	// wait.until(ExpectedConditions.elementToBeClickable(login.getUser())).getText();
 		//login.getUser().getText();

@@ -51,6 +51,7 @@ public class VerifyAlerts_iFrame extends BaseClass1 {
             System.out.println("Link not displayed======");
         }        
         driver.switchTo().parentFrame();
+        driver.quit();
         //System.out.println("Switched to parent frame");
     }
     
@@ -83,6 +84,7 @@ public class VerifyAlerts_iFrame extends BaseClass1 {
         Alert simpleAlert = driver.switchTo().alert();
         simpleAlert.accept();
         winWait(2000);
+        driver.quit();
     }
 
     @When("I click on the Confirm button")
@@ -107,6 +109,7 @@ public class VerifyAlerts_iFrame extends BaseClass1 {
         Alert confirmAlert = driver.switchTo().alert();
         confirmAlert.dismiss();
         winWait(2000);
+        driver.quit();
     }
 
 }
