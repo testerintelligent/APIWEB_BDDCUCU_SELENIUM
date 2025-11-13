@@ -50,13 +50,14 @@ public class LoginSteps extends BaseClass1 {
     }
 
     @Then("I click logout")
-public void i_click_logout() {
-    System.out.println("Logout the Application");
+    public void i_click_logout() {
+        System.out.println("Logout the Application");
+        driver.quit();
 }
-@Then("validate the response message {string}")
-public void validate_the_response_message(String string) {
-    System.out.println("Success Message showing");
+    @Then("validate the response message {string}")
+    public void validate_the_response_message(String string) {
+        System.out.println("Success Message showing");
     // Write code here that turns the phrase above into concrete actions
-    driver.quit();
-}
+        //driver.quit();
+    }
 }

@@ -23,5 +23,6 @@ public void verify_searched_product_is_visible() {
 @Then("verify searched product {string} are visible")
 public void verify_searched_product_are_visible(String searchedproductname) {
    searchproduct.verifyAllProductsMatchSearch(searchedproductname);
+   driver.quit();
 }
 }

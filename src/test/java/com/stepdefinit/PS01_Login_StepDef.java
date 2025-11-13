@@ -38,6 +38,7 @@ public void user_enters_the_valid_and_for_the_adactin_site(String userName, Stri
 @When("User clicks the login buttons")
 public void user_clicks_the_login_buttons() {
     driver.findElement(By.xpath("//input[@type='Submit']")).click();
+    driver.quit();
     
 }
 @Then("User should be redirected to Adactin Homepage")

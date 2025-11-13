@@ -39,6 +39,6 @@ public void i_enter_the_book_name_in_the_search_box() {
 }
 @Then("I can able to see the book")
 public void i_can_able_to_see_the_book() {
-  driver.close();
+  driver.quit();
 }
 }

@@ -47,6 +47,7 @@ public void i_navigated_the_hover() {
 }
 @Then("I can able to see all the apps")
 public void i_can_able_to_see_all_the_apps() {
-   driver.close();
+  // driver.close();
+   driver.quit();
 }
 }

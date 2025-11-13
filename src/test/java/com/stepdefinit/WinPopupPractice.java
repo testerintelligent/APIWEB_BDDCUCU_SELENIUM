@@ -56,6 +56,7 @@ public void i_can_see_open_window_page_successfully() {
             break;
         }
     }
+    driver.quit();
 }
     }
 

@@ -60,5 +60,6 @@ public class QAfoxCartPageStepDef {
     public void i_should_see_product_listed_in_the_cart(String productName) {
         WebElement item = driver.findElement(By.className("inventory_item_name"));
         assertEquals(productName, item.getText());
+        driver.quit();
     }
 }

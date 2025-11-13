@@ -43,5 +43,6 @@ public void click_ok_alert_in_contact_us_form() {
 @Then("Verify success message is visible")
 public void verify_success_message_is_visible() {
 contactus.sucessMessageVisible();
+driver.quit();
 }
 }

@@ -109,6 +109,7 @@ public class QAfoxAddAdresssStepDef {
 		@Nullable
 		String pageTtile = driver.getTitle();
 		System.out.println(pageTtile);
+		driver.quit();
 	}
 	@Then("I should see a success message indicating the address has been added")
 	public void i_should_see_a_success_message_indicating_the_address_has_been_added() {

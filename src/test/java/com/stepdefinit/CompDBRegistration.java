@@ -20,7 +20,7 @@ public class CompDBRegistration {
 public void i_enter_the_url_of_registraion_domain() {
     WebDriverManager.chromedriver().setup();
     ChromeOptions options = new ChromeOptions();
-	options.addArguments("--headless");
+	//options.addArguments("--headless");
     options.addArguments("disable-infobars");
     options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
     driver = new ChromeDriver(options);

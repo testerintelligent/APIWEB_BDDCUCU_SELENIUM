@@ -19,7 +19,7 @@ public class AcademicNavigation {
 public void i_enter_into_the_academy_domain() {
     WebDriverManager.chromedriver().setup();
     ChromeOptions options = new ChromeOptions();
-	options.addArguments("--headless");
+	//options.addArguments("--headless");
     options.addArguments("disable-infobars");
     options.setExperimentalOption("prefs", Map.of(
     "credentials_enable_service", false,

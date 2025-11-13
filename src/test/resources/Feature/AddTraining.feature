@@ -1,4 +1,4 @@
-@FeaturesFilesOne
+@FeaturesFileCheck
 Feature: Web_React_Create_New_Record
 
 @AddTrainingScenario

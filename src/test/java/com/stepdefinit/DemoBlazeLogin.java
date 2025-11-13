@@ -45,6 +45,7 @@ public class DemoBlazeLogin {
     @When("handle the alert")
     public void handle_the_alert() {
         demoBlaze.alerthandle();
+        driver.quit();
     }
 
     @Then("I click the Continue button")
@@ -60,6 +61,7 @@ public class DemoBlazeLogin {
          //   throw new AssertionError("User not logged in!");
        // }
        // System.out.println("User is logged in as registered username");
+       driver.quit();
     }
 
     @Then("I click the Delete Account button")

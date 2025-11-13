@@ -28,8 +28,8 @@ public class shopsteps {
 
     WebDriver driver;
     shoppingpage shop = new shoppingpage();
-@Given("I navigate to the shopping page")
-public void i_navigate_to_the_shopping_page() {
+    @Given("I navigate to the shopping page")
+    public void i_navigate_to_the_shopping_page() {
    WebDriverManager.chromedriver().setup();
     ChromeOptions options = new ChromeOptions();
 	options.addArguments("--headless");
@@ -111,13 +111,10 @@ public void i_add_the_product_to_the_cart() {
     
 }
 @Then("I should be redirected to the shopping cart page")
-public void i_should_be_redirected_to_the_shopping_cart_page() {
-   
+public void i_should_be_redirected_to_the_shopping_cart_page() {   
     WebElement cartPage = driver.findElement(shop.cartPageBy);
-    cartPage.click();
-    
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    
+    cartPage.click();    
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));    
     // Wait for checkout button to be visible
     WebElement checkOut = wait.until(ExpectedConditions.visibilityOfElementLocated(shop.checkOutBy));
     System.out.println("Redirected to Shopping Page");
@@ -126,12 +123,8 @@ public void i_should_be_redirected_to_the_shopping_cart_page() {
     wait.until(ExpectedConditions.urlContains("checkout/#shipping"));
     
     System.out.println("Navigate to shipping");
-
     System.out.println("Ordered successfully");
-
-    driver.quit();
-    
-    
+    driver.quit();    
 }
 // @Then("I should be able to proceed to checkout")
 // public void i_should_be_able_to_proceed_to_checkout() {

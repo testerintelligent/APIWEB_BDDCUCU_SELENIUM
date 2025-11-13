@@ -250,13 +250,10 @@ public class AutomationTesterRaj {
 	}
 	
 	@Then("user Click Logout Button")
-	public void user_click_logout_button() {
-		
-//		clickonElement(Logout.getLogout());
-		
+	public void user_click_logout_button() {		
+//		clickonElement(Logout.getLogout());		
 		booking.getLogout().click();
-
-
+		driver.quit();
 	}
 
 	@Given("user lauch the automation practice")
@@ -351,17 +348,15 @@ public class AutomationTesterRaj {
 	}
 	@Then("user send the input value")
 	public void user_send_the_input_value() {
-
 		WebElement enteryourname= driver.findElement(By.xpath("//*[@id=\"name\"]"));
 		enteryourname.sendKeys("raj");		
 		driver.quit();
-
 	}
 	
 	
 	
 	@Given("User launch Application")
-public void user_launch_application() throws Exception {
+	public void user_launch_application() throws Exception {
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
 		
@@ -431,20 +426,18 @@ public void user_input_the_first_name() {
 	}
 	
 	@When("User Click the continue button")
-	public void user_click_the_continue_button() {
-		
+	public void user_click_the_continue_button() {		
 		WebElement cont= driver.findElement(By.id("continue"));
-		cont.click();
-	    
+		cont.click();	
+		driver.quit();    
 	}
+
 	@Then("User Click finish button.")
 	public void user_click_finish_button() {
 		
 		WebElement finish= driver.findElement(By.id("finish"));
-		finish.click();
-	   
-	}
-	
+		finish.click();	   
+	}	
 	
 	@Given("user launch the application with credentilas")
 	public void user_launch_the_application_with_credentilas() {
@@ -473,12 +466,12 @@ public void user_input_the_first_name() {
 	
 	
 	@Then("user click the cart icon and navigates to Swag labs")
-	public void user_click_the_cart_icon_and_navigates_to_swag_labs() {
-		
+	public void user_click_the_cart_icon_and_navigates_to_swag_labs() {		
         WebElement cartBadge = driver.findElement(By.className("shopping_cart_badge"));
         assertEquals("1", cartBadge.getText());
         WebElement cartclick= driver.findElement(By.xpath("//* [contains(@id,'shopping_cart_container')]"));
 		cartclick.click();
+		driver.quit();
 	}
 	
 	@Given("user lauch the herokuapp automation page")
@@ -490,7 +483,7 @@ public void user_input_the_first_name() {
     options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
     driver = new ChromeDriver(options);
     driver.manage().window().maximize();
-		driver.get("https://the-internet.herokuapp.com/");
+	driver.get("https://the-internet.herokuapp.com/");
 	}
 
 
@@ -526,40 +519,26 @@ public void user_input_the_first_name() {
 
 	@Then("verify stale element execption")
 	public void verify_stale_element_execption() {
-
 		WebElement addelement= driver.findElement(By.xpath("//*[@id=\"content\"]/div/button"));
-
 		addelement.click();
-
 		addelement.click();
-
 		addelement.click();
-
 		List<WebElement> title= driver.findElements(By.xpath("//button[@class='added-manually' and @onclick='deleteElement()']"));
-
 		WebElement deletebutton = title.get(0);
-
 		deletebutton.click();
-
 		for (WebElement link : title) {
-
 			try {
 				System.out.println(link.getText());
 			} catch (StaleElementReferenceException e) {
 				List<WebElement> title1= driver.findElements(By.xpath("//button[@class='added-manually' and @onclick='deleteElement()']"));
 				System.out.println("Output: " + " " + title1);
 			}  
-
 		}
-
-		
-
-
+		driver.quit();
 	}
 	
 	@Given("user lauch the letcode dropdown button automation page")
-public void user_lauch_the_letcode_dropdown_button_automation_page() {
-
+	public void user_lauch_the_letcode_dropdown_button_automation_page() {
     driver.get("https://letcode.in/dropdowns");
    
 }
@@ -592,16 +571,12 @@ public void user_get_the_dropdown_button() {
 
 @Then("User get multiselect")
 public void user_get_multiselect() {
-
-    WebElement multiselect = driver.findElement(By.id("superheros"));
-		
-		Select multiselectbox = new Select(multiselect);
-		
-		multiselectbox.selectByIndex(2);
-		
-		multiselectbox.selectByIndex(3);
-		
+    WebElement multiselect = driver.findElement(By.id("superheros"));		
+		Select multiselectbox = new Select(multiselect);		
+		multiselectbox.selectByIndex(2);		
+		multiselectbox.selectByIndex(3);		
 		multiselectbox.selectByIndex(4);
+		driver.quit();
   
 }
 
@@ -648,15 +623,11 @@ public void user_click_confirm_alert() {
 public void a_confirmation_popup_should_appear() {
 
     WebElement promptAlert= driver.findElement(By.id("prompt"));
-    promptAlert.click();
-		
-    Alert alert3= driver.switchTo().alert();
-    
-    alert3.sendKeys("raj");
-    
+    promptAlert.click();		
+    Alert alert3= driver.switchTo().alert();    
+    alert3.sendKeys("raj");    
     alert3.accept();
-
-    driver.close();
+    driver.quit();
    
 }
 
@@ -718,7 +689,7 @@ public void a_confirmation_on_disable_button() {
     WebElement homebutton=driver.findElement(By.id("home"));
 
     homebutton.click();
-
+	driver.quit();
 
 }
 

@@ -64,5 +64,6 @@ public class OpenTabStepDefinitions {
                 break;
             }
         }
+        driver.quit();
     }
 }

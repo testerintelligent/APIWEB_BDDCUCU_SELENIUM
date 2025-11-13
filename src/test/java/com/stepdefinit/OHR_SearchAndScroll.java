@@ -59,9 +59,9 @@ public class OHR_SearchAndScroll {
 
     @Then("I should see the {string} module visible in the sidebar")
     public void i_should_see_module_visible(String module) {
-
         WebElement item = driver.findElement(By.xpath("//span[text()='Recruitment']"));
         assertTrue(item.isDisplayed());
+        driver.quit();
     }
 
 }

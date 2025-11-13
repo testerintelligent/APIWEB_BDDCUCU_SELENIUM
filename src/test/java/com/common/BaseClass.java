@@ -110,7 +110,6 @@ public class BaseClass {
         Random random = new Random();
         int randomNum = random.nextInt(num);
         return randomNum;
-
     }
 
     public static void takesScreenshot() throws IOException {

@@ -181,9 +181,11 @@ public void i_select_the_checkbox_should_be_selected(String checkboxName) {
     System.out.println("✅ Checkbox '" + checkboxName + "' is selected successfully.");
     
     if ("Home".equals(checkboxName)) {
-        System.out.println("✅ Home is selected");
-        driver.quit();
+        System.out.println("✅ Home is selected");       
+    }else{
+        System.out.println("Success");
     }
+    driver.quit();
 }
 
 
@@ -221,7 +223,7 @@ public void i_select_the_checkbox_should_be_selected(String checkboxName) {
         // Validate selection
         Assert.assertTrue("❌ Radio button '" + radioButtonLabel + "' is NOT selected!", radioButton.isSelected());
         System.out.println("✅ Radio button '" + radioButtonLabel + "' is selected successfully.");
-    driver.quit();
+        driver.quit();
     }
 
 }

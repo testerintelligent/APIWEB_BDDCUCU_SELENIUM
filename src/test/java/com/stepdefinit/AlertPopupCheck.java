@@ -56,6 +56,7 @@ public class AlertPopupCheck {
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         System.out.println("Alert Message: " + alert.getText());
         alert.accept();
+        driver.quit();
     }
     
 }

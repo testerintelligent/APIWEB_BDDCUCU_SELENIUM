@@ -91,5 +91,6 @@ public void filter_start_date_by_CurrentdateTime() {
 public void verify_filtered_records_have_CurrentdateTime() {
     String expecteddate = getCurrentDate();
     edit.verifyRecordswithGivenStartDate(expecteddate);
+    driver.quit();
 }
 }

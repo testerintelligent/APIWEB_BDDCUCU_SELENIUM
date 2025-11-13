@@ -32,6 +32,7 @@ public void click_on_view_product_of_first_product() {
 @Then("verify product name, price and availability")
 public void verify_product_name_price_and_availability() {
    productdetails.FirstProductDetails();
+   driver.quit();
 }
 
 }

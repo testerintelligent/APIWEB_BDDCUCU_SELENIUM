@@ -69,7 +69,6 @@ public void i_should_see_the_message(String expectedMessage) {
 
     // Case insensitive + trim extra spaces
     Assert.assertEquals("Key press message does not match!", expectedMessage.trim().toLowerCase(), actualMessage.trim().toLowerCase());
-
     driver.quit();
 }
 }

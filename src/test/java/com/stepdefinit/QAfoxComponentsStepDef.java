@@ -56,6 +56,7 @@ public class QAfoxComponentsStepDef {
 		@Nullable
 		String expectedTitle = driver.getTitle();
 		assertEquals(expectedTitle, actaulTitle);
+		driver.quit();
 	}
 	@When("the user selects List view")
 	public void the_user_selects_list_view() {

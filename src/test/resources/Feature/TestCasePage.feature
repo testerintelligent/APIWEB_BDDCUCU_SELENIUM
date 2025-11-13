@@ -1,4 +1,4 @@
-@FeaturesFiles
+@FeaturesFileCheck
 Feature: Web_AutomationExercise_Forms_Validation
    
     Scenario: Verify Test Case Page
@@ -16,7 +16,6 @@ Feature: Web_AutomationExercise_Forms_Validation
         And user is landed to product detail page
         Then Verify that detail is visible: product name, category, price, availability, condition, brand
 
-   
     Scenario: Add Products in cart
         Given launching the url "https://www.automationexercise.com/"
         When verify that the home page is visible successfully

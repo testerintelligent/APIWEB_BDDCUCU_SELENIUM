@@ -46,6 +46,7 @@ public class OHR_AddEmployeeStepDef {
         String actualTitle = driver.getTitle();
         System.out.println("Dashboard Title: " + actualTitle);
         assertTrue(actualTitle.contains("OrangeHRM"));
+        driver.quit();
     }
     
     @When("I navigate to the {string} page")

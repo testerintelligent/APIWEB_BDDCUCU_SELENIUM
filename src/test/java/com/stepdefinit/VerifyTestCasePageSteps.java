@@ -25,6 +25,7 @@ public void clicks_on_test_cases_page() {
 @Then("user navigates to test page successfully")
 public void user_navigates_to_test_page_successfully() {
 testcasepage.testCasePageVisible();
+driver.quit();
 }
 
 }

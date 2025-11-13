@@ -1,15 +1,12 @@
 package com.stepdefinit;
 
 import java.util.Map;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
 import com.Pom.AutomationExercise;
-
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -55,7 +52,7 @@ public class LogOut {
     }
 
     @And("Now I have clicked the log button")
-public void now_I_have_clicked_the_log_button() {
+    public void now_I_have_clicked_the_log_button() {
     WebElement loginButton = driver.findElement(By.xpath("//button[contains(text(),'Login')]"));
     loginButton.click();
     System.out.println("Clicked the login button.");
@@ -85,5 +82,6 @@ public void now_I_have_clicked_the_log_button() {
     public void i_will_check_if_the_logout_is_correctly_happened() {
         System.out.println("Verifying that the home page is visible again...");
         AE.verifyHome();
+        driver.quit();
     }
 }

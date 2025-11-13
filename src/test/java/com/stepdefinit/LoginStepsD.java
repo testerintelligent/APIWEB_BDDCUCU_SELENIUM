@@ -41,11 +41,13 @@ loginpage.enterPassword(password);
 @And("User clicks the login button")
 public void user_clicks_the_login_button() {
 loginpage.loginClick();
+driver.quit();
 }
 
 @Then("Login should be successful")
 public void login_should_be_successful() {
 System.out.println("Successfully loggedin");
+driver.quit();
 }
 
 @Then("User should be Logged in as {string}")
@@ -56,5 +58,6 @@ loginpage.verifyLoggedInUser(expectedUserName);
 @Then("Click Logout button")
 public void click_logout_button() {
 loginpage.logOut();
+driver.quit();
 }
 }

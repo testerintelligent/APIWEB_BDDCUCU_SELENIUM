@@ -98,7 +98,7 @@ public class ContactUs {
 	  if (s) {
 		System.out.println("The success message is shown!");
 	}
-	
+		driver.quit();
 	}
 
 

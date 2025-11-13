@@ -20,7 +20,7 @@ public class CompDBLogin {
 public void i_enter_the_url_of_domain_CompDBlogin() {
     WebDriverManager.chromedriver().setup();
     ChromeOptions options = new ChromeOptions();
-	options.addArguments("--headless");
+	//options.addArguments("--headless");
     options.addArguments("disable-infobars");
     options.setExperimentalOption("prefs", Map.of("credentials_enable_service", false,"profile.password_manager_enabled", false));
     driver = new ChromeDriver(options);
@@ -58,7 +58,7 @@ public void i_can_login_domain_of_CompDBlogin_successfully() {
        //{
         //System.out.println("Login failed!");
        //}
-        //driver.quit();
+        driver.quit();
    
 }
 }

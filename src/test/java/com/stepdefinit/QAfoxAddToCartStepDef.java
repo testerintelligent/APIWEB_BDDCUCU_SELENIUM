@@ -38,6 +38,7 @@ public class QAfoxAddToCartStepDef {
     @When("I click the Add to cart button for Sauce Labs Backpack")
     public void i_click_add_to_cart_for_sauce_labs_backpack() {
         driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
+        driver.quit();
     }
 
     @Then("the cart badge should display 1")

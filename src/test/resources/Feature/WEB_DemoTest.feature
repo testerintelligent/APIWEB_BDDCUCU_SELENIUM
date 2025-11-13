@@ -1,9 +1,9 @@
 @FeaturesFiles
 Feature: WEB_DemoTest
 
-Background: Check Automation Tester Website
-Given Launch browser and navigate to AutomationTester url
-    Then Verify that home page is visible successfully
+# Background: Check Automation Tester Website
+# Given Launch browser and navigate to AutomationTester url
+#     Then Verify that home page is visible successfully
 
  @Testone
   Scenario: Test the Navvigation and Back operations in Academic Domain
@@ -116,7 +116,7 @@ Scenario: To view all the front end back end apps
       | muthu123   | muthu123   |
       | muthu456   | muthu456   |
  
- @Smoke
+
     # Scenario: Choosing and adding the item into the cart
     # Given Should be logged in into the system
     # When I select the item from list
@@ -364,6 +364,8 @@ Scenario: Login user with incorrect email and password
 
 @Fourty
     Scenario: Submit contact form with message and file upload
+    Given Launch browser and navigate to AutomationTester url
+    Then Verify that home page is visible successfully
     When Click on 'Contact Us' button
     Then Verify 'GET IN TOUCH' is visible
     And Enter name, email, subject and message
@@ -371,9 +373,12 @@ Scenario: Login user with incorrect email and password
     And Click OK button
     Then Verify success message 'Success! Your details have been submitted successfully.' is visible
     And Click 'Home' button and verify that landed to home page successfully
-        And Finally i close the browserrr
+    And Finally i close the browserrr
+
 @FourtyOne
-        Scenario: Verify search functionality for products
+    Scenario: Verify search functionality for products
+    Given Launch browser and navigate to AutomationTester url
+    Then Verify that home page is visible successfully
     When Click on 'Products' button
     Then Verify user is navigated to ALL PRODUCTS page successfully
     When Enter product name in search input and click search button
@@ -382,6 +387,8 @@ Scenario: Login user with incorrect email and password
 
 @FourtyTwo
      Scenario: Verify all products and product detail page functionality
+    Given Launch browser and navigate to AutomationTester url
+    Then Verify that home page is visible successfully
     When Click on 'Products' button
     Then Verify user is navigated to ALL PRODUCTS page successfully
     Then The products list is visible
@@ -421,15 +428,15 @@ Scenario: Login user with incorrect email and password
 
     @FourtyFour
     Scenario Outline: Verify login functionality with valid Credentials
-Given User should launch the browser
-When User should write "<username>" and "<password>"
-And User should click the login button
-Then User should verify success message after login
-And User should logoff
+    Given User should launch the browser
+    When User should write "<username>" and "<password>"
+    And User should click the login button
+    Then User should verify success message after login
+    And User should logoff
  
-Examples:
-|username|password|
-|standard_user|secret_sauce|
+    Examples:
+    |username|password|
+    |standard_user|secret_sauce|
  
 @FourtyFive
 Scenario Outline: Verify User is able Select Product

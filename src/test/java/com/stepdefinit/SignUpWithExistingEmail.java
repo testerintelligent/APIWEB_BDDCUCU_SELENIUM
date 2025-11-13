@@ -65,6 +65,7 @@ public class SignUpWithExistingEmail {
 	    if (error) {
 			System.out.println("Error message is shown");
 		}
+		driver.quit();
 	}
 
 

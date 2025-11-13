@@ -66,7 +66,7 @@ public class SauceStep extends BaseClass {
 	//logout the application
 	@Then("User should logoff")
 	public void user_should_logoff() {
-		driver.close();
+		driver.quit();
 	}
 
 	//Selecting the product
@@ -74,7 +74,7 @@ public class SauceStep extends BaseClass {
 	public void user_should_click_the_product() {
 		Click(login.getClick1());
 		Click(login.getClick2());
-		driver.close();
+		driver.quit();
 	}
 
 	@Then("User should click the Add to cart button")
@@ -116,7 +116,7 @@ public class SauceStep extends BaseClass {
 		EnterValue(cart.getLname(), "kumar");
 		EnterValue(cart.getPincode(), "600097");
 		Click(cart.getClick11());
-		driver.close();
+		driver.quit();
 	}
 
 	@Then("User should use dynamic path")
@@ -137,8 +137,8 @@ public class SauceStep extends BaseClass {
 	    EnterValue(pro.getClick5(),"600096");
 	    Click(pro.getClick6());
 	    Click(pro.getClick7());
-	    driver.close();
-	    	}
+	    driver.quit();
+	    }
 
 	@Then("User should click logout")
 	public void user_should_click_logout() {
@@ -153,7 +153,7 @@ public class SauceStep extends BaseClass {
 		 pro = new SaucePro();
 	    Click(pro.getClick10());
 	    Click(pro.getClick11());
-	    driver.close();
+	    driver.quit();
 	}
 
 	@Then("User should click all cart")

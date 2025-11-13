@@ -60,5 +60,6 @@ public class SliderSteps {
 
         // Assert the displayed value
         Assert.assertEquals("Slider value did not update correctly!", expectedValue, displayedValue.getText());
+        driver.quit();
     }
 }

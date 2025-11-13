@@ -125,10 +125,11 @@ public void launch_browser_and_navigate() {
 	}
 
 		
-	@Then("Finally i close the browserrr")
+		@Then("Finally i close the browserrr")
 		public void finally_i_close_the_browser() {
 		   driver.quit();
 		}
+
 	    @Then("Verify 'Login to your account' is visible")
 	    public void verify_login_to_account_visible() {
 	        WebElement loginText = driver.findElement(By.xpath("//h2[text()='Login to your account']"));
@@ -300,7 +301,9 @@ public void launch_browser_and_navigate() {
 	        for (WebElement product : productList) {
 	            Assert.assertTrue("Product not visible", product.isDisplayed());
 	        }
+			driver.quit();
 	    }
+
 	    @When("Click on 'View Product' of first product")
 	    public void click_on_view_product_of_first_product() {
 	        WebElement firstProductViewButton = driver.findElement(By.xpath("(//a[contains(text(),'View Product')])[1]"));

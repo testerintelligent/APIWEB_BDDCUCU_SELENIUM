@@ -19,7 +19,7 @@ public class ComputerRegDBM {
 public void i_enter_the_url_of_domain_CompDB1login() {
     WebDriverManager.chromedriver().setup();
     ChromeOptions options = new ChromeOptions();
-	options.addArguments("--headless");
+	//options.addArguments("--headless");
     options.addArguments("disable-infobars");
     options.setExperimentalOption("prefs", Map.of(
     "credentials_enable_service", false,
@@ -42,8 +42,6 @@ public void i_enter_customer_credentials_of_CompDB1login() {
         Password.sendKeys("Password@200391");
         WebElement Login=driver.findElement(By.xpath("//input[@class='button-1 login-button']"));
         Login.click();
-        
-  
+        driver.quit();  
 }
-
 }

@@ -48,5 +48,6 @@ public class RegisterSteps extends BaseClass1 {
     public void verify_error_email_address_already_exist_is_visible() {
         WebElement signUpNotification = driver.findElement(By.xpath("//p[text()='Email Address already exist!']"));
         System.out.println(signUpNotification.getText());
+        driver.quit();
     }
 }

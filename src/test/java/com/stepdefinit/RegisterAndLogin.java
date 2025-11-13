@@ -45,5 +45,6 @@ public class RegisterAndLogin {
     @Then("I should be successfully logged in")
     public void i_should_be_successfully_logged_in() {
         //paraBankPage.LoggedIn(); // Verifying successful login
+        driver.quit();
     }
 }

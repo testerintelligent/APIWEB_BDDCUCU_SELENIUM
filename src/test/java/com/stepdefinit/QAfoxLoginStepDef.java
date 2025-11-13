@@ -51,6 +51,7 @@ WebDriver driver;
 	public void it_should_be_redirected_to_homepage_with_title(String expectedTitle) {
 	    String actualTitle = driver.getTitle();
 	    System.out.println("expectedTitle");
+		driver.quit();
 	}
 
 	@When("the user enters the invalid username {string} and password {string}")
@@ -70,6 +71,7 @@ WebDriver driver;
 	public void the_user_should_get_error_message(String expectedErrorMsg) {
 	    String actualErrorMsg = driver.findElement(By.xpath("//div[contains(text(), 'Warning: No match')]")).getText();
 	    assertEquals(expectedErrorMsg, actualErrorMsg);
+		driver.quit();
 	}
 
 

@@ -61,7 +61,7 @@ public class LoginwithIncorrectCredentials {
 	   if (Error.isDisplayed()) {
 		System.out.println("Error message is displayed");
 	}
-	
+		driver.quit();
 	}
 
 
